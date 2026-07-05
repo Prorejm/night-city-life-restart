@@ -152,7 +152,14 @@ body {
 .bottom-bar {
   position: fixed; bottom: 0; left: 0; right: 0;
   background: rgba(10,10,15,0.95); border-top: 1px solid var(--cyber-cyan);
-  padding: 12px 20px; display: flex; justify-content: center; z-index: 100;
+  padding: 12px 20px; display: flex; justify-content: center; align-items: center; gap: 10px; z-index: 100;
+}
+
+.auto-btn.active {
+  background: var(--cyber-red);
+  border-color: var(--cyber-red);
+  color: #fff;
+  box-shadow: 0 0 10px var(--cyber-red);
 }
 
 /* Talents */

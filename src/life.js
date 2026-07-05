@@ -7,6 +7,16 @@ import { Inventory } from './inventory.js';
 import { Achievement } from './achievement.js';
 import { generateSummary } from './functions/summary.js';
 
+// 事件类型权重配置
+const TYPE_WEIGHTS = {
+  daily: 40,
+  social: 20,
+  combat: 15,
+  medical: 10,
+  economy: 10,
+  special: 5
+};
+
 // 死亡原因映射
 const DEATH_EVENTS = {
   18001: '你被漩涡帮抓到废弃工厂，他们对你进行了仪式性的残忍处刑。你的义体被拆下作为"祭品"，你的尖叫在铁皮墙壁间回荡……',
@@ -23,7 +33,7 @@ const DEATH_EVENTS = {
   18012: '你消失了。没有尸体，没有凶杀案——就像你从未存在过一样。夜之城的黑暗吞没了一切痕迹。'
 };
 
-// 特殊武器/义体获取事件映射
+// 特殊武器/义体获取事件映射（向后兼容旧事件）
 const ITEM_GAIN_EVENTS = {
   13001: 'wpn_001',  // M-179E 阿喀琉斯
   13002: 'wpn_002',  // 宪法捍卫者
@@ -34,6 +44,9 @@ const ITEM_GAIN_EVENTS = {
   13015: 'cyber_020', // 荷鲁斯之眼 (不朽)
   13016: 'cyber_021', // 提尔之臂 (不朽)
 };
+
+// Combat type 标签事件
+const COMBAT_TYPE_TAG = 'combat';
 
 export class Life {
   #property;
@@ -52,6 +65,9 @@ export class Life {
   #bonusPoints;
   #ownedVehicles;
   #consumedDrugs;
+  #eventCooldowns;
+  #drugUsageCount;
+  #brainDanceCount;
 
   constructor() {
     this.#property = new Property();
@@ -70,6 +86,9 @@ export class Life {
     this.#bonusPoints = 0;
     this.#ownedVehicles = [];
     this.#consumedDrugs = [];
+    this.#eventCooldowns = new Map();
+    this.#drugUsageCount = 0;
+    this.#brainDanceCount = 0;
   }
 
   async initial() {
@@ -125,6 +144,9 @@ export class Life {
     this.#deathMessage = '';
     this.#ownedVehicles = [];
     this.#consumedDrugs = [];
+    this.#eventCooldowns = new Map();
+    this.#drugUsageCount = 0;
+    this.#brainDanceCount = 0;
 
     // 应用基础初始属性
     this.#property.change('EDDIES', 2);
@@ -170,19 +192,19 @@ export class Life {
     const newAge = age + 1;
     this.#property.change('AGE', 1);
 
+    const results = [];
+
     const ageKey = String(newAge);
     const ageConfig = this.#ageData[ageKey];
 
-    const results = [];
-
-    // 1. 检查该年龄是否触发了特殊事件
+    // 1. 检查该年龄是否触发了特殊事件（age.json 配置）
     if (ageConfig) {
       // 处理天赋触发
       if (ageConfig.talent) {
         const talentIds = typeof ageConfig.talent === 'string'
           ? ageConfig.talent.split(',').map(Number)
           : (Array.isArray(ageConfig.talent) ? ageConfig.talent : []);
-        
+
         for (const tId of talentIds) {
           const talentResult = this.#talent.do(tId, this.#property);
           if (talentResult && talentResult.effect) {
@@ -192,10 +214,7 @@ export class Life {
         }
       }
 
-      // 处理普通天赋触发（已拥有但未触发的）
-      this.#processPendingTalents();
-
-      // 2. 随机选择年龄事件
+      // 处理年龄配置事件（优先）
       if (ageConfig.event && ageConfig.event.length > 0) {
         const parsedEvents = ageConfig.event.map(ev => {
           if (typeof ev === 'string') {
@@ -209,37 +228,86 @@ export class Life {
         if (selectedEventId !== null) {
           const eventResults = this.#executeEvent(selectedEventId);
           results.push(...eventResults);
-          this.#currentEvents.push(...eventResults);
         }
       }
-    } else {
-      // 没有该年龄的特殊配置，检查普通天赋触发
-      this.#processPendingTalents();
+    }
 
-      // 从通用事件池中选择
-      const generalEventId = this.#pickGeneralEvent(newAge);
-      if (generalEventId) {
-        const eventResults = this.#executeEvent(generalEventId);
+    // 2. 处理待触发天赋
+    this.#processPendingTalents();
+
+    // 3. 从类型权重池中触发多事件
+    const eventCount = this.#rollEventCount(newAge);
+    for (let i = 0; i < eventCount; i++) {
+      const eventId = this.#pickWeightedEvent(newAge);
+      if (eventId) {
+        const eventResults = this.#executeEvent(eventId);
         results.push(...eventResults);
-        this.#currentEvents.push(...eventResults);
       }
     }
 
-    // 3. 记录当前状态
+    // 4. 记录状态
     this.#property.record();
 
-    // 4. 检查死亡
-    const deathCheck = this.#checkDeath();
-    if (deathCheck) {
-      results.push(deathCheck);
-      this.#currentEvents.push(deathCheck);
+    // 5. 死亡检查
+    const death = this.#checkDeath();
+    if (death) {
+      results.push(death);
     }
 
-    return {
-      age: newAge,
-      events: results,
-      isDead: this.#property.isDead() || this.#property.isCyberpsycho()
+    return { age: newAge, events: results, isDead: this.#property.isDead() || this.#property.isCyberpsycho() };
+  }
+
+  /**
+   * 根据年龄段决定该年龄触发几个随机事件
+   * @param {number} age
+   * @returns {number} 事件数量
+   */
+  #rollEventCount(age) {
+    if (age <= 6) return 1;
+    if (age <= 15) return Math.random() < 0.4 ? 2 : 1;
+    if (age <= 25) return 2 + (Math.random() < 0.4 ? 1 : 0);
+    if (age <= 50) return 2 + (Math.random() < 0.3 ? 1 : 0);
+    if (age <= 70) return Math.random() < 0.4 ? 2 : 1;
+    return 1;
+  }
+
+  /**
+   * 基于类型权重选取一个事件
+   * @param {number} age - 当前年龄
+   * @returns {number|null} eventId
+   */
+  #pickWeightedEvent(age) {
+    // 构建加权类型列表
+    const types = Object.entries(TYPE_WEIGHTS);
+    const totalWeight = types.reduce((s, [, w]) => s + w, 0);
+    let r = Math.random() * totalWeight;
+
+    let selectedType = 'daily';
+    for (const [type, weight] of types) {
+      if ((r -= weight) < 0) {
+        selectedType = type;
+        break;
+      }
+    }
+
+    // 获取当前年龄已触发事件列表（用于排除 oneshot）
+    const state = this.#property.getAll();
+    const extraState = {
+      eventCooldowns: this.#eventCooldowns,
+      age: age
     };
+
+    // 尝试从选中类型中选取事件
+    const eventId = this.#event.pickByType(selectedType, age, this.#property, extraState);
+    if (eventId !== null) return eventId;
+
+    // 如果选中类型没有可用事件，尝试 fallback 到 special 类型
+    if (selectedType !== 'special') {
+      const fallbackId = this.#event.pickByType('special', age, this.#property, extraState);
+      if (fallbackId !== null) return fallbackId;
+    }
+
+    return null;
   }
 
   #processPendingTalents() {
@@ -255,6 +323,11 @@ export class Life {
     }
   }
 
+  /**
+   * 执行事件（增强版：支持 itemAward/vehicleAward/drugAward 和冷却追踪）
+   * @param {number} eventId
+   * @returns {Array} 事件结果数组
+   */
   #executeEvent(eventId) {
     const results = [];
     let currentId = eventId;
@@ -267,15 +340,75 @@ export class Life {
         // 应用效果
         if (result.effect) {
           this.#property.effect(result.effect);
+
+          // 检查战斗事件导致 LIFE 降至 0 以下 → 即死
+          const life = this.#property.get('LIFE');
+          if (life <= 0) {
+            const combatDeath = {
+              id: 18001,
+              event: '你在一次激烈的街头火拼中倒下了。弹片撕裂了你的护甲，鲜血浸透了霓虹灯下的水泥地面。这是夜之城——只有强者才能活着离开。',
+              isDeath: true,
+              deathType: '战斗致死'
+            };
+            results.push(result);
+            results.push(combatDeath);
+            this.#property.change('LIFE', -1);
+            return results;
+          }
         }
 
-        // 记录事件
+        // 记录事件到 EVT
         this.#property.change('EVT', [result.id]);
 
-        // 检查是否有物品获取
+        // 检查事件元数据
+        const meta = this.#event.getEventMeta(result.id);
+
+        // 新元数据字段：itemAward
+        if (meta && meta.itemAward && this.#inventory) {
+          this.#inventory.addItem(meta.itemAward);
+        }
+
+        // 新元数据字段：vehicleAward
+        if (meta && meta.vehicleAward) {
+          this.addVehicle(meta.vehicleAward);
+        }
+
+        // 新元数据字段：drugAward
+        if (meta && meta.drugAward) {
+          this.addDrug(meta.drugAward);
+          this.#drugUsageCount++;
+        }
+
+        // 旧版兼容：ITEM_GAIN_EVENTS 映射
         const itemGain = ITEM_GAIN_EVENTS[result.id];
         if (itemGain && this.#inventory) {
           this.#inventory.addItem(itemGain);
+        }
+
+        // 处理可重复/一次性事件追踪
+        if (meta) {
+          if (meta.repeatable) {
+            // 可重复事件：更新冷却记录
+            this.#eventCooldowns.set(result.id, this.#property.get('AGE'));
+          } else {
+            // 一次性事件：已通过 EVT 记录排除，无需额外操作
+          }
+
+          // 追踪特定事件类型计数
+          if (meta.type === 'combat') {
+            // combat 事件可能伴随药物使用（通过 effect 中的 CHROME 变化来推断不精确，
+            // 此处简单统计 combat 类型事件）
+          }
+
+          // 追踪药物/超梦相关事件
+          if (meta.tags) {
+            if (meta.tags.includes('drug') || meta.tags.includes('substance')) {
+              this.#drugUsageCount++;
+            }
+            if (meta.tags.includes('braindance') || meta.tags.includes('bd')) {
+              this.#brainDanceCount++;
+            }
+          }
         }
 
         results.push(result);
@@ -286,32 +419,22 @@ export class Life {
     return results;
   }
 
-  #pickGeneralEvent(age) {
-    // 通用事件池：包含新扩展事件
-    const pools = [
-      { min: 0, max: 6, pool: [10001, 10002, 10003, 10004, 10005, 10501, 10502] },
-      { min: 7, max: 15, pool: [11001, 11002, 11003, 11004, 11005, 11301, 11302, 11303, 11304] },
-      { min: 16, max: 25, pool: [12001, 12002, 12003, 12004, 12005, 12201, 12202, 12801, 12802, 19001, 19002, 19005, 19101, 19301] },
-      { min: 26, max: 50, pool: [14001, 14002, 14003, 14004, 14005, 14501, 14502, 19010, 19015, 19020, 19201, 19205, 19310, 19315] },
-      { min: 51, max: 70, pool: [17001, 17002, 17003, 17004, 17005, 17501, 17502, 19025, 19030] },
-      { min: 71, max: 200, pool: [18001, 18011, 19030, 19501, 19502, 20001, 20002] }
-    ];
-
-    for (const pool of pools) {
-      if (age >= pool.min && age <= pool.max) {
-        const parsed = pool.pool.map(id => [id, 1]);
-        return this.#event.random(parsed, this.#property);
-      }
-    }
-
-    return null;
-  }
-
   #checkDeath() {
     const age = this.#property.get('AGE');
     const chrome = this.#property.get('CHROME');
     const humanity = this.#property.get('HUMANITY');
     const eddies = this.#property.get('EDDIES');
+
+    // 0. LIFE 已降至 0 以下（由 #executeEvent 中的战斗即死检查处理，此处兜底）
+    if (this.#property.get('LIFE') <= 0) {
+      this.#property.change('LIFE', -1);
+      return {
+        id: 18001,
+        event: DEATH_EVENTS[18001],
+        isDeath: true,
+        deathType: '战斗致死'
+      };
+    }
 
     // 1. 赛博精神病 (HUMANITY <= 0)
     if (this.#property.isCyberpsycho()) {
@@ -338,6 +461,16 @@ export class Life {
 
     // 低人性增加死亡概率
     if (humanity < 3) deathChance += 0.03;
+
+    // 药物滥用增加死亡概率
+    if (this.#drugUsageCount > 10) {
+      deathChance += 0.05;
+    }
+
+    // 超梦滥用增加死亡概率（脑损伤）
+    if (this.#brainDanceCount > 8) {
+      deathChance += 0.03;
+    }
 
     if (Math.random() < deathChance) {
       const deathTypes = this.#getRandomDeathType();

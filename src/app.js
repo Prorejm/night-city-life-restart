@@ -22,6 +22,10 @@ export class App {
   #talentPool;
   #points;
   #allocated;
+  #autoMode;
+  #autoSpeed;
+  #autoTimer;
+  #runCount;
 
   constructor() {
     this.#life = new Life();
@@ -29,6 +33,10 @@ export class App {
     this.#talentPool = [];
     this.#points = 20;
     this.#allocated = { STYLE: 0, TECH: 0, CHROME: 0, EDDIES: 0 };
+    this.#autoMode = false;
+    this.#autoSpeed = 200;
+    this.#autoTimer = null;
+    this.#runCount = 0;
   }
 
   async initial() {
@@ -195,22 +203,109 @@ export class App {
 
   async nextYear() {
     const btn = document.getElementById('next-btn');
-    btn.disabled = true;
-    btn.textContent = '⏳ 正在接入…';
+    if (!this.#autoMode) {
+      btn.disabled = true;
+      btn.textContent = '⏳ 正在接入…';
+    }
 
     const result = this.#life.ageNext();
     this.#updateHUD();
     this.#appendEvents(result);
 
     if (result.isDead) {
-      btn.textContent = '☠ 人生终结';
-      btn.disabled = true;
-      await this.#delay(1500);
-      this.#showSummary();
+      if (this.#autoMode) {
+        // 自动模式：短暂停顿后显示总结再自动重来
+        await this.#delay(800);
+        this.#showSummary();
+        await this.#delay(3000);
+        this.#autoRestart();
+      } else {
+        btn.textContent = '☠ 人生终结';
+        btn.disabled = true;
+        await this.#delay(1500);
+        this.#showSummary();
+      }
     } else {
-      btn.disabled = false;
-      btn.textContent = '▶ 继续 (下一岁)';
+      if (!this.#autoMode) {
+        btn.disabled = false;
+        btn.textContent = '▶ 继续 (下一岁)';
+      }
     }
+  }
+
+  // 自动模式：连续推进年龄
+  startAuto() {
+    this.#autoMode = true;
+    this.#autoSpeed = 200;
+    document.getElementById('auto-btn').textContent = '⏹ 停止';
+    document.getElementById('auto-btn').classList.add('active');
+    document.getElementById('next-btn').disabled = true;
+    this.#autoLoop();
+  }
+
+  #autoLoop() {
+    if (!this.#autoMode) return;
+    const result = this.#life.ageNext();
+    this.#updateHUD();
+    this.#appendEvents(result);
+
+    if (result.isDead) {
+      // 延迟显示总结再自动重来
+      this.#autoTimer = setTimeout(() => {
+        this.#showSummary();
+        this.#autoTimer = setTimeout(() => {
+          this.#autoRestart();
+        }, 2500);
+      }, 500);
+    } else {
+      this.#autoTimer = setTimeout(() => this.#autoLoop(), this.#autoSpeed);
+    }
+  }
+
+  stopAuto() {
+    this.#autoMode = false;
+    if (this.#autoTimer) {
+      clearTimeout(this.#autoTimer);
+      this.#autoTimer = null;
+    }
+    document.getElementById('auto-btn').textContent = '⟳ 自动模拟';
+    document.getElementById('auto-btn').classList.remove('active');
+    const btn = document.getElementById('next-btn');
+    btn.disabled = false;
+    btn.textContent = '▶ 继续 (下一岁)';
+  }
+
+  toggleAuto() {
+    if (this.#autoMode) {
+      this.stopAuto();
+    } else {
+      this.startAuto();
+    }
+  }
+
+  // 自动重新开始（保留计数）
+  async #autoRestart() {
+    if (!this.#autoMode) return;
+    this.#runCount++;
+    document.getElementById('run-count').textContent = `第 ${this.#runCount} 次人生`;
+
+    this.#resetGame();
+    // 自动随机选3个天赋
+    const allTalents = this.#life.talent.getAll();
+    const shuffled = [...allTalents].sort(() => Math.random() - 0.5);
+    this.#selectedTalents = shuffled.slice(0, 3).map(t => t.id);
+
+    this.#life.restart(this.#selectedTalents);
+    // 随机分配属性
+    for (const key of ['STYLE', 'TECH', 'CHROME', 'EDDIES']) {
+      this.#life.property.change(key, Math.floor(Math.random() * 6));
+    }
+
+    this.#showPage('life');
+    this.#updateHUD();
+    document.getElementById('log').innerHTML = '';
+
+    this.#autoTimer = setTimeout(() => this.#autoLoop(), 500);
   }
 
   #updateHUD() {
