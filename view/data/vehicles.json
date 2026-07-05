@@ -1,0 +1,295 @@
+{
+  "veh_001": {
+    "id": "veh_001",
+    "name": "雷菲尔德·石中剑",
+    "brand": "雷菲尔德",
+    "type": "超级跑车",
+    "class": "豪华",
+    "speed": 9,
+    "price": 225000,
+    "description": "雷菲尔德旗舰超跑，水晶球车体技术，极速无人能及",
+    "lore": "夜之城最昂贵的量产车，每一台都是艺术品",
+    "effect": {
+      "STYLE": 8
+    }
+  },
+  "veh_002": {
+    "id": "veh_002",
+    "name": "雷菲尔德·湖女之剑",
+    "brand": "雷菲尔德",
+    "type": "超级跑车",
+    "class": "豪华",
+    "speed": 9,
+    "price": 198000,
+    "description": "雷菲尔德经典超跑，流线型车身如湖中仙女般优雅",
+    "lore": "在石中剑量产之前，湖女之剑曾是雷菲尔德的旗舰车型",
+    "effect": {
+      "STYLE": 7
+    }
+  },
+  "veh_003": {
+    "id": "veh_003",
+    "name": "埃雷拉·歹徒",
+    "brand": "埃雷拉",
+    "type": "跑车",
+    "class": "豪华",
+    "speed": 8,
+    "price": 145000,
+    "description": "埃雷拉出品的豪华跑车，优雅中透着亡命之徒的桀骜",
+    "lore": "西班牙顶级车厂的作品，夜之城富豪们的新宠",
+    "effect": {
+      "STYLE": 6
+    }
+  },
+  "veh_004": {
+    "id": "veh_004",
+    "name": "埃雷拉·翼手龙",
+    "brand": "埃雷拉",
+    "type": "跑车",
+    "class": "豪华",
+    "speed": 8,
+    "price": 138000,
+    "description": "埃雷拉双门跑车，如翼手龙般掠过夜之城的天际线",
+    "lore": "限量发行的纪念版车型，车身带有翼手龙浮雕",
+    "effect": {
+      "STYLE": 6
+    }
+  },
+  "veh_005": {
+    "id": "veh_005",
+    "name": "古德拉·66型",
+    "brand": "古德拉",
+    "type": "肌肉车",
+    "class": "肌肉",
+    "speed": 7,
+    "price": 75000,
+    "description": "经典美式肌肉车，V8引擎的咆哮是夜之城最动听的声音",
+    "lore": "街头帮派最钟爱的座驾——便宜、结实、跑得快",
+    "effect": {
+      "CHROME": 3,
+      "STYLE": 3
+    }
+  },
+  "veh_006": {
+    "id": "veh_006",
+    "name": "古德拉·图尔",
+    "brand": "古德拉",
+    "type": "肌肉车",
+    "class": "肌肉",
+    "speed": 7,
+    "price": 88000,
+    "description": "古德拉涡轮增压版肌肉车，速度与力量的最佳平衡",
+    "lore": "恶土赛车爱好者的改装首选，涡轮增压声浪震耳欲聋",
+    "effect": {
+      "STYLE": 4,
+      "CHROME": 2
+    }
+  },
+  "veh_007": {
+    "id": "veh_007",
+    "name": "霆威·科尔比",
+    "brand": "霆威",
+    "type": "轿车",
+    "class": "中档",
+    "speed": 5,
+    "price": 38000,
+    "description": "经济实用型四门轿车，夜之城最常见的中档家用车",
+    "lore": "霆威集团最畅销的车型——平庸但可靠",
+    "effect": {
+      "LIFE": 2
+    }
+  },
+  "veh_008": {
+    "id": "veh_008",
+    "name": "霆威·马其诺",
+    "brand": "霆威",
+    "type": "SUV",
+    "class": "中档",
+    "speed": 5,
+    "price": 55000,
+    "description": "重型越野SUV，以马其诺防线命名强调其坚固耐用",
+    "lore": "恶土旅行者和走私贩的可靠伙伴",
+    "effect": {
+      "LIFE": 3,
+      "CHROME": 1
+    }
+  },
+  "veh_009": {
+    "id": "veh_009",
+    "name": "水谷·隼",
+    "brand": "水谷",
+    "type": "跑车",
+    "class": "运动",
+    "speed": 7,
+    "price": 62000,
+    "description": "日系轻型跑车，如游隼般敏捷穿梭于城市车流",
+    "lore": "水谷集团的明星产品，以操控性著称的平价跑车",
+    "effect": {
+      "STYLE": 3,
+      "TECH": 2
+    }
+  },
+  "veh_010": {
+    "id": "veh_010",
+    "name": "水谷·MZ1",
+    "brand": "水谷",
+    "type": "跑车",
+    "class": "运动",
+    "speed": 7,
+    "price": 58000,
+    "description": "水谷经典双门跑车，街头改装的热门选择",
+    "lore": "虎爪帮成员最爱的座驾——便宜、够快、改装潜力大",
+    "effect": {
+      "STYLE": 3,
+      "CHROME": 2
+    }
+  },
+  "veh_011": {
+    "id": "veh_011",
+    "name": "卷贝·湖勇",
+    "brand": "卷贝",
+    "type": "微型车",
+    "class": "廉价",
+    "speed": 3,
+    "price": 9000,
+    "description": "超小型双门微型车，夜之城最便宜的代步工具",
+    "lore": "穷人的救星——四个轮子加一个引擎，仅此而已",
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "veh_012": {
+    "id": "veh_012",
+    "name": "卷贝·海怪",
+    "brand": "卷贝",
+    "type": "轿车",
+    "class": "廉价",
+    "speed": 4,
+    "price": 15000,
+    "description": "坚固耐用的廉价轿车，虽然不好看但永远不会把你丢在路上",
+    "lore": "低收入阶层最普遍的选择——一点也不酷但极其可靠",
+    "effect": {
+      "LIFE": 1,
+      "EDDIES": 1
+    }
+  },
+  "veh_013": {
+    "id": "veh_013",
+    "name": "梅赫·苏普龙",
+    "brand": "梅赫",
+    "type": "轿车",
+    "class": "廉价",
+    "speed": 4,
+    "price": 12000,
+    "description": "东欧进口的廉价轿车，皮实耐造易于维修",
+    "lore": "恶土居民的最爱——拿铁锤敲敲打打就能再跑十万公里",
+    "effect": {
+      "LIFE": 2
+    }
+  },
+  "veh_014": {
+    "id": "veh_014",
+    "name": "梅赫·巨兽",
+    "brand": "梅赫",
+    "type": "卡车",
+    "class": "廉价",
+    "speed": 3,
+    "price": 28000,
+    "description": "重型货运卡车，恶土运输的绝对主力",
+    "lore": "阿尔德卡多斯家族的首选运输车辆——能装、能跑、能撞",
+    "effect": {
+      "LIFE": 3,
+      "CHROME": 2
+    }
+  },
+  "veh_015": {
+    "id": "veh_015",
+    "name": "ARCH·忍者",
+    "brand": "ARCH",
+    "type": "摩托车",
+    "class": "摩托",
+    "speed": 7,
+    "price": 35000,
+    "description": "ARCH定制重型摩托，暗夜中的钢铁忍者",
+    "lore": "武侍乐队主唱约翰尼·银手曾多次公开表示ARCH是最酷的摩托",
+    "effect": {
+      "STYLE": 5,
+      "CHROME": 2
+    }
+  },
+  "veh_016": {
+    "id": "veh_016",
+    "name": "ARCH·刽子手",
+    "brand": "ARCH",
+    "type": "摩托车",
+    "class": "摩托",
+    "speed": 7,
+    "price": 32000,
+    "description": "ARCH狂暴重型摩托，车轮碾过一切阻碍",
+    "lore": "夜之城的快递员和信使们最爱的坐骑——能抢出最后一分钟",
+    "effect": {
+      "STYLE": 4,
+      "CHROME": 3
+    }
+  },
+  "veh_017": {
+    "id": "veh_017",
+    "name": "保时捷·911",
+    "brand": "保时捷",
+    "type": "经典跑车",
+    "class": "特殊",
+    "speed": 8,
+    "price": 165000,
+    "description": "911型经典跑车，来自旧时代的机械艺术杰作",
+    "lore": "约翰尼·银手最爱的座驾——1977年款保时捷911，纯燃油引擎的绝唱",
+    "effect": {
+      "STYLE": 7,
+      "HUMANITY": 3
+    }
+  },
+  "veh_018": {
+    "id": "veh_018",
+    "name": "天穹·赫拉",
+    "brand": "天穹",
+    "type": "SUV",
+    "class": "中档",
+    "speed": 5,
+    "price": 48000,
+    "description": "中大型豪华SUV，兼顾商务和家庭的实用选择",
+    "lore": "荒坂中层管理人员的公务配车——体面但不张扬",
+    "effect": {
+      "STYLE": 2,
+      "LIFE": 2
+    }
+  },
+  "veh_019": {
+    "id": "veh_019",
+    "name": "天穹·伊莎",
+    "brand": "天穹",
+    "type": "轿车",
+    "class": "中档",
+    "speed": 5,
+    "price": 42000,
+    "description": "环保电动轿车，天穹集团的城市通勤解决方案",
+    "lore": "在化石燃料日益昂贵的2077年，电动车的市场份额正在稳步增长",
+    "effect": {
+      "TECH": 2,
+      "EDDIES": 1
+    }
+  },
+  "veh_020": {
+    "id": "veh_020",
+    "name": "维尔福·德莱昂",
+    "brand": "维尔福",
+    "type": "豪华轿车",
+    "class": "豪华",
+    "speed": 6,
+    "price": 98000,
+    "description": "全尺寸防弹豪华轿车，企业高管的移动堡垒",
+    "lore": "荒坂和军用科技高管的标准通勤座驾——舒适和安全的代名词",
+    "effect": {
+      "STYLE": 4,
+      "LIFE": 4
+    }
+  }
+}

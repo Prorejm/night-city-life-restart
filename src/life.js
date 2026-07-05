@@ -103,9 +103,17 @@ export class Life {
   }
 
   async #loadJSON(path) {
-    const response = await fetch(path);
-    if (!response.ok) throw new Error(`Failed to load ${path}`);
-    return response.json();
+    // 尝试多个路径以兼容 dev server 和 file:// 两种模式
+    const paths = [path, `data/${path.replace('../data/', '')}`, `../${path}`];
+    for (const p of paths) {
+      try {
+        const response = await fetch(p);
+        if (response.ok) return response.json();
+      } catch (e) {
+        // 继续尝试下一个路径
+      }
+    }
+    throw new Error(`Failed to load ${path}`);
   }
 
   restart(selectedTalents) {

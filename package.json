@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "webpack serve --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack --mode production && powershell -Command \"Copy-Item -Path 'data' -Destination 'view\\data' -Recurse -Force\"",
+    "postinstall": "powershell -Command \"Copy-Item -Path 'data' -Destination 'view\\data' -Recurse -Force\"",
     "test": "node tests/index.js"
   },
   "devDependencies": {
