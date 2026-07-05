@@ -1,0 +1,164 @@
+{
+  "achv_001": {
+    "id": "achv_001",
+    "name": "第一滴血",
+    "description": "完成第一次雇佣兵任务",
+    "icon": "⚔️",
+    "category": "战斗",
+    "condition": "EVT?[12001]",
+    "reward_recipe": null
+  },
+  "achv_002": {
+    "id": "achv_002",
+    "name": "风格重于实质",
+    "description": "街头声望达到12级",
+    "icon": "🎭",
+    "category": "声望",
+    "condition": "STYLE>=12",
+    "reward_recipe": null
+  },
+  "achv_003": {
+    "id": "achv_003",
+    "name": "赛博怪物",
+    "description": "赛博植入物等级达到15级",
+    "icon": "🤖",
+    "category": "义体",
+    "condition": "CHROME>=15",
+    "reward_recipe": null
+  },
+  "achv_004": {
+    "id": "achv_004",
+    "name": "黑墙行者",
+    "description": "技术能力达到15级",
+    "icon": "🧠",
+    "category": "技术",
+    "condition": "TECH>=15",
+    "reward_recipe": null
+  },
+  "achv_005": {
+    "id": "achv_005",
+    "name": "人性之光",
+    "description": "人性值达到12级",
+    "icon": "💛",
+    "category": "人性",
+    "condition": "HUMANITY>=12",
+    "reward_recipe": null
+  },
+  "achv_006": {
+    "id": "achv_006",
+    "name": "百万欧元",
+    "description": "累计赚取15万欧元",
+    "icon": "💰",
+    "category": "经济",
+    "condition": "EDDIES>=15",
+    "reward_recipe": null
+  },
+  "achv_007": {
+    "id": "achv_007",
+    "name": "来生常客",
+    "description": "你的名字已成为来生酒吧的传奇",
+    "icon": "🍺",
+    "category": "传奇",
+    "condition": "LEGENDARY_COUNT",
+    "reward_recipe": "recipe_jackie_welles"
+  },
+  "achv_008": {
+    "id": "achv_008",
+    "name": "夜之城传奇",
+    "description": "垂垂老矣，名震天下",
+    "icon": "👑",
+    "category": "传奇",
+    "condition": "AGE>=70&STYLE>=15",
+    "reward_recipe": "recipe_silverhand"
+  },
+  "achv_009": {
+    "id": "achv_009",
+    "name": "不朽收集者",
+    "description": "集齐所有不朽武器",
+    "icon": "🔫",
+    "category": "收集",
+    "condition": "COLLECT_ALL_WEAPONS",
+    "reward_recipe": "recipe_rogue"
+  },
+  "achv_010": {
+    "id": "achv_010",
+    "name": "荒坂塔之影",
+    "description": "你的行动撼动了荒坂塔",
+    "icon": "🏢",
+    "category": "剧情",
+    "condition": "EVT?[14005]",
+    "reward_recipe": "recipe_saburo"
+  },
+  "achv_011": {
+    "id": "achv_011",
+    "name": "网络幽灵",
+    "description": "技术能力突破20级，触及黑墙边界",
+    "icon": "👻",
+    "category": "技术",
+    "condition": "TECH>=20",
+    "reward_recipe": null
+  },
+  "achv_012": {
+    "id": "achv_012",
+    "name": "街头霸主",
+    "description": "声望与财富兼备的街头王者",
+    "icon": "🏆",
+    "category": "声望",
+    "condition": "STYLE>=15&EDDIES>=10",
+    "reward_recipe": null
+  },
+  "achv_013": {
+    "id": "achv_013",
+    "name": "半神",
+    "description": "义体与人性之间的完美平衡",
+    "icon": "✨",
+    "category": "义体",
+    "condition": "CHROME>=10&HUMANITY>=10",
+    "reward_recipe": null
+  },
+  "achv_014": {
+    "id": "achv_014",
+    "name": "来生之王",
+    "description": "收集5种来生酒配方",
+    "icon": "👑",
+    "category": "收集",
+    "condition": "COLLECT_5_RECIPES",
+    "reward_recipe": null
+  },
+  "achv_015": {
+    "id": "achv_015",
+    "name": "荒原亡魂",
+    "description": "在恶土经历了生死考验并幸存",
+    "icon": "☠️",
+    "category": "生存",
+    "condition": "TLT?[1081]&AGE>=60",
+    "reward_recipe": null
+  },
+  "achv_016": {
+    "id": "achv_016",
+    "name": "缘起夜城",
+    "description": "踏出你在夜之城的第一步",
+    "icon": "🌆",
+    "category": "剧情",
+    "condition": "EVT?[10001]",
+    "reward_recipe": null
+  },
+  "achv_017": {
+    "id": "achv_017",
+    "name": "武装到牙齿",
+    "description": "收集5件不朽武器",
+    "icon": "💥",
+    "category": "收集",
+    "condition": "COLLECT_5_LEGENDARY",
+    "reward_recipe": null
+  },
+  "achv_018": {
+    "id": "achv_018",
+    "name": "传奇落幕",
+    "description": "活到了一百岁，本身就是传奇",
+    "icon": "🏅",
+    "category": "传奇",
+    "condition": "AGE>=100",
+    "reward_recipe": null
+  }
+}

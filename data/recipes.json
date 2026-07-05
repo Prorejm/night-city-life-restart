@@ -1,0 +1,82 @@
+{
+  "recipe_silverhand": {
+    "id": "recipe_silverhand",
+    "name": "银手 (Silverhand)",
+    "based_on": "强尼·银手",
+    "ingredients": ["龙舌兰", "啤酒", "青柠汁", "盐"],
+    "description": "烈酒入喉，震撼灵魂",
+    "glass": "洛克杯",
+    "color": "#ff4400",
+    "unlock_condition": "AGE>=70&STYLE>=15"
+  },
+  "recipe_jackie_welles": {
+    "id": "recipe_jackie_welles",
+    "name": "杰基·威尔斯",
+    "based_on": "杰基·威尔斯",
+    "ingredients": ["龙舌兰", "蜜糖", "辣椒", "可乐"],
+    "description": "甜蜜中带着辛辣",
+    "glass": "古典杯",
+    "color": "#ffaa00",
+    "unlock_condition": "LEGENDARY_COUNT"
+  },
+  "recipe_rogue": {
+    "id": "recipe_rogue",
+    "name": "罗格 (Rogue)",
+    "based_on": "罗格·阿玛迪亚斯",
+    "ingredients": ["伏特加", "姜汁啤酒", "越橘", "黑樱桃"],
+    "description": "深红如血，辛辣如她的话语",
+    "glass": "高球杯",
+    "color": "#8b0000",
+    "unlock_condition": "COLLECT_ALL_WEAPONS"
+  },
+  "recipe_saburo": {
+    "id": "recipe_saburo",
+    "name": "荒坂三郎",
+    "based_on": "荒坂三郎",
+    "ingredients": ["日本清酒", "苦艾酒", "金箔", "樱花"],
+    "description": "金黄透亮，昂贵而致命",
+    "glass": "利口杯",
+    "color": "#ffd700",
+    "unlock_condition": "EVT?[14005]"
+  },
+  "recipe_v": {
+    "id": "recipe_v",
+    "name": "V (未知)",
+    "based_on": "你",
+    "ingredients": ["?", "?", "?", "?"],
+    "description": "这杯酒还没有名字——它的配方取决于你的一生",
+    "glass": "自定义",
+    "color": "#00fff7",
+    "unlock_condition": "AGE>=50"
+  },
+  "recipe_alt": {
+    "id": "recipe_alt",
+    "name": "奥特·坎宁安",
+    "based_on": "奥特·坎宁安",
+    "ingredients": ["薄荷酒", "蓝库拉索", "苏打水", "电子冰块"],
+    "description": "冰蓝透明，恍若数据之海",
+    "glass": "马丁尼杯",
+    "color": "#00bfff",
+    "unlock_condition": "TECH>=15"
+  },
+  "recipe_smasher": {
+    "id": "recipe_smasher",
+    "name": "亚当·重锤",
+    "based_on": "亚当·重锤",
+    "ingredients": ["伏特加", "铁锈", "火药", "机油"],
+    "description": "工业级烈酒，喝下去像被重锤砸中",
+    "glass": "直饮杯",
+    "color": "#555555",
+    "unlock_condition": "CHROME>=15"
+  },
+  "recipe_morgan": {
+    "id": "recipe_morgan",
+    "name": "摩根·黑手",
+    "based_on": "摩根·黑手",
+    "ingredients": ["波本威士忌", "烟熏泥煤", "黑胡椒", "辣椒"],
+    "description": "传说中传奇佣兵最爱的酒，入口灼烧",
+    "glass": "岩石杯",
+    "color": "#c0392b",
+    "unlock_condition": "STYLE>=18"
+  }
+}

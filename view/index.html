@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>夜之城人生重开模拟器</title>
+  <link rel="stylesheet" href="cyberpunk.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Loading -->
+    <div id="loading" class="page active">
+      <div class="glitch-text" data-text="夜之城">夜之城</div>
+      <div class="subtitle">人生重开模拟器</div>
+      <div class="loading-bar"><div class="progress"></div></div>
+      <div style="margin-top:20px;font-family:'Orbitron',sans-serif;font-size:0.7em;color:#555;" id="load-status">正在接入网络…</div>
+    </div>
+
+    <!-- Menu -->
+    <div id="menu" class="page">
+      <div class="title-glitch">NIGHT CITY</div>
+      <div class="subtitle-glitch">LIFE·RESTART</div>
+      <div class="version">VER.2077.1.0</div>
+      <div style="text-align:center;">
+        <button class="cyber-btn" onclick="window.app.startGame()">▶ 接入神经接口</button>
+      </div>
+      <div class="footer-data">// 系统就绪 — 等待用户接入 //</div>
+    </div>
+
+    <!-- Talent Selection -->
+    <div id="talent" class="page">
+      <div class="talent-section">
+        <h2>⚡ 天赋抽选 ⚡</h2>
+        <p style="text-align:center;color:#888;font-size:0.8em;margin-bottom:15px;">从上述天赋中，选择 3 个开始你的人生</p>
+        <div id="talent-pool" class="talent-grid"></div>
+        <div style="text-align:center;margin-top:15px;">
+          <button class="cyber-btn" id="reroll-btn" onclick="window.app.rerollTalents()">⟳ 重新抽取</button>
+          <button class="cyber-btn gold" id="confirm-talent-btn" onclick="window.app.confirmTalents()" style="display:none;">✓ 确认选择 (0/3)</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attribute Allocation -->
+    <div id="allocate" class="page">
+      <div class="allocate-section">
+        <h2 style="font-family:'Orbitron',sans-serif;color:var(--cyber-cyan);text-align:center;margin-bottom:15px;font-size:1.2em;">✦ 属性分配 ✦</h2>
+        <p style="text-align:center;color:#888;font-size:0.75em;margin-bottom:10px;">剩余点数: <span id="points-left" style="color:var(--cyber-yellow);font-family:'Orbitron',sans-serif;">20</span></p>
+        <div id="allocate-controls"></div>
+        <div id="selected-talents-display" style="margin:15px 0;text-align:center;"></div>
+        <div style="text-align:center;">
+          <button class="cyber-btn gold" id="start-life-btn" onclick="window.app.startLife()">▶ 接入夜之城</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Life -->
+    <div id="life" class="page" style="padding:0;">
+      <div class="hud-header">
+        <span class="age">AGE: <span id="ageDisplay" style="color:#fff;">0</span></span>
+        <span class="stats">
+          <span>STYLE:</span> <span id="statStyle" class="stat-value">0</span>
+          <span>TECH:</span> <span id="statTech" class="stat-value">0</span>
+          <span>CHROME:</span> <span id="statChrome" class="stat-value">0</span>
+          <span>€$:</span> <span id="statEddies" class="stat-value">0</span>
+          <span>❤:</span> <span id="statHumanity" class="stat-value">10</span>
+        </span>
+      </div>
+      <div class="hud-panel">
+        <div class="stat-row"><span class="stat-label">STYLE</span><span class="stat-value" id="panelStyle">0</span></div>
+        <div class="stat-row"><span class="stat-label">TECH</span><span class="stat-value" id="panelTech">0</span></div>
+        <div class="stat-row"><span class="stat-label">CHROME</span><span class="stat-value" id="panelChrome">0</span></div>
+        <div class="stat-row"><span class="stat-label">€DDS</span><span class="stat-value" id="panelEddies">0</span></div>
+        <div class="stat-row"><span class="stat-label">HUMAN</span><span class="stat-value" id="panelHumanity">10</span></div>
+        <div class="stat-row"><span class="stat-label">LIFE</span><span class="stat-value" id="panelLife">1</span></div>
+      </div>
+      <div class="log-container" id="log"></div>
+      <div class="bottom-bar">
+        <button class="cyber-btn" id="next-btn" onclick="window.app.nextYear()">▶ 继续 (下一岁)</button>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div id="summary" class="page">
+      <div class="summary-section" id="summary-content"></div>
+      <button class="cyber-btn gold" onclick="window.app.startGame()" style="margin-top:20px;">▶ 重新接入</button>
+    </div>
+  </div>
+
+  <div class="vignette"></div>
+  <div class="scan-line"></div>
+  <script src="bundle.js"></script>
+</body>
+</html>
