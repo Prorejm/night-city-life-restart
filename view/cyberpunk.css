@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;700;900&display=swap');
 
 :root {
+  color-scheme: dark;
   --cyber-cyan: #00fff7;
   --cyber-magenta: #ff00ff;
   --cyber-yellow: #ffea00;
@@ -13,7 +14,23 @@
   --cyber-card: rgba(0,0,0,0.6);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* 尊重用户减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .glitch-text, .title-glitch {
+    animation: none !important;
+    text-shadow: 2px 2px var(--cyber-magenta);
+  }
+}
+
+* {
+  margin: 0; padding: 0; box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
 
 body {
   background: var(--cyber-bg);
@@ -83,6 +100,7 @@ body {
   font-family: 'Orbitron', sans-serif; font-size: 1em; padding: 15px 35px;
   cursor: pointer; transition: all 0.3s; text-transform: uppercase;
   letter-spacing: 3px; margin: 10px;
+  touch-action: manipulation;
 }
 .cyber-btn:hover { background: rgba(0,255,247,0.1); box-shadow: 0 0 20px rgba(0,255,247,0.5), inset 0 0 20px rgba(0,255,247,0.1); transform: scale(1.05); }
 .cyber-btn:active { transform: scale(0.95); }

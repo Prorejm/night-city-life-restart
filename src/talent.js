@@ -14,9 +14,14 @@ export class Talent {
   initial(data) {
     if (!data) return;
     for (const [id, talent] of Object.entries(data)) {
-      this.#talentData.set(Number(id), talent);
+      const numId = Number(id);
+      this.#talentData.set(numId, { ...talent, id: numId });
       if (talent.condition) {
-        this.#conditionCache.set(Number(id), parseCondition(talent.condition));
+        this.#conditionCache.set(numId, parseCondition(talent.condition));
+      }
+      // 确保exclusive也是数字
+      if (talent.exclusive) {
+        this.#talentData.get(numId).exclusive = talent.exclusive.map(Number);
       }
     }
   }

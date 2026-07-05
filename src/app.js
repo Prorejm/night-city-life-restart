@@ -5,6 +5,17 @@ import { Life } from './life.js';
 const GRADE_LABELS = ['普通', '稀有', '史诗', '传说'];
 const GRADE_COLORS = ['#808080', '#00bfff', '#aa00ff', '#ffd700'];
 
+// HTML转义工具（防XSS）
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export class App {
   #life;
   #selectedTalents;
@@ -85,10 +96,12 @@ export class App {
     let html = '';
     for (const t of this.#talentPool) {
       const isSelected = this.#selectedTalents.includes(t.id);
+      const desc = escapeHtml(t.description || '');
+      const name = escapeHtml(t.name);
       html += `<div class="talent-card grade-${t.grade} ${isSelected ? 'selected' : ''}" 
         onclick="window.app.toggleTalent(${t.id})" data-id="${t.id}">
-        <div class="talent-name">${t.name}</div>
-        <div class="talent-desc">${t.description || ''}</div>
+        <div class="talent-name">${name}</div>
+        <div class="talent-desc">${desc}</div>
         <div class="talent-grade">${GRADE_LABELS[t.grade] || ''}</div>
       </div>`;
     }
@@ -226,10 +239,24 @@ export class App {
     for (const ev of result.events) {
       const div = document.createElement('div');
       div.className = 'event-entry' + (ev.isDeath ? ' death-event' : '');
-      const ageHtml = `<div class="event-age">▼ AGE ${result.age || this.#life.getAge()}</div>`;
-      const textHtml = `<div class="event-text">${ev.event || ''}</div>`;
-      const postHtml = ev.postEvent ? `<div class="event-post">${ev.postEvent}</div>` : '';
-      div.innerHTML = ageHtml + textHtml + postHtml;
+      
+      const ageDiv = document.createElement('div');
+      ageDiv.className = 'event-age';
+      ageDiv.textContent = `▼ AGE ${result.age || this.#life.getAge()}`;
+      div.appendChild(ageDiv);
+      
+      const textDiv = document.createElement('div');
+      textDiv.className = 'event-text';
+      textDiv.textContent = ev.event || '';
+      div.appendChild(textDiv);
+      
+      if (ev.postEvent) {
+        const postDiv = document.createElement('div');
+        postDiv.className = 'event-post';
+        postDiv.textContent = ev.postEvent;
+        div.appendChild(postDiv);
+      }
+      
       log.appendChild(div);
     }
     log.scrollTop = log.scrollHeight;

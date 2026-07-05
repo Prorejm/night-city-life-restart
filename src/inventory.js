@@ -6,7 +6,7 @@ export class Inventory {
 
   constructor(itemsData = {}) {
     this.#itemsData = itemsData;
-    this.#owned = { weapons: [], cyberware: [] };
+    this.#owned = { weapons: [], cyberware: [], drugs: [] };
   }
 
   // 添加物品到清单
@@ -15,8 +15,14 @@ export class Inventory {
     if (!item) return false;
 
     // 判断物品类型
-    const isCyber = item.type === 'cyber' || itemId.startsWith('cyber_');
-    const list = isCyber ? this.#owned.cyberware : this.#owned.weapons;
+    let list;
+    if (item.type === 'cyber' || item.type === 'cyberware' || itemId.startsWith('cyber_') || itemId.startsWith('imp_')) {
+      list = this.#owned.cyberware;
+    } else if (itemId.startsWith('drug_') || item.type === 'drug' || item.type === 'consumable') {
+      list = this.#owned.drugs;
+    } else {
+      list = this.#owned.weapons;
+    }
 
     // 不重复获取
     if (list.includes(itemId)) return false;
