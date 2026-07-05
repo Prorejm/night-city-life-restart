@@ -48,7 +48,10 @@ export class Life {
   #itemsData;
   #achievementData;
   #recipeData;
+  #vehicleData;
   #bonusPoints;
+  #ownedVehicles;
+  #consumedDrugs;
 
   constructor() {
     this.#property = new Property();
@@ -63,18 +66,22 @@ export class Life {
     this.#itemsData = {};
     this.#achievementData = {};
     this.#recipeData = {};
+    this.#vehicleData = {};
     this.#bonusPoints = 0;
+    this.#ownedVehicles = [];
+    this.#consumedDrugs = [];
   }
 
   async initial() {
     try {
-      const [talentsData, eventsData, ageData, itemsData, achData, recipesData] = await Promise.all([
+      const [talentsData, eventsData, ageData, itemsData, achData, recipesData, vehiclesData] = await Promise.all([
         this.#loadJSON('data/talents.json'),
         this.#loadJSON('data/events.json'),
         this.#loadJSON('data/age.json'),
         this.#loadJSON('data/items.json'),
         this.#loadJSON('data/achievements.json'),
-        this.#loadJSON('data/recipes.json')
+        this.#loadJSON('data/recipes.json'),
+        this.#loadJSON('data/vehicles.json')
       ]);
 
       this.#talent.initial(talentsData);
@@ -83,6 +90,7 @@ export class Life {
       this.#itemsData = itemsData || {};
       this.#achievementData = achData || {};
       this.#recipeData = recipesData || {};
+      this.#vehicleData = vehiclesData || {};
 
       this.#inventory = new Inventory(this.#itemsData);
       this.#achievement = new Achievement(this.#achievementData, this.#recipeData);
@@ -107,6 +115,8 @@ export class Life {
     this.#triggerTalents = new Set();
     this.#currentEvents = [];
     this.#deathMessage = '';
+    this.#ownedVehicles = [];
+    this.#consumedDrugs = [];
 
     // 应用基础初始属性
     this.#property.change('EDDIES', 2);
@@ -366,8 +376,17 @@ export class Life {
     if (!this.#inventory || !this.#achievement) return null;
 
     const invStats = this.#inventory.getAllStats();
+    invStats.vehicleCount = this.#ownedVehicles.length;
+    invStats.vehicles = this.#ownedVehicles.map(id => this.#vehicleData[id]).filter(Boolean);
+    invStats.consumedDrugs = [...this.#consumedDrugs];
+    invStats.unlockedRecipeCount = 0;
+
     const achResult = this.#achievement.checkAll(this.#property, invStats);
-    return generateSummary(this.#property.getAll(), invStats, achResult);
+    invStats.unlockedRecipeCount = achResult.unlockedRecipes.length;
+
+    // 重新检查成就（现在有了配方计数）
+    const finalAchResult = this.#achievement.checkAll(this.#property, invStats);
+    return generateSummary(this.#property.getAll(), invStats, finalAchResult);
   }
 
   isEnd() {
@@ -376,5 +395,35 @@ export class Life {
 
   getAge() {
     return this.#property.get('AGE');
+  }
+
+  // 载具方法
+  addVehicle(vehicleId) {
+    if (!this.#vehicleData[vehicleId]) return false;
+    if (!this.#ownedVehicles.includes(vehicleId)) {
+      this.#ownedVehicles.push(vehicleId);
+      return true;
+    }
+    return false;
+  }
+
+  getVehicles() {
+    return this.#ownedVehicles.map(id => this.#vehicleData[id]).filter(Boolean);
+  }
+
+  // 消耗品方法
+  addDrug(drugId) {
+    if (!this.#itemsData[drugId]) return false;
+    this.#consumedDrugs.push(drugId);
+    // 应用消耗品效果
+    const drug = this.#itemsData[drugId];
+    if (drug.effect) {
+      this.#property.effect(drug.effect);
+    }
+    return true;
+  }
+
+  getConsumedDrugs() {
+    return [...this.#consumedDrugs];
   }
 }

@@ -119,6 +119,16 @@ export function generateSummary(property, inventoryStats, achievementResult) {
         lore: c.lore
       }))
     },
+    // 载具统计
+    vehicles: (inventoryStats.vehicles || []).map(v => ({
+      name: v.name,
+      brand: v.brand,
+      class: v.class
+    })),
+    vehicleCount: inventoryStats.vehicleCount || 0,
+    // 消耗品统计
+    consumedDrugs: (inventoryStats.consumedDrugs || []),
+    drugCount: (inventoryStats.consumedDrugs || []).length,
     // 成就
     achievements: (achievementResult.unlocked || []).map(a => ({
       name: a.name,

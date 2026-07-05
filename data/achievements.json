@@ -160,5 +160,185 @@
     "category": "传奇",
     "condition": "AGE>=100",
     "reward_recipe": null
+  },
+  "achv_019": {
+    "id": "achv_019",
+    "name": "愚者",
+    "description": "完成第一次雇佣任务",
+    "icon": "🃏",
+    "category": "剧情",
+    "condition": "EVT?[12001]",
+    "reward_recipe": null
+  },
+  "achv_020": {
+    "id": "achv_020",
+    "name": "恋人",
+    "description": "偷走Relic芯片",
+    "icon": "❤️",
+    "category": "剧情",
+    "condition": "EVT?[19301]",
+    "reward_recipe": null
+  },
+  "achv_021": {
+    "id": "achv_021",
+    "name": "隐士",
+    "description": "找到奥特·坎宁安",
+    "icon": "🌀",
+    "category": "剧情",
+    "condition": "TECH>=10&AGE>=30",
+    "reward_recipe": null
+  },
+  "achv_022": {
+    "id": "achv_022",
+    "name": "女祭司",
+    "description": "和荒坂高层交谈",
+    "icon": "🔥",
+    "category": "剧情",
+    "condition": "CORP?[1026]&EVT?[19305]",
+    "reward_recipe": null
+  },
+  "achv_023": {
+    "id": "achv_023",
+    "name": "命运之轮",
+    "description": "审问关键人物",
+    "icon": "💀",
+    "category": "剧情",
+    "condition": "EVT?[19310]",
+    "reward_recipe": null
+  },
+  "achv_024": {
+    "id": "achv_024",
+    "name": "世界",
+    "description": "完成主线大劫案",
+    "icon": "⭐",
+    "category": "剧情",
+    "condition": "EVT?[14005]",
+    "reward_recipe": null
+  },
+  "achv_025": {
+    "id": "achv_025",
+    "name": "星星",
+    "description": "和流浪者一起离开夜之城",
+    "icon": "🌙",
+    "category": "剧情",
+    "condition": "TLT?[1081]&AGE>=40",
+    "reward_recipe": null
+  },
+  "achv_026": {
+    "id": "achv_026",
+    "name": "太阳",
+    "description": "成为来生传奇",
+    "icon": "☀️",
+    "category": "传奇",
+    "condition": "STYLE>=18",
+    "reward_recipe": null
+  },
+  "achv_027": {
+    "id": "achv_027",
+    "name": "节制",
+    "description": "把身体留给强尼·银手",
+    "icon": "🚗",
+    "category": "剧情",
+    "condition": "EVT?[19910]",
+    "reward_recipe": null
+  },
+  "achv_028": {
+    "id": "achv_028",
+    "name": "恶魔",
+    "description": "为荒坂三郎报仇",
+    "icon": "⚔️",
+    "category": "剧情",
+    "condition": "CORP?[1026]&AGE>=35",
+    "reward_recipe": null
+  },
+  "achv_029": {
+    "id": "achv_029",
+    "name": "路上人生",
+    "description": "完成帕南路线",
+    "icon": "🎸",
+    "category": "剧情",
+    "condition": "TLT?[1081]",
+    "reward_recipe": null
+  },
+  "achv_030": {
+    "id": "achv_030",
+    "name": "欲望都市里的朱迪",
+    "description": "完成朱迪路线",
+    "icon": "❤️",
+    "category": "剧情",
+    "condition": "EVT?[19320]",
+    "reward_recipe": null
+  },
+  "achv_031": {
+    "id": "achv_031",
+    "name": "爱车如命",
+    "description": "获得5辆载具",
+    "icon": "🚗",
+    "category": "收集",
+    "condition": "VEHICLE_COUNT>=5",
+    "reward_recipe": null
+  },
+  "achv_032": {
+    "id": "achv_032",
+    "name": "全身转化",
+    "description": "拥有5件以上义体",
+    "icon": "⚔️",
+    "category": "义体",
+    "condition": "CHROME>=5",
+    "reward_recipe": null
+  },
+  "achv_033": {
+    "id": "achv_033",
+    "name": "学有所长",
+    "description": "任意属性达到20",
+    "icon": "⭐",
+    "category": "成长",
+    "condition": "STYLE>=20|TECH>=20|CHROME>=20|EDDIES>=20",
+    "reward_recipe": null
+  },
+  "achv_034": {
+    "id": "achv_034",
+    "name": "You Are Breathtaking",
+    "description": "收集3件强尼相关物品",
+    "icon": "🎸",
+    "category": "收集",
+    "condition": "COLLECT_JOHNNY",
+    "reward_recipe": null
+  },
+  "achv_035": {
+    "id": "achv_035",
+    "name": "特警判官",
+    "description": "见证3次赛博精神病事件",
+    "icon": "👑",
+    "category": "战斗",
+    "condition": "EVT?[14010]&EVT?[14011]",
+    "reward_recipe": null
+  },
+  "achv_036": {
+    "id": "achv_036",
+    "name": "边缘行者",
+    "description": "和大卫一样走上不归路",
+    "icon": "🌵",
+    "category": "义体",
+    "condition": "CHROME>=15&HUMANITY<=2",
+    "reward_recipe": null
+  },
+  "achv_037": {
+    "id": "achv_037",
+    "name": "全城戒备",
+    "description": "成为头号通缉犯",
+    "icon": "💀",
+    "category": "声望",
+    "condition": "STYLE>=15&EDDIES>=8",
+    "reward_recipe": null
+  },
+  "achv_038": {
+    "id": "achv_038",
+    "name": "来生之王",
+    "description": "收集全部8个来生酒配方",
+    "icon": "👑",
+    "category": "收集",
+    "condition": "COLLECT_ALL_RECIPES",
+    "reward_recipe": null
   }
 }

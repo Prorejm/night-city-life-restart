@@ -1,44 +1,1849 @@
 {
-  "wpn_001":{"id":"wpn_001","name":"先锋","type":"power_pistol","quality":"common","category":"动能手枪","description":"标准动能手枪，可靠耐用，夜之城最常见的随身武器","lore":"夜之城军械厂的标配电手枪，每天都有上百支被卖出","stats":{"damage":8,"range":"中距离"},"effect":{"STYLE":1}},
-  "wpn_002":{"id":"wpn_002","name":"响尾蛇","type":"smart_smg","quality":"uncommon","category":"智能冲锋枪","description":"入门级智能冲锋枪，子弹会自行追踪目标","lore":"俄制的廉价智能武器，在黑市上广受欢迎","stats":{"damage":12,"range":"中距离"},"effect":{"STYLE":1,"TECH":1}},
-  "wpn_003":{"id":"wpn_003","name":"碎骨","type":"power_shotgun","quality":"uncommon","category":"动能霰弹枪","description":"大威力三管霰弹枪，近距离一发入魂","lore":"街头执法者最喜欢用的关门利器","stats":{"damage":18,"range":"近距离"},"effect":{"CHROME":1}},
-  "wpn_004":{"id":"wpn_004","name":"穿透者","type":"tech_rifle","quality":"rare","category":"技术步枪","description":"技术步枪，可蓄力穿透掩体","lore":"军用科技的实验性武器，能穿透几乎任何障碍物","stats":{"damage":22,"range":"远距离"},"effect":{"TECH":2}},
-  "wpn_005":{"id":"wpn_005","name":"夜行者","type":"power_smg","quality":"rare","category":"动能冲锋枪","description":"配备消音器的战术冲锋枪，专为潜行暗杀设计","lore":"荒坂特种部队的标准夜战装备","stats":{"damage":14,"range":"中距离"},"effect":{"STYLE":1,"CHROME":1}},
-  "wpn_006":{"id":"wpn_006","name":"铁壁","type":"power_shotgun","quality":"common","category":"动能霰弹枪","description":"重型防暴霰弹枪，专为压制人群设计","lore":"夜之城警察部队的制式装备","stats":{"damage":16,"range":"近距离"},"effect":{"LIFE":1}},
-  "wpn_007":{"id":"wpn_007","name":"毒刺","type":"tech_pistol","quality":"uncommon","category":"技术手枪","description":"电击手枪，可释放高压电流麻痹目标","lore":"非致命执法武器的代表之作","stats":{"damage":10,"range":"中距离"},"effect":{"TECH":1}},
-  "wpn_008":{"id":"wpn_008","name":"风暴","type":"smart_rifle","quality":"rare","category":"智能步枪","description":"弹幕型智能步枪，火力压制效果极佳","lore":"俄罗斯军工的出口明星产品","stats":{"damage":20,"range":"远距离"},"effect":{"TECH":1,"STYLE":1}},
-  "wpn_009":{"id":"wpn_009","name":"裁决","type":"power_rifle","quality":"epic","category":"动能步枪","description":"重型半自动精确步枪，每一发都经过精密计算","lore":"军用科技退役狙击手的最爱","stats":{"damage":28,"range":"远距离"},"effect":{"STYLE":2,"CHROME":1}},
-  "wpn_010":{"id":"wpn_010","name":"普鲁托之握","type":"smart_pistol","quality":"legendary","category":"不朽武器","description":"传说中冥界之神锻造的智能手枪，子弹永不落空","lore":"据传由一位神秘枪匠在黑墙之外打造，弹匣仿佛连接着冥界深渊","stats":{"damage":25,"range":"全距离"},"effect":{"STYLE":5,"TECH":3}},
-  "wpn_011":{"id":"wpn_011","name":"罗兰之誓","type":"power_rifle","quality":"legendary","category":"不朽武器","description":"圣骑士之誓化作的动能步枪，每一发子弹都带着正义的愤怒","lore":"一名前军用科技骑士在失去战友后，将自己的配枪改造成了复仇利器","stats":{"damage":32,"range":"远距离"},"effect":{"CHROME":4,"STYLE":4}},
-  "wpn_012":{"id":"wpn_012","name":"霜啮","type":"tech_smg","quality":"legendary","category":"不朽武器","description":"极寒之息凝结的冲锋枪，射出的子弹能冻结敌人血液","lore":"使用冰封科技冷却的超导枪管，在夜之城地下靶场从未有人见过类似武器","stats":{"damage":18,"range":"中距离"},"effect":{"TECH":5,"STYLE":3}},
-  "wpn_013":{"id":"wpn_013","name":"米诺斯裁决","type":"power_shotgun","quality":"legendary","category":"不朽武器","description":"迷宫守护者的审判之枪，近距离下无人能逃","lore":"在恶土深处一个废弃迷宫实验室中发现的实验性武器","stats":{"damage":35,"range":"近距离"},"effect":{"CHROME":3,"LIFE":3}},
-  "wpn_014":{"id":"wpn_014","name":"娜迦之噬","type":"smart_smg","quality":"legendary","category":"不朽武器","description":"九头蛇的毒牙化作了追踪弹幕，敌人越多火力越猛","lore":"巫毒帮首领在一次祭祀中获得的古老武器改造方案","stats":{"damage":20,"range":"中距离"},"effect":{"TECH":4,"STYLE":4}},
-  "wpn_015":{"id":"wpn_015","name":"米斯特汀","type":"power_pistol","quality":"legendary","category":"不朽武器","description":"传说中必中的神枪，扣下扳机时命运已然注定","lore":"一把在阿尔德卡多斯家族中流传了数十年的传奇手枪","stats":{"damage":22,"range":"全距离"},"effect":{"STYLE":5,"LIFE":3}},
-  "wpn_016":{"id":"wpn_016","name":"迦楼罗之翼","type":"tech_rifle","quality":"legendary","category":"不朽武器","description":"金翅神鸟展开的钢铁之翼，从天而降的火力审判","lore":"康陶集团最高机密项目的原型武器，传闻使用了外星科技","stats":{"damage":30,"range":"远距离"},"effect":{"TECH":5,"EDDIES":3}},
-  "wpn_017":{"id":"wpn_017","name":"阿拉克涅之网","type":"smart_shotgun","quality":"legendary","category":"不朽武器","description":"蜘蛛女皇编织的死亡之网，子弹在目标之间弹射","lore":"一名疯狂的义体科学家把自己改造成半蜘蛛后制造的武器","stats":{"damage":30,"range":"中距离"},"effect":{"CHROME":4,"TECH":4}},
-  "wpn_018":{"id":"wpn_018","name":"巴别碎片","type":"tech_pistol","quality":"legendary","category":"不朽武器","description":"通天塔碎片锻造的手枪，能干扰一切电子系统","lore":"在黑墙深处发现的古老数据碎片重组而成的数字武器","stats":{"damage":20,"range":"全距离"},"effect":{"TECH":5,"HUMANITY":3}},
-  "wpn_019":{"id":"wpn_019","name":"斯芬克斯谜题","type":"power_rifle","quality":"legendary","category":"不朽武器","description":"解不开谜题就无法躲开子弹，这就是斯芬克斯的规则","lore":"一把搭载了AI解谜系统的狙击步枪，每次开枪都是对智力的考验","stats":{"damage":35,"range":"远距离"},"effect":{"STYLE":4,"TECH":4}},
-  "wpn_020":{"id":"wpn_020","name":"天丛云","type":"tech_katana","quality":"legendary","category":"不朽武器","description":"须佐之男命斩断八岐大蛇的神剑，等离子剑刃可切断万物","lore":"虎爪帮收藏的传世名刀，加装了最先进的等离子切割技术","stats":{"damage":40,"range":"近距离"},"effect":{"CHROME":3,"STYLE":5}},
-  "wpn_021":{"id":"wpn_021","name":"米密尔之泉","type":"smart_rifle","quality":"legendary","category":"不朽武器","description":"智慧之泉赋予子弹预见能力，弹无虚发","lore":"网络行者传奇利用赛博空间深处的数据洪流改造的智能步枪","stats":{"damage":28,"range":"远距离"},"effect":{"TECH":5,"HUMANITY":3}},
-  "imp_001":{"id":"imp_001","name":"基础光学","type":"cybereye","quality":"common","category":"义体","description":"标准义眼，提供基本的增强现实功能","lore":"各大企业标配的入门级义眼","stats":{"armor":0,"capacity":1},"effect":{"TECH":1}},
-  "imp_002":{"id":"imp_002","name":"强化肌腱","type":"cyberlimb","quality":"uncommon","category":"义体","description":"经过强化处理的仿生肌腱，提升肌肉力量","lore":"军用科技外销的民用强化组件","stats":{"armor":2,"capacity":2},"effect":{"CHROME":1,"LIFE":1}},
-  "imp_003":{"id":"imp_003","name":"皮下护甲","type":"integumentary","quality":"epic","category":"义体","description":"军用级皮下防弹纤维层，提供全面的弹道防护","lore":"军用科技特种部队的标配防弹系统","stats":{"armor":8,"capacity":3},"effect":{"LIFE":3}},
-  "imp_004":{"id":"imp_004","name":"神经加速器","type":"nervous","quality":"rare","category":"义体","description":"神经信号增强器，提升反应速度和反射弧","lore":"从荒坂在线的赛博组件中逆向仿制的产品","stats":{"armor":1,"capacity":2},"effect":{"TECH":2,"CHROME":1}},
-  "imp_005":{"id":"imp_005","name":"合成肺","type":"respiratory","quality":"uncommon","category":"义体","description":"人造肺叶，能在有毒环境中正常呼吸","lore":"恶土矿工的保命装备","stats":{"armor":0,"capacity":1},"effect":{"LIFE":2}},
-  "imp_006":{"id":"imp_006","name":"代谢增强器","type":"circulatory","quality":"rare","category":"义体","description":"加速新陈代谢的植入装置，提升伤口愈合速度","lore":"创伤小队急救人员的标准配置","stats":{"armor":1,"capacity":2},"effect":{"LIFE":2,"HUMANITY":1}},
-  "imp_007":{"id":"imp_007","name":"反射增强","type":"nervous","quality":"common","category":"义体","description":"基础版反射增强芯片，略微提升反应时间","lore":"街头义体医生的入门推荐改装","stats":{"armor":0,"capacity":1},"effect":{"CHROME":1}},
-  "imp_008":{"id":"imp_008","name":"骨骼加固","type":"skeletal","quality":"uncommon","category":"义体","description":"碳纤维骨骼加固，提升抗击打能力","lore":"帮派打手最爱的防御性改装","stats":{"armor":3,"capacity":2},"effect":{"LIFE":1,"CHROME":1}},
-  "imp_009":{"id":"imp_009","name":"血液过滤","type":"circulatory","quality":"rare","category":"义体","description":"血液净化系统，中和血液中的毒素和病毒","lore":"曾用于抗击多次病毒爆发事件的医疗义体","stats":{"armor":0,"capacity":1},"effect":{"LIFE":2,"TECH":1}},
-  "imp_010":{"id":"imp_010","name":"荷鲁斯之眼","type":"cybereye","quality":"legendary","category":"不朽义体","description":"埃及鹰神之眼，透视一切伪装与幻觉","lore":"传说中由第一位网络行者从旧网遗迹中带出的神器级义眼","stats":{"armor":1,"capacity":4},"effect":{"TECH":5,"HUMANITY":3}},
-  "imp_011":{"id":"imp_011","name":"提尔之臂","type":"cyberlimb","quality":"legendary","category":"不朽义体","description":"战神之臂，蕴含毁灭性的力量","lore":"荒坂集团用战争AI核心锻造的终极战斗义肢","stats":{"armor":5,"capacity":5},"effect":{"CHROME":5,"LIFE":3}},
-  "imp_012":{"id":"imp_012","name":"赫尔墨斯之足","type":"cyberlimb","quality":"legendary","category":"不朽义体","description":"神使之足，速度超越人类极限","lore":"捷达集团从一处古代遗址中发掘并逆向工程的速度义体","stats":{"armor":2,"capacity":4},"effect":{"STYLE":4,"CHROME":4}},
-  "imp_013":{"id":"imp_013","name":"刻耳柏洛斯脊索","type":"nervous","quality":"legendary","category":"不朽义体","description":"三头地狱犬的脊髓，三重神经冗余永不断联","lore":"军用科技最高机密的神经增强项目原型","stats":{"armor":2,"capacity":5},"effect":{"CHROME":4,"TECH":4}},
-  "imp_014":{"id":"imp_014","name":"女娲之指","type":"cyberlimb","quality":"legendary","category":"不朽义体","description":"造物主的手指，能够重塑物质结构","lore":"康陶研发部门在解析外星科技时获得的灵感之作","stats":{"armor":1,"capacity":4},"effect":{"TECH":5,"EDDIES":3}},
-  "imp_015":{"id":"imp_015","name":"月读之镜","type":"cybereye","quality":"legendary","category":"不朽义体","description":"月神之镜，映射一切电子信号的流动","lore":"虎爪帮的大主教从日本本土带来的古老神器与现代科技的融合","stats":{"armor":0,"capacity":4},"effect":{"HUMANITY":4,"TECH":4}},
-  "imp_016":{"id":"imp_016","name":"布罗卡之锻炉","type":"integumentary","quality":"legendary","category":"不朽义体","description":"矮人锻造大师打造的火焰熔炉，改造优化全身义体","lore":"夜之城最传奇的义体医生毕生心血的结晶","stats":{"armor":6,"capacity":6},"effect":{"CHROME":5,"TECH":3}},
-  "imp_017":{"id":"imp_017","name":"奥丁之眼","type":"cybereye","quality":"legendary","category":"不朽义体","description":"众神之父的眼睛，洞悉赛博空间的每一个角落","lore":"网络监察不惜一切代价想要销毁的禁忌义体","stats":{"armor":0,"capacity":5},"effect":{"TECH":5,"HUMANITY":4}},
-  "imp_018":{"id":"imp_018","name":"阿努比斯之心","type":"circulatory","quality":"legendary","category":"不朽义体","description":"冥界审判者的心脏，衡量每一个义体的价值","lore":"在埃及沙漠深处一座金字塔形数据中心中发现的神秘植入体","stats":{"armor":3,"capacity":5},"effect":{"LIFE":5,"HUMANITY":3}},
-  "imp_019":{"id":"imp_019","name":"塞壬之歌","type":"nervous","quality":"legendary","category":"不朽义体","description":"海妖的歌声，用神经信号操纵敌人的感知","lore":"巫毒帮女祭司用黑墙碎片和古老歌谣数据融合制造的义体","stats":{"armor":1,"capacity":4},"effect":{"HUMANITY":5,"STYLE":3}},
-  "imp_020":{"id":"imp_020","name":"毗湿奴之握","type":"cyberlimb","quality":"legendary","category":"不朽义体","description":"维护之神的多重手臂，同时操控多个武器系统","lore":"一名武僧在网络空间中悟道后设计的多臂操控义体","stats":{"armor":3,"capacity":6},"effect":{"CHROME":4,"STYLE":4}},
-  "imp_021":{"id":"imp_021","name":"凤凰羽翼","type":"integumentary","quality":"legendary","category":"不朽义体","description":"不死鸟的羽翼，在致命伤害中涅槃重生","lore":"创伤小队创始人用超梦记录的不死鸟数据编码而成的生物芯片","stats":{"armor":4,"capacity":5},"effect":{"LIFE":5,"STYLE":3}}
+  "wpn_001": {
+    "id": "wpn_001",
+    "name": "先锋",
+    "type": "power_pistol",
+    "quality": "common",
+    "category": "动能手枪",
+    "description": "标准动能手枪，可靠耐用，夜之城最常见的随身武器",
+    "lore": "夜之城军械厂的标配电手枪，每天都有上百支被卖出",
+    "stats": {
+      "damage": 8,
+      "range": "中距离"
+    },
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "wpn_002": {
+    "id": "wpn_002",
+    "name": "响尾蛇",
+    "type": "smart_smg",
+    "quality": "uncommon",
+    "category": "智能冲锋枪",
+    "description": "入门级智能冲锋枪，子弹会自行追踪目标",
+    "lore": "俄制的廉价智能武器，在黑市上广受欢迎",
+    "stats": {
+      "damage": 12,
+      "range": "中距离"
+    },
+    "effect": {
+      "STYLE": 1,
+      "TECH": 1
+    }
+  },
+  "wpn_003": {
+    "id": "wpn_003",
+    "name": "碎骨",
+    "type": "power_shotgun",
+    "quality": "uncommon",
+    "category": "动能霰弹枪",
+    "description": "大威力三管霰弹枪，近距离一发入魂",
+    "lore": "街头执法者最喜欢用的关门利器",
+    "stats": {
+      "damage": 18,
+      "range": "近距离"
+    },
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "wpn_004": {
+    "id": "wpn_004",
+    "name": "穿透者",
+    "type": "tech_rifle",
+    "quality": "rare",
+    "category": "技术步枪",
+    "description": "技术步枪，可蓄力穿透掩体",
+    "lore": "军用科技的实验性武器，能穿透几乎任何障碍物",
+    "stats": {
+      "damage": 22,
+      "range": "远距离"
+    },
+    "effect": {
+      "TECH": 2
+    }
+  },
+  "wpn_005": {
+    "id": "wpn_005",
+    "name": "夜行者",
+    "type": "power_smg",
+    "quality": "rare",
+    "category": "动能冲锋枪",
+    "description": "配备消音器的战术冲锋枪，专为潜行暗杀设计",
+    "lore": "荒坂特种部队的标准夜战装备",
+    "stats": {
+      "damage": 14,
+      "range": "中距离"
+    },
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1
+    }
+  },
+  "wpn_006": {
+    "id": "wpn_006",
+    "name": "铁壁",
+    "type": "power_shotgun",
+    "quality": "common",
+    "category": "动能霰弹枪",
+    "description": "重型防暴霰弹枪，专为压制人群设计",
+    "lore": "夜之城警察部队的制式装备",
+    "stats": {
+      "damage": 16,
+      "range": "近距离"
+    },
+    "effect": {
+      "LIFE": 1
+    }
+  },
+  "wpn_007": {
+    "id": "wpn_007",
+    "name": "毒刺",
+    "type": "tech_pistol",
+    "quality": "uncommon",
+    "category": "技术手枪",
+    "description": "电击手枪，可释放高压电流麻痹目标",
+    "lore": "非致命执法武器的代表之作",
+    "stats": {
+      "damage": 10,
+      "range": "中距离"
+    },
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "wpn_008": {
+    "id": "wpn_008",
+    "name": "风暴",
+    "type": "smart_rifle",
+    "quality": "rare",
+    "category": "智能步枪",
+    "description": "弹幕型智能步枪，火力压制效果极佳",
+    "lore": "俄罗斯军工的出口明星产品",
+    "stats": {
+      "damage": 20,
+      "range": "远距离"
+    },
+    "effect": {
+      "TECH": 1,
+      "STYLE": 1
+    }
+  },
+  "wpn_009": {
+    "id": "wpn_009",
+    "name": "裁决",
+    "type": "power_rifle",
+    "quality": "epic",
+    "category": "动能步枪",
+    "description": "重型半自动精确步枪，每一发都经过精密计算",
+    "lore": "军用科技退役狙击手的最爱",
+    "stats": {
+      "damage": 28,
+      "range": "远距离"
+    },
+    "effect": {
+      "STYLE": 2,
+      "CHROME": 1
+    }
+  },
+  "wpn_010": {
+    "id": "wpn_010",
+    "name": "普鲁托之握",
+    "type": "smart_pistol",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "传说中冥界之神锻造的智能手枪，子弹永不落空",
+    "lore": "据传由一位神秘枪匠在黑墙之外打造，弹匣仿佛连接着冥界深渊",
+    "stats": {
+      "damage": 25,
+      "range": "全距离"
+    },
+    "effect": {
+      "STYLE": 5,
+      "TECH": 3
+    }
+  },
+  "wpn_011": {
+    "id": "wpn_011",
+    "name": "罗兰之誓",
+    "type": "power_rifle",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "圣骑士之誓化作的动能步枪，每一发子弹都带着正义的愤怒",
+    "lore": "一名前军用科技骑士在失去战友后，将自己的配枪改造成了复仇利器",
+    "stats": {
+      "damage": 32,
+      "range": "远距离"
+    },
+    "effect": {
+      "CHROME": 4,
+      "STYLE": 4
+    }
+  },
+  "wpn_012": {
+    "id": "wpn_012",
+    "name": "霜啮",
+    "type": "tech_smg",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "极寒之息凝结的冲锋枪，射出的子弹能冻结敌人血液",
+    "lore": "使用冰封科技冷却的超导枪管，在夜之城地下靶场从未有人见过类似武器",
+    "stats": {
+      "damage": 18,
+      "range": "中距离"
+    },
+    "effect": {
+      "TECH": 5,
+      "STYLE": 3
+    }
+  },
+  "wpn_013": {
+    "id": "wpn_013",
+    "name": "米诺斯裁决",
+    "type": "power_shotgun",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "迷宫守护者的审判之枪，近距离下无人能逃",
+    "lore": "在恶土深处一个废弃迷宫实验室中发现的实验性武器",
+    "stats": {
+      "damage": 35,
+      "range": "近距离"
+    },
+    "effect": {
+      "CHROME": 3,
+      "LIFE": 3
+    }
+  },
+  "wpn_014": {
+    "id": "wpn_014",
+    "name": "娜迦之噬",
+    "type": "smart_smg",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "九头蛇的毒牙化作了追踪弹幕，敌人越多火力越猛",
+    "lore": "巫毒帮首领在一次祭祀中获得的古老武器改造方案",
+    "stats": {
+      "damage": 20,
+      "range": "中距离"
+    },
+    "effect": {
+      "TECH": 4,
+      "STYLE": 4
+    }
+  },
+  "wpn_015": {
+    "id": "wpn_015",
+    "name": "米斯特汀",
+    "type": "power_pistol",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "传说中必中的神枪，扣下扳机时命运已然注定",
+    "lore": "一把在阿尔德卡多斯家族中流传了数十年的传奇手枪",
+    "stats": {
+      "damage": 22,
+      "range": "全距离"
+    },
+    "effect": {
+      "STYLE": 5,
+      "LIFE": 3
+    }
+  },
+  "wpn_016": {
+    "id": "wpn_016",
+    "name": "迦楼罗之翼",
+    "type": "tech_rifle",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "金翅神鸟展开的钢铁之翼，从天而降的火力审判",
+    "lore": "康陶集团最高机密项目的原型武器，传闻使用了外星科技",
+    "stats": {
+      "damage": 30,
+      "range": "远距离"
+    },
+    "effect": {
+      "TECH": 5,
+      "EDDIES": 3
+    }
+  },
+  "wpn_017": {
+    "id": "wpn_017",
+    "name": "阿拉克涅之网",
+    "type": "smart_shotgun",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "蜘蛛女皇编织的死亡之网，子弹在目标之间弹射",
+    "lore": "一名疯狂的义体科学家把自己改造成半蜘蛛后制造的武器",
+    "stats": {
+      "damage": 30,
+      "range": "中距离"
+    },
+    "effect": {
+      "CHROME": 4,
+      "TECH": 4
+    }
+  },
+  "wpn_018": {
+    "id": "wpn_018",
+    "name": "巴别碎片",
+    "type": "tech_pistol",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "通天塔碎片锻造的手枪，能干扰一切电子系统",
+    "lore": "在黑墙深处发现的古老数据碎片重组而成的数字武器",
+    "stats": {
+      "damage": 20,
+      "range": "全距离"
+    },
+    "effect": {
+      "TECH": 5,
+      "HUMANITY": 3
+    }
+  },
+  "wpn_019": {
+    "id": "wpn_019",
+    "name": "斯芬克斯谜题",
+    "type": "power_rifle",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "解不开谜题就无法躲开子弹，这就是斯芬克斯的规则",
+    "lore": "一把搭载了AI解谜系统的狙击步枪，每次开枪都是对智力的考验",
+    "stats": {
+      "damage": 35,
+      "range": "远距离"
+    },
+    "effect": {
+      "STYLE": 4,
+      "TECH": 4
+    }
+  },
+  "wpn_020": {
+    "id": "wpn_020",
+    "name": "天丛云",
+    "type": "tech_katana",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "须佐之男命斩断八岐大蛇的神剑，等离子剑刃可切断万物",
+    "lore": "虎爪帮收藏的传世名刀，加装了最先进的等离子切割技术",
+    "stats": {
+      "damage": 40,
+      "range": "近距离"
+    },
+    "effect": {
+      "CHROME": 3,
+      "STYLE": 5
+    }
+  },
+  "wpn_021": {
+    "id": "wpn_021",
+    "name": "米密尔之泉",
+    "type": "smart_rifle",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "description": "智慧之泉赋予子弹预见能力，弹无虚发",
+    "lore": "网络行者传奇利用赛博空间深处的数据洪流改造的智能步枪",
+    "stats": {
+      "damage": 28,
+      "range": "远距离"
+    },
+    "effect": {
+      "TECH": 5,
+      "HUMANITY": 3
+    }
+  },
+  "imp_001": {
+    "id": "imp_001",
+    "name": "基础光学",
+    "type": "cybereye",
+    "quality": "common",
+    "category": "义体",
+    "description": "标准义眼，提供基本的增强现实功能",
+    "lore": "各大企业标配的入门级义眼",
+    "stats": {
+      "armor": 0,
+      "capacity": 1
+    },
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "imp_002": {
+    "id": "imp_002",
+    "name": "强化肌腱",
+    "type": "cyberlimb",
+    "quality": "uncommon",
+    "category": "义体",
+    "description": "经过强化处理的仿生肌腱，提升肌肉力量",
+    "lore": "军用科技外销的民用强化组件",
+    "stats": {
+      "armor": 2,
+      "capacity": 2
+    },
+    "effect": {
+      "CHROME": 1,
+      "LIFE": 1
+    }
+  },
+  "imp_003": {
+    "id": "imp_003",
+    "name": "皮下护甲",
+    "type": "integumentary",
+    "quality": "epic",
+    "category": "义体",
+    "description": "军用级皮下防弹纤维层，提供全面的弹道防护",
+    "lore": "军用科技特种部队的标配防弹系统",
+    "stats": {
+      "armor": 8,
+      "capacity": 3
+    },
+    "effect": {
+      "LIFE": 3
+    }
+  },
+  "imp_004": {
+    "id": "imp_004",
+    "name": "神经加速器",
+    "type": "nervous",
+    "quality": "rare",
+    "category": "义体",
+    "description": "神经信号增强器，提升反应速度和反射弧",
+    "lore": "从荒坂在线的赛博组件中逆向仿制的产品",
+    "stats": {
+      "armor": 1,
+      "capacity": 2
+    },
+    "effect": {
+      "TECH": 2,
+      "CHROME": 1
+    }
+  },
+  "imp_005": {
+    "id": "imp_005",
+    "name": "合成肺",
+    "type": "respiratory",
+    "quality": "uncommon",
+    "category": "义体",
+    "description": "人造肺叶，能在有毒环境中正常呼吸",
+    "lore": "恶土矿工的保命装备",
+    "stats": {
+      "armor": 0,
+      "capacity": 1
+    },
+    "effect": {
+      "LIFE": 2
+    }
+  },
+  "imp_006": {
+    "id": "imp_006",
+    "name": "代谢增强器",
+    "type": "circulatory",
+    "quality": "rare",
+    "category": "义体",
+    "description": "加速新陈代谢的植入装置，提升伤口愈合速度",
+    "lore": "创伤小队急救人员的标准配置",
+    "stats": {
+      "armor": 1,
+      "capacity": 2
+    },
+    "effect": {
+      "LIFE": 2,
+      "HUMANITY": 1
+    }
+  },
+  "imp_007": {
+    "id": "imp_007",
+    "name": "反射增强",
+    "type": "nervous",
+    "quality": "common",
+    "category": "义体",
+    "description": "基础版反射增强芯片，略微提升反应时间",
+    "lore": "街头义体医生的入门推荐改装",
+    "stats": {
+      "armor": 0,
+      "capacity": 1
+    },
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "imp_008": {
+    "id": "imp_008",
+    "name": "骨骼加固",
+    "type": "skeletal",
+    "quality": "uncommon",
+    "category": "义体",
+    "description": "碳纤维骨骼加固，提升抗击打能力",
+    "lore": "帮派打手最爱的防御性改装",
+    "stats": {
+      "armor": 3,
+      "capacity": 2
+    },
+    "effect": {
+      "LIFE": 1,
+      "CHROME": 1
+    }
+  },
+  "imp_009": {
+    "id": "imp_009",
+    "name": "血液过滤",
+    "type": "circulatory",
+    "quality": "rare",
+    "category": "义体",
+    "description": "血液净化系统，中和血液中的毒素和病毒",
+    "lore": "曾用于抗击多次病毒爆发事件的医疗义体",
+    "stats": {
+      "armor": 0,
+      "capacity": 1
+    },
+    "effect": {
+      "LIFE": 2,
+      "TECH": 1
+    }
+  },
+  "imp_010": {
+    "id": "imp_010",
+    "name": "荷鲁斯之眼",
+    "type": "cybereye",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "埃及鹰神之眼，透视一切伪装与幻觉",
+    "lore": "传说中由第一位网络行者从旧网遗迹中带出的神器级义眼",
+    "stats": {
+      "armor": 1,
+      "capacity": 4
+    },
+    "effect": {
+      "TECH": 5,
+      "HUMANITY": 3
+    }
+  },
+  "imp_011": {
+    "id": "imp_011",
+    "name": "提尔之臂",
+    "type": "cyberlimb",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "战神之臂，蕴含毁灭性的力量",
+    "lore": "荒坂集团用战争AI核心锻造的终极战斗义肢",
+    "stats": {
+      "armor": 5,
+      "capacity": 5
+    },
+    "effect": {
+      "CHROME": 5,
+      "LIFE": 3
+    }
+  },
+  "imp_012": {
+    "id": "imp_012",
+    "name": "赫尔墨斯之足",
+    "type": "cyberlimb",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "神使之足，速度超越人类极限",
+    "lore": "捷达集团从一处古代遗址中发掘并逆向工程的速度义体",
+    "stats": {
+      "armor": 2,
+      "capacity": 4
+    },
+    "effect": {
+      "STYLE": 4,
+      "CHROME": 4
+    }
+  },
+  "imp_013": {
+    "id": "imp_013",
+    "name": "刻耳柏洛斯脊索",
+    "type": "nervous",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "三头地狱犬的脊髓，三重神经冗余永不断联",
+    "lore": "军用科技最高机密的神经增强项目原型",
+    "stats": {
+      "armor": 2,
+      "capacity": 5
+    },
+    "effect": {
+      "CHROME": 4,
+      "TECH": 4
+    }
+  },
+  "imp_014": {
+    "id": "imp_014",
+    "name": "女娲之指",
+    "type": "cyberlimb",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "造物主的手指，能够重塑物质结构",
+    "lore": "康陶研发部门在解析外星科技时获得的灵感之作",
+    "stats": {
+      "armor": 1,
+      "capacity": 4
+    },
+    "effect": {
+      "TECH": 5,
+      "EDDIES": 3
+    }
+  },
+  "imp_015": {
+    "id": "imp_015",
+    "name": "月读之镜",
+    "type": "cybereye",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "月神之镜，映射一切电子信号的流动",
+    "lore": "虎爪帮的大主教从日本本土带来的古老神器与现代科技的融合",
+    "stats": {
+      "armor": 0,
+      "capacity": 4
+    },
+    "effect": {
+      "HUMANITY": 4,
+      "TECH": 4
+    }
+  },
+  "imp_016": {
+    "id": "imp_016",
+    "name": "布罗卡之锻炉",
+    "type": "integumentary",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "矮人锻造大师打造的火焰熔炉，改造优化全身义体",
+    "lore": "夜之城最传奇的义体医生毕生心血的结晶",
+    "stats": {
+      "armor": 6,
+      "capacity": 6
+    },
+    "effect": {
+      "CHROME": 5,
+      "TECH": 3
+    }
+  },
+  "imp_017": {
+    "id": "imp_017",
+    "name": "奥丁之眼",
+    "type": "cybereye",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "众神之父的眼睛，洞悉赛博空间的每一个角落",
+    "lore": "网络监察不惜一切代价想要销毁的禁忌义体",
+    "stats": {
+      "armor": 0,
+      "capacity": 5
+    },
+    "effect": {
+      "TECH": 5,
+      "HUMANITY": 4
+    }
+  },
+  "imp_018": {
+    "id": "imp_018",
+    "name": "阿努比斯之心",
+    "type": "circulatory",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "冥界审判者的心脏，衡量每一个义体的价值",
+    "lore": "在埃及沙漠深处一座金字塔形数据中心中发现的神秘植入体",
+    "stats": {
+      "armor": 3,
+      "capacity": 5
+    },
+    "effect": {
+      "LIFE": 5,
+      "HUMANITY": 3
+    }
+  },
+  "imp_019": {
+    "id": "imp_019",
+    "name": "塞壬之歌",
+    "type": "nervous",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "海妖的歌声，用神经信号操纵敌人的感知",
+    "lore": "巫毒帮女祭司用黑墙碎片和古老歌谣数据融合制造的义体",
+    "stats": {
+      "armor": 1,
+      "capacity": 4
+    },
+    "effect": {
+      "HUMANITY": 5,
+      "STYLE": 3
+    }
+  },
+  "imp_020": {
+    "id": "imp_020",
+    "name": "毗湿奴之握",
+    "type": "cyberlimb",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "维护之神的多重手臂，同时操控多个武器系统",
+    "lore": "一名武僧在网络空间中悟道后设计的多臂操控义体",
+    "stats": {
+      "armor": 3,
+      "capacity": 6
+    },
+    "effect": {
+      "CHROME": 4,
+      "STYLE": 4
+    }
+  },
+  "imp_021": {
+    "id": "imp_021",
+    "name": "凤凰羽翼",
+    "type": "integumentary",
+    "quality": "legendary",
+    "category": "不朽义体",
+    "description": "不死鸟的羽翼，在致命伤害中涅槃重生",
+    "lore": "创伤小队创始人用超梦记录的不死鸟数据编码而成的生物芯片",
+    "stats": {
+      "armor": 4,
+      "capacity": 5
+    },
+    "effect": {
+      "LIFE": 5,
+      "STYLE": 3
+    }
+  },
+  "wpn_022": {
+    "id": "wpn_022",
+    "name": "金刚",
+    "type": "power_pistol",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "荒坂",
+    "description": "荒坂HJKE-11幸村的手枪型，精准致命的不朽动能手枪",
+    "lore": "荒坂集团高层护卫的标准配枪，以金刚石命名象征其坚不可摧的可靠性",
+    "stats": {
+      "damage": 18,
+      "range": "中距离"
+    },
+    "effect": {
+      "STYLE": 4
+    }
+  },
+  "wpn_023": {
+    "id": "wpn_023",
+    "name": "应龙",
+    "type": "smart_smg",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "康陶",
+    "description": "康陶G-58典式智能冲锋枪，子弹如应龙之雨倾泻而下",
+    "lore": "康陶集团采用上古神兽命名的顶级智能武器系统",
+    "stats": {
+      "damage": 16,
+      "range": "中距离"
+    },
+    "effect": {
+      "TECH": 4,
+      "CHROME": 3
+    }
+  },
+  "wpn_024": {
+    "id": "wpn_024",
+    "name": "寡妇制造者",
+    "type": "tech_rifle",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "军用科技",
+    "description": "军用科技M-179e阿喀琉斯精准步枪改造，蓄力穿透一切掩体",
+    "lore": "一名痛失爱侣的军用科技工程师用毕生心血改造的复仇利器",
+    "stats": {
+      "damage": 34,
+      "range": "远距离"
+    },
+    "effect": {
+      "TECH": 4,
+      "STYLE": 3
+    }
+  },
+  "wpn_025": {
+    "id": "wpn_025",
+    "name": "守望",
+    "type": "tech_sniper",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "高科军工",
+    "description": "高科军工冰暴狙击步枪，极寒能量弹冻结目标",
+    "lore": "高科军工为荒坂特种部队定制的极地作战狙击系统",
+    "stats": {
+      "damage": 42,
+      "range": "超远距离"
+    },
+    "effect": {
+      "STYLE": 4,
+      "TECH": 3
+    }
+  },
+  "wpn_026": {
+    "id": "wpn_026",
+    "name": "尽忠丸",
+    "type": "melee_katana",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "荒坂",
+    "description": "荒坂家族的传世武士刀，刀锋所向无不披靡",
+    "lore": "荒坂三郎亲自赐予最忠诚武士的名刀，据传以陨铁锻造",
+    "stats": {
+      "damage": 38,
+      "range": "近距离"
+    },
+    "effect": {
+      "CHROME": 4,
+      "STYLE": 4
+    }
+  },
+  "wpn_027": {
+    "id": "wpn_027",
+    "name": "八星铳",
+    "type": "power_shotgun",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "康陶",
+    "description": "康陶卓式八管霰弹枪，一轮齐射如八星连珠",
+    "lore": "康陶军械库中威力最大的近战压制武器，以北斗七星加辅星命名",
+    "stats": {
+      "damage": 40,
+      "range": "近距离"
+    },
+    "effect": {
+      "CHROME": 3,
+      "LIFE": 3
+    }
+  },
+  "wpn_028": {
+    "id": "wpn_028",
+    "name": "芬里尔",
+    "type": "power_smg",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "军用科技",
+    "description": "军用科技萨拉托加冲锋枪改造版，如北欧魔狼般凶残",
+    "lore": "一名前军用科技黑色行动队员的退役改装武器，弹匣仿佛永不耗尽",
+    "stats": {
+      "damage": 15,
+      "range": "中距离"
+    },
+    "effect": {
+      "CHROME": 4,
+      "STYLE": 3
+    }
+  },
+  "wpn_029": {
+    "id": "wpn_029",
+    "name": "四季宝",
+    "type": "smart_pistol",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "荒坂",
+    "description": "装载了情感AI的智能手枪，会和你聊天并选择攻击模式",
+    "lore": "一把搭载了有意识AI的智能手枪——它会自己选择爆头还是打腿",
+    "stats": {
+      "damage": 16,
+      "range": "中距离"
+    },
+    "effect": {
+      "HUMANITY": 3,
+      "TECH": 3
+    }
+  },
+  "wpn_030": {
+    "id": "wpn_030",
+    "name": "觉",
+    "type": "melee_katana",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "荒坂",
+    "description": "绀碧大厦收藏的古代武士刀，觉醒之刃出鞘必见血",
+    "lore": "荒坂三郎在绀碧大厦私人收藏中的绝世名刃，据传为战国时代传承",
+    "stats": {
+      "damage": 42,
+      "range": "近距离"
+    },
+    "effect": {
+      "STYLE": 5,
+      "HUMANITY": 3
+    }
+  },
+  "wpn_031": {
+    "id": "wpn_031",
+    "name": "同志的铁锤",
+    "type": "power_revolver",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "高科军工",
+    "description": "高科军工风暴左轮改造版，每一发都如铁锤重击",
+    "lore": "夜之城地下枪匠的杰作，将左轮手枪的威力推到了物理极限",
+    "stats": {
+      "damage": 45,
+      "range": "中距离"
+    },
+    "effect": {
+      "LIFE": 4,
+      "STYLE": 3
+    }
+  },
+  "wpn_032": {
+    "id": "wpn_032",
+    "name": "骄傲",
+    "type": "power_pistol",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "军用科技",
+    "description": "军用科技统一手枪定制版，夜之城传奇中的传奇",
+    "lore": "夜之城传奇雇佣兵V曾使用过的标志性武器",
+    "stats": {
+      "damage": 20,
+      "range": "中距离"
+    },
+    "effect": {
+      "STYLE": 5,
+      "EDDIES": 3
+    }
+  },
+  "wpn_033": {
+    "id": "wpn_033",
+    "name": "诗篇11:6",
+    "type": "power_rifle",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "诺科他",
+    "description": "诺科他铜斑蛇突击步枪，圣经经文刻于枪身之上",
+    "lore": "一名前传教士改造的审判之枪，枪身刻满圣经诗篇第11章第6节",
+    "stats": {
+      "damage": 30,
+      "range": "远距离"
+    },
+    "effect": {
+      "STYLE": 4,
+      "HUMANITY": 2
+    }
+  },
+  "wpn_034": {
+    "id": "wpn_034",
+    "name": "零五",
+    "type": "tech_sniper",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "高科军工",
+    "description": "高科军工冰暴重型狙击步枪，一枪可穿墙击杀",
+    "lore": "军用科技黑色行动中使用的极密反器材狙击武器",
+    "stats": {
+      "damage": 50,
+      "range": "超远距离"
+    },
+    "effect": {
+      "LIFE": 4,
+      "TECH": 3
+    }
+  },
+  "wpn_035": {
+    "id": "wpn_035",
+    "name": "退路",
+    "type": "power_rifle",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "宪法军工",
+    "description": "宪法军工自由突击步枪，为你杀出一条血路",
+    "lore": "一名退出江湖的前帮派成员改造的逃亡武器",
+    "stats": {
+      "damage": 28,
+      "range": "远距离"
+    },
+    "effect": {
+      "LIFE": 3,
+      "STYLE": 3
+    }
+  },
+  "wpn_036": {
+    "id": "wpn_036",
+    "name": "偏见",
+    "type": "power_rifle",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "荒坂",
+    "description": "荒坂正宗突击步枪，每一发子弹都带着绝对的偏见",
+    "lore": "荒坂安保部队精锐中的精锐才有资格使用的定制武器",
+    "stats": {
+      "damage": 32,
+      "range": "远距离"
+    },
+    "effect": {
+      "CHROME": 4,
+      "STYLE": 3
+    }
+  },
+  "wpn_037": {
+    "id": "wpn_037",
+    "name": "金色狠婆娘",
+    "type": "smart_pistol",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "海啸防御系统",
+    "description": "海啸鵺智能手枪镀金版，夜之城最危险的女人之选",
+    "lore": "来生酒吧传奇女佣兵罗格·阿曼迪亚斯的配枪",
+    "stats": {
+      "damage": 22,
+      "range": "中距离"
+    },
+    "effect": {
+      "EDDIES": 4,
+      "STYLE": 4
+    }
+  },
+  "wpn_038": {
+    "id": "wpn_038",
+    "name": "莫克斯",
+    "type": "power_shotgun",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "莫克斯帮",
+    "description": "莫克斯帮订制霰弹枪，为姐妹复仇而锻造",
+    "lore": "莫克斯帮首任领袖为纪念牺牲的姐妹们而委托打造的复仇之枪",
+    "stats": {
+      "damage": 36,
+      "range": "近距离"
+    },
+    "effect": {
+      "CHROME": 3,
+      "EDDIES": 3
+    }
+  },
+  "wpn_039": {
+    "id": "wpn_039",
+    "name": "大天使",
+    "type": "power_revolver",
+    "quality": "legendary",
+    "category": "不朽武器",
+    "manufacturer": "马洛里安武器",
+    "description": "马洛里安前奏左轮，摇滚男孩的大天使之枪",
+    "lore": "武侍乐队主唱约翰尼·银手的标志性武器，刻有天使羽翼花纹",
+    "stats": {
+      "damage": 44,
+      "range": "中距离"
+    },
+    "effect": {
+      "STYLE": 5,
+      "CHROME": 4
+    }
+  },
+  "wpn_040": {
+    "id": "wpn_040",
+    "name": "真探",
+    "type": "power_pistol",
+    "quality": "epic",
+    "category": "动能手枪",
+    "manufacturer": "军用科技",
+    "description": "军用科技协和手枪，夜之城警探的标准配枪",
+    "lore": "夜之城警察局仍在列装的经典警用配枪",
+    "stats": {
+      "damage": 14,
+      "range": "中距离"
+    },
+    "effect": {
+      "STYLE": 2,
+      "TECH": 1
+    }
+  },
+  "wpn_041": {
+    "id": "wpn_041",
+    "name": "罗刹",
+    "type": "tech_shotgun",
+    "quality": "epic",
+    "category": "技术霰弹枪",
+    "manufacturer": "康陶",
+    "description": "康陶技术霰弹枪，蓄力后可穿透护甲喷射",
+    "lore": "康陶军火研发部门的实验性穿透型霰弹武器",
+    "stats": {
+      "damage": 36,
+      "range": "近距离"
+    },
+    "effect": {
+      "TECH": 3,
+      "CHROME": 2
+    }
+  },
+  "wpn_042": {
+    "id": "wpn_042",
+    "name": "幽影",
+    "type": "power_pistol",
+    "quality": "epic",
+    "category": "动能手枪",
+    "manufacturer": "荒坂",
+    "description": "配备全消音器的特工手枪，暗杀无声",
+    "lore": "荒坂情报部特务的标准暗杀装备",
+    "stats": {
+      "damage": 12,
+      "range": "中距离"
+    },
+    "effect": {
+      "STYLE": 3,
+      "TECH": 2
+    }
+  },
+  "wpn_043": {
+    "id": "wpn_043",
+    "name": "突破",
+    "type": "tech_smg",
+    "quality": "epic",
+    "category": "技术冲锋枪",
+    "manufacturer": "荒坂",
+    "description": "连射型技术冲锋枪，弹幕穿透一切障碍",
+    "lore": "荒坂快速反应部队的室内近战利器",
+    "stats": {
+      "damage": 14,
+      "range": "中距离"
+    },
+    "effect": {
+      "TECH": 3,
+      "STYLE": 2
+    }
+  },
+  "wpn_044": {
+    "id": "wpn_044",
+    "name": "不归",
+    "type": "power_revolver",
+    "quality": "epic",
+    "category": "动能左轮",
+    "manufacturer": "高科军工",
+    "description": "大口径动能左轮，一枪定生死再无回头路",
+    "lore": "恶土孤狼们最信赖的随身火力",
+    "stats": {
+      "damage": 38,
+      "range": "中距离"
+    },
+    "effect": {
+      "LIFE": 3,
+      "STYLE": 2
+    }
+  },
+  "wpn_045": {
+    "id": "wpn_045",
+    "name": "沉默",
+    "type": "tech_rifle",
+    "quality": "epic",
+    "category": "技术狙击枪",
+    "manufacturer": "高科军工",
+    "description": "无声蓄力的技术狙击枪，子弹在沉默中降临",
+    "lore": "以静默击杀闻名的刺客专用远程武器",
+    "stats": {
+      "damage": 38,
+      "range": "超远距离"
+    },
+    "effect": {
+      "TECH": 3,
+      "STYLE": 3
+    }
+  },
+  "wpn_046": {
+    "id": "wpn_046",
+    "name": "金蜥蜴",
+    "type": "smart_pistol",
+    "quality": "epic",
+    "category": "智能手枪",
+    "manufacturer": "海啸防御系统",
+    "description": "鎏金外壳的智能手枪，子弹如蜥蜴吐信追踪目标",
+    "lore": "海啸防御系统为高端客户定制的奢侈品级防卫武器",
+    "stats": {
+      "damage": 18,
+      "range": "中距离"
+    },
+    "effect": {
+      "EDDIES": 3,
+      "STYLE": 3
+    }
+  },
+  "wpn_047": {
+    "id": "wpn_047",
+    "name": "混沌",
+    "type": "tech_pistol",
+    "quality": "epic",
+    "category": "技术手枪",
+    "manufacturer": "荒坂",
+    "description": "蓄力释放电磁脉冲的技术手枪，随机附加异常效果",
+    "lore": "荒坂实验室内混乱邪恶的产物，每次开枪都是一场赌博",
+    "stats": {
+      "damage": 20,
+      "range": "中距离"
+    },
+    "effect": {
+      "TECH": 3,
+      "CHROME": 2
+    }
+  },
+  "wpn_048": {
+    "id": "wpn_048",
+    "name": "行刑者的宽恕",
+    "type": "power_revolver",
+    "quality": "epic",
+    "category": "动能左轮",
+    "manufacturer": "宪法军工",
+    "description": "宪法军工特制大威力左轮，行刑前的最后一枪",
+    "lore": "一名退休行刑官保留的纪念品——子弹留给被宽恕的人",
+    "stats": {
+      "damage": 40,
+      "range": "中距离"
+    },
+    "effect": {
+      "LIFE": 3,
+      "HUMANITY": 2
+    }
+  },
+  "wpn_049": {
+    "id": "wpn_049",
+    "name": "蓝色钢铁",
+    "type": "power_pistol",
+    "quality": "epic",
+    "category": "动能手枪",
+    "manufacturer": "海啸防御系统",
+    "description": "蓝色枪钢锻造的精密手枪，射速极快",
+    "lore": "海啸防御系统最新产品的原型枪，采用革命性材料工艺",
+    "stats": {
+      "damage": 16,
+      "range": "中距离"
+    },
+    "effect": {
+      "STYLE": 3,
+      "TECH": 2
+    }
+  },
+  "wpn_050": {
+    "id": "wpn_050",
+    "name": "哈兰",
+    "type": "power_revolver",
+    "quality": "epic",
+    "category": "动能左轮",
+    "manufacturer": "军用科技",
+    "description": "军用科技经典重型左轮，以传奇佣兵之名命名",
+    "lore": "为了纪念在第四次企业战争中牺牲的军用科技传奇战士",
+    "stats": {
+      "damage": 36,
+      "range": "中距离"
+    },
+    "effect": {
+      "CHROME": 3,
+      "LIFE": 2
+    }
+  },
+  "imp_022": {
+    "id": "imp_022",
+    "name": "斯安威斯坦",
+    "type": "operating_system",
+    "quality": "legendary",
+    "category": "操作系统",
+    "manufacturer": "荒坂",
+    "description": "顶级军用操作系统，启动后可大幅减缓时间流速",
+    "lore": "荒坂集团最高机密的时感操控义体，使用者能感知子弹的轨迹",
+    "stats": {
+      "armor": 0,
+      "capacity": 5
+    },
+    "effect": {
+      "CHROME": 5,
+      "STYLE": 4
+    }
+  },
+  "imp_023": {
+    "id": "imp_023",
+    "name": "克伦齐科夫",
+    "type": "nervous",
+    "quality": "legendary",
+    "category": "反应增强",
+    "manufacturer": "军用科技",
+    "description": "军用级反射增强系统，在闪避时进入子弹时间",
+    "lore": "以苏联科学家命名的神经反射增强系统，战场上九死一生的王牌",
+    "stats": {
+      "armor": 1,
+      "capacity": 4
+    },
+    "effect": {
+      "CHROME": 4,
+      "TECH": 3
+    }
+  },
+  "imp_024": {
+    "id": "imp_024",
+    "name": "大猩猩手臂",
+    "type": "cyberarm",
+    "quality": "epic",
+    "category": "手臂义体",
+    "manufacturer": "军用科技",
+    "description": "军用级重型义体手臂，徒手撕开装甲门",
+    "lore": "军用科技为重型作战单位设计的近战粉碎义体",
+    "stats": {
+      "armor": 3,
+      "capacity": 4
+    },
+    "effect": {
+      "CHROME": 4,
+      "LIFE": 3
+    }
+  },
+  "imp_025": {
+    "id": "imp_025",
+    "name": "强化肌腱",
+    "type": "cyberleg",
+    "quality": "rare",
+    "category": "腿部义体",
+    "manufacturer": "捷达",
+    "description": "高弹性仿生肌腱，赋予使用者二段跳跃能力",
+    "lore": "捷达集团的热门消费品，街头跑酷爱好者的首选改装",
+    "stats": {
+      "armor": 1,
+      "capacity": 2
+    },
+    "effect": {
+      "CHROME": 2,
+      "STYLE": 3
+    }
+  },
+  "imp_026": {
+    "id": "imp_026",
+    "name": "副心脏",
+    "type": "circulatory",
+    "quality": "legendary",
+    "category": "循环系统",
+    "manufacturer": "军用科技",
+    "description": "备用人工心脏，受到致命伤后自动重启循环系统",
+    "lore": "创伤小队创始人的保命发明，被救活的人可以写一本回忆录",
+    "stats": {
+      "armor": 1,
+      "capacity": 4
+    },
+    "effect": {
+      "LIFE": 5,
+      "CHROME": 3
+    }
+  },
+  "imp_027": {
+    "id": "imp_027",
+    "name": "活血泵",
+    "type": "circulatory",
+    "quality": "rare",
+    "category": "循环系统",
+    "manufacturer": "军用科技",
+    "description": "紧急注射泵，瞬间注入合成血液加速伤口愈合",
+    "lore": "战场急救的标准配置，为受伤的士兵争取宝贵时间",
+    "stats": {
+      "armor": 0,
+      "capacity": 2
+    },
+    "effect": {
+      "LIFE": 3,
+      "TECH": 1
+    }
+  },
+  "imp_028": {
+    "id": "imp_028",
+    "name": "生物监测",
+    "type": "circulatory",
+    "quality": "epic",
+    "category": "循环系统",
+    "manufacturer": "创伤小队",
+    "description": "实时监测生命体征，在濒危状态自动注射急救药物",
+    "lore": "创伤小队白金会员的标准植入套装组件",
+    "stats": {
+      "armor": 0,
+      "capacity": 3
+    },
+    "effect": {
+      "LIFE": 4,
+      "TECH": 2
+    }
+  },
+  "imp_029": {
+    "id": "imp_029",
+    "name": "致密骨髓",
+    "type": "skeletal",
+    "quality": "rare",
+    "category": "骨骼系统",
+    "manufacturer": "军用科技",
+    "description": "碳化钛骨髓填充，大幅提升近战攻击的破坏力",
+    "lore": "军用科技为近战特化士兵研发的骨骼强化方案",
+    "stats": {
+      "armor": 3,
+      "capacity": 2
+    },
+    "effect": {
+      "CHROME": 3,
+      "LIFE": 2
+    }
+  },
+  "imp_030": {
+    "id": "imp_030",
+    "name": "突触信号优化件",
+    "type": "skeletal",
+    "quality": "rare",
+    "category": "骨骼系统",
+    "manufacturer": "荒坂",
+    "description": "神经突触信号放大器，提升全身协调性增加血量上限",
+    "lore": "荒坂生物实验室的意外发现——强化骨骼的同时提升了整体耐久",
+    "stats": {
+      "armor": 2,
+      "capacity": 2
+    },
+    "effect": {
+      "LIFE": 3,
+      "TECH": 2
+    }
+  },
+  "imp_031": {
+    "id": "imp_031",
+    "name": "外接盘",
+    "type": "frontal_cortex",
+    "quality": "epic",
+    "category": "额皮质",
+    "manufacturer": "荒坂",
+    "description": "额外数据处理芯片，提升赛博空间RAM上限",
+    "lore": "网络行者们梦寐以求的装备——更多RAM意味着更强的入侵能力",
+    "stats": {
+      "armor": 0,
+      "capacity": 3
+    },
+    "effect": {
+      "TECH": 4,
+      "HUMANITY": -1
+    }
+  },
+  "imp_032": {
+    "id": "imp_032",
+    "name": "纳米镀膜",
+    "type": "integumentary",
+    "quality": "epic",
+    "category": "表皮",
+    "manufacturer": "军用科技",
+    "description": "光学纳米镀膜皮肤，降低被敌人探测到的概率",
+    "lore": "军用科技隐形技术的最新民用化成果",
+    "stats": {
+      "armor": 2,
+      "capacity": 3
+    },
+    "effect": {
+      "STYLE": 3,
+      "TECH": 3
+    }
+  },
+  "imp_033": {
+    "id": "imp_033",
+    "name": "散热槽",
+    "type": "integumentary",
+    "quality": "rare",
+    "category": "表皮",
+    "manufacturer": "捷达",
+    "description": "皮下液态冷却系统，防止义体过热过载",
+    "lore": "捷达集团用以解决高负荷义体散热问题的畅销产品",
+    "stats": {
+      "armor": 1,
+      "capacity": 2
+    },
+    "effect": {
+      "CHROME": 2,
+      "TECH": 2
+    }
+  },
+  "imp_034": {
+    "id": "imp_034",
+    "name": "视觉皮质支持",
+    "type": "frontal_cortex",
+    "quality": "epic",
+    "category": "额皮质",
+    "manufacturer": "荒坂",
+    "description": "视觉数据处理加速器，提升扫描分析和弱点识别的效率",
+    "lore": "荒坂网络监察部门专用的视觉增强义体",
+    "stats": {
+      "armor": 0,
+      "capacity": 3
+    },
+    "effect": {
+      "TECH": 4,
+      "STYLE": 2
+    }
+  },
+  "imp_035": {
+    "id": "imp_035",
+    "name": "微发电机",
+    "type": "circulatory",
+    "quality": "rare",
+    "category": "循环系统",
+    "manufacturer": "军用科技",
+    "description": "生物电微型发电机，利用体温发电为义体供能",
+    "lore": "军用科技能源部门的副产品，曾被用于偏远哨所的应急电源",
+    "stats": {
+      "armor": 0,
+      "capacity": 2
+    },
+    "effect": {
+      "TECH": 2,
+      "LIFE": 2
+    }
+  },
+  "drug_001": {
+    "id": "drug_001",
+    "name": "倾力治1型",
+    "type": "consumable",
+    "quality": "common",
+    "category": "医疗品",
+    "manufacturer": "创伤小队",
+    "description": "标准急救喷雾，快速恢复中等量生命值",
+    "lore": "创伤小队认证的标准院前急救药品，街头售价公道",
+    "stats": {
+      "heal": 25,
+      "weight": 0.1
+    },
+    "effect": {
+      "LIFE": 1
+    }
+  },
+  "drug_002": {
+    "id": "drug_002",
+    "name": "倾力治2型",
+    "type": "consumable",
+    "quality": "uncommon",
+    "category": "医疗品",
+    "manufacturer": "创伤小队",
+    "description": "强效急救喷雾，大量恢复生命值",
+    "lore": "创伤小队特勤人员使用的加强版急救药品",
+    "stats": {
+      "heal": 50,
+      "weight": 0.1
+    },
+    "effect": {
+      "LIFE": 2
+    }
+  },
+  "drug_003": {
+    "id": "drug_003",
+    "name": "RAM级联",
+    "type": "consumable",
+    "quality": "uncommon",
+    "category": "赛博软件",
+    "manufacturer": "网络行者",
+    "description": "临时提升赛博空间RAM处理能力",
+    "lore": "网络行者在黑市上流通的自制破解芯片",
+    "stats": {
+      "ram_boost": 15,
+      "duration": "60秒",
+      "weight": 0.05
+    },
+    "effect": {
+      "TECH": 2
+    }
+  },
+  "drug_004": {
+    "id": "drug_004",
+    "name": "生命值增强件",
+    "type": "consumable",
+    "quality": "rare",
+    "category": "强化药",
+    "manufacturer": "军用科技",
+    "description": "临时提升生命值上限的增强药剂",
+    "lore": "军用科技为前线士兵开发的战前强化药剂",
+    "stats": {
+      "hp_boost": 30,
+      "duration": "300秒",
+      "weight": 0.2
+    },
+    "effect": {
+      "LIFE": 3
+    }
+  },
+  "drug_005": {
+    "id": "drug_005",
+    "name": "耐力增强件",
+    "type": "consumable",
+    "quality": "uncommon",
+    "category": "强化药",
+    "manufacturer": "捷达",
+    "description": "提升体力恢复速度和最大耐力的兴奋剂",
+    "lore": "夜之城地下拳场的宠儿，能让拳手多撑三个回合",
+    "stats": {
+      "stamina_boost": 40,
+      "duration": "300秒",
+      "weight": 0.15
+    },
+    "effect": {
+      "LIFE": 2
+    }
+  },
+  "drug_006": {
+    "id": "drug_006",
+    "name": "负重增强件",
+    "type": "consumable",
+    "quality": "uncommon",
+    "category": "强化药",
+    "manufacturer": "捷达",
+    "description": "临时提升负重能力的合成代谢促进剂",
+    "lore": "码头搬运工和走私贩的必备良药",
+    "stats": {
+      "carry_boost": 50,
+      "duration": "600秒",
+      "weight": 0.15
+    },
+    "effect": {
+      "LIFE": 1,
+      "EDDIES": 1
+    }
+  },
+  "drug_007": {
+    "id": "drug_007",
+    "name": "布洛芬",
+    "type": "consumable",
+    "quality": "common",
+    "category": "药品",
+    "manufacturer": "普通制药",
+    "description": "非处方止痛药，缓解轻度疼痛和炎症",
+    "lore": "2077年的布洛芬和2025年的没什么区别——科技改变世界但不改变头痛",
+    "stats": {
+      "pain_relief": 15,
+      "weight": 0.05
+    },
+    "effect": {
+      "LIFE": 1
+    }
+  },
+  "drug_008": {
+    "id": "drug_008",
+    "name": "CHOOH2",
+    "type": "consumable",
+    "quality": "common",
+    "category": "饮品",
+    "manufacturer": "生物技术",
+    "description": "夜之城最流行的合成酒精饮料，谷物发酵的廉价快乐",
+    "lore": "取代了传统啤酒的全民饮品，喝多了第二天照样头痛",
+    "stats": {
+      "drunk": 20,
+      "weight": 0.3
+    },
+    "effect": {
+      "STYLE": 1,
+      "LIFE": -1
+    }
+  },
+  "drug_009": {
+    "id": "drug_009",
+    "name": "龙舌兰",
+    "type": "consumable",
+    "quality": "uncommon",
+    "category": "饮品",
+    "manufacturer": "来生酒吧",
+    "description": "来生酒吧特调龙舌兰，以传奇佣兵命名的经典烈酒",
+    "lore": "来生酒吧的招牌酒——以死后在来生相会为名",
+    "stats": {
+      "drunk": 35,
+      "weight": 0.3
+    },
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": 1,
+      "LIFE": -1
+    }
+  },
+  "drug_010": {
+    "id": "drug_010",
+    "name": "因哆啡",
+    "type": "consumable",
+    "quality": "rare",
+    "category": "药品",
+    "manufacturer": "军用科技",
+    "description": "强效军用合成镇痛剂，瞬间消除所有疼痛但有成瘾风险",
+    "lore": "军用科技开发的超级止痛药——在战场上它是天使，在街头它是魔鬼",
+    "stats": {
+      "pain_relief": 80,
+      "addiction_risk": 15,
+      "weight": 0.1
+    },
+    "effect": {
+      "LIFE": 3,
+      "HUMANITY": -2
+    }
+  },
+  "drug_011": {
+    "id": "drug_011",
+    "name": "纳米修复剂",
+    "type": "consumable",
+    "quality": "rare",
+    "category": "医疗品",
+    "manufacturer": "生物技术",
+    "description": "纳米机器人悬浮液，快速修复受损组织",
+    "lore": "生物技术公司的旗舰医疗产品，纳米机器人在血液中修复一切",
+    "stats": {
+      "heal": 75,
+      "weight": 0.15
+    },
+    "effect": {
+      "LIFE": 3,
+      "TECH": 1
+    }
+  },
+  "drug_012": {
+    "id": "drug_012",
+    "name": "战场兴奋剂",
+    "type": "consumable",
+    "quality": "rare",
+    "category": "强化药",
+    "manufacturer": "军用科技",
+    "description": "军用级战斗兴奋剂，提升攻击力和反应速度",
+    "lore": "黑色行动部队在敌后作战时的标准配给品",
+    "stats": {
+      "damage_boost": 25,
+      "duration": "120秒",
+      "weight": 0.15
+    },
+    "effect": {
+      "CHROME": 2,
+      "LIFE": 1
+    }
+  },
+  "drug_013": {
+    "id": "drug_013",
+    "name": "冷静剂",
+    "type": "consumable",
+    "quality": "uncommon",
+    "category": "药品",
+    "manufacturer": "生物技术",
+    "description": "合成镇定剂，降低心率并提升潜行时的稳定性",
+    "lore": "狙击手和渗透者工具箱里的沉默伙伴",
+    "stats": {
+      "stealth_boost": 20,
+      "duration": "180秒",
+      "weight": 0.1
+    },
+    "effect": {
+      "STYLE": 2,
+      "TECH": 1
+    }
+  },
+  "drug_014": {
+    "id": "drug_014",
+    "name": "解毒剂",
+    "type": "consumable",
+    "quality": "common",
+    "category": "医疗品",
+    "manufacturer": "普通制药",
+    "description": "广谱解毒剂，中和大部分常见毒素和化学毒剂",
+    "lore": "在满是污染和化学废料的夜之城，这东西和子弹一样重要",
+    "stats": {
+      "antidote": "中和毒素",
+      "weight": 0.1
+    },
+    "effect": {
+      "LIFE": 2
+    }
+  },
+  "drug_015": {
+    "id": "drug_015",
+    "name": "反射增强药",
+    "type": "consumable",
+    "quality": "rare",
+    "category": "强化药",
+    "manufacturer": "荒坂",
+    "description": "神经突触加速剂，临时提升闪避和反应速度",
+    "lore": "荒坂安保特工在VIP护送任务中的常用辅助药剂",
+    "stats": {
+      "reflex_boost": 30,
+      "duration": "120秒",
+      "weight": 0.1
+    },
+    "effect": {
+      "CHROME": 3,
+      "STYLE": 1
+    }
+  },
+  "drug_016": {
+    "id": "drug_016",
+    "name": "超频芯片",
+    "type": "consumable",
+    "quality": "epic",
+    "category": "赛博软件",
+    "manufacturer": "网络行者",
+    "description": "非法破解芯片，大幅提升义体运算速度但可能引发过热",
+    "lore": "夜之城地下网络行者圈子里的违禁品——性能爆炸但风险极高",
+    "stats": {
+      "chrome_boost": 40,
+      "duration": "90秒",
+      "overheat_risk": 10,
+      "weight": 0.05
+    },
+    "effect": {
+      "CHROME": 4,
+      "TECH": 3,
+      "LIFE": -1
+    }
+  },
+  "drug_017": {
+    "id": "drug_017",
+    "name": "记忆增强剂",
+    "type": "consumable",
+    "quality": "uncommon",
+    "category": "药品",
+    "manufacturer": "荒坂",
+    "description": "短期记忆增强药剂，更容易发现环境中的细节",
+    "lore": "荒坂学院精英学生的秘密武器——考试周的硬通货",
+    "stats": {
+      "perception_boost": 15,
+      "duration": "300秒",
+      "weight": 0.1
+    },
+    "effect": {
+      "TECH": 2,
+      "HUMANITY": 1
+    }
+  },
+  "drug_018": {
+    "id": "drug_018",
+    "name": "神经镇定剂",
+    "type": "consumable",
+    "quality": "uncommon",
+    "category": "药品",
+    "manufacturer": "生物技术",
+    "description": "降低赛博精神病症状的镇定药物",
+    "lore": "任何义体医生都会建议高频使用者常备的处方药",
+    "stats": {
+      "humanity_restore": 10,
+      "weight": 0.1
+    },
+    "effect": {
+      "HUMANITY": 3,
+      "LIFE": 1
+    }
+  },
+  "drug_019": {
+    "id": "drug_019",
+    "name": "黑市兴奋剂",
+    "type": "consumable",
+    "quality": "uncommon",
+    "category": "药品",
+    "manufacturer": "不明",
+    "description": "来源不明的强力街头兴奋剂，效果拔群但副作用未知",
+    "lore": "街头义体医生在地下实验室里调配的灰色产品——好东西但别问原料",
+    "stats": {
+      "all_boost": 15,
+      "duration": "60秒",
+      "side_effect_risk": 20,
+      "weight": 0.1
+    },
+    "effect": {
+      "CHROME": 2,
+      "STYLE": 2,
+      "LIFE": -1
+    }
+  },
+  "drug_020": {
+    "id": "drug_020",
+    "name": "肾上腺激素",
+    "type": "consumable",
+    "quality": "epic",
+    "category": "强化药",
+    "manufacturer": "军用科技",
+    "description": "合成肾上腺激素注射剂，濒死时自动触发极限状态",
+    "lore": "军用科技绝密项目的产物——让士兵在致命伤后还能继续战斗30秒",
+    "stats": {
+      "last_stand": "濒死触发, 5秒内无敌并恢复30%血量",
+      "weight": 0.15
+    },
+    "effect": {
+      "LIFE": 4,
+      "CHROME": 3
+    }
+  }
 }

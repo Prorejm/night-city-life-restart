@@ -104,8 +104,9 @@ function parseSimpleCondition(str, pos) {
   pos += propName.length;
   pos = skipSpace(str, pos);
 
-  // 特殊属性: LEGENDARY_COUNT, COLLECT_ALL_WEAPONS 等（无比较符）
-  if (propName === 'LEGENDARY_COUNT' || propName === 'COLLECT_ALL_WEAPONS' || propName === 'COLLECT_ALL_CYBER') {
+  // 特殊属性（无比较符）
+  const SPECIAL_PROPS = ['LEGENDARY_COUNT', 'COLLECT_ALL_WEAPONS', 'COLLECT_ALL_CYBER', 'VEHICLE_COUNT', 'COLLECT_JOHNNY', 'COLLECT_ALL_RECIPES', 'COLLECT_5_RECIPES', 'COLLECT_5_LEGENDARY'];
+  if (SPECIAL_PROPS.includes(propName)) {
     return {
       result: { type: 'special', prop: propName },
       pos
@@ -206,6 +207,16 @@ export function evaluateCondition(parsed, propertyState, extraState = {}) {
           return (extraState.legendaryWeapons || []).length >= 12;
         case 'COLLECT_ALL_CYBER':
           return (extraState.legendaryCyberware || []).length >= 12;
+        case 'VEHICLE_COUNT':
+          return (extraState.vehicleCount || 0) >= 5;
+        case 'COLLECT_JOHNNY':
+          return (extraState.collectedJohnnyItems || 0) >= 3;
+        case 'COLLECT_ALL_RECIPES':
+          return (extraState.unlockedRecipeCount || 0) >= 8;
+        case 'COLLECT_5_RECIPES':
+          return (extraState.unlockedRecipeCount || 0) >= 5;
+        case 'COLLECT_5_LEGENDARY':
+          return (extraState.legendaryCount || 0) >= 5;
         default:
           return true;
       }

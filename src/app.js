@@ -263,11 +263,15 @@ export class App {
 
     // 装备统计
     html += `<div class="summary-card"><h3>● 装备清单</h3>
-      <div style="display:flex;gap:15px;font-size:0.8em;">
+      <div style="display:flex;gap:15px;font-size:0.8em;flex-wrap:wrap;">
         <span>武器: 普通${summary.weapons.common||0} / 精良${summary.weapons.uncommon||0} / 稀有${summary.weapons.rare||0} / 史诗${summary.weapons.epic||0} / <span style="color:var(--cyber-yellow);">不朽${summary.weapons.legendary||0}</span></span>
       </div>
       <div style="display:flex;gap:15px;font-size:0.8em;margin-top:5px;">
         <span>义体: 普通${summary.cyberware.common||0} / <span style="color:var(--cyber-yellow);">不朽${summary.cyberware.legendary||0}</span></span>
+      </div>
+      <div style="display:flex;gap:15px;font-size:0.8em;margin-top:5px;">
+        <span>载具: <span style="color:var(--cyber-cyan);">${summary.vehicleCount||0}</span> 辆</span>
+        <span>药品消耗: <span style="color:var(--cyber-cyan);">${summary.drugCount||0}</span> 次</span>
       </div>`;
 
     // 不朽清单
@@ -282,6 +286,15 @@ export class App {
       html += `</div></div>`;
     }
     html += `</div>`;
+
+    // 载具清单
+    if (summary.vehicles && summary.vehicles.length > 0) {
+      html += `<div class="summary-card"><h3>● 载具收藏</h3><div class="item-list">`;
+      for (const v of summary.vehicles) {
+        html += `<div class="item-entry"><div class="item-name">${v.name}</div><div class="item-desc">${v.brand||''} · ${v.class||''}</div></div>`;
+      }
+      html += `</div></div>`;
+    }
 
     // 成就
     if (summary.achievements.length > 0) {
