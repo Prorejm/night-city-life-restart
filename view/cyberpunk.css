@@ -149,6 +149,17 @@ body {
 .event-entry.death-event .event-text { color: var(--cyber-red); }
 .event-entry .event-post { margin-top: 6px; color: var(--cyber-dim); font-style: italic; font-size: 0.8em; }
 
+.birth-event {
+  border-left: 3px solid var(--cyber-cyan);
+  background: rgba(0,255,247,0.08);
+  border-image: linear-gradient(180deg, var(--cyber-cyan), var(--cyber-magenta)) 1;
+  border-left-width: 3px;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-style: solid;
+}
+
 .bottom-bar {
   position: fixed; bottom: 0; left: 0; right: 0;
   background: rgba(10,10,15,0.95); border-top: 1px solid var(--cyber-cyan);

@@ -1,23 +1,4 @@
 {
-  "12004a": {
-    "id": "12004a",
-    "event": "你抱着马桶吐完，盯着镜子里苍白的脸。你对自己说：'我是为了保护别人才动手的。'但这个借口连你自己都不信。你把枪放在枕边，一夜没睡。",
-    "postEvent": "你体内关于'对错'的那根弦，已经断了。",
-    "effect": {
-      "HUMANITY": -1,
-      "LIFE": 1
-    }
-  },
-  "12004b": {
-    "id": "12004b",
-    "event": "你擦了擦脸上的血迹，搜了那个清道夫的口袋——三百欧元和一把不错的智能手枪。你对着尸体吹了声口哨。'这就是夜之城。'你对自己说，然后把尸体拖进了下水道。",
-    "postEvent": "血腥味再也影响不了你的食欲了。",
-    "effect": {
-      "EDDIES": 1,
-      "HUMANITY": -2,
-      "STYLE": 2
-    }
-  },
   "10001": {
     "id": 10001,
     "event": "你在科珀广场的豪华公寓中出生，窗外是夜之城璀璨的天际线。你的父母是荒坂集团的中层管理人员，从你记事起，家里就充斥着企业精英的高效与冷漠。",
@@ -26,7 +7,9 @@
       "STYLE": 3,
       "EDDIES": 3,
       "HUMANITY": -1
-    }
+    },
+    "NoRandom": true,
+    "type": "special"
   },
   "10002": {
     "id": 10002,
@@ -35,7 +18,9 @@
     "effect": {
       "EDDIES": -1,
       "STYLE": 2
-    }
+    },
+    "NoRandom": true,
+    "type": "special"
   },
   "10003": {
     "id": 10003,
@@ -45,7 +30,9 @@
       "TECH": 1,
       "EDDIES": -1,
       "STYLE": -1
-    }
+    },
+    "NoRandom": true,
+    "type": "special"
   },
   "10004": {
     "id": 10004,
@@ -55,7 +42,9 @@
       "TECH": 2,
       "STYLE": -1,
       "EDDIES": -2
-    }
+    },
+    "NoRandom": true,
+    "type": "special"
   },
   "10005": {
     "id": 10005,
@@ -65,7 +54,9 @@
       "LIFE": 2,
       "TECH": -1,
       "EDDIES": -1
-    }
+    },
+    "NoRandom": true,
+    "type": "special"
   },
   "10006": {
     "id": 10006,
@@ -75,7 +66,9 @@
       "STYLE": 2,
       "TECH": 2,
       "HUMANITY": -2
-    }
+    },
+    "NoRandom": true,
+    "type": "special"
   },
   "10007": {
     "id": 10007,
@@ -85,7 +78,9 @@
       "EDDIES": -2,
       "HUMANITY": -1,
       "STYLE": -1
-    }
+    },
+    "NoRandom": true,
+    "type": "special"
   },
   "10008": {
     "id": 10008,
@@ -94,7 +89,9 @@
     "effect": {
       "STYLE": 2,
       "HUMANITY": -1
-    }
+    },
+    "NoRandom": true,
+    "type": "special"
   },
   "10009": {
     "id": 10009,
@@ -113,7 +110,8 @@
       "corporate",
       "araska",
       "corporate_plaza"
-    ]
+    ],
+    "NoRandom": true
   },
   "10010": {
     "id": 10010,
@@ -132,7 +130,8 @@
       "birth",
       "corporate",
       "militech"
-    ]
+    ],
+    "NoRandom": true
   },
   "10011": {
     "id": 10011,
@@ -151,7 +150,8 @@
       "corporate",
       "biotechnica",
       "experiment"
-    ]
+    ],
+    "NoRandom": true
   },
   "10012": {
     "id": 10012,
@@ -169,7 +169,8 @@
       "birth",
       "corporate",
       "kangtao"
-    ]
+    ],
+    "NoRandom": true
   },
   "10013": {
     "id": 10013,
@@ -188,7 +189,8 @@
       "corporate",
       "webster",
       "corporate_plaza"
-    ]
+    ],
+    "NoRandom": true
   },
   "10014": {
     "id": 10014,
@@ -207,7 +209,8 @@
       "corporate",
       "charter_hill",
       "dual_corp"
-    ]
+    ],
+    "NoRandom": true
   },
   "10015": {
     "id": 10015,
@@ -226,7 +229,8 @@
       "corporate",
       "araska",
       "scavs"
-    ]
+    ],
+    "NoRandom": true
   },
   "10016": {
     "id": 10016,
@@ -246,7 +250,8 @@
       "corporate",
       "webster",
       "gene_therapy"
-    ]
+    ],
+    "NoRandom": true
   },
   "10017": {
     "id": 10017,
@@ -265,7 +270,8 @@
       "corporate",
       "araska",
       "north_oak"
-    ]
+    ],
+    "NoRandom": true
   },
   "10018": {
     "id": 10018,
@@ -285,7 +291,8 @@
       "corporate",
       "militech",
       "experiment"
-    ]
+    ],
+    "NoRandom": true
   },
   "10019": {
     "id": 10019,
@@ -305,7 +312,8 @@
       "araska",
       "corporate_plaza",
       "protest"
-    ]
+    ],
+    "NoRandom": true
   },
   "10020": {
     "id": 10020,
@@ -324,7 +332,8 @@
       "corporate",
       "orbital_air",
       "space"
-    ]
+    ],
+    "NoRandom": true
   },
   "10021": {
     "id": 10021,
@@ -343,7 +352,8 @@
       "birth",
       "nomad",
       "badlands"
-    ]
+    ],
+    "NoRandom": true
   },
   "10022": {
     "id": 10022,
@@ -363,7 +373,8 @@
       "nomad",
       "badlands",
       "alisted_nomad"
-    ]
+    ],
+    "NoRandom": true
   },
   "10023": {
     "id": 10023,
@@ -383,7 +394,8 @@
       "nomad",
       "badlands",
       "jackals"
-    ]
+    ],
+    "NoRandom": true
   },
   "10024": {
     "id": 10024,
@@ -403,7 +415,8 @@
       "nomad",
       "badlands",
       "radiation"
-    ]
+    ],
+    "NoRandom": true
   },
   "10025": {
     "id": 10025,
@@ -422,7 +435,8 @@
       "nomad",
       "badlands",
       "racing"
-    ]
+    ],
+    "NoRandom": true
   },
   "10026": {
     "id": 10026,
@@ -442,7 +456,8 @@
       "nomad",
       "badlands",
       "combat"
-    ]
+    ],
+    "NoRandom": true
   },
   "10027": {
     "id": 10027,
@@ -462,7 +477,8 @@
       "nomad",
       "pacific",
       "former_corpo"
-    ]
+    ],
+    "NoRandom": true
   },
   "10028": {
     "id": 10028,
@@ -482,7 +498,8 @@
       "badlands",
       "alisted_nomad",
       "ritual"
-    ]
+    ],
+    "NoRandom": true
   },
   "10029": {
     "id": 10029,
@@ -501,7 +518,8 @@
       "gang",
       "valentinos",
       "kabuki"
-    ]
+    ],
+    "NoRandom": true
   },
   "10030": {
     "id": 10030,
@@ -521,7 +539,8 @@
       "gang",
       "tyger_claws",
       "kabuki"
-    ]
+    ],
+    "NoRandom": true
   },
   "10031": {
     "id": 10031,
@@ -540,7 +559,8 @@
       "gang",
       "moxes",
       "santo_domingo"
-    ]
+    ],
+    "NoRandom": true
   },
   "10032": {
     "id": 10032,
@@ -560,7 +580,8 @@
       "gang",
       "scavs",
       "watson"
-    ]
+    ],
+    "NoRandom": true
   },
   "10033": {
     "id": 10033,
@@ -580,7 +601,8 @@
       "gang",
       "6th_street",
       "santo_domingo"
-    ]
+    ],
+    "NoRandom": true
   },
   "10034": {
     "id": 10034,
@@ -599,7 +621,8 @@
       "gang",
       "voodoo_boys",
       "tech"
-    ]
+    ],
+    "NoRandom": true
   },
   "10035": {
     "id": 10035,
@@ -619,7 +642,8 @@
       "valentinos",
       "heywood",
       "religion"
-    ]
+    ],
+    "NoRandom": true
   },
   "10036": {
     "id": 10036,
@@ -639,7 +663,8 @@
       "gang",
       "jackals",
       "pacific"
-    ]
+    ],
+    "NoRandom": true
   },
   "10037": {
     "id": 10037,
@@ -659,7 +684,8 @@
       "moxes",
       "kabuki",
       "sex_worker"
-    ]
+    ],
+    "NoRandom": true
   },
   "10038": {
     "id": 10038,
@@ -679,7 +705,8 @@
       "gang",
       "tyger_claws",
       "westbrook"
-    ]
+    ],
+    "NoRandom": true
   },
   "10039": {
     "id": 10039,
@@ -696,7 +723,8 @@
       "birth",
       "street_kid",
       "watson"
-    ]
+    ],
+    "NoRandom": true
   },
   "10040": {
     "id": 10040,
@@ -714,7 +742,8 @@
       "street_kid",
       "kabuki",
       "debt"
-    ]
+    ],
+    "NoRandom": true
   },
   "10041": {
     "id": 10041,
@@ -732,7 +761,8 @@
       "birth",
       "street_kid",
       "santo_domingo"
-    ]
+    ],
+    "NoRandom": true
   },
   "10042": {
     "id": 10042,
@@ -751,7 +781,8 @@
       "street_kid",
       "heywood",
       "ncpd"
-    ]
+    ],
+    "NoRandom": true
   },
   "10043": {
     "id": 10043,
@@ -770,7 +801,8 @@
       "street_kid",
       "pacific",
       "boat"
-    ]
+    ],
+    "NoRandom": true
   },
   "10044": {
     "id": 10044,
@@ -789,7 +821,8 @@
       "street_kid",
       "westbrook",
       "black_market"
-    ]
+    ],
+    "NoRandom": true
   },
   "10045": {
     "id": 10045,
@@ -808,7 +841,8 @@
       "street_kid",
       "watson",
       "homeless"
-    ]
+    ],
+    "NoRandom": true
   },
   "10046": {
     "id": 10046,
@@ -826,7 +860,8 @@
       "birth",
       "street_kid",
       "japantown"
-    ]
+    ],
+    "NoRandom": true
   },
   "10047": {
     "id": 10047,
@@ -844,7 +879,8 @@
       "birth",
       "street_kid",
       "kabuki"
-    ]
+    ],
+    "NoRandom": true
   },
   "10048": {
     "id": 10048,
@@ -863,7 +899,8 @@
       "street_kid",
       "north_oak",
       "servant"
-    ]
+    ],
+    "NoRandom": true
   },
   "10049": {
     "id": 10049,
@@ -881,7 +918,8 @@
       "birth",
       "medical",
       "premature"
-    ]
+    ],
+    "NoRandom": true
   },
   "10050": {
     "id": 10050,
@@ -900,7 +938,8 @@
       "medical",
       "gene_mutation",
       "chrome"
-    ]
+    ],
+    "NoRandom": true
   },
   "10051": {
     "id": 10051,
@@ -920,7 +959,8 @@
       "medical",
       "araska",
       "implant"
-    ]
+    ],
+    "NoRandom": true
   },
   "10052": {
     "id": 10052,
@@ -938,7 +978,8 @@
       "birth",
       "medical",
       "trauma"
-    ]
+    ],
+    "NoRandom": true
   },
   "10053": {
     "id": 10053,
@@ -956,7 +997,8 @@
       "birth",
       "medical",
       "cyber_rejection"
-    ]
+    ],
+    "NoRandom": true
   },
   "10054": {
     "id": 10054,
@@ -976,7 +1018,8 @@
       "medical",
       "biotechnica",
       "chimera"
-    ]
+    ],
+    "NoRandom": true
   },
   "10055": {
     "id": 10055,
@@ -995,7 +1038,8 @@
       "medical",
       "implant",
       "disability"
-    ]
+    ],
+    "NoRandom": true
   },
   "10056": {
     "id": 10056,
@@ -1014,7 +1058,8 @@
       "medical",
       "biotechnica",
       "experiment"
-    ]
+    ],
+    "NoRandom": true
   },
   "10057": {
     "id": 10057,
@@ -1032,7 +1077,8 @@
       "birth",
       "ncpd",
       "family"
-    ]
+    ],
+    "NoRandom": true
   },
   "10058": {
     "id": 10058,
@@ -1049,7 +1095,8 @@
     "tags": [
       "birth",
       "fixer"
-    ]
+    ],
+    "NoRandom": true
   },
   "10059": {
     "id": 10059,
@@ -1066,7 +1113,8 @@
     "tags": [
       "birth",
       "ncpd"
-    ]
+    ],
+    "NoRandom": true
   },
   "10060": {
     "id": 10060,
@@ -1084,7 +1132,8 @@
       "birth",
       "fixer",
       "japantown"
-    ]
+    ],
+    "NoRandom": true
   },
   "10061": {
     "id": 10061,
@@ -1102,7 +1151,8 @@
       "birth",
       "ncpd",
       "anti_gang"
-    ]
+    ],
+    "NoRandom": true
   },
   "10062": {
     "id": 10062,
@@ -1122,7 +1172,8 @@
       "corporate",
       "araska",
       "security"
-    ]
+    ],
+    "NoRandom": true
   },
   "10063": {
     "id": 10063,
@@ -1140,7 +1191,8 @@
     "tags": [
       "birth",
       "merc"
-    ]
+    ],
+    "NoRandom": true
   },
   "10064": {
     "id": 10064,
@@ -1158,7 +1210,8 @@
       "birth",
       "fixer",
       "watson"
-    ]
+    ],
+    "NoRandom": true
   },
   "10065": {
     "id": 10065,
@@ -1177,7 +1230,8 @@
       "trauma",
       "kabuki",
       "addict"
-    ]
+    ],
+    "NoRandom": true
   },
   "10066": {
     "id": 10066,
@@ -1196,7 +1250,8 @@
       "trauma",
       "kabuki",
       "sex_worker"
-    ]
+    ],
+    "NoRandom": true
   },
   "10067": {
     "id": 10067,
@@ -1215,7 +1270,8 @@
       "birth",
       "trauma",
       "addict"
-    ]
+    ],
+    "NoRandom": true
   },
   "10068": {
     "id": 10068,
@@ -1233,7 +1289,8 @@
       "birth",
       "trauma",
       "abuse"
-    ]
+    ],
+    "NoRandom": true
   },
   "10069": {
     "id": 10069,
@@ -1252,7 +1309,8 @@
       "trauma",
       "heywood",
       "addict"
-    ]
+    ],
+    "NoRandom": true
   },
   "10070": {
     "id": 10070,
@@ -1270,7 +1328,8 @@
       "birth",
       "trauma",
       "scavs"
-    ]
+    ],
+    "NoRandom": true
   },
   "10071": {
     "id": 10071,
@@ -1288,7 +1347,8 @@
       "birth",
       "netrunner",
       "araska"
-    ]
+    ],
+    "NoRandom": true
   },
   "10072": {
     "id": 10072,
@@ -1306,7 +1366,8 @@
       "birth",
       "netrunner",
       "santo_domingo"
-    ]
+    ],
+    "NoRandom": true
   },
   "10073": {
     "id": 10073,
@@ -1324,7 +1385,8 @@
       "birth",
       "netrunner",
       "voodoo_boys"
-    ]
+    ],
+    "NoRandom": true
   },
   "10074": {
     "id": 10074,
@@ -1343,7 +1405,8 @@
       "birth",
       "scientist",
       "biotechnica"
-    ]
+    ],
+    "NoRandom": true
   },
   "10075": {
     "id": 10075,
@@ -1361,7 +1424,8 @@
       "birth",
       "scientist",
       "kangtao"
-    ]
+    ],
+    "NoRandom": true
   },
   "10076": {
     "id": 10076,
@@ -1381,7 +1445,8 @@
       "scientist",
       "militech",
       "implant"
-    ]
+    ],
+    "NoRandom": true
   },
   "10077": {
     "id": 10077,
@@ -1399,7 +1464,8 @@
       "birth",
       "netrunner",
       "ncpd"
-    ]
+    ],
+    "NoRandom": true
   },
   "10078": {
     "id": 10078,
@@ -1418,7 +1484,8 @@
       "scientist",
       "webster",
       "ai"
-    ]
+    ],
+    "NoRandom": true
   },
   "10079": {
     "id": 10079,
@@ -1435,7 +1502,8 @@
     "tags": [
       "birth",
       "corporate_plaza"
-    ]
+    ],
+    "NoRandom": true
   },
   "10080": {
     "id": 10080,
@@ -1453,7 +1521,8 @@
     "tags": [
       "birth",
       "japantown"
-    ]
+    ],
+    "NoRandom": true
   },
   "10081": {
     "id": 10081,
@@ -1470,7 +1539,8 @@
     "tags": [
       "birth",
       "kabuki"
-    ]
+    ],
+    "NoRandom": true
   },
   "10082": {
     "id": 10082,
@@ -1486,7 +1556,8 @@
     "tags": [
       "birth",
       "santo_domingo"
-    ]
+    ],
+    "NoRandom": true
   },
   "10083": {
     "id": 10083,
@@ -1503,7 +1574,8 @@
     "tags": [
       "birth",
       "pacific"
-    ]
+    ],
+    "NoRandom": true
   },
   "10084": {
     "id": 10084,
@@ -1519,7 +1591,8 @@
     "tags": [
       "birth",
       "westbrook"
-    ]
+    ],
+    "NoRandom": true
   },
   "10085": {
     "id": 10085,
@@ -1537,7 +1610,8 @@
       "birth",
       "north_oak",
       "wealthy"
-    ]
+    ],
+    "NoRandom": true
   },
   "10086": {
     "id": 10086,
@@ -1554,7 +1628,8 @@
     "tags": [
       "birth",
       "heywood"
-    ]
+    ],
+    "NoRandom": true
   },
   "10087": {
     "id": 10087,
@@ -1570,7 +1645,8 @@
     "tags": [
       "birth",
       "watson"
-    ]
+    ],
+    "NoRandom": true
   },
   "10088": {
     "id": 10088,
@@ -1589,7 +1665,8 @@
       "kabuki",
       "trauma",
       "addict"
-    ]
+    ],
+    "NoRandom": true
   },
   "10089": {
     "id": 10089,
@@ -1608,7 +1685,8 @@
       "birth",
       "santo_domingo",
       "junkyard"
-    ]
+    ],
+    "NoRandom": true
   },
   "10090": {
     "id": 10090,
@@ -1626,7 +1704,8 @@
       "birth",
       "pacific",
       "immigrant"
-    ]
+    ],
+    "NoRandom": true
   },
   "10091": {
     "id": 10091,
@@ -1644,7 +1723,8 @@
       "birth",
       "trauma",
       "rare"
-    ]
+    ],
+    "NoRandom": true
   },
   "10092": {
     "id": 10092,
@@ -1662,7 +1742,8 @@
       "birth",
       "rare",
       "mysterious"
-    ]
+    ],
+    "NoRandom": true
   },
   "10093": {
     "id": 10093,
@@ -1682,7 +1763,8 @@
       "trauma",
       "combat",
       "gang"
-    ]
+    ],
+    "NoRandom": true
   },
   "10094": {
     "id": 10094,
@@ -1701,7 +1783,8 @@
       "trauma",
       "ncpd",
       "scavs"
-    ]
+    ],
+    "NoRandom": true
   },
   "10095": {
     "id": 10095,
@@ -1719,7 +1802,8 @@
       "birth",
       "rare",
       "blackout"
-    ]
+    ],
+    "NoRandom": true
   },
   "10096": {
     "id": 10096,
@@ -1737,7 +1821,8 @@
       "birth",
       "rare",
       "araska"
-    ]
+    ],
+    "NoRandom": true
   },
   "10097": {
     "id": 10097,
@@ -1755,7 +1840,8 @@
       "birth",
       "medical",
       "rare"
-    ]
+    ],
+    "NoRandom": true
   },
   "10098": {
     "id": 10098,
@@ -1774,7 +1860,8 @@
       "protest",
       "araska",
       "ncn"
-    ]
+    ],
+    "NoRandom": true
   },
   "10099": {
     "id": 10099,
@@ -1794,7 +1881,8 @@
       "synthetic",
       "experiment",
       "rare"
-    ]
+    ],
+    "NoRandom": true
   },
   "10100": {
     "id": 10100,
@@ -1811,7 +1899,8 @@
     "tags": [
       "birth",
       "new_year"
-    ]
+    ],
+    "NoRandom": true
   },
   "11001": {
     "id": 11001,

@@ -14,6 +14,17 @@ const EVENT_META_DEFAULTS = {
   tags: []
 };
 
+// ID范围对应的隐含年龄段
+const ID_AGE_RANGES = [
+  { minId: 10000, maxId: 10999, minAge: 0, maxAge: 2 },    // 出身事件：0-2岁
+  { minId: 11000, maxId: 11999, minAge: 2, maxAge: 16 },   // 童年事件：2-16岁
+  { minId: 12000, maxId: 13999, minAge: 14, maxAge: 28 },  // 青年出道：14-28岁
+  { minId: 14000, maxId: 17999, minAge: 20, maxAge: 200 }, // 佣兵传奇：20岁+
+  { minId: 18000, maxId: 18999, minAge: 0, maxAge: 200 },  // 死亡事件：任何年龄
+  { minId: 19000, maxId: 19999, minAge: 0, maxAge: 200 },  // 日常事件：任何年龄
+  { minId: 20000, maxId: 20999, minAge: 16, maxAge: 200 }, // 剧情事件：16岁+
+];
+
 export class Event {
   #eventData;
   #conditionCache;
@@ -104,6 +115,14 @@ export class Event {
       if (incCond && !evaluateCondition(incCond, state)) {
         return false;
       }
+    }
+
+    // 如果事件没有显式的 AGE 条件，检查隐含的 ID 范围年龄限制
+    const inc = event.include || '';
+    const exc = event.exclude || '';
+    const hasAgeCondition = inc.includes('AGE') || exc.includes('AGE');
+    if (!hasAgeCondition && !this.#isInIdAgeRange(Number(eventId), state.AGE || 0)) {
+      return false;
     }
 
     return true;
@@ -340,5 +359,20 @@ export class Event {
     if (lastTriggerAge === undefined || lastTriggerAge === null) return true;
 
     return (currentAge - lastTriggerAge) >= event.cooldown;
+  }
+
+  /**
+   * 根据事件ID范围检查是否匹配当前年龄（仅用于没有显式AGE条件的事件）
+   * @param {number} eventId
+   * @param {number} age
+   * @returns {boolean}
+   */
+  #isInIdAgeRange(eventId, age) {
+    for (const range of ID_AGE_RANGES) {
+      if (eventId >= range.minId && eventId <= range.maxId) {
+        return age >= range.minAge && age <= range.maxAge;
+      }
+    }
+    return true; // 不在定义的范围内则放行
   }
 }

@@ -68,6 +68,8 @@ export class Life {
   #eventCooldowns;
   #drugUsageCount;
   #brainDanceCount;
+  #birthEventResult;
+  #hasFiredBirth;
 
   constructor() {
     this.#property = new Property();
@@ -89,6 +91,8 @@ export class Life {
     this.#eventCooldowns = new Map();
     this.#drugUsageCount = 0;
     this.#brainDanceCount = 0;
+    this.#birthEventResult = null;
+    this.#hasFiredBirth = false;
   }
 
   async initial() {
@@ -147,6 +151,8 @@ export class Life {
     this.#eventCooldowns = new Map();
     this.#drugUsageCount = 0;
     this.#brainDanceCount = 0;
+    this.#birthEventResult = null;
+    this.#hasFiredBirth = false;
 
     // 应用基础初始属性
     this.#property.change('EDDIES', 2);
@@ -172,6 +178,32 @@ export class Life {
 
     // 记录首年
     this.#property.record();
+
+    // 随机选取一个出生事件并预执行
+    this.#selectBirthEvent();
+  }
+
+  /**
+   * 随机选取一个出生事件（10001-10008），在AGE 0时触发
+   */
+  #selectBirthEvent() {
+    const birthIds = [10001, 10002, 10003, 10004, 10005, 10006, 10007, 10008];
+    const available = birthIds.filter(id => this.#event.check(id, this.#property));
+    if (available.length === 0) return;
+    const selectedId = available[Math.floor(Math.random() * available.length)];
+    const results = this.#event.do(selectedId, this.#property);
+    if (results && results.length > 0) {
+      this.#birthEventResult = results;
+      // 记录出生事件
+      this.#property.change('EVT', [selectedId]);
+      // 应用出生事件效果
+      for (const r of results) {
+        if (r.effect) {
+          this.#property.effect(r.effect);
+        }
+      }
+      this.#property.record();
+    }
   }
 
   get property() {
@@ -193,6 +225,24 @@ export class Life {
     this.#property.change('AGE', 1);
 
     const results = [];
+
+    // AGE 0 → 1：展示出生事件
+    if (age === 0) {
+      if (this.#birthEventResult) {
+        for (const r of this.#birthEventResult) {
+          results.push({
+            ...r,
+            isBirth: true
+          });
+        }
+      }
+      this.#hasFiredBirth = true;
+      this.#processPendingTalents();
+      this.#property.record();
+      const death = this.#checkDeath();
+      if (death) results.push(death);
+      return { age: 1, events: results, isDead: this.#property.isDead() || this.#property.isCyberpsycho() };
+    }
 
     const ageKey = String(newAge);
     const ageConfig = this.#ageData[ageKey];
@@ -235,7 +285,7 @@ export class Life {
     // 2. 处理待触发天赋
     this.#processPendingTalents();
 
-    // 3. 从类型权重池中触发多事件
+    // 3. 从类型权重池中触发多事件（仅在AGE≥1以后）
     const eventCount = this.#rollEventCount(newAge);
     for (let i = 0; i < eventCount; i++) {
       const eventId = this.#pickWeightedEvent(newAge);
@@ -248,10 +298,13 @@ export class Life {
     // 4. 记录状态
     this.#property.record();
 
-    // 5. 死亡检查
-    const death = this.#checkDeath();
-    if (death) {
-      results.push(death);
+    // 5. 死亡检查——如果已有战斗致死事件，不再重复触发
+    const alreadyDead = results.some(r => r.isDeath);
+    if (!alreadyDead) {
+      const death = this.#checkDeath();
+      if (death) {
+        results.push(death);
+      }
     }
 
     return { age: newAge, events: results, isDead: this.#property.isDead() || this.#property.isCyberpsycho() };
@@ -425,18 +478,7 @@ export class Life {
     const humanity = this.#property.get('HUMANITY');
     const eddies = this.#property.get('EDDIES');
 
-    // 0. LIFE 已降至 0 以下（由 #executeEvent 中的战斗即死检查处理，此处兜底）
-    if (this.#property.get('LIFE') <= 0) {
-      this.#property.change('LIFE', -1);
-      return {
-        id: 18001,
-        event: DEATH_EVENTS[18001],
-        isDeath: true,
-        deathType: '战斗致死'
-      };
-    }
-
-    // 1. 赛博精神病 (HUMANITY <= 0)
+    // 1. 赛博精神病 (HUMANITY <= 0) — 立即结束
     if (this.#property.isCyberpsycho()) {
       this.#property.change('LIFE', -1);
       return {
@@ -447,24 +489,29 @@ export class Life {
       };
     }
 
-    // 2. 随机死亡概率（随年龄增加）
+    // 2. 自然/意外死亡概率（随年龄增加，整体适中）
     let deathChance = 0;
-    if (age >= 80) deathChance = 0.15;
-    else if (age >= 70) deathChance = 0.08;
-    else if (age >= 60) deathChance = 0.04;
-    else if (age >= 50) deathChance = 0.02;
-    else if (age >= 30) deathChance = 0.005;
+    if (age >= 80) deathChance = 0.25;   // 老去
+    else if (age >= 70) deathChance = 0.12;
+    else if (age >= 60) deathChance = 0.06;
+    else if (age >= 50) deathChance = 0.03;
+    else if (age >= 40) deathChance = 0.015;
+    else if (age >= 30) deathChance = 0.008;
+    else if (age >= 20) deathChance = 0.003;
+    else if (age >= 10) deathChance = 0.001;
 
     // 高义体化增加死亡概率
-    if (chrome > 8) deathChance += 0.02;
-    if (chrome > 12) deathChance += 0.03;
+    if (chrome > 8) deathChance += 0.015;
+    if (chrome > 12) deathChance += 0.025;
+    if (chrome > 16) deathChance += 0.04;
 
-    // 低人性增加死亡概率
-    if (humanity < 3) deathChance += 0.03;
+    // 低人性增加死亡概率（赛博精神病前兆）
+    if (humanity < 3) deathChance += 0.05;
+    else if (humanity < 5) deathChance += 0.02;
 
     // 药物滥用增加死亡概率
     if (this.#drugUsageCount > 10) {
-      deathChance += 0.05;
+      deathChance += 0.04;
     }
 
     // 超梦滥用增加死亡概率（脑损伤）
@@ -537,6 +584,14 @@ export class Life {
 
   getAge() {
     return this.#property.get('AGE');
+  }
+
+  /**
+   * 获取出生事件结果（用于开局展示）
+   * @returns {Array|null}
+   */
+  getBirthEvent() {
+    return this.#birthEventResult ? [...this.#birthEventResult] : null;
   }
 
   // 载具方法

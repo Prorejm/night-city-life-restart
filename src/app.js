@@ -199,6 +199,12 @@ export class App {
     this.#showPage('life');
     this.#updateHUD();
     document.getElementById('log').innerHTML = '';
+
+    // 自动展示出生事件（AGE 0 → 1）
+    await this.#delay(300);
+    const birthResult = this.#life.ageNext();
+    this.#updateHUD();
+    this.#appendEvents(birthResult);
   }
 
   async nextYear() {
@@ -302,10 +308,14 @@ export class App {
     }
 
     this.#showPage('life');
-    this.#updateHUD();
     document.getElementById('log').innerHTML = '';
 
-    this.#autoTimer = setTimeout(() => this.#autoLoop(), 500);
+    // 展示出生事件
+    const birthResult = this.#life.ageNext();
+    this.#updateHUD();
+    this.#appendEvents(birthResult);
+
+    this.#autoTimer = setTimeout(() => this.#autoLoop(), 800);
   }
 
   #updateHUD() {
@@ -332,8 +342,11 @@ export class App {
   #appendEvents(result) {
     const log = document.getElementById('log');
     for (const ev of result.events) {
+      let cls = 'event-entry';
+      if (ev.isDeath) cls += ' death-event';
+      if (ev.isBirth) cls += ' birth-event';
       const div = document.createElement('div');
-      div.className = 'event-entry' + (ev.isDeath ? ' death-event' : '');
+      div.className = cls;
       
       const ageDiv = document.createElement('div');
       ageDiv.className = 'event-age';
