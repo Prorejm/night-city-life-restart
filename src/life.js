@@ -368,8 +368,18 @@ export class Life {
         this.#loadJSON('data/vehicles.json')
       ]);
 
+      // 加载额外事件集（可选）
+      let eventsUnderclassData = {};
+      try {
+        eventsUnderclassData = await this.#loadJSON('data/events-underclass.json');
+      } catch (_) {
+        // 可选事件文件，加载失败不影响主流程
+      }
+
+      // 合并所有事件数据
+      const mergedEvents = { ...eventsData, ...eventsUnderclassData };
       this.#talent.initial(talentsData);
-      this.#event.initial(eventsData);
+      this.#event.initial(mergedEvents);
       this.#ageData = ageData;
       this.#itemsData = itemsData || {};
       this.#achievementData = achData || {};
