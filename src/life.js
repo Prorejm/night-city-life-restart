@@ -5,6 +5,7 @@ import { Talent } from './talent.js';
 import { Event } from './event.js';
 import { Inventory } from './inventory.js';
 import { Achievement } from './achievement.js';
+import { QuestSystem } from './quest.js';
 import { generateSummary } from './functions/summary.js';
 import { evaluateCondition, parseCondition } from './functions/condition.js';
 
@@ -98,6 +99,7 @@ export class Life {
   #event;
   #inventory;
   #achievement;
+  #questSystem;
   #triggerTalents;
   #ageData;
   #currentEvents;
@@ -114,6 +116,8 @@ export class Life {
   #brainDanceCount;
   #birthEventResult;
   #hasFiredBirth;
+  #traumaTeamCount;
+  #tarotCount;
 
   constructor() {
     this.#property = new Property();
@@ -121,6 +125,7 @@ export class Life {
     this.#event = new Event();
     this.#inventory = null;
     this.#achievement = null;
+    this.#questSystem = new QuestSystem();
     this.#triggerTalents = new Set();
     this.#ageData = {};
     this.#currentEvents = [];
@@ -137,6 +142,8 @@ export class Life {
     this.#brainDanceCount = 0;
     this.#birthEventResult = null;
     this.#hasFiredBirth = false;
+    this.#traumaTeamCount = 0;
+    this.#tarotCount = 0;
   }
 
   async initial() {
@@ -187,6 +194,7 @@ export class Life {
     // 重置状态
     this.#property.reset();
     this.#inventory.reset();
+    this.#questSystem.reset();
     this.#triggerTalents = new Set();
     this.#currentEvents = [];
     this.#deathMessage = '';
@@ -197,6 +205,8 @@ export class Life {
     this.#brainDanceCount = 0;
     this.#birthEventResult = null;
     this.#hasFiredBirth = false;
+    this.#traumaTeamCount = 0;
+    this.#tarotCount = 0;
 
     // 应用基础初始属性
     this.#property.change('EDDIES', 2);
@@ -289,8 +299,17 @@ export class Life {
     // 调用36次turnNext推进一整年，汇总事件
     const allEvents = [];
     let lastResult = null;
+    let hasAddedDivider = false;
     for (let i = 0; i < 36; i++) {
       lastResult = this.turnNext();
+      if (lastResult.age > currentAge && !hasAddedDivider) {
+        allEvents.push({
+          id: 'year_divider',
+          event: `═══ ${lastResult.age}岁 ═══`,
+          isYearDivider: true
+        });
+        hasAddedDivider = true;
+      }
       allEvents.push(...lastResult.events);
       if (lastResult.isDead) break;
     }
@@ -330,7 +349,7 @@ export class Life {
       this.#property.record();
       const death = this.#checkDeath();
       if (death) results.push(death);
-      return { turn: newTurn, age: newAge, month, phase, events: results, isDead: this.#property.isDead() || this.#property.isCyberpsycho() };
+      return { turn: newTurn, age: newAge, month, phase, events: results, questUpdates: { completed: [], failed: [], penalties: {} }, isDead: this.#property.isDead() || this.#property.isCyberpsycho() };
     }
 
     // 年度逻辑：天赋 + age.json（仅在跨年时触发）
@@ -412,6 +431,31 @@ export class Life {
       this.#property.effect({ HUMANITY: -1 });
     }
 
+    // ===== 任务系统处理 =====
+    const questUpdates = { completed: [], failed: [], penalties: {} };
+    // 推进活跃任务的目标进度
+    const completedQuests = this.#questSystem.processTurn(newTurn);
+    for (const { quest, rewards } of completedQuests) {
+      questUpdates.completed.push({ quest, rewards });
+      // 应用任务完成奖励
+      if (rewards) {
+        this.#property.effect(rewards);
+      }
+    }
+    // 检查过期任务
+    const expiredPenalties = this.#questSystem.checkExpired(newTurn);
+    if (expiredPenalties && Object.keys(expiredPenalties).length > 0) {
+      questUpdates.penalties = expiredPenalties;
+      this.#property.effect(expiredPenalties);
+      // 收集失败任务信息用于UI展示
+      const failedQuests = this.#questSystem.getFailedQuests();
+      // 只展示本轮新失败的
+      const newlyFailed = failedQuests.filter(q => q.failedThisTurn);
+      for (const q of newlyFailed) {
+        questUpdates.failed.push(q);
+      }
+    }
+
     // 记录状态
     this.#property.record();
 
@@ -425,7 +469,7 @@ export class Life {
       }
     }
 
-    return { turn: newTurn, age: newAge, month, phase, events: results, isDead: this.#property.isDead() || this.#property.isCyberpsycho() };
+    return { turn: newTurn, age: newAge, month, phase, events: results, questUpdates, isDead: this.#property.isDead() || this.#property.isCyberpsycho() };
   }
 
   /**
@@ -537,6 +581,7 @@ export class Life {
           this.#property.change('CHROME', resultMeta.traumaChromeGain || 2);
           // 人性下降（被迫接受更多义体）
           this.#property.change('HUMANITY', -(resultMeta.traumaHumanityLoss || 2));
+          this.#traumaTeamCount++;
           results.push({ ...result, isTraumaTeam: true });
           currentId = result.next;
           continue;
@@ -546,6 +591,7 @@ export class Life {
         if (resultMeta && resultMeta.isTarot) {
           result.isTarot = true;
           result.tarotName = resultMeta.tarotName || '未知塔罗';
+          this.#tarotCount++;
         }
 
         // 战斗拼点判定（combat类型事件，在effect应用之前）
@@ -672,12 +718,69 @@ export class Life {
           }
         }
 
+        // ===== Fixer事件自动转化为任务（24001-24500）=====
+        if (result.id >= 24001 && result.id <= 24500) {
+          const questData = this.#buildQuestFromEvent(result.id, resultMeta);
+          const quest = this.#questSystem.acceptQuest(questData);
+          result.isQuestAccepted = true;
+          result.questId = quest.id;
+        }
+
         results.push({ ...result, rewards });
         currentId = result.next;
       }
     }
 
     return results;
+  }
+
+  /**
+   * 从Fixer事件构建任务数据
+   */
+  #buildQuestFromEvent(eventId, eventMeta) {
+    const currentTurn = this.#property.get('TURN');
+    // 如果eventMeta不存在，尝试从event系统获取
+    const meta = eventMeta || this.#event.get(eventId) || {};
+    const eventText = meta.event || '';
+    // 提取中间人名字（简单正则匹配）
+    const giverMatch = eventText.match(/中间人[""']([^""']+)[""']/);
+    const giver = giverMatch ? giverMatch[1] : (eventText.includes('企业中间人') ? '企业中间人' : '匿名中间人');
+    // 从效果推导难度
+    const eddiesReward = meta.effect ? (meta.effect.EDDIES || 1) : 1;
+    const difficulty = Math.min(5, Math.max(1, Math.floor(eddiesReward / 2)));
+    // 任务目标：需要经过若干回合完成
+    const turnRequired = Math.floor(Math.random() * 3) + 1 + difficulty;
+
+    return {
+      id: `quest_${eventId}_${currentTurn}`,
+      sourceEventId: eventId,
+      title: this.#extractQuestTitle(eventText),
+      description: eventText,
+      giver,
+      type: 'contract',
+      difficulty,
+      objectives: [{ text: '执行任务', completed: false, turnRequired, currentTurn: 0 }],
+      rewards: meta.effect ? { ...meta.effect } : {},
+      penalties: { EDDIES: -Math.max(1, Math.floor(eddiesReward * 0.5)), STYLE: -1 },
+      deadline: 10 + difficulty * 5 + Math.floor(Math.random() * 10),
+      acceptedTurn: currentTurn
+    };
+  }
+
+  #extractQuestTitle(eventText) {
+    if (!eventText) return '未命名任务';
+    // 尝试提取核心动作
+    const actions = ['回收', '处理掉', '暗杀', '护送', '调查', '窃取', '摧毁', '保卫', '渗透', '追踪'];
+    for (const action of actions) {
+      const idx = eventText.indexOf(action);
+      if (idx >= 0) {
+        // 取动作前后几个字作为标题
+        const start = Math.max(0, idx - 4);
+        const end = Math.min(eventText.length, idx + 12);
+        return eventText.slice(start, end).trim();
+      }
+    }
+    return eventText.slice(0, 15) + (eventText.length > 15 ? '…' : '');
   }
 
   #checkDeath() {
@@ -689,6 +792,7 @@ export class Life {
     // 0. 战斗/事件导致 LIFE <= 0 — 立即战斗死亡
     if (life <= 0) {
       this.#property.change('LIFE', -1);
+      this.#deathMessage = '战斗致死';
       return {
         id: 18021,
         event: DEATH_EVENTS[18021].text,
@@ -700,6 +804,7 @@ export class Life {
     // 1. 赛博精神病 (HUMANITY <= 0) — 立即结束，固定使用赛博精神病事件
     if (this.#property.isCyberpsycho()) {
       this.#property.change('LIFE', -1);
+      this.#deathMessage = '赛博精神病';
       return {
         id: 18011,
         event: DEATH_EVENTS[18011].text,
@@ -719,6 +824,7 @@ export class Life {
     if (Math.random() < finalChance) {
       const entry = this.#selectWeightedDeath();
       this.#property.change('LIFE', -1);
+      this.#deathMessage = entry.type;
       return {
         id: entry.id,
         event: entry.text,
@@ -865,6 +971,10 @@ export class Life {
     invStats.vehicleCount = this.#ownedVehicles.length;
     invStats.vehicles = this.#ownedVehicles.map(id => this.#vehicleData[id]).filter(Boolean);
     invStats.consumedDrugs = [...this.#consumedDrugs];
+    invStats.drugCount = this.#drugUsageCount;
+    invStats.traumaCount = this.#traumaTeamCount;
+    invStats.tarotCount = this.#tarotCount;
+    invStats.totalEddies = this.#property.get('TOTAL_EDDIES');
     invStats.unlockedRecipeCount = 0;
 
     const achResult = this.#achievement.checkAll(this.#property, invStats);
@@ -872,7 +982,27 @@ export class Life {
 
     // 重新检查成就（现在有了配方计数）
     const finalAchResult = this.#achievement.checkAll(this.#property, invStats);
-    return generateSummary(this.#property.getAll(), invStats, finalAchResult);
+    const summary = generateSummary(this.#property.getAll(), invStats, finalAchResult);
+    summary.deathReason = this.#deathMessage || (this.#property.isCyberpsycho() ? '赛博精神病' : '未知');
+    summary.talentIds = this.#property.get('TLT');
+    return summary;
+  }
+
+  // 获取当前已解锁的成就列表（用于游戏过程中检测新成就）
+  getCurrentAchievements() {
+    if (!this.#inventory || !this.#achievement) return [];
+
+    const invStats = this.#inventory.getAllStats();
+    invStats.vehicleCount = this.#ownedVehicles.length;
+    invStats.vehicles = this.#ownedVehicles.map(id => this.#vehicleData[id]).filter(Boolean);
+    invStats.consumedDrugs = [...this.#consumedDrugs];
+    invStats.drugCount = this.#drugUsageCount;
+    invStats.traumaCount = this.#traumaTeamCount;
+    invStats.tarotCount = this.#tarotCount;
+    invStats.totalEddies = this.#property.get('TOTAL_EDDIES');
+
+    const achResult = this.#achievement.checkAll(this.#property, invStats);
+    return achResult.unlocked;
   }
 
   isEnd() {
@@ -889,6 +1019,23 @@ export class Life {
    */
   getBirthEvent() {
     return this.#birthEventResult ? [...this.#birthEventResult] : null;
+  }
+
+  /**
+   * 获取任务系统（供UI使用）
+   * @returns {QuestSystem}
+   */
+  getQuestSystem() {
+    return this.#questSystem;
+  }
+
+  /**
+   * 测试辅助：直接执行指定事件（仅用于测试）
+   * @param {number} eventId
+   * @returns {Array} 事件结果
+   */
+  testExecuteEvent(eventId) {
+    return this.#executeEvent(eventId);
   }
 
   // 载具方法

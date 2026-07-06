@@ -43,7 +43,8 @@ export class Property {
       DIST: '',
       TURN: 0,
       MONTH: 1,
-      PHASE: 0
+      PHASE: 0,
+      TOTAL_EDDIES: 0
     };
   }
 
@@ -72,6 +73,9 @@ export class Property {
       } else if (type === TYPES.AGE) {
         this.#state.AGE += value;
       } else if (type === TYPES.EDDIES) {
+        if (value > 0) {
+          this.#state.TOTAL_EDDIES += value;
+        }
         this.#state.EDDIES = Math.max(0, this.#state.EDDIES + value);
       } else if (type === TYPES.STYLE) {
         this.#state.STYLE = Math.max(0, this.#state.STYLE + value);

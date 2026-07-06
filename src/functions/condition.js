@@ -106,7 +106,7 @@ function parseSimpleCondition(str, pos) {
   pos = skipSpace(str, pos);
 
   // 特殊属性（无比较符）
-  const SPECIAL_PROPS = ['LEGENDARY_COUNT', 'COLLECT_ALL_WEAPONS', 'COLLECT_ALL_CYBER', 'VEHICLE_COUNT', 'COLLECT_JOHNNY', 'COLLECT_ALL_RECIPES', 'COLLECT_5_RECIPES', 'COLLECT_5_LEGENDARY'];
+  const SPECIAL_PROPS = ['LEGENDARY_COUNT', 'COLLECT_ALL_WEAPONS', 'COLLECT_ALL_CYBER', 'VEHICLE_COUNT', 'COLLECT_JOHNNY', 'COLLECT_ALL_RECIPES', 'COLLECT_5_RECIPES', 'COLLECT_5_LEGENDARY', 'DRUG_COUNT', 'TRAUMA_COUNT', 'TAROT_COUNT', 'WEAPON_COUNT', 'TOTAL_EDDIES', 'GANG_COUNT', 'CORP_COUNT'];
   if (SPECIAL_PROPS.includes(propName)) {
     return {
       result: { type: 'special', prop: propName },
@@ -218,6 +218,20 @@ export function evaluateCondition(parsed, propertyState, extraState = {}) {
           return (extraState.unlockedRecipeCount || 0) >= 5;
         case 'COLLECT_5_LEGENDARY':
           return (extraState.legendaryCount || 0) >= 5;
+        case 'DRUG_COUNT':
+          return (extraState.drugCount || 0) >= 20;
+        case 'TRAUMA_COUNT':
+          return (extraState.traumaCount || 0) >= 3;
+        case 'TAROT_COUNT':
+          return (extraState.tarotCount || 0) >= 10;
+        case 'WEAPON_COUNT':
+          return (extraState.weaponCount || 0) >= 10;
+        case 'TOTAL_EDDIES':
+          return (extraState.totalEddies || 0) >= 1000;
+        case 'GANG_COUNT':
+          return (extraState.gangCount || 0) >= 5;
+        case 'CORP_COUNT':
+          return (extraState.corpCount || 0) >= 5;
         default:
           return true;
       }

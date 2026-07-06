@@ -9,7 +9,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, '..', 'data');
 
 const EVENTS_FILE = join(DATA_DIR, 'events.json');
-const GENERATED_FILE = join(DATA_DIR, 'events-infancy-gear.json');
+const GENERATED_FILE = join(DATA_DIR, 'events-extended.json');
 const BACKUP_FILE = join(DATA_DIR, 'events.json.bak');
 
 // 读取文件

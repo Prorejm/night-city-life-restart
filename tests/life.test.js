@@ -154,11 +154,12 @@ describe('Life', () => {
       // 设置极高EDDIES使扣除金额远大于可能的随机事件收益
       life.property.change('EDDIES', 10000);
       const eddiesBefore = life.property.get('EDDIES');
-      life.ageNext(); // AGE 16→17, 每旬扣 floor(10000 * 0.02 / 36) = floor(5.56) = 5，36旬共约180
+      // 推进36旬（一年）累计扣除生活费
+      for (let i = 0; i < 36; i++) life.ageNext();
       const eddiesAfter = life.property.get('EDDIES');
       ok(eddiesAfter < eddiesBefore, `EDDIES应减少: ${eddiesBefore} -> ${eddiesAfter}`);
-      // 36旬中大部分旬扣除 Math.floor(eddies * 0.02 / 36) = 5
-      // 但随机事件可能临时降低EDDIES导致部分旬走破产路径而非扣除路径
+      // 36旬中大部分旬扣除 Math.floor(eddies * 0.02 / 36) ≈ 5
+      // 累计扣除应接近年费的80%以上
       const expectedMin = Math.floor(eddiesBefore * 0.02);
       ok(eddiesBefore - eddiesAfter >= expectedMin * 0.8,
         `EDDIES扣除应接近年费的80%: 扣除${eddiesBefore - eddiesAfter} >= ${Math.floor(expectedMin * 0.8)}`);

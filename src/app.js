@@ -26,6 +26,7 @@ export class App {
   #autoSpeed;
   #autoTimer;
   #runCount;
+  #previousAchievementIds;
 
   constructor() {
     this.#life = new Life();
@@ -37,6 +38,7 @@ export class App {
     this.#autoSpeed = 200;
     this.#autoTimer = null;
     this.#runCount = 0;
+    this.#previousAchievementIds = new Set();
   }
 
   async initial() {
@@ -192,6 +194,7 @@ export class App {
 
   async startLife() {
     this.#life.restart(this.#selectedTalents);
+    this.#previousAchievementIds = new Set();
     // 应用分配属性
     for (const [key, val] of Object.entries(this.#allocated)) {
       this.#life.property.change(key, val);
@@ -217,6 +220,20 @@ export class App {
     const result = this.#life.ageNext();
     this.#updateHUD();
     this.#appendEvents(result);
+
+    // 显示任务状态更新通知
+    if (result.questUpdates) {
+      this.#showQuestUpdates(result.questUpdates);
+    }
+
+    // 检查新解锁的成就
+    const currentAchievements = this.#life.getCurrentAchievements();
+    for (const ach of currentAchievements) {
+      if (!this.#previousAchievementIds.has(ach.id)) {
+        this.#previousAchievementIds.add(ach.id);
+        this.#showAchievementUnlock(ach);
+      }
+    }
 
     if (result.isDead) {
       if (this.#autoMode) {
@@ -386,12 +403,23 @@ export class App {
 
     // 更新物品栏UI
     this.updateInventoryUI();
+    // 更新任务日志UI
+    this.updateQuestLogUI();
   }
 
   #appendEvents(result) {
     const log = document.getElementById('log');
     const entries = result.events;
     entries.forEach((ev, index) => {
+      // 年度跨越分隔线
+      if (ev.isYearDivider) {
+        const divider = document.createElement('div');
+        divider.className = 'year-divider';
+        divider.textContent = ev.event;
+        log.appendChild(divider);
+        return;
+      }
+
       let cls = 'event-entry';
       if (ev.isDeath || ev.isInstantDeath) cls += ' death-event';
       if (ev.isBirth) cls += ' birth-event';
@@ -442,6 +470,15 @@ export class App {
         }
       }
 
+      // 任务接取标签
+      if (ev.isQuestAccepted) {
+        const questSpan = document.createElement('span');
+        questSpan.className = 'reward-tag';
+        questSpan.style.color = '#ff66ff';
+        questSpan.textContent = ' 📋 已接取任务';
+        textDiv.appendChild(questSpan);
+      }
+
       div.appendChild(textDiv);
 
       if (ev.postEvent) {
@@ -454,6 +491,103 @@ export class App {
       log.appendChild(div);
     });
     log.scrollTop = log.scrollHeight;
+  }
+
+  #showAchievementUnlock(ach) {
+    const log = document.getElementById('log');
+    const div = document.createElement('div');
+    div.className = 'event-entry achievement-unlock';
+    div.style.borderLeftColor = '#ffcc00';
+    div.style.background = 'rgba(255,204,0,0.05)';
+
+    const iconDiv = document.createElement('div');
+    iconDiv.style.fontSize = '1.5em';
+    iconDiv.style.marginBottom = '4px';
+    iconDiv.textContent = ach.icon || '🏆';
+    div.appendChild(iconDiv);
+
+    const textDiv = document.createElement('div');
+    textDiv.className = 'event-text';
+    textDiv.style.color = '#ffcc00';
+    textDiv.style.fontWeight = 'bold';
+    textDiv.textContent = `✦ 成就解锁: ${ach.name}`;
+    div.appendChild(textDiv);
+
+    const descDiv = document.createElement('div');
+    descDiv.style.fontSize = '0.75em';
+    descDiv.style.color = '#cc9900';
+    descDiv.style.marginTop = '4px';
+    descDiv.textContent = ach.description || '';
+    div.appendChild(descDiv);
+
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  #showQuestUpdates(questUpdates) {
+    const log = document.getElementById('log');
+
+    // 显示完成的任务
+    for (const { quest, rewards } of questUpdates.completed) {
+      const div = document.createElement('div');
+      div.className = 'event-entry quest-notify';
+      div.style.borderLeftColor = '#00ffaa';
+      div.style.background = 'rgba(0,255,170,0.05)';
+
+      const textDiv = document.createElement('div');
+      textDiv.className = 'event-text';
+      textDiv.style.color = '#00ffaa';
+      textDiv.style.fontWeight = 'bold';
+      textDiv.textContent = `✅ 任务完成: ${quest.title}`;
+      div.appendChild(textDiv);
+
+      const rewardText = Object.entries(rewards || {})
+        .map(([k, v]) => `${k}: ${v > 0 ? '+' : ''}${v}`)
+        .join(', ');
+      if (rewardText) {
+        const rewardDiv = document.createElement('div');
+        rewardDiv.style.fontSize = '0.75em';
+        rewardDiv.style.color = '#66ffcc';
+        rewardDiv.style.marginTop = '4px';
+        rewardDiv.textContent = `奖励: ${rewardText}`;
+        div.appendChild(rewardDiv);
+      }
+
+      log.appendChild(div);
+    }
+
+    // 显示失败的任务
+    for (const quest of questUpdates.failed || []) {
+      const div = document.createElement('div');
+      div.className = 'event-entry quest-notify';
+      div.style.borderLeftColor = '#ff0044';
+      div.style.background = 'rgba(255,0,68,0.05)';
+
+      const textDiv = document.createElement('div');
+      textDiv.className = 'event-text';
+      textDiv.style.color = '#ff0044';
+      textDiv.style.fontWeight = 'bold';
+      textDiv.textContent = `❌ 任务失败: ${quest.title}`;
+      div.appendChild(textDiv);
+
+      const penaltyText = Object.entries(quest.penalties || {})
+        .map(([k, v]) => `${k}: ${v}`)
+        .join(', ');
+      if (penaltyText) {
+        const penaltyDiv = document.createElement('div');
+        penaltyDiv.style.fontSize = '0.75em';
+        penaltyDiv.style.color = '#ff6688';
+        penaltyDiv.style.marginTop = '4px';
+        penaltyDiv.textContent = `惩罚: ${penaltyText}`;
+        div.appendChild(penaltyDiv);
+      }
+
+      log.appendChild(div);
+    }
+
+    if (questUpdates.completed.length > 0 || (questUpdates.failed && questUpdates.failed.length > 0)) {
+      log.scrollTop = log.scrollHeight;
+    }
   }
 
   #showSummary() {
@@ -545,6 +679,44 @@ export class App {
     }
 
     container.innerHTML = html;
+
+    // 保存到 localStorage
+    try {
+      const history = JSON.parse(localStorage.getItem('nc-life-history') || '[]');
+      const p = this.#life.property.getAll();
+      history.unshift({
+        date: new Date().toISOString(),
+        age: summary.age,
+        talentIds: summary.talentIds || [],
+        finalProps: { STYLE: p.STYLE, TECH: p.TECH, CHROME: p.CHROME, EDDIES: p.EDDIES, HUMANITY: p.HUMANITY, LIFE: p.LIFE },
+        achievementIds: summary.achievements.map(a => a.id || ''),
+        deathReason: summary.deathReason
+      });
+      if (history.length > 20) history.pop();
+      localStorage.setItem('nc-life-history', JSON.stringify(history));
+    } catch (e) {
+      console.error('保存历史记录失败:', e);
+    }
+
+    // 渲染历史记录表格
+    try {
+      const historyEl = document.getElementById('history-list');
+      if (historyEl) {
+        const history = JSON.parse(localStorage.getItem('nc-life-history') || '[]');
+        const tbody = historyEl.querySelector('tbody');
+        if (tbody) {
+          tbody.innerHTML = history.slice(0, 5).map(h =>
+            `<tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+              <td style="padding:6px;color:var(--cyber-text);">${new Date(h.date).toLocaleDateString()}</td>
+              <td style="padding:6px;color:var(--cyber-yellow);">${h.age}岁</td>
+              <td style="padding:6px;color:var(--cyber-red);">${h.deathReason || '存活'}</td>
+            </tr>`
+          ).join('');
+        }
+      }
+    } catch (e) {
+      console.error('渲染历史记录失败:', e);
+    }
   }
 
   #resetGame() {
@@ -586,6 +758,68 @@ export class App {
       if (toggle) {
         toggle.textContent = panel.classList.contains('collapsed') ? '▼ 物品栏' : '▲ 物品栏';
       }
+    }
+  }
+
+  toggleQuestLog() {
+    const panel = document.getElementById('quest-panel');
+    if (panel) {
+      panel.classList.toggle('collapsed');
+      const toggle = panel.querySelector('.quest-toggle');
+      if (toggle) {
+        toggle.textContent = panel.classList.contains('collapsed') ? '▼ 任务日志' : '▲ 任务日志';
+      }
+    }
+  }
+
+  updateQuestLogUI() {
+    if (!this.#life) return;
+    const qs = this.#life.getQuestSystem();
+    const currentTurn = this.#life.property.get('TURN');
+
+    // 活跃任务
+    const activeEl = document.getElementById('quest-active');
+    if (activeEl) {
+      const active = qs.getActiveQuests();
+      activeEl.innerHTML = active.length
+        ? active.map(q => {
+            const remaining = qs.getRemainingTurns(q.id, currentTurn);
+            const progress = qs.getQuestProgress(q.id);
+            const urgentClass = remaining <= 3 ? 'urgent' : '';
+            return `<div class="quest-item">
+              <div class="quest-title">${escapeHtml(q.title)}</div>
+              <div class="quest-giver">中间人: ${escapeHtml(q.giver)}</div>
+              <div class="quest-meta">
+                <span class="quest-deadline ${urgentClass}">⏳ ${remaining}旬</span>
+                <span class="quest-progress">${progress}%</span>
+              </div>
+            </div>`;
+          }).join('')
+        : '<div class="quest-empty">无活跃任务</div>';
+    }
+
+    // 已完成
+    const completedEl = document.getElementById('quest-completed');
+    if (completedEl) {
+      const completed = qs.getCompletedQuests().slice(-5); // 只显示最近5个
+      completedEl.innerHTML = completed.length
+        ? completed.map(q => `<div class="quest-item completed">
+          <div class="quest-title">${escapeHtml(q.title)}</div>
+          <div class="quest-giver">${escapeHtml(q.giver)}</div>
+        </div>`).join('')
+        : '<div class="quest-empty">无</div>';
+    }
+
+    // 已失败
+    const failedEl = document.getElementById('quest-failed');
+    if (failedEl) {
+      const failed = qs.getFailedQuests().slice(-3); // 只显示最近3个
+      failedEl.innerHTML = failed.length
+        ? failed.map(q => `<div class="quest-item failed">
+          <div class="quest-title">${escapeHtml(q.title)}</div>
+          <div class="quest-giver">${escapeHtml(q.giver)}</div>
+        </div>`).join('')
+        : '<div class="quest-empty">无</div>';
     }
   }
 

@@ -81,6 +81,16 @@
         <button class="cyber-btn auto-btn" id="auto-btn" onclick="window.app.toggleAuto()">⟳ 自动模拟</button>
         <span id="run-count" style="font-size:0.65em;color:#555;margin-left:8px;"></span>
       </div>
+      <!-- 任务日志面板 -->
+      <div id="quest-panel" class="quest-panel collapsed">
+        <div class="quest-toggle" onclick="window.app.toggleQuestLog()">▼ 任务日志</div>
+        <div class="quest-content" id="quest-content">
+          <div class="quest-section"><h4>📋 活跃任务</h4><div id="quest-active" class="quest-list"></div></div>
+          <div class="quest-section"><h4>✅ 已完成</h4><div id="quest-completed" class="quest-list"></div></div>
+          <div class="quest-section"><h4>❌ 已失败</h4><div id="quest-failed" class="quest-list"></div></div>
+        </div>
+      </div>
+
       <div id="inventory-panel" class="inventory-panel collapsed">
         <div class="inventory-toggle" onclick="window.app.toggleInventory()">▼ 物品栏</div>
         <div class="inventory-content" id="inventory-content">
@@ -95,6 +105,15 @@
     <!-- Summary -->
     <div id="summary" class="page">
       <div class="summary-section" id="summary-content"></div>
+      <div id="history-section" style="margin-top:20px;max-width:800px;width:100%;">
+        <h3 style="font-family:'Orbitron',sans-serif;color:var(--cyber-cyan);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid rgba(0,255,247,0.2);">📜 历史记录</h3>
+        <table id="history-list" class="history-table" style="width:100%;font-size:0.75em;border-collapse:collapse;">
+          <thead><tr style="color:var(--cyber-dim);border-bottom:1px solid rgba(0,255,247,0.2);">
+            <th style="text-align:left;padding:6px;">日期</th><th style="text-align:left;padding:6px;">年龄</th><th style="text-align:left;padding:6px;">死因</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
       <button class="cyber-btn gold" onclick="window.app.startGame()" style="margin-top:20px;">▶ 重新接入</button>
     </div>
   </div>

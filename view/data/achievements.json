@@ -340,5 +340,113 @@
     "category": "收集",
     "condition": "COLLECT_ALL_RECIPES",
     "reward_recipe": null
+  },
+  "achv_039": {
+    "id": "achv_039",
+    "name": "长寿",
+    "description": "活到80岁以上",
+    "icon": "🕯️",
+    "category": "生存",
+    "condition": "AGE>=80",
+    "reward_recipe": null
+  },
+  "achv_040": {
+    "id": "achv_040",
+    "name": "富豪",
+    "description": "累计EDDIES超过1000",
+    "icon": "💎",
+    "category": "经济",
+    "condition": "TOTAL_EDDIES>=1000",
+    "reward_recipe": null
+  },
+  "achv_041": {
+    "id": "achv_041",
+    "name": "铬金之神",
+    "description": "CHROME超过15",
+    "icon": "🔩",
+    "category": "义体",
+    "condition": "CHROME>=16",
+    "reward_recipe": null
+  },
+  "achv_042": {
+    "id": "achv_042",
+    "name": "赛博精神病",
+    "description": "陷入赛博精神病",
+    "icon": "🌀",
+    "category": "义体",
+    "condition": "HUMANITY<=0",
+    "reward_recipe": null
+  },
+  "achv_043": {
+    "id": "achv_043",
+    "name": "药物成瘾",
+    "description": "使用药物超过20次",
+    "icon": "💉",
+    "category": "生存",
+    "condition": "DRUG_COUNT>=20",
+    "reward_recipe": null
+  },
+  "achv_044": {
+    "id": "achv_044",
+    "name": "帮派老大",
+    "description": "GANG属性达到100",
+    "icon": "🔪",
+    "category": "声望",
+    "condition": "GANG_COUNT>=5",
+    "reward_recipe": null
+  },
+  "achv_045": {
+    "id": "achv_045",
+    "name": "企业高管",
+    "description": "CORP属性达到100",
+    "icon": "🏢",
+    "category": "声望",
+    "condition": "CORP_COUNT>=5",
+    "reward_recipe": null
+  },
+  "achv_046": {
+    "id": "achv_046",
+    "name": "载具收藏家",
+    "description": "拥有5辆以上载具",
+    "icon": "🏎️",
+    "category": "收集",
+    "condition": "VEHICLE_COUNT>=5",
+    "reward_recipe": null
+  },
+  "achv_047": {
+    "id": "achv_047",
+    "name": "武器大师",
+    "description": "拥有10件以上武器",
+    "icon": "🔫",
+    "category": "收集",
+    "condition": "WEAPON_COUNT>=10",
+    "reward_recipe": null
+  },
+  "achv_048": {
+    "id": "achv_048",
+    "name": "创伤小组常客",
+    "description": "被创伤小组救过3次以上",
+    "icon": "🏥",
+    "category": "生存",
+    "condition": "TRAUMA_COUNT>=3",
+    "reward_recipe": null
+  },
+  "achv_049": {
+    "id": "achv_049",
+    "name": "塔罗牌大师",
+    "description": "触发过10次以上塔罗牌事件",
+    "icon": "🃏",
+    "category": "收集",
+    "condition": "TAROT_COUNT>=10",
+    "reward_recipe": null
+  },
+  "achv_050": {
+    "id": "achv_050",
+    "name": "幼儿期幸存者",
+    "description": "在幼儿期存活到6岁",
+    "icon": "👶",
+    "category": "生存",
+    "condition": "AGE>=6",
+    "reward_recipe": null
   }
 }

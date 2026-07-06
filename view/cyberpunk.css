@@ -171,6 +171,9 @@ body {
 .event-entry.trauma-event .event-text { color: #00ee88; }
 
 /* 直接死亡事件 */
+.event-entry.death-event {
+  animation: deathPulse 1.5s ease-in-out infinite alternate, slideInLeft 0.4s ease-out both;
+}
 .event-entry.death-event.is-instant {
   border-left-color: #ff0044;
   background: rgba(255,0,68,0.1);
@@ -190,6 +193,26 @@ body {
   border-right: 0;
   border-bottom: 0;
   border-style: solid;
+}
+
+/* 成就解锁动画 */
+.achievement-unlock {
+  animation: achievementFlash 2s ease-out;
+}
+@keyframes achievementFlash {
+  0% { box-shadow: 0 0 0 0 rgba(255,204,0,0.8); }
+  50% { box-shadow: 0 0 30px 10px rgba(255,204,0,0.4); }
+  100% { box-shadow: 0 0 0 0 rgba(255,204,0,0); }
+}
+
+/* 年度跨越分隔线 */
+.year-divider {
+  text-align: center;
+  color: #ffcc00;
+  font-size: 0.75em;
+  margin: 8px 0;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out 0.3s both;
 }
 
 .bottom-bar {
@@ -355,6 +378,138 @@ body {
   font-size: 11px;
   color: #505060;
   font-style: italic;
+}
+
+/* 任务日志面板 */
+.quest-panel {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 220px;
+  background: rgba(10, 10, 20, 0.9);
+  border: 1px solid #ff00ff33;
+  border-left: none;
+  z-index: 100;
+  transition: width 0.3s ease;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.quest-panel.collapsed {
+  width: 32px;
+}
+
+.quest-panel.collapsed .quest-content {
+  display: none;
+}
+
+.quest-toggle {
+  writing-mode: vertical-lr;
+  padding: 12px 6px;
+  cursor: pointer;
+  color: #ff00ff;
+  font-size: 13px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #ff00ff22;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.quest-toggle:hover {
+  background: #ff00ff11;
+}
+
+.quest-content {
+  padding: 8px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.quest-content::-webkit-scrollbar { width: 3px; }
+.quest-content::-webkit-scrollbar-thumb { background: #ff00ff55; border-radius: 2px; }
+
+.quest-section {
+  margin-bottom: 10px;
+}
+
+.quest-section h4 {
+  color: #ff00ff;
+  font-size: 11px;
+  margin: 0 0 5px 0;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #ff00ff22;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.quest-item {
+  padding: 5px 6px;
+  font-size: 11px;
+  color: #c0c0d0;
+  margin-bottom: 3px;
+  border-left: 2px solid #ff00ff55;
+  background: rgba(255,0,255,0.03);
+}
+
+.quest-item .quest-title {
+  color: #ff66ff;
+  font-weight: bold;
+  font-size: 11px;
+  margin-bottom: 2px;
+}
+
+.quest-item .quest-giver {
+  color: #888;
+  font-size: 10px;
+  margin-bottom: 2px;
+}
+
+.quest-item .quest-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #666;
+}
+
+.quest-item .quest-deadline {
+  color: #ffaa00;
+}
+
+.quest-item .quest-deadline.urgent {
+  color: #ff0044;
+  animation: blink 1s infinite;
+}
+
+.quest-item .quest-progress {
+  color: #00ffaa;
+}
+
+.quest-item.completed {
+  border-left-color: #00ffaa;
+  background: rgba(0,255,170,0.03);
+  opacity: 0.7;
+}
+
+.quest-item.failed {
+  border-left-color: #ff0044;
+  background: rgba(255,0,68,0.03);
+  opacity: 0.6;
+}
+
+.quest-empty {
+  padding: 3px 6px;
+  font-size: 10px;
+  color: #505060;
+  font-style: italic;
+}
+
+/* 任务通知动画 */
+.quest-notify {
+  animation: questSlideIn 0.5s ease-out;
+}
+
+@keyframes questSlideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 /* 奖励标签 */

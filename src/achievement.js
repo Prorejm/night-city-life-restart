@@ -33,7 +33,15 @@ export class Achievement {
     const extraState = {
       legendaryCount: inventoryStats.legendaryCount || 0,
       legendaryWeapons: inventoryStats.legendaryWeapons || [],
-      legendaryCyberware: inventoryStats.legendaryCyberware || []
+      legendaryCyberware: inventoryStats.legendaryCyberware || [],
+      vehicleCount: inventoryStats.vehicleCount || 0,
+      drugCount: inventoryStats.drugCount || 0,
+      traumaCount: inventoryStats.traumaCount || 0,
+      tarotCount: inventoryStats.tarotCount || 0,
+      totalEddies: inventoryStats.totalEddies || 0,
+      weaponCount: inventoryStats.weaponCount || 0,
+      gangCount: (state.GANG || []).length,
+      corpCount: (state.CORP || []).length
     };
 
     for (const [id, ach] of Object.entries(this.#achievements)) {
