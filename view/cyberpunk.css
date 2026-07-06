@@ -188,6 +188,20 @@ body {
   to   { box-shadow: inset 3px 0 30px rgba(255,0,68,0.5); }
 }
 
+/* 死亡事件链中的危机事件 */
+.event-entry.death-chain-event {
+  border-left-color: #ff6644;
+  background: rgba(255,100,50,0.04);
+}
+.event-entry.death-chain-event .event-text { color: #ff8866; }
+
+/* 死里逃生事件 */
+.event-entry.survived-event {
+  border-left-color: var(--cyber-cyan);
+  background: rgba(0,255,247,0.06);
+}
+.event-entry.survived-event .event-text { color: var(--cyber-cyan); }
+
 .birth-event {
   border-left: 3px solid var(--cyber-cyan);
   background: rgba(0,255,247,0.08);

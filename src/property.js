@@ -22,10 +22,10 @@ export const TYPES = {
 
 // 需要经验值机制的数值属性及其配置
 const LEVEL_ATTR_CONFIGS = {
-  STYLE:   { baseExp: 1, multiplier: 2, maxLevel: 50 },
-  TECH:    { baseExp: 1, multiplier: 2, maxLevel: 50 },
-  CHROME:  { baseExp: 1, multiplier: 2, maxLevel: 50 },
-  HUMANITY:{ baseExp: 1, multiplier: 2, maxLevel: 50 },
+  STYLE:   { baseExp: 1, multiplier: 2, maxLevel: 20 },
+  TECH:    { baseExp: 1, multiplier: 2, maxLevel: 20 },
+  CHROME:  { baseExp: 1, multiplier: 2, maxLevel: 20 },
+  HUMANITY:{ baseExp: 1, multiplier: 2, maxLevel: 20 },
   LIFE:    { baseExp: 1, multiplier: 2, maxLevel: 20 }
 };
 

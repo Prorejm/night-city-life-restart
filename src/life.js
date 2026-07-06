@@ -93,6 +93,216 @@ const ITEM_GAIN_EVENTS = {
 // Combat type 标签事件
 const COMBAT_TYPE_TAG = 'combat';
 
+// ========== 死亡事件链定义 ==========
+// 死亡不再是瞬间发生，而是危机→挣扎→结果的多段链式过程
+// 链中的 branch 条件可能导向存活分支（chainTerminal: 'survive'）
+// 链事件ID范围: 18101-18200
+const DEATH_CHAINS = {
+  gang: {
+    start: 18101,
+    events: {
+      18101: {
+        event: '几个帮派成员在暗巷里堵住了你。他们手里拎着扳手和焊接面罩，脸上带着不怀好意的笑容——你闻到了廉价合成酒精和血腥味。',
+        effect: { LIFE: -1 },
+        chainNext: 18102
+      },
+      18102: {
+        event: '你想跑，但他们早有准备。一根电棍击中了你的后背，你跪倒在地。领头的俯下身，用扳手拍了拍你的脸。',
+        effect: { LIFE: -1 },
+        branch: ['STYLE>8:18103', 'TECH>8:18104', 'CHROME>10:18105'],
+        chainNext: 18001
+      },
+      18103: {
+        event: '你抬起头，冷冷地盯着他："你知道我是谁吗？"你的名声在这一刻像一面盾。他们犹豫了一下，骂骂咧咧地退回了黑暗中。你活下来了——但这次教训刻骨铭心。',
+        effect: { STYLE: 1, HUMANITY: -1 },
+        chainTerminal: 'survive'
+      },
+      18104: {
+        event: '你悄悄激活了植入式通讯干扰器。他们的义眼同时闪烁——系统过载。趁着混乱，你滚进了一条排水沟，消失在夜之城的下水道网络中。',
+        effect: { TECH: 1 },
+        chainTerminal: 'survive'
+      },
+      18105: {
+        event: '你的螳螂刀从手臂中弹出。虽然寡不敌众，但你的军用级义体让你杀出了一条血路。你浑身是血地逃到了安全地带——但你知道，这座城市的眼睛永远不会忘记。',
+        effect: { CHROME: 1, HUMANITY: -2 },
+        chainTerminal: 'survive'
+      }
+    }
+  },
+  corp: {
+    start: 18111,
+    events: {
+      18111: {
+        event: '你的银行账户突然被冻结，公寓的门锁变成了红色。你知道这意味着什么——企业的清理程序已经启动了。',
+        effect: { EDDIES: -5 },
+        chainNext: 18112
+      },
+      18112: {
+        event: '无人机在你窗外盘旋。你的通讯器收到一条只有三个字的短信："别跑了。"你能感觉到死亡的气息——冰冷、精确、不带感情。',
+        effect: { LIFE: -1 },
+        branch: ['TECH>10:18113', 'STYLE>10:18114'],
+        chainNext: 18006
+      },
+      18113: {
+        event: '你在最后一秒黑入了大楼的消防系统。喷淋头爆开，烟雾弥漫整个走廊。在企业特工的怒吼声中，你从通风管道爬了出去——湿透、狼狈，但活着。',
+        effect: { TECH: 1, EDDIES: -3 },
+        chainTerminal: 'survive'
+      },
+      18114: {
+        event: '你拨通了一个号码——来生酒吧的某个中间人欠你一个人情。五分钟后，一队"不明身份"的武装人员 intervened，双方交火中你趁乱逃离。夜之城的债，有时候能救命。',
+        effect: { STYLE: 1, EDDIES: -5 },
+        chainTerminal: 'survive'
+      }
+    }
+  },
+  cyber: {
+    start: 18121,
+    events: {
+      18121: {
+        event: '你的神经处理器突然发出尖锐的警报。视野边缘开始出现雪花噪点——这是义体排斥反应的前兆。你感觉到自己的左手正在失去控制。',
+        effect: { LIFE: -1 },
+        chainNext: 18122
+      },
+      18122: {
+        event: '系统错误代码像瀑布一样冲刷你的视网膜。你的心脏——那颗改装过的赛博引擎——开始不规则跳动。每一次颤抖都像是有人在胸腔里拧螺丝。',
+        effect: { LIFE: -1 },
+        branch: ['TECH>12:18123'],
+        chainNext: 18011
+      },
+      18123: {
+        event: '你强行接入了义体的诊断端口，用 raw code 重写了固件。这是一场与机器的赛跑——你的意识在数据流中漂流了似乎永恒的几秒钟。然后，警报解除了。你浑身冷汗地靠在墙上，第一次觉得"活着"是一种奢侈。',
+        effect: { TECH: 1, HUMANITY: -1 },
+        chainTerminal: 'survive'
+      }
+    }
+  },
+  medical: {
+    start: 18131,
+    events: {
+      18131: {
+        event: '黑市诊所的手术出了差错。麻醉剂剂量不对——你在手术台上提前醒了过来。你能感觉到手术刀在皮肤下移动，但你的身体不听使唤。',
+        effect: { LIFE: -1 },
+        chainNext: 18132
+      },
+      18132: {
+        event: '感染在几小时内扩散。你的体温飙升，视野模糊，每一次呼吸都像吞咽碎玻璃。那个"医生"已经不见了，只留下一瓶来历不明的抗生素。',
+        effect: { LIFE: -1 },
+        branch: ['EDDIES>10:18133'],
+        chainNext: 18016
+      },
+      18133: {
+        event: '你用最后的力气拨通了创伤小组的号码。钻石会员的优先级让你在一小时内被送上了浮空车。当镇静剂注入静脉时，你听到医生说："再晚十分钟就完了。"你活下来了——但账户里的数字让你想哭。',
+        effect: { EDDIES: -10, LIFE: 1 },
+        chainTerminal: 'survive'
+      }
+    }
+  },
+  combat: {
+    start: 18141,
+    events: {
+      18141: {
+        event: '子弹从四面八方射来。你躲在掩体后面，感觉到温热的血液从肩膀流下——你中弹了。对方的火力压制让你连头都抬不起来。',
+        effect: { LIFE: -1 },
+        chainNext: 18142
+      },
+      18142: {
+        event: '弹药用尽。你听到了脚步声在靠近——沉重、谨慎、训练有素。你握紧了最后一颗手雷，手指悬在拉环上。',
+        effect: { LIFE: -1 },
+        branch: ['STYLE>10:18143', 'CHROME>12:18144'],
+        chainNext: 18021
+      },
+      18143: {
+        event: '就在最后一刻，远处传来了引擎的轰鸣——你的帮派兄弟们赶到了。双方在街道上展开了激烈的交火，你被拖上一辆装甲车，在呼啸的弹雨中逃离。夜之城的街头规则：永远不要独自面对死亡。',
+        effect: { STYLE: 1, HUMANITY: -1 },
+        chainTerminal: 'survive'
+      },
+      18144: {
+        event: '你启动了皮下装甲的紧急模式。钛合金板从肋骨间弹出，挡住了致命的一击。你像一头受伤的野兽一样冲出了包围圈——虽然伤痕累累，但你的心脏还在跳动。',
+        effect: { CHROME: 1, HUMANITY: -2 },
+        chainTerminal: 'survive'
+      }
+    }
+  },
+  accident: {
+    start: 18151,
+    events: {
+      18151: {
+        event: '你驾驶的载具在一个急转弯处失控。金属撕裂的声音、玻璃碎裂的声音、然后是——寂静。你悬挂在安全带里，头顶的燃油正在滴落。',
+        effect: { LIFE: -1 },
+        chainNext: 18152
+      },
+      18152: {
+        event: '火焰开始蔓延。你的腿被卡住了，每一次挣扎都带来钻心的疼痛。浓烟灌入肺部，视线越来越暗。',
+        effect: { LIFE: -1 },
+        branch: ['TECH>8:18153'],
+        chainNext: 18026
+      },
+      18153: {
+        event: '你用便携切片器黑入了车门的安全锁。液压装置松开的瞬间，你从燃烧的残骸中滚了出来。你在地上躺了很久，看着自己的载具化为火球——但你还活着。',
+        effect: { TECH: 1 },
+        chainTerminal: 'survive'
+      }
+    }
+  },
+  braindance: {
+    start: 18161,
+    events: {
+      18161: {
+        event: '你在超梦中陷得太深了。边界开始模糊——你分不清哪些是别人的记忆，哪些是你自己的。有人在超梦信号里埋了东西，你能感觉到它在你的神经通路中蔓延。',
+        effect: { LIFE: -1 },
+        chainNext: 18162
+      },
+      18162: {
+        event: '你的视觉皮层被过量的感官数据淹没。你看到自己的双手在溶解，变成纯粹的数据流。海马体在发出求救信号——再这样下去，你将不再是"你"。',
+        effect: { LIFE: -1 },
+        branch: ['TECH>12:18163'],
+        chainNext: 18031
+      },
+      18163: {
+        event: '你强行切断了超梦连接——用 raw code 烧断了神经链接。剧烈的头痛让你呕吐了三次，但你的意识终于回到了自己的身体里。你发誓再也不碰未经认证的超梦——至少这个月不会。',
+        effect: { TECH: 1, HUMANITY: -1 },
+        chainTerminal: 'survive'
+      }
+    }
+  },
+  badlands: {
+    start: 18171,
+    events: {
+      18171: {
+        event: '恶土上的辐射风暴来得毫无预兆。你的载具抛锚了，水囊破了，GPS信号在沙暴中消失。四周只有无尽的黄沙和远处游荡的变异生物。',
+        effect: { LIFE: -1 },
+        chainNext: 18172
+      },
+      18172: {
+        event: '夜幕降临，温度骤降。你能感觉到辐射在皮肤下灼烧，每一次呼吸都带着金属味。远处传来了引擎声——不知是救援还是夜游鬼。',
+        effect: { LIFE: -1 },
+        branch: ['STYLE>8:18173'],
+        chainNext: 18036
+      },
+      18173: {
+        event: '那是一支流浪者 clan 的车队。你的名声在恶土上也有回响——他们认出了你。一个满脸风霜的老妇人扔给你一瓶净水和一块防辐射布："在这鬼地方，活着的人互相帮助。"你跟着他们的车队回到了文明边缘。',
+        effect: { STYLE: 1, HUMANITY: 1 },
+        chainTerminal: 'survive'
+      }
+    }
+  },
+  natural: {
+    start: 18181,
+    events: {
+      18181: {
+        event: '你的身体在发出最后的警告。那颗改装过的心脏跳得越来越慢，每一次搏动都像是在与重力抗争。你靠在窗边，看着夜之城永不熄灭的霓虹灯——它们已经陪伴了你太多年。',
+        effect: { LIFE: -1 },
+        chainNext: 18182
+      },
+      18182: {
+        event: '意识在漂移。你看到了过去的片段——第一次安装义体时的兴奋，第一次杀人后的噩梦，第一次在来生酒吧听到有人提起你名字时的骄傲。然后一切开始褪色。',
+        effect: { LIFE: -1 },
+        chainNext: 18040
+      }
+    }
+  }
+};
+
 export class Life {
   #property;
   #talent;
@@ -459,17 +669,22 @@ export class Life {
     // 记录状态
     this.#property.record();
 
-    // 死亡检查
+    // 死亡检查 —— 死亡事件链
     const alreadyDead = results.some(r => r.isDeath || r.isInstantDeath);
     if (!alreadyDead) {
       const traumaTeamEvent = results.find(r => r.isTraumaTeam);
       if (!traumaTeamEvent) {
-        const death = this.#checkDeath();
-        if (death) results.push(death);
+        const chainInfo = this.#checkDeath();
+        if (chainInfo) {
+          const chainResults = this.#executeDeathChain(chainInfo.category);
+          results.push(...chainResults);
+        }
       }
     }
 
-    return { turn: newTurn, age: newAge, month, phase, events: results, questUpdates, isDead: this.#property.isDead() || this.#property.isCyberpsycho() };
+    // 判断最终是否死亡（经过死亡链后）
+    const isDead = results.some(r => r.isDeath) || this.#property.isDead() || this.#property.isCyberpsycho();
+    return { turn: newTurn, age: newAge, month, phase, events: results, questUpdates, isDead };
   }
 
   /**
@@ -602,18 +817,12 @@ export class Life {
           if (power < difficulty) {
             // 战斗失败
             this.#property.effect({ LIFE: -1 });
-            // 战斗失败后检查LIFE是否已<=0
+            // 战斗失败后检查LIFE是否已<=0 → 进入死亡事件链
             const lifeAfterCombat = this.#property.get('LIFE');
             if (lifeAfterCombat <= 0) {
-              const combatDeath = {
-                id: 18001,
-                event: '你在一次激烈的街头火拼中倒下了。弹片撕裂了你的护甲，鲜血浸透了霓虹灯下的水泥地面。这是夜之城——只有强者才能活着离开。',
-                isDeath: true,
-                deathType: '战斗致死'
-              };
+              const chainResults = this.#executeDeathChain('combat');
               results.push(result);
-              results.push(combatDeath);
-              this.#property.change('LIFE', -1);
+              results.push(...chainResults);
               return results;
             }
           }
@@ -629,18 +838,12 @@ export class Life {
             this.#property.effect({ HUMANITY: -Math.ceil(chromeGain * 0.5) });
           }
 
-          // 检查战斗事件导致 LIFE 降至 0 以下 → 即死
+          // 检查事件导致 LIFE 降至 0 以下 → 进入死亡事件链
           const life = this.#property.get('LIFE');
           if (life <= 0) {
-            const combatDeath = {
-              id: 18001,
-              event: '你在一次激烈的街头火拼中倒下了。弹片撕裂了你的护甲，鲜血浸透了霓虹灯下的水泥地面。这是夜之城——只有强者才能活着离开。',
-              isDeath: true,
-              deathType: '战斗致死'
-            };
+            const chainResults = this.#executeDeathChain('combat');
             results.push(result);
-            results.push(combatDeath);
-            this.#property.change('LIFE', -1);
+            results.push(...chainResults);
             return results;
           }
         }
@@ -785,32 +988,16 @@ export class Life {
 
   #checkDeath() {
     const age = this.#property.get('AGE');
-    const chrome = this.#property.get('CHROME');
-    const humanity = this.#property.get('HUMANITY');
     const life = this.#property.get('LIFE');
 
-    // 0. 战斗/事件导致 LIFE <= 0 — 立即战斗死亡
+    // 0. 战斗/事件导致 LIFE <= 0 — 进入战斗死亡链
     if (life <= 0) {
-      this.#property.change('LIFE', -1);
-      this.#deathMessage = '战斗致死';
-      return {
-        id: 18021,
-        event: DEATH_EVENTS[18021].text,
-        isDeath: true,
-        deathType: '战斗致死'
-      };
+      return { category: 'combat' };
     }
 
-    // 1. 赛博精神病 (HUMANITY <= 0) — 立即结束，固定使用赛博精神病事件
+    // 1. 赛博精神病 (HUMANITY <= 0) — 进入义体故障死亡链
     if (this.#property.isCyberpsycho()) {
-      this.#property.change('LIFE', -1);
-      this.#deathMessage = '赛博精神病';
-      return {
-        id: 18011,
-        event: DEATH_EVENTS[18011].text,
-        isDeath: true,
-        deathType: '赛博精神病'
-      };
+      return { category: 'cyber' };
     }
 
     // 2. 计算基础死亡概率（每旬）
@@ -820,19 +1007,119 @@ export class Life {
     const modifiers = this.#calculateDeathModifiers();
     let finalChance = deathChance + modifiers.total;
 
-    // 4. 如果触发死亡，从加权池中选取具体死因
+    // 4. 如果触发死亡，从加权池中选取具体死因类别，进入对应死亡链
     if (Math.random() < finalChance) {
       const entry = this.#selectWeightedDeath();
-      this.#property.change('LIFE', -1);
-      this.#deathMessage = entry.type;
-      return {
-        id: entry.id,
-        event: entry.text,
-        isDeath: true,
-        deathType: entry.type
-      };
+      return { category: entry.category };
     }
 
+    return null;
+  }
+
+  /**
+   * 执行死亡事件链
+   * @param {string} category - 死亡链类别 (gang/corp/cyber/medical/combat/accident/braindance/badlands/natural)
+   * @returns {Array} 链中所有事件结果
+   */
+  #executeDeathChain(category) {
+    const chainDef = DEATH_CHAINS[category];
+    if (!chainDef) return [];
+
+    const results = [];
+    let currentId = chainDef.start;
+
+    while (currentId) {
+      const eventData = chainDef.events[currentId];
+
+      // 如果链中没有该ID，可能是引用了 DEATH_EVENTS 的终点
+      if (!eventData) {
+        const deathEvent = DEATH_EVENTS[currentId];
+        if (deathEvent) {
+          this.#property.change('LIFE', -1);
+          this.#deathMessage = deathEvent.type;
+          results.push({
+            id: currentId,
+            event: deathEvent.text,
+            isDeathChain: true,
+            isDeath: true,
+            deathType: deathEvent.type
+          });
+        }
+        break;
+      }
+
+      // 应用效果
+      if (eventData.effect) {
+        this.#property.effect(eventData.effect);
+      }
+
+      const result = {
+        id: currentId,
+        event: eventData.event,
+        isDeathChain: true
+      };
+
+      // 链终点：死亡
+      if (eventData.chainTerminal === 'death') {
+        this.#property.change('LIFE', -1);
+        const deathEntry = Object.entries(DEATH_EVENTS).find(([_, d]) => d.category === category);
+        if (deathEntry) {
+          this.#deathMessage = deathEntry[1].type;
+          result.event = deathEntry[1].text;
+          result.id = Number(deathEntry[0]);
+        }
+        result.isDeath = true;
+        result.deathType = this.#deathMessage;
+        results.push(result);
+        break;
+      }
+
+      // 链终点：存活
+      if (eventData.chainTerminal === 'survive') {
+        result.isSurvived = true;
+        // 确保存活后 LIFE 至少为 1（防止链中扣减过多导致意外死亡）
+        if (this.#property.get('LIFE') <= 0) {
+          this.#property.set('LIFE', 1);
+        }
+        results.push(result);
+        break;
+      }
+
+      results.push(result);
+
+      // 评估分支条件
+      if (eventData.branch) {
+        const matched = this.#evaluateChainBranch(eventData.branch);
+        if (matched) {
+          currentId = matched;
+          continue;
+        }
+      }
+
+      currentId = eventData.chainNext || null;
+    }
+
+    return results;
+  }
+
+  /**
+   * 评估死亡链分支条件
+   * @param {string[]} branchArray - 如 ['STYLE>8:18103', 'TECH>8:18104']
+   * @returns {number|null} 匹配的分支目标ID
+   */
+  #evaluateChainBranch(branchArray) {
+    const state = this.#property.getAll();
+    for (const branchStr of branchArray) {
+      const colonIdx = branchStr.lastIndexOf(':');
+      if (colonIdx < 0) continue;
+      const cond = branchStr.slice(0, colonIdx).trim();
+      const targetId = Number(branchStr.slice(colonIdx + 1));
+      if (!cond || isNaN(targetId)) continue;
+      const parsed = parseCondition(cond);
+      if (parsed && evaluateCondition(parsed, state)) {
+        return targetId;
+      }
+    }
     return null;
   }
 

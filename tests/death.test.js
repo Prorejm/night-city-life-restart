@@ -44,14 +44,16 @@ describe('Death System', () => {
     ok(deathEvent.id >= 18001 && deathEvent.id <= 18040);
   });
 
-  it('战斗导致LIFE<=0时立即触发战斗死亡', async () => {
+  it('战斗导致LIFE<=0时触发战斗死亡链', async () => {
     life = await createLife();
     life.property.change('LIFE', -1);
     const result = life.ageNext();
     strictEqual(result.isDead, true);
     const deathEvent = result.events.find(e => e.isDeath);
     ok(deathEvent);
-    strictEqual(deathEvent.deathType, '战斗致死');
+    // combat 链终点使用 DEATH_EVENTS 中的具体死因（18021-18025 范围）
+    ok(deathEvent.deathType, '应有 deathType');
+    ok(deathEvent.id >= 18021 && deathEvent.id <= 18025, `死亡事件ID ${deathEvent.id} 不在 combat 范围 18021-18025 内`);
   });
 
   it('死亡事件不重复触发', async () => {

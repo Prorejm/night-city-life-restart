@@ -447,6 +447,8 @@ export class App {
 
       let cls = 'event-entry';
       if (ev.isDeath || ev.isInstantDeath) cls += ' death-event';
+      if (ev.isDeathChain && !ev.isDeath && !ev.isSurvived) cls += ' death-chain-event';
+      if (ev.isSurvived) cls += ' survived-event';
       if (ev.isBirth) cls += ' birth-event';
       if (ev.isTarot) cls += ' tarot-event';
       if (ev.isTraumaTeam) cls += ' trauma-event';
@@ -470,13 +472,19 @@ export class App {
 
       const textDiv = document.createElement('div');
       textDiv.className = 'event-text';
-      // 塔罗牌事件前缀
+      // 事件前缀标记
       if (ev.isTarot && ev.tarotName) {
         textDiv.textContent = `🔮 [${ev.tarotName}] ${ev.event || ''}`;
       } else if (ev.isTraumaTeam) {
         textDiv.textContent = `🏥 [创伤小组] ${ev.event || ''}`;
       } else if (ev.isInstantDeath) {
         textDiv.textContent = `💀 [致命] ${ev.event || ''}`;
+      } else if (ev.isDeathChain && ev.isDeath) {
+        textDiv.textContent = `☠ [死亡] ${ev.event || ''}`;
+      } else if (ev.isDeathChain && ev.isSurvived) {
+        textDiv.textContent = `✦ [死里逃生] ${ev.event || ''}`;
+      } else if (ev.isDeathChain) {
+        textDiv.textContent = `⚠ [危机] ${ev.event || ''}`;
       } else {
         textDiv.textContent = ev.event || '';
       }
