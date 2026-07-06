@@ -45,9 +45,9 @@ describe('Event', () => {
     event.initial(sampleEvents);
     const prop = new Property();
     prop.change('AGE', 5);
-    prop.change('CHROME', 2);
+    prop.set('CHROME', 2);
     strictEqual(event.check(11002, prop), true);
-    prop.change('CHROME', 6);
+    prop.set('CHROME', 6);
     strictEqual(event.check(11002, prop), false);
   });
 
@@ -76,7 +76,7 @@ describe('Event', () => {
     const event = new Event();
     event.initial(sampleEvents);
     const prop = new Property();
-    prop.change('STYLE', 6);
+    prop.set('STYLE', 6);
     const results = event.do(20001, prop);
     strictEqual(results.length, 1);
     strictEqual(results[0].next, 20002);

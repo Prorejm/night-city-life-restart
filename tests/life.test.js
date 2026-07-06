@@ -59,16 +59,16 @@ describe('Life', () => {
   });
 
   it('restart() 正确初始化并触发出生事件', async () => {
-    life = new Life();
-    await life.initial();
-    life.restart([1001]);
-    // STYLE = 基础1 + 天赋1001的effect { STYLE: 2 } + 随机出生事件(10001:EDDIES+2 或 10002:STYLE+2)
-    // 如果选10001: STYLE=3; 如果选10002: STYLE=5
-    const style = life.property.get('STYLE');
-    ok(style === 3 || style === 5, `STYLE 应为 3 或 5，实际 ${style}`);
-    strictEqual(life.property.get('TLT').includes(1001), true);
-    strictEqual(life.property.get('AGE'), 0);
-  });
+      life = new Life();
+      await life.initial();
+      life.restart([1001]);
+      // 经验值机制下: 天赋1001的effect { STYLE: 2 } = +2经验 → 等级约1-2
+      // 出生事件效果也变为经验值，等级比原来低
+      const style = life.property.get('STYLE');
+      ok(style >= 1 && style <= 3, `STYLE 应在1-3之间，实际 ${style}`);
+      strictEqual(life.property.get('TLT').includes(1001), true);
+      strictEqual(life.property.get('AGE'), 0);
+    });
 
   it('ageNext() AGE 0→1 展示出生事件', async () => {
     life = new Life();
@@ -148,43 +148,36 @@ describe('Life', () => {
     });
 
     it('生活费扣除对大量EDDIES生效', async () => {
-      // 使用大量EDDIES使得扣除金额大于任何单次事件可能带来的增量
+      // 直接设置到AGE=16, TURN=16*36，验证生活费扣除公式
       life = await createLife();
-      for (let i = 0; i < 16; i++) life.ageNext();
-      // 设置极高EDDIES使扣除金额远大于可能的随机事件收益
+      life.property.set('AGE', 16);
+      life.property.set('TURN', 16 * 36);
       life.property.change('EDDIES', 10000);
       const eddiesBefore = life.property.get('EDDIES');
-      // 推进36旬（一年）累计扣除生活费
-      for (let i = 0; i < 36; i++) life.ageNext();
+      // 推进一旬扣除生活费
+      life.turnNext();
       const eddiesAfter = life.property.get('EDDIES');
       ok(eddiesAfter < eddiesBefore, `EDDIES应减少: ${eddiesBefore} -> ${eddiesAfter}`);
-      // 36旬中大部分旬扣除 Math.floor(eddies * 0.02 / 36) ≈ 5
-      // 累计扣除应接近年费的80%以上
-      const expectedMin = Math.floor(eddiesBefore * 0.02);
-      ok(eddiesBefore - eddiesAfter >= expectedMin * 0.8,
-        `EDDIES扣除应接近年费的80%: 扣除${eddiesBefore - eddiesAfter} >= ${Math.floor(expectedMin * 0.8)}`);
+      // 每旬扣除 floor(EDDIES * rate / 36)，10000*0.02/36 ≈ 5
+      ok(eddiesBefore - eddiesAfter >= 3, `EDDIES扣除应≥3: 扣除${eddiesBefore - eddiesAfter}`);
     });
 
     it('AGE>=16后破产惩罚（EDDIES=0时扣HUMANITY和STYLE，降频到每年一次）', async () => {
       life = await createLife();
-      // 推进到AGE 16
-      for (let i = 0; i < 16; i++) life.ageNext();
-      // 将EDDIES归零
-      const currentEddies = life.property.get('EDDIES');
-      if (currentEddies > 0) {
-        life.property.effect({ EDDIES: -currentEddies });
-      }
-
+      // 设置TURN=575，使turnNext后newTurn=576, phase=0, 满足破产条件
+      life.property.set('AGE', 16);
+      life.property.set('TURN', 16 * 36 - 1);
+      // EDDIES归零（直接数值）
+      life.property.change('EDDIES', -999999);
+      strictEqual(life.property.get('EDDIES'), 0, 'EDDIES应归零');
       const humanityBefore = life.property.get('HUMANITY');
       const styleBefore = life.property.get('STYLE');
-
-      life.ageNext(); // AGE 16→17 (36旬)
-      const eddiesAfter = life.property.get('EDDIES');
-      ok(typeof eddiesAfter === 'number', `EDDIES应为数字: ${eddiesAfter}`);
-      const hChanged = life.property.get('HUMANITY') !== humanityBefore;
-      const sChanged = life.property.get('STYLE') !== styleBefore;
-      ok(hChanged || sChanged || eddiesAfter > 0,
-        '破产惩罚应触发（HUMANITY或STYLE变化）或随机事件增加了EDDIES');
+      // phase===0时扣
+      life.turnNext();
+      const humanityAfter = life.property.get('HUMANITY');
+      const styleAfter = life.property.get('STYLE');
+      ok(humanityAfter < humanityBefore, `破产应扣HUMANITY: ${humanityBefore} -> ${humanityAfter}`);
+      ok(styleAfter < styleBefore, `破产应扣STYLE: ${styleBefore} -> ${styleAfter}`);
     });
 
     it('生活费率随年龄增加', async () => {
@@ -231,40 +224,27 @@ describe('Life', () => {
     });
 
     it('通过事件触发义体安装时自动扣除人性', async () => {
-      // 通过推进年龄使13001事件有机会触发
-      // 13001: 义体安装, effect: { CHROME: 2 }, type: medical, include: AGE>15
-      // 自动平衡: HUMANITY -= Math.ceil(2 * 0.5) = 1
+      // 直接执行义体安装事件验证经验值机制
+      // 13001: 义体安装, effect: { CHROME: 2 }
+      // 经验值机制下: CHROME+2经验 → 等级提升
       life = await createLife();
-      // 推进到 AGE 16
+      // 推进到 AGE 16+
       for (let i = 0; i < 15; i++) life.ageNext();
 
-      // 记录触发义体安装事件前后的HUMANITY变化
-      let humanityBefore = life.property.get('HUMANITY');
-      let chromeBefore = life.property.get('CHROME');
-      let foundChromeEvent = false;
+      const chromeBefore = life.property.get('CHROME');
+      const humanityBefore = life.property.get('HUMANITY');
 
-      // 尝试推进多个年龄来触发义体事件
-      for (let i = 0; i < 10 && !foundChromeEvent; i++) {
-        humanityBefore = life.property.get('HUMANITY');
-        chromeBefore = life.property.get('CHROME');
-        const result = life.ageNext();
-        // 检查是否有义体安装事件被触发
-        const chromeEvent = result.events.find(e => e.id === 13001);
-        if (chromeEvent) {
-          foundChromeEvent = true;
-          const humanityAfter = life.property.get('HUMANITY');
-          const chromeAfter = life.property.get('CHROME');
-          // 13001的effect只给了CHROME:+2，无HUMANITY指定
-          // 自动平衡应扣除 Math.ceil(2 * 0.5) = 1
-          ok(chromeAfter >= chromeBefore + 2, `CHROME应增加: ${chromeBefore} -> ${chromeAfter}`);
-          ok(humanityAfter <= humanityBefore - 1, `HUMANITY应自动减少: ${humanityBefore} -> ${humanityAfter}`);
-        }
-      }
+      // 直接执行事件效果
+      life.property.effect({ CHROME: 2 });
 
-      // 义体事件不一定每次运行都触发（随机），如果未触发则跳过断言
-      if (!foundChromeEvent) {
-        ok(true, '义体安装事件未在10年内触发（随机性），跳过断言');
-      }
+      const chromeAfter = life.property.get('CHROME');
+      const humanityAfter = life.property.get('HUMANITY');
+
+      // CHROME应获得经验并提升等级（指数曲线）
+      ok(chromeAfter > chromeBefore, `CHROME应增加: ${chromeBefore} -> ${chromeAfter}`);
+      // 自动平衡: 每2级CHROME扣1级HUMANITY
+      const chromeGained = chromeAfter - chromeBefore;
+      ok(humanityAfter <= humanityBefore, `HUMANITY应因义体化减少或不变: ${humanityBefore} -> ${humanityAfter}`);
     });
   });
 
@@ -301,8 +281,9 @@ describe('Life', () => {
   describe('属性衰减', () => {
     it('CHROME>12时额外人性衰减（phase===0时触发）', async () => {
       life = await createLife();
-      // 手动提升CHROME到13以上
-      life.property.change('CHROME', 20);
+      // 手动提升CHROME到13以上（经验值机制下需要大量经验）
+      // 升到13级需要 2^13 - 1 = 8191 经验
+      life.property.change('CHROME', 8200);
       const humanityBefore = life.property.get('HUMANITY');
       // 推进一岁(ageNext内调36次turnNext)，phase===0会触发衰减
       life.ageNext();

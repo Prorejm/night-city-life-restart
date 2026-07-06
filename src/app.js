@@ -401,6 +401,31 @@ export class App {
       }
     }
 
+    // 更新经验进度条（经验值属性）
+    const expAttrs = [
+      { type: 'STYLE', id: 'expStyle' },
+      { type: 'TECH', id: 'expTech' },
+      { type: 'CHROME', id: 'expChrome' },
+      { type: 'HUMANITY', id: 'expHumanity', cls: 'humanity' },
+      { type: 'LIFE', id: 'expLife', cls: 'life' }
+    ];
+    for (const { type, id, cls } of expAttrs) {
+      const bar = document.getElementById(id);
+      if (bar) {
+        const info = p.getLevelInfo(type);
+        if (info && info.nextRequired > 0) {
+          bar.style.width = `${info.progress}%`;
+          bar.title = `${type} Lv.${info.level} | 经验 ${info.exp}/${info.nextRequired}`;
+        } else {
+          bar.style.width = '100%';
+          bar.title = `${type} Lv.MAX`;
+        }
+        if (cls) {
+          bar.className = 'exp-fill ' + cls;
+        }
+      }
+    }
+
     // 更新物品栏UI
     this.updateInventoryUI();
     // 更新任务日志UI

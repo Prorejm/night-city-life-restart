@@ -132,6 +132,10 @@ body {
 .hud-panel .stat-value { color: var(--cyber-cyan); }
 .hud-panel .stat-value.warning { color: var(--cyber-yellow); }
 .hud-panel .stat-value.danger { color: var(--cyber-red); animation: blink 0.5s infinite; }
+.hud-panel .exp-bar { width: 100%; height: 3px; background: rgba(255,255,255,0.08); border-radius: 1px; margin: -2px 0 4px; overflow: hidden; }
+.hud-panel .exp-fill { height: 100%; width: 0%; background: var(--cyber-cyan); border-radius: 1px; transition: width 0.4s ease; box-shadow: 0 0 4px var(--cyber-cyan); }
+.hud-panel .exp-fill.humanity { background: var(--cyber-magenta); box-shadow: 0 0 4px var(--cyber-magenta); }
+.hud-panel .exp-fill.life { background: var(--cyber-yellow); box-shadow: 0 0 4px var(--cyber-yellow); }
 
 /* Log */
 .log-container {

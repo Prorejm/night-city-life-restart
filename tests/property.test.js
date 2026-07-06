@@ -19,27 +19,42 @@ describe('Property', () => {
     deepStrictEqual(p.get('EVT'), []);
   });
 
-  it('change() 数值增加', () => {
+  it('change() 正值添加经验并提升等级（指数曲线）', () => {
     const p = new Property();
-    p.change('STYLE', 3);
+    // baseExp=1, multiplier=2
+    // addExp(1): 0→1级
+    p.change('STYLE', 1);
+    strictEqual(p.get('STYLE'), 1);
+
+    // addExp(2): 1级已有，加2经验 → 1→2需要2，正好升到2级
+    p.change('STYLE', 2);
+    strictEqual(p.get('STYLE'), 2);
+
+    // addExp(7): 2→3需要4, 3→4需要8(不够) → 等级3
+    p.change('STYLE', 7);
     strictEqual(p.get('STYLE'), 3);
   });
 
-  it('change() 数值减少但不低于0（除LIFE外）', () => {
+  it('change() 负值直接扣减等级', () => {
     const p = new Property();
-    p.change('STYLE', 5);
-    p.change('STYLE', -10);
+    p.change('STYLE', 7); // 升到3级
+    strictEqual(p.get('STYLE'), 3);
+    p.change('STYLE', -2);
+    strictEqual(p.get('STYLE'), 1);
+    p.change('STYLE', -10); // 不会低于0
     strictEqual(p.get('STYLE'), 0);
   });
 
   it('change() HUMANITY 不会低于0', () => {
     const p = new Property();
+    strictEqual(p.get('HUMANITY'), 10);
     p.change('HUMANITY', -15);
     strictEqual(p.get('HUMANITY'), 0);
   });
 
   it('change() LIFE 可以低于0', () => {
     const p = new Property();
+    strictEqual(p.get('LIFE'), 1);
     p.change('LIFE', -3);
     strictEqual(p.get('LIFE'), -2);
   });
@@ -58,22 +73,25 @@ describe('Property', () => {
     strictEqual(p.isDead(), true);
   });
 
-  it('effect() 批量应用效果', () => {
+  it('effect() 批量应用效果（经验值）', () => {
     const p = new Property();
+    // STYLE+2: 0→1(剩1), 1→2需要2(不够) → 等级1
+    // TECH+3: 0→1(剩2), 1→2需要2(剩0) → 等级2
+    // HUMANITY-2: 10-2=8
     p.effect({ STYLE: 2, TECH: 3, HUMANITY: -2 });
-    strictEqual(p.get('STYLE'), 2);
-    strictEqual(p.get('TECH'), 3);
+    strictEqual(p.get('STYLE'), 1);
+    strictEqual(p.get('TECH'), 2);
     strictEqual(p.get('HUMANITY'), 8);
   });
 
-  it('record() 快照正确', () => {
+  it('record() 快照记录等级值', () => {
     const p = new Property();
-    p.change('STYLE', 5);
+    p.change('STYLE', 3); // 0→1(剩2), 1→2需要2(剩0) → 等级2
     p.record();
-    p.change('STYLE', 3);
+    p.change('STYLE', 4); // 2→3需要4(剩0) → 等级3
     const records = p.getRecords();
     strictEqual(records.length, 1);
-    strictEqual(records[0].STYLE, 5);
+    strictEqual(records[0].STYLE, 2);
   });
 
   it('reset() 恢复初始状态', () => {
@@ -162,5 +180,21 @@ describe('Property', () => {
     strictEqual(p.get('TURN'), 0);
     strictEqual(p.get('MONTH'), 1);
     strictEqual(p.get('PHASE'), 0);
+  });
+
+  it('getLevelInfo() 返回经验进度信息', () => {
+    const p = new Property();
+    p.change('STYLE', 1); // 1级, 0经验
+    const info = p.getLevelInfo('STYLE');
+    strictEqual(info.level, 1);
+    strictEqual(info.exp, 0);
+    strictEqual(info.nextRequired, 2); // 1→2需要2
+    strictEqual(info.progress, 0);
+
+    p.change('STYLE', 1); // 1级, 1经验
+    const info2 = p.getLevelInfo('STYLE');
+    strictEqual(info2.level, 1);
+    strictEqual(info2.exp, 1);
+    strictEqual(info2.progress, 50); // 1/2 = 50%
   });
 });
