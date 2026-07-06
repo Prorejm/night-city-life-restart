@@ -38,11 +38,15 @@ export class Property {
   #state;
   #records;
   #levels; // Map<type, LevelCurve>
+  #equipBonuses; // Map<type, number> 装备提供的属性加成
+  #buffs; // Array<{type, value, turnsLeft}> 临时增益
 
   constructor() {
     this.#state = this.#getDefaultState();
     this.#records = [];
     this.#levels = new Map();
+    this.#equipBonuses = new Map();
+    this.#buffs = [];
     this.#initLevels();
   }
 
@@ -73,8 +77,19 @@ export class Property {
   get(type) {
     const curve = this.#levels.get(type);
     if (curve) {
-      return curve.getLevel();
+      const base = curve.getLevel();
+      const equip = this.#equipBonuses.get(type) || 0;
+      const buff = this.#buffs.filter(b => b.type === type).reduce((sum, b) => sum + b.value, 0);
+      return base + equip + buff;
     }
+    const val = this.#state[type];
+    return val !== undefined ? val : 0;
+  }
+
+  // 获取不包含装备/buff的基础值
+  getBase(type) {
+    const curve = this.#levels.get(type);
+    if (curve) return curve.getLevel();
     const val = this.#state[type];
     return val !== undefined ? val : 0;
   }
@@ -165,6 +180,60 @@ export class Property {
     return this.get(TYPES.LIFE) <= 0;
   }
 
+  // ========== 装备加成管理 ==========
+
+  // 设置装备加成（由Inventory调用）
+  setEquipBonus(type, value) {
+    if (value === 0) {
+      this.#equipBonuses.delete(type);
+    } else {
+      this.#equipBonuses.set(type, (this.#equipBonuses.get(type) || 0) + value);
+    }
+  }
+
+  // 移除装备加成（卸下装备时）
+  removeEquipBonus(type, value) {
+    const current = this.#equipBonuses.get(type) || 0;
+    const newVal = current - value;
+    if (newVal <= 0) {
+      this.#equipBonuses.delete(type);
+    } else {
+      this.#equipBonuses.set(type, newVal);
+    }
+  }
+
+  // 获取装备加成总值
+  getEquipBonus(type) {
+    return this.#equipBonuses.get(type) || 0;
+  }
+
+  // ========== 临时增益（Buff）管理 ==========
+
+  // 添加buff（药品等消耗品）
+  addBuff(type, value, durationTurns) {
+    this.#buffs.push({ type, value, turnsLeft: durationTurns });
+  }
+
+  // 每旬推进buff持续时间，过期自动移除
+  tickBuffs() {
+    for (let i = this.#buffs.length - 1; i >= 0; i--) {
+      this.#buffs[i].turnsLeft--;
+      if (this.#buffs[i].turnsLeft <= 0) {
+        this.#buffs.splice(i, 1);
+      }
+    }
+  }
+
+  // 获取活跃的buff列表
+  getBuffs() {
+    return this.#buffs.map(b => ({ ...b }));
+  }
+
+  // 获取buff对某属性的加成
+  getBuffBonus(type) {
+    return this.#buffs.filter(b => b.type === type).reduce((sum, b) => sum + b.value, 0);
+  }
+
   // 记录当前属性快照
   record() {
     this.#records.push(this.getAll());
@@ -179,6 +248,8 @@ export class Property {
   reset() {
     this.#state = this.#getDefaultState();
     this.#records = [];
+    this.#equipBonuses.clear();
+    this.#buffs = [];
     for (const curve of this.#levels.values()) {
       curve.reset();
     }

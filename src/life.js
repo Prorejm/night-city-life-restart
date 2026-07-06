@@ -542,6 +542,8 @@ export class Life {
 
     this.#property.change('TURN', 1);
     if (newAge > oldAge) this.#property.change('AGE', newAge - oldAge);
+    // 推进buff持续时间
+    this.#property.tickBuffs();
     this.#property.set('MONTH', month);
     this.#property.set('PHASE', phase);
 
@@ -812,7 +814,9 @@ export class Life {
         // 战斗拼点判定（combat类型事件，在effect应用之前）
         if (resultMeta && resultMeta.type === 'combat' && result.effect) {
           const state = this.#property.getAll();
-          const power = (state.STYLE || 0) * 0.3 + (state.TECH || 0) * 0.2 + (state.CHROME || 0) * 0.5 + Math.random() * 5;
+          // 战斗拼点：基础属性 + 装备武器加成
+          const weaponBonus = this.#inventory ? this.#inventory.getEquippedBonuses().STYLE || 0 : 0;
+          const power = ((state.STYLE || 0) + weaponBonus) * 0.3 + (state.TECH || 0) * 0.2 + (state.CHROME || 0) * 0.5 + Math.random() * 5;
           const difficulty = 5; // 默认难度
           if (power < difficulty) {
             // 战斗失败
@@ -861,12 +865,18 @@ export class Life {
 
         // 新元数据字段：itemAward
         if (resultMeta && resultMeta.itemAward && this.#inventory) {
-          this.#inventory.addItem(resultMeta.itemAward);
+          const addResult = this.#inventory.addItem(resultMeta.itemAward, this.#property);
           rewards.item = resultMeta.itemAward;
-          // 立即应用武器/义体的属性加成
-          const itemData = this.#itemsData[resultMeta.itemAward];
-          if (itemData && itemData.effect) {
-            this.#property.effect(itemData.effect);
+          // 义体装备时触发人性惩罚
+          if (addResult.equipped && resultMeta.itemAward.startsWith('imp_')) {
+            const itemData = this.#itemsData[resultMeta.itemAward];
+            if (itemData && itemData.effect) {
+              // 检查是否增加了CHROME
+              if (itemData.effect.CHROME) {
+                const humanityLoss = Math.ceil(itemData.effect.CHROME * 0.5);
+                this.#property.effect({ HUMANITY: -humanityLoss });
+              }
+            }
           }
         }
 
@@ -876,9 +886,9 @@ export class Life {
           rewards.vehicle = resultMeta.vehicleAward;
         }
 
-        // 新元数据字段：drugAward
+        // 新元数据字段：drugAward → 药品进背包（不直接应用）
         if (resultMeta && resultMeta.drugAward) {
-          this.addDrug(resultMeta.drugAward);
+          this.#inventory.addItem(resultMeta.drugAward);
           this.#drugUsageCount++;
           rewards.drug = resultMeta.drugAward;
         }
@@ -886,12 +896,15 @@ export class Life {
         // 旧版兼容：ITEM_GAIN_EVENTS 映射
         const itemGain = ITEM_GAIN_EVENTS[result.id];
         if (itemGain && this.#inventory) {
-          this.#inventory.addItem(itemGain);
+          const addResult = this.#inventory.addItem(itemGain, this.#property);
           if (!rewards.item) rewards.item = itemGain;
-          // 立即应用物品属性加成
-          const compatItemData = this.#itemsData[itemGain];
-          if (compatItemData && compatItemData.effect) {
-            this.#property.effect(compatItemData.effect);
+          // 义体装备时触发人性惩罚
+          if (addResult.equipped && itemGain.startsWith('imp_')) {
+            const compatItemData = this.#itemsData[itemGain];
+            if (compatItemData && compatItemData.effect && compatItemData.effect.CHROME) {
+              const humanityLoss = Math.ceil(compatItemData.effect.CHROME * 0.5);
+              this.#property.effect({ HUMANITY: -humanityLoss });
+            }
           }
         }
 

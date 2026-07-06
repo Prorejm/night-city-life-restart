@@ -15,8 +15,11 @@ describe('Inventory', () => {
 
   it('addItem() 正确分类武器', () => {
     const inv = new Inventory(sampleItems);
-    strictEqual(inv.addItem('wpn_001'), true);
-    strictEqual(inv.addItem('wpn_001'), false);
+    const r1 = inv.addItem('wpn_001');
+    strictEqual(r1.added, true);
+    strictEqual(r1.equipped, true);
+    const r2 = inv.addItem('wpn_001');
+    strictEqual(r2.added, false);
     const stats = inv.getAllStats();
     strictEqual(stats.weaponCount, 1);
     strictEqual(stats.weaponsByQuality.rare, 1);
@@ -24,14 +27,18 @@ describe('Inventory', () => {
 
   it('addItem() 正确分类义体', () => {
     const inv = new Inventory(sampleItems);
-    strictEqual(inv.addItem('cyber_001'), true);
+    const r = inv.addItem('cyber_001');
+    strictEqual(r.added, true);
+    strictEqual(r.equipped, true);
     const stats = inv.getAllStats();
     strictEqual(stats.cyberCount, 1);
   });
 
   it('addItem() 正确分类药品', () => {
     const inv = new Inventory(sampleItems);
-    strictEqual(inv.addItem('drug_001'), true);
+    const r = inv.addItem('drug_001');
+    strictEqual(r.added, true);
+    strictEqual(r.equipped, false);
     const stats = inv.getAllStats();
     strictEqual(stats.totalDrugs, 1);
   });

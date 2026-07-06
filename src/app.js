@@ -861,22 +861,33 @@ export class App {
     const inv = this.#life.inventory;
     const vehicles = this.#life.getVehicles();
 
-    // 渲染武器
+    const effectLabel = (effect) => {
+      if (!effect) return '';
+      const parts = Object.entries(effect).map(([k, v]) => {
+        const label = { STYLE: '街头', TECH: '技术', CHROME: '义体', HUMANITY: '人性', LIFE: '生命', EDDIES: '€' }[k] || k;
+        return `${v > 0 ? '+' : ''}${v}${label}`;
+      });
+      return `<span class="inv-effect">${parts.join(' ')}</span>`;
+    };
+
+    // 渲染武器（显示效果和装备状态）
     const weaponsEl = document.getElementById('inv-weapons');
     if (weaponsEl) {
-      const stats = inv.getAllStats();
-      weaponsEl.innerHTML = (stats.weapons || []).map(w =>
-        `<div class="inv-item quality-${w.quality || 'common'}">${escapeHtml(w.name)}</div>`
-      ).join('') || '<div class="inv-empty">无</div>';
+      const weapons = inv.getWeapons();
+      weaponsEl.innerHTML = weapons.map(w => {
+        const equipMark = w._equipped ? '<span class="inv-equipped">E</span>' : '';
+        return `<div class="inv-item quality-${w.quality || 'common'}" title="${escapeHtml(w.description || '')}">${equipMark}${escapeHtml(w.name)}${effectLabel(w.effect)}</div>`;
+      }).join('') || '<div class="inv-empty">无</div>';
     }
 
-    // 渲染义体
+    // 渲染义体（显示效果和装备状态）
     const cyberwareEl = document.getElementById('inv-cyberware');
     if (cyberwareEl) {
-      const stats = inv.getAllStats();
-      cyberwareEl.innerHTML = (stats.cyberware || []).map(c =>
-        `<div class="inv-item quality-${c.quality || 'common'}">${escapeHtml(c.name)}</div>`
-      ).join('') || '<div class="inv-empty">无</div>';
+      const cyberware = inv.getCyberware();
+      cyberwareEl.innerHTML = cyberware.map(c => {
+        const equipMark = c._equipped ? '<span class="inv-equipped">E</span>' : '';
+        return `<div class="inv-item quality-${c.quality || 'common'}" title="${escapeHtml(c.description || '')}">${equipMark}${escapeHtml(c.name)}${effectLabel(c.effect)}</div>`;
+      }).join('') || '<div class="inv-empty">无</div>';
     }
 
     // 渲染载具
@@ -887,12 +898,12 @@ export class App {
       ).join('') || '<div class="inv-empty">无</div>';
     }
 
-    // 渲染药品
+    // 渲染药品（显示效果）
     const drugsEl = document.getElementById('inv-drugs');
     if (drugsEl) {
-      const stats = inv.getAllStats();
-      drugsEl.innerHTML = (stats.drugs || []).map(d =>
-        `<div class="inv-item quality-${d.quality || 'common'}">${escapeHtml(d.name)}</div>`
+      const drugs = inv.getDrugs();
+      drugsEl.innerHTML = drugs.map(d =>
+        `<div class="inv-item quality-${d.quality || 'common'}" title="${escapeHtml(d.description || '')}">${escapeHtml(d.name)}${effectLabel(d.effect)}</div>`
       ).join('') || '<div class="inv-empty">无</div>';
     }
   }
