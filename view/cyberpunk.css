@@ -40,6 +40,18 @@ body {
   min-height: 100vh;
 }
 
+/* 数据雨背景画布 */
+canvas#data-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
 .scan-line {
   position: fixed; top: 0; left: 0;
   width: 100%; height: 100%;
@@ -62,6 +74,14 @@ body {
 .page.leaving { opacity: 0; transform: translateX(-30px); }
 
 /* Loading */
+#loading {
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(0,255,247,0.04) 28px, rgba(0,255,247,0.04) 29px),
+    repeating-linear-gradient(90deg, transparent, transparent 28px, rgba(0,255,247,0.04) 28px, rgba(0,255,247,0.04) 29px),
+    radial-gradient(circle at 50% 50%, rgba(0,255,247,0.03) 0%, transparent 70%),
+    var(--cyber-bg);
+  background-size: auto, auto, auto, auto;
+}
 #loading .glitch-text {
   font-family: 'Orbitron', sans-serif; font-size: 4em;
   color: var(--cyber-cyan);
@@ -82,6 +102,70 @@ body {
 #menu .subtitle-glitch { font-family: 'Orbitron', sans-serif; font-size: 1.8em; color: var(--cyber-yellow); letter-spacing: 10px; margin: 10px 0 5px; text-shadow: 0 0 20px rgba(255,234,0,0.5); }
 #menu .version { font-family: 'Orbitron', sans-serif; font-size: 0.8em; color: var(--cyber-dim); margin-bottom: 40px; }
 #menu .footer-data { margin-top: 30px; font-family: 'Orbitron', sans-serif; font-size: 0.7em; color: var(--cyber-dim); animation: blink 1.5s infinite; }
+
+/* 城市天际线装饰 */
+.city-skyline {
+  width: 100%;
+  max-width: 600px;
+  height: 80px;
+  margin: 25px auto;
+  position: relative;
+  opacity: 0.6;
+  background:
+    /* 建筑群 - 用多个渐变模拟 */
+    linear-gradient(to bottom, transparent 65%, rgba(0,255,247,0.15) 65%, rgba(0,255,247,0.15) 100%),
+    linear-gradient(90deg,
+      transparent 0%, transparent 3%,
+      rgba(0,255,247,0.12) 3%, rgba(0,255,247,0.12) 6%,
+      transparent 6%, transparent 10%,
+      rgba(0,255,247,0.18) 10%, rgba(0,255,247,0.18) 13%,
+      transparent 13%, transparent 14%,
+      rgba(0,255,247,0.1) 14%, rgba(0,255,247,0.1) 18%,
+      transparent 18%, transparent 22%,
+      rgba(0,255,247,0.22) 22%, rgba(0,255,247,0.22) 26%,
+      transparent 26%, transparent 28%,
+      rgba(0,255,247,0.08) 28%, rgba(0,255,247,0.08) 32%,
+      transparent 32%, transparent 35%,
+      rgba(0,255,247,0.25) 35%, rgba(0,255,247,0.25) 42%,
+      transparent 42%, transparent 44%,
+      rgba(0,255,247,0.14) 44%, rgba(0,255,247,0.14) 50%,
+      transparent 50%, transparent 52%,
+      rgba(0,255,247,0.2) 52%, rgba(0,255,247,0.2) 58%,
+      transparent 58%, transparent 60%,
+      rgba(0,255,247,0.1) 60%, rgba(0,255,247,0.1) 65%,
+      transparent 65%, transparent 68%,
+      rgba(0,255,247,0.16) 68%, rgba(0,255,247,0.16) 73%,
+      transparent 73%, transparent 76%,
+      rgba(0,255,247,0.12) 76%, rgba(0,255,247,0.12) 80%,
+      transparent 80%, transparent 83%,
+      rgba(0,255,247,0.2) 83%, rgba(0,255,247,0.2) 88%,
+      transparent 88%, transparent 92%,
+      rgba(0,255,247,0.1) 92%, rgba(0,255,247,0.1) 96%,
+      transparent 96%, transparent 100%
+    );
+  clip-path: polygon(
+    0% 100%,
+    0% 72%, 3% 72%, 3% 55%, 6% 55%, 6% 72%, 10% 72%, 10% 40%, 13% 40%, 13% 72%,
+    14% 72%, 14% 58%, 18% 58%, 18% 72%, 22% 72%, 22% 25%, 26% 25%, 26% 72%,
+    28% 72%, 28% 62%, 32% 62%, 32% 72%, 35% 72%, 35% 18%, 37% 18%, 37% 15%, 42% 15%, 42% 18%, 42% 72%,
+    44% 72%, 44% 48%, 50% 48%, 50% 72%, 52% 72%, 52% 32%, 55% 32%, 55% 28%, 58% 28%, 58% 32%, 58% 72%,
+    60% 72%, 60% 55%, 65% 55%, 65% 72%, 68% 72%, 68% 42%, 73% 42%, 73% 72%,
+    76% 72%, 76% 60%, 80% 60%, 80% 72%, 83% 72%, 83% 35%, 85% 35%, 85% 30%, 88% 30%, 88% 35%, 88% 72%,
+    92% 72%, 92% 50%, 96% 50%, 96% 72%, 100% 72%,
+    100% 100%
+  );
+  filter: drop-shadow(0 0 8px rgba(0,255,247,0.15));
+}
+.city-skyline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyber-cyan), transparent);
+  opacity: 0.5;
+}
 
 /* Animations */
 @keyframes glitch {
@@ -111,6 +195,37 @@ body {
 .cyber-btn.gold { border-color: var(--cyber-yellow); color: var(--cyber-yellow); }
 .cyber-btn.gold:hover { background: rgba(255,234,0,0.1); box-shadow: 0 0 20px rgba(255,234,0,0.5); }
 
+/* 按钮脉冲光效 */
+.cyber-btn::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  animation: cyberPulse 2.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+@keyframes cyberPulse {
+  0%, 100% { border-color: transparent; box-shadow: none; }
+  50% { border-color: rgba(0,255,247,0.2); box-shadow: 0 0 12px rgba(0,255,247,0.1); }
+}
+.cyber-btn.gold::before {
+  animation-name: cyberPulseGold;
+}
+@keyframes cyberPulseGold {
+  0%, 100% { border-color: transparent; box-shadow: none; }
+  50% { border-color: rgba(255,234,0,0.2); box-shadow: 0 0 12px rgba(255,234,0,0.1); }
+}
+.cyber-btn.danger::before {
+  animation-name: cyberPulseRed;
+}
+@keyframes cyberPulseRed {
+  0%, 100% { border-color: transparent; box-shadow: none; }
+  50% { border-color: rgba(255,0,68,0.2); box-shadow: 0 0 12px rgba(255,0,68,0.1); }
+}
+
 /* HUD */
 .hud-header {
   position: fixed; top: 0; left: 0; right: 0;
@@ -122,7 +237,7 @@ body {
 .hud-header .stats span { color: var(--cyber-cyan); margin: 0 3px; }
 
 .hud-panel {
-  position: fixed; top: 45px; right: 0;
+  position: fixed; top: 55px; right: 0;
   background: rgba(10,10,15,0.9); border-left: 1px solid rgba(0,255,247,0.3);
   padding: 12px; font-family: 'Orbitron', sans-serif; font-size: 0.6em;
   z-index: 99; width: 160px;
@@ -139,7 +254,7 @@ body {
 
 /* Log */
 .log-container {
-  position: fixed; top: 45px; left: 0; right: 160px; bottom: 70px;
+  position: fixed; top: 55px; left: 32px; right: 160px; bottom: 70px;
   padding: 15px; overflow-y: auto;
 }
 .log-container::-webkit-scrollbar { width: 4px; }
@@ -298,6 +413,43 @@ body {
 .overall-score { font-family: 'Orbitron', sans-serif; font-size: 2.5em; color: var(--cyber-yellow); text-align: center; text-shadow: 0 0 30px rgba(255,234,0,0.5); }
 .overall-title { font-family: 'Orbitron', sans-serif; font-size: 1.2em; color: #fff; text-align: center; }
 
+/* Summary 死因标题 */
+.summary-death-cause {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2em;
+  color: var(--cyber-red);
+  text-align: center;
+  margin: 20px 0 15px;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  text-shadow:
+    0 0 10px rgba(255,0,68,0.6),
+    0 0 30px rgba(255,0,68,0.3),
+    0 0 60px rgba(255,0,68,0.1);
+  position: relative;
+  padding-bottom: 12px;
+}
+.summary-death-cause::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyber-red), transparent);
+}
+.summary-death-cause::before {
+  content: '// FATAL ERROR //';
+  display: block;
+  font-size: 0.35em;
+  letter-spacing: 8px;
+  color: var(--cyber-dim);
+  margin-bottom: 8px;
+  text-shadow: none;
+  animation: blink 2s infinite;
+}
+
 /* Items list */
 .item-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }
 .item-entry { padding: 10px; background: rgba(0,255,247,0.02); border: 1px solid rgba(0,255,247,0.1); }
@@ -324,14 +476,13 @@ body {
 .inventory-panel {
   position: fixed;
   right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 310px;
   width: 200px;
   background: rgba(10, 10, 20, 0.9);
   border: 1px solid #00f0ff33;
   border-right: none;
   z-index: 100;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease, top 0.3s ease;
   font-family: 'Rajdhani', sans-serif;
 }
 
@@ -404,8 +555,7 @@ body {
 .quest-panel {
   position: fixed;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 55px;
   width: 220px;
   background: rgba(10, 10, 20, 0.9);
   border: 1px solid #ff00ff33;
@@ -587,8 +737,35 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
   .hud-header { font-size: 0.55em; padding: 5px 10px; }
-  .hud-panel { width: 120px; font-size: 0.5em; padding: 8px; }
-  .log-container { right: 120px; }
+  .hud-panel { width: 120px; font-size: 0.5em; padding: 8px; top: 42px; }
+  .inventory-panel { top: 260px; width: 160px; }
+  .log-container { right: 120px; left: 32px; top: 42px; }
+  .quest-panel { width: 180px; top: 42px; }
   #menu .title-glitch { font-size: 2em; }
   .talent-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+  .city-skyline { height: 50px; max-width: 400px; }
+  .summary-death-cause { font-size: 1.4em; letter-spacing: 3px; }
+  canvas#data-rain { opacity: 0.2; }
+}
+
+@media (max-width: 480px) {
+  .hud-header { font-size: 0.45em; padding: 3px 6px; flex-wrap: wrap; }
+  .hud-panel { width: 90px; font-size: 0.4em; padding: 5px; top: 36px; }
+  .inventory-panel { top: 220px; width: 120px; }
+  .log-container { right: 90px; left: 28px; top: 36px; padding: 8px; }
+  .quest-panel { width: 140px; top: 36px; }
+  #menu .title-glitch { font-size: 1.4em; }
+  #menu .subtitle-glitch { font-size: 1em; letter-spacing: 4px; }
+  .talent-grid { grid-template-columns: 1fr; }
+  .city-skyline { height: 35px; max-width: 280px; }
+  .summary-death-cause { font-size: 1.1em; letter-spacing: 2px; }
+  .summary-death-cause::before { font-size: 0.3em; letter-spacing: 4px; }
+  .cyber-btn { padding: 10px 18px; font-size: 0.8em; letter-spacing: 1px; margin: 6px; }
+  canvas#data-rain { opacity: 0.15; }
+}
+
+@media (min-width: 1200px) {
+  .hud-panel { width: 180px; }
+  .log-container { right: 180px; }
+  .inventory-panel { top: 340px; width: 220px; }
 }
