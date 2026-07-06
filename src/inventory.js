@@ -66,15 +66,24 @@ export class Inventory {
   getAllStats() {
     const weapons = this.getWeapons();
     const cyberware = this.getCyberware();
+    const drugs = this.getDrugs();
     const legendaryWeapons = this.getLegendaryWeapons();
     const legendaryCyberware = this.getLegendaryCyberware();
 
     return {
       weapons,
       cyberware,
+      drugs,
+      weaponCount: weapons.length,
+      cyberCount: cyberware.length,
+      totalDrugs: drugs.length,
       legendaryWeapons,
       legendaryCyberware,
       legendaryCount: this.getLegendaryCount(),
+      legendaryItems: {
+        weapons: legendaryWeapons,
+        cyberware: legendaryCyberware
+      },
       weaponsByQuality: {
         common: weapons.filter(w => w.quality === 'common').length,
         uncommon: weapons.filter(w => w.quality === 'uncommon').length,
@@ -85,11 +94,53 @@ export class Inventory {
       cyberwareByQuality: {
         common: cyberware.filter(c => c.quality === 'common').length,
         legendary: legendaryCyberware.length
+      },
+      drugsByType: {
+        stimulant: drugs.filter(d => d.type === 'stimulant').length,
+        depressant: drugs.filter(d => d.type === 'depressant').length,
+        hallucinogen: drugs.filter(d => d.type === 'hallucinogen').length
       }
     };
   }
 
+  // 获取所有药品
+  getDrugs() {
+    return this.#owned.drugs.map(id => this.#itemsData[id]).filter(Boolean);
+  }
+
+  // 移除物品
+  removeItem(itemId) {
+    const item = this.#itemsData[itemId];
+    if (!item) return false;
+
+    let list;
+    if (item.type === 'cyber' || item.type === 'cyberware' || itemId.startsWith('cyber_') || itemId.startsWith('imp_')) {
+      list = this.#owned.cyberware;
+    } else if (itemId.startsWith('drug_') || item.type === 'drug' || item.type === 'consumable') {
+      list = this.#owned.drugs;
+    } else {
+      list = this.#owned.weapons;
+    }
+
+    const idx = list.indexOf(itemId);
+    if (idx === -1) return false;
+    list.splice(idx, 1);
+    return true;
+  }
+
+  // 获取最近获得的N个物品
+  getRecentItems(count = 5) {
+    const all = [
+      ...this.#owned.weapons.map(id => this.#itemsData[id]).filter(Boolean).map(i => ({ ...i, _type: 'weapon' })),
+      ...this.#owned.cyberware.map(id => this.#itemsData[id]).filter(Boolean).map(i => ({ ...i, _type: 'cyberware' })),
+      ...this.#owned.drugs.map(id => this.#itemsData[id]).filter(Boolean).map(i => ({ ...i, _type: 'drug' }))
+    ];
+    // 按添加顺序的逆序返回（最近添加的在前面）
+    // 由于我们没有精确的时间戳，简单返回所有物品的倒序
+    return all.slice(-count).reverse();
+  }
+
   reset() {
-    this.#owned = { weapons: [], cyberware: [] };
+    this.#owned = { weapons: [], cyberware: [], drugs: [] };
   }
 }

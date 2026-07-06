@@ -2,12 +2,14 @@
   "name": "night-city-life-restart",
   "version": "1.0.0",
   "description": "夜之城人生重开模拟器 - 赛博朋克2077世界观",
+  "homepage": "https://prorejm.github.io/night-city-life-restart",
   "main": "src/index.js",
+  "type": "module",
   "scripts": {
     "dev": "webpack serve --mode development",
     "build": "webpack --mode production && powershell -Command \"Copy-Item -Path 'data\\*.json' -Destination 'view\\data' -Force\"",
     "postinstall": "powershell -Command \"Copy-Item -Path 'data' -Destination 'view\\data' -Recurse -Force\"",
-    "test": "node tests/index.js"
+    "test": "node --test tests/**/*.test.js"
   },
   "devDependencies": {
     "webpack": "^5.95.0",

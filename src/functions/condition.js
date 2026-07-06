@@ -17,6 +17,9 @@ export const PROPERTY_TYPES = {
   GANG: 'GANG',
   CORP: 'CORP',
   DIST: 'DIST',
+  TURN: 'TURN',
+  MONTH: 'MONTH',
+  PHASE: 'PHASE',
   // 特殊成就检查条件
   LEGENDARY_COUNT: 'LEGENDARY_COUNT',
   COLLECT_ALL_WEAPONS: 'COLLECT_ALL_WEAPONS',
@@ -31,7 +34,7 @@ export function parseCondition(expr) {
 
 function parseOr(str, pos) {
   let left = parseAnd(str, pos);
-  while (left.result && pos < str.length) {
+  while (left.result && left.pos < str.length) {
     const { result: op, pos: newPos } = parseChar(str, left.pos);
     if (op === '|') {
       const right = parseAnd(str, newPos);
@@ -41,7 +44,6 @@ function parseOr(str, pos) {
         pos: right.pos
       };
     } else {
-      left.pos = newPos;
       break;
     }
   }
@@ -50,7 +52,7 @@ function parseOr(str, pos) {
 
 function parseAnd(str, pos) {
   let left = parsePrimary(str, pos);
-  while (left.result && pos < str.length) {
+  while (left.result && left.pos < str.length) {
     const { result: op, pos: newPos } = parseChar(str, left.pos);
     if (op === '&') {
       const right = parsePrimary(str, newPos);
@@ -60,7 +62,6 @@ function parseAnd(str, pos) {
         pos: right.pos
       };
     } else {
-      left.pos = newPos;
       break;
     }
   }

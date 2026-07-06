@@ -1,0 +1,7506 @@
+{
+  "30000": {
+    "id": 30000,
+    "event": "你的眼睑第一次颤动，在产房冰冷的LED灯下勉强睁开一条缝。护士的义眼闪着蓝光扫描了你的虹膜数据，确认视觉系统正常。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_010"
+  },
+  "30001": {
+    "id": 30001,
+    "event": "你发出了来到这个世界的第一声啼哭——尖锐而有力，穿透了夜之城综合医院的隔音墙壁。产房外的父亲松了口气。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30002": {
+    "id": 30002,
+    "event": "出生第二天，你出现了轻微的新生儿黄疸。医生建议用纳米光疗仪照射，但母亲选择了更便宜的化学药剂。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30003": {
+    "id": 30003,
+    "event": "你的脐带残端在三天后脱落，护士将它收集起来放入生物样本管。你永远不会知道这个小小的组织会被送往何处。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1,
+      "HUMANITY": -1,
+      "EDDIES": 1
+    }
+  },
+  "30004": {
+    "id": 30004,
+    "event": "第一次尝试抬头，你的脖子微微颤抖着撑起了不到一秒。虽然只是转瞬即逝，但母亲的喜悦全息照片已经发到了社交网络。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30005": {
+    "id": 30005,
+    "event": "你在恒温箱里安静地睡着，手臂上插着微型监测管。数据显示你的一切体征正常，除了心率偶尔会在夜间突然加速。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": 2
+    }
+  },
+  "30006": {
+    "id": 30006,
+    "event": "你的第一次微笑被义体监测器记录为面部肌肉无意识收缩，但母亲坚持认为那是对她说话的回应。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30007": {
+    "id": 30007,
+    "event": "由于出生时缺氧，医生建议安装基础脑部辅助芯片。费用不高，但父母犹豫了很久——毕竟你才来到这个世界。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30008": {
+    "id": 30008,
+    "event": "你抓握住了母亲的手指，力量出奇地大。护士说这是新生儿的原始反射，但在这个义体普遍的时代，父母忍不住多想了一层。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30009": {
+    "id": 30009,
+    "event": "你的体重在第一周下降了200克，儿科医生说这是正常的新陈代谢调整，但深夜母亲还是偷偷在网上搜索了基因缺陷的症状。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30010": {
+    "id": 30010,
+    "event": "出生第三天，NCPD的出生登记无人机来访，记录了你的生物特征数据。从这一刻起，你成为了荒坂数据库中的一个条目。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30011": {
+    "id": 30011,
+    "event": "你的听觉系统正式上线——首先听到的是隔壁病房婴儿的哭声，然后是病房窗外远处的警笛。夜之城的欢迎仪式。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30012": {
+    "id": 30012,
+    "event": "第一次洗澡时你被温水吓得浑身发紫，监测仪的警报吓坏了新手的护士。原来只是水温传感器校准偏差。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30013": {
+    "id": 30013,
+    "event": "你在睡梦中出现了数次呼吸暂停，每次持续不到三秒。医生说是新生儿常见现象，但心电监测还是多挂了两天。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30014": {
+    "id": 30014,
+    "event": "你的第一次排便——护士熟练地处理了胎便样本，顺便检测了其中是否含有异常生物标记物。一切正常。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1,
+      "CHROME": 1
+    }
+  },
+  "30015": {
+    "id": 30015,
+    "event": "父亲的朋友送来了一个二手婴儿脑波监测头环，说是军用淘汰品改装的。母亲犹豫后还是给你戴上了。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30016": {
+    "id": 30016,
+    "event": "由于家族遗传的听力问题，你在出生一周后就接受了基础听觉增强植入手术。手术仅用了十五分钟。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30017": {
+    "id": 30017,
+    "event": "医院的基因筛查报告出来了——你携带了一种罕见的神经可塑性基因变体。医生说这可能意味着更高的义体兼容性。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30018": {
+    "id": 30018,
+    "event": "有人向父母推销新生儿视网膜增强套餐，声称能让孩子在三岁时就拥有夜视能力。父母礼貌地拒绝了。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30019": {
+    "id": 30019,
+    "event": "你的左手小指上有一个微小的疤痕——那是出生采集DNA样本时留下的。在这个城市，没有人能真正匿名。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": 1
+    }
+  },
+  "30020": {
+    "id": 30020,
+    "event": "母亲在孕检时服用的廉价基因优化药物似乎起了作用，你的各项发育指标略高于平均水平。副作用要等以后才知道。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 2
+    }
+  },
+  "30021": {
+    "id": 30021,
+    "event": "一个自称生物黑客的男人在医院的公共信息屏上留言，说你的基因数据很有研究价值。父亲愤怒地删除了那条消息。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30022": {
+    "id": 30022,
+    "event": "出生体检发现你有一个微小的先天性心脏缺陷，建议在六个月大时用纳米机器人进行修复。费用预估2500欧。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1
+    }
+  },
+  "30023": {
+    "id": 30023,
+    "event": "你在新生儿ICU旁边听到了义体手术的声音——电钻和焊接。隔壁床的婴儿正在接受手臂骨骼金属化手术。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30024": {
+    "id": 30024,
+    "event": "护士注意到你的瞳孔对强光的反应速度异常快。她记录了这个发现，但没有告诉你父母。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30025": {
+    "id": 30025,
+    "event": "你被带回了沃森区的一间微型公寓。墙上的全息广告闪烁着，你的眼睛追着移动的光影转来转去。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30026": {
+    "id": 30026,
+    "event": "回家的第一天晚上，街区的帮派枪战把你吓得哭了一整夜。父亲用消音器调低了房间外的声音，但振动还是能感受到。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30027": {
+    "id": 30027,
+    "event": "你的第一个摇篮是用废弃的服务器机箱改装的，上面还残留着企业的logo。母亲说这是浪漫的赛博朋克风。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30028": {
+    "id": 30028,
+    "event": "亲戚们送来了一堆二手婴儿用品——有几件显然是义体改装过的，比如内置加热功能的襁褓。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 2
+    }
+  },
+  "30029": {
+    "id": 30029,
+    "event": "父亲安装了一个廉价的智能摄像头对准你的摇篮，通过手机就能随时查看。他不知道这个摄像头的默认密码从未更改过。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30030": {
+    "id": 30030,
+    "event": "你的第一次出门是去太平洲的露天市场。空气中的重金属味道让你打了个喷嚏，但色彩斑斓的全息招牌让你目不转睛。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30031": {
+    "id": 30031,
+    "event": "邻居是个退休的义体医生，他来看你时用便携扫描仪快速检查了一下你的骨骼密度，说'这孩子骨头不错'。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1,
+      "EDDIES": 1
+    }
+  },
+  "30032": {
+    "id": 30032,
+    "event": "深夜，你被一阵刺眼的蓝光惊醒——窗外一架警用无人机正在扫描整栋楼。红外探测让你变成了墙上的一个亮斑。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30033": {
+    "id": 30033,
+    "event": "母亲每天在摇篮边播放教育性的神经刺激音频。你虽然听不懂，但低频脉冲让你的大脑皮层异常活跃。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1,
+      "CHROME": 1,
+      "EDDIES": -1
+    }
+  },
+  "30034": {
+    "id": 30034,
+    "event": "你的奶粉被换成了更便宜的合成蛋白配方。味道差了很多，但营养价值标注完全一样——至少包装上是这么写的。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30035": {
+    "id": 30035,
+    "event": "家里的自动调温系统坏了三天，你的体温轻微波动了好几次。修好后父亲把系统密码改了，防止再次被黑客入侵。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30036": {
+    "id": 30036,
+    "event": "父亲在你摇篮旁放了一把改装过的手枪。在这个街区，带枪的婴儿不会被骚扰——至少理论上是这样的。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1
+    }
+  },
+  "30037": {
+    "id": 30037,
+    "event": "你在摇篮里第一次翻了个身——虽然只是从侧卧变成了趴着，但这意味着你的运动神经开始苏醒。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1,
+      "EDDIES": 2
+    }
+  },
+  "30038": {
+    "id": 30038,
+    "event": "楼上的邻居正在进行非法义体改造，震动和噪音通过薄薄的墙壁传下来。你在噪音中学会了入睡。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30039": {
+    "id": 30039,
+    "event": "母亲在你满月时制作了一份数字成长记录，上传到了'育儿链'——一个基于区块链的成长追踪平台。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30040": {
+    "id": 30040,
+    "event": "你的第一次疫苗接种使用的是通用纳米疫苗枪，一秒完成注射。与传统针头相比，你几乎没有哭。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30041": {
+    "id": 30041,
+    "event": "父亲带你去社区诊所做满月体检。排队两小时后，医生看了你一眼就开了账单。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30042": {
+    "id": 30042,
+    "event": "你在太平洲的废弃集装箱中被发现，身上只有一张手写的出生日期纸条和一条廉价的合成纤维毯子。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1,
+      "HUMANITY": -1
+    }
+  },
+  "30043": {
+    "id": 30043,
+    "event": "孤儿院的看护人把你从NCPD手中接过来，给你起了个临时的编号：NC-0427。你的正式名字要等领养才能确定。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30044": {
+    "id": 30044,
+    "event": "一个神秘的中间人联系了孤儿院，表示对你很感兴趣。他说你的基因数据在黑市上有人出价，但被孤儿院拒绝了。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30045": {
+    "id": 30045,
+    "event": "你在孤儿院里被安排在一个六人婴儿间，隔壁是个哭个不停的义体婴儿——它的声带被人换成了电子合成器。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": -1,
+      "EDDIES": -2
+    }
+  },
+  "30046": {
+    "id": 30046,
+    "event": "一个流浪者在街头发现了被遗弃的你，把你送到了最近的教会庇护所。修女们给你做了清洁和体检。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30047": {
+    "id": 30047,
+    "event": "由于出生时母亲因义体排斥反应去世，你被自动转入政府育儿托管系统。你的档案上被标记为'高危孤儿'。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30048": {
+    "id": 30048,
+    "event": "孤儿院的墙壁上画满了涂鸦，有些看起来像是帮派标记。最年长的孩子说，这里是'瓦尔瓦德的小型新手村'。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1
+    }
+  },
+  "30049": {
+    "id": 30049,
+    "event": "一位年迈的义体技师在孤儿院做慈善活动时，发现你对闪烁的光源有异常反应。他在你的档案里加了一行备注。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30050": {
+    "id": 30050,
+    "event": "作为荒坂员工子女，你从出生起就享有公司医疗计划——包括免费的基因缺陷筛查和基础脑波优化。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30051": {
+    "id": 30051,
+    "event": "你的出生数据被上传至军用科技的'天才计划'数据库。如果未来展现出特殊天赋，你可能会收到邀请函。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30052": {
+    "id": 30052,
+    "event": "公司配发的婴儿监测系统精确记录了你每天的每一次呼吸和心跳。这些数据将用于你的终身健康档案。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30053": {
+    "id": 30053,
+    "event": "母亲产假结束后必须回去上班，你被送到了公司的日托中心。那里的护工都是经过认证的高级AI辅助系统。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1,
+      "CHROME": 1,
+      "EDDIES": 2
+    }
+  },
+  "30054": {
+    "id": 30054,
+    "event": "你的出生 coincided with 荒坂的年度员工体检，医生在检查时多看了你的基因数据几眼，然后若无其事地继续了。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30055": {
+    "id": 30055,
+    "event": "一个穿西装的男人出现在医院走廊，翻看了你的出生记录后就离开了。护士说他只是例行公事的企业代表。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30056": {
+    "id": 30056,
+    "event": "你出生在军用科技移动医疗车的后车厢里——因为父母来不及赶到医院。你的出生证明上的地址写的是'流动单位-07'。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "HUMANITY": -1,
+      "EDDIES": -2
+    }
+  },
+  "30057": {
+    "id": 30057,
+    "event": "出生时你被检测出携带一种军用科技正在研究的基因标记。医院被要求对此保密，但那个标记被悄悄加入了你的档案。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30058": {
+    "id": 30058,
+    "event": "母亲是公司的高级义体工程师，她在你出生当天就回到实验室继续工作。你的第一张照片是实验室AI自动拍摄的。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30059": {
+    "id": 30059,
+    "event": "你的出生标志着一个企业家庭计划的完成——父母为你预设了一条完整的教育和成长路线。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30060": {
+    "id": 30060,
+    "event": "你在睡梦中被一阵低沉的电子音惊醒——那是隔壁房间的邻居在进行脑机接口的固件更新。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30061": {
+    "id": 30061,
+    "event": "你的视神经发育速度比标准值快了15%。医生说这不一定是好事，但母亲已经开始幻想你成为黑客的天才。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1,
+      "CHROME": 1
+    }
+  },
+  "30062": {
+    "id": 30062,
+    "event": "第一场赛博雨从天而降，酸性的水滴打在窗上发出嘶嘶声。你被密集的雨声催眠，安然入睡。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30063": {
+    "id": 30063,
+    "event": "你的皮肤在第一个月出现了一些红斑，医生诊断为新陈代谢适应反应，开了涂抹型纳米修复凝胶。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30064": {
+    "id": 30064,
+    "event": "父母在二手市场淘到了一个全息投影玩具，投射出的虚拟宠物在你头顶飘浮。你伸手去抓，却什么都没碰到。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30065": {
+    "id": 30065,
+    "event": "你第一次被抱到室外，阳光透过永久的雾霾照射在你的脸上。你的瞳孔急速收缩，然后慢慢适应。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30066": {
+    "id": 30066,
+    "event": "夜间监测记录显示你在深度睡眠时大脑活动模式异常规律，接近成年人冥想状态。这被归档为'待观察'。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30067": {
+    "id": 30067,
+    "event": "你的哭声被智能分析系统检测到了轻微的声纹异常，但这在夜之城并不罕见——空气中的重金属含量会影响新生儿声带。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30068": {
+    "id": 30068,
+    "event": "父亲用3D打印机给你制作了一个定制的奶嘴，形状经过算法优化，据说能促进口腔肌肉发育。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30069": {
+    "id": 30069,
+    "event": "你在一个月大时体重已经增加了1.5公斤，超过平均水平。医生开玩笑说你要成为夜之城最重的婴儿。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30070": {
+    "id": 30070,
+    "event": "家里的智能家居系统学习了你哭声的模式，能够在你哭出来之前30秒预判并自动播放安抚音乐。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30071": {
+    "id": 30071,
+    "event": "你在换尿布时第一次露出了完整的笑容——正好在母亲的镜头前。这张照片后来成为了家庭的全息头像。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30072": {
+    "id": 30072,
+    "event": "社区的全息广告牌播放着荒坂的最新义体广告，你的眼睛被移动的全息影像牢牢吸引。这是你第一次长时间专注注视。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30073": {
+    "id": 30073,
+    "event": "你的手指已经能张开和合拢，偶尔会碰到摇铃玩具并发出声响。你似乎对这个因果关系感到困惑。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30074": {
+    "id": 30074,
+    "event": "邻居家的孩子比你大两个月，已经是半机械化的了。他的父母试图说服你的父母尽早为孩子进行义体改造。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30075": {
+    "id": 30075,
+    "event": "你的体温调节系统比正常新生儿更强——在空调坏了的房间里你依然睡得很安稳。父亲说你是'真正的夜之城孩子'。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1
+    }
+  },
+  "30076": {
+    "id": 30076,
+    "event": "第一次坐上婴儿车出门，你在太平洲的海边被浪花的声音吓哭了。母亲赶紧用AR安抚界面转移你的注意力。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30077": {
+    "id": 30077,
+    "event": "你的生物节律在一个月后已经基本稳定，但每天凌晨三点准时醒来。母亲怀疑是附近的超梦发射塔干扰了你的脑波。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30078": {
+    "id": 30078,
+    "event": "由于空气污染指数过高，父母在你外出时给你戴上了微型防毒面罩——看起来像个迷你的战斗机飞行员。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1,
+      "EDDIES": -1
+    }
+  },
+  "30079": {
+    "id": 30079,
+    "event": "你在第二个月末出现了第一次大笑——被父亲夸张的鬼脸逗乐的。这一次不是肌肉反射，而是真正的社交性微笑。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30080": {
+    "id": 30080,
+    "event": "你开始对颜色产生反应，特别喜欢霓虹粉色的全息灯。父亲开玩笑说这是'夜之城本能'。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30081": {
+    "id": 30081,
+    "event": "母亲发现你听到某种特定频率的电子音时不会哭，反而会安静下来。她把这个频率记了下来，当作你的专属安抚音。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30082": {
+    "id": 30082,
+    "event": "你的头围增长速度略高于平均水平，医生说可能与过度的脑波刺激有关——毕竟你从出生起就处于全息投影环境中。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {},
+    "itemAward": "imp_026"
+  },
+  "30083": {
+    "id": 30083,
+    "event": "父亲用一个废弃的神经接口外壳做了你的第一件玩具，金属光泽和轻微的电流反馈让你着迷。",
+    "type": "infancy",
+    "include": "TURN>=0&TURN<=11",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30084": {
+    "id": 30084,
+    "event": "你翻了个身！从仰卧到俯卧，虽然姿势歪歪扭扭，但这是一次完整的自主翻身。母亲的欢呼声几乎震碎了窗户。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30085": {
+    "id": 30085,
+    "event": "你开始能够抓住悬挂在婴儿床上方的全息小球，虽然经常抓空，但成功率在稳步提高。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": 2
+    }
+  },
+  "30086": {
+    "id": 30086,
+    "event": "你学会了坐——起初需要枕头支撑，后来逐渐能自己保持平衡。新获得的视野让你对这个世界更加好奇。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30087": {
+    "id": 30087,
+    "event": "你试图用四肢爬行，但动作更像是原地游泳。不过你已经开始向前移动了，虽然方向不太受控。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30088": {
+    "id": 30088,
+    "event": "你的手指已经能完成精细的捏合动作——用拇指和食指捏起一颗豆子大小的东西。这对于将来的义体操控很重要。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {},
+    "itemAward": "drug_002"
+  },
+  "30089": {
+    "id": 30089,
+    "event": "你在婴儿床里站了起来，扶着栏杆摇摇晃晃。母亲拍下了这个里程碑时刻，随后紧急加装了床围。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30090": {
+    "id": 30090,
+    "event": "你发现了脚的存在——坐在地上专注地研究自己的脚趾，尝试把脚趾放进嘴里。这是自我认知的第一步。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30091": {
+    "id": 30091,
+    "event": "你能够将玩具从一只手传到另一只手了。大脑左右半球的协调正在发育。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30092": {
+    "id": 30092,
+    "event": "你开始用手指指东西——指向窗户外的全息广告、指向远处的霓虹灯。这是早期沟通能力的关键信号。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30093": {
+    "id": 30093,
+    "event": "你的爬行速度越来越快，已经能够穿越整个客厅。父母不得不在所有插座上安装了安全锁。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30094": {
+    "id": 30094,
+    "event": "你在爬行时发现了一个被遗忘的电子元件——一个小芯片。你把它放进嘴里，被父亲及时抢救出来。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30095": {
+    "id": 30095,
+    "event": "你尝试站立时摔倒了，额头碰到了一个金属边框。虽然没有大碍，但那是你在夜之城留下的第一道疤痕。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30096": {
+    "id": 30096,
+    "event": "你的双手已经能够撑起整个身体的重量——虽然只有几秒。离独立行走又近了一步。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30097": {
+    "id": 30097,
+    "event": "你开始对抛掷和扔东西产生兴趣，把玩具一个接一个地从高椅上扔下去，然后探出头去看它们落在哪里。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -1
+    }
+  },
+  "30098": {
+    "id": 30098,
+    "event": "你在六个月大时开始长出了第一颗牙——在啃咬一个义体零件时，母亲注意到了你牙龈上的白点。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1,
+      "HUMANITY": -1
+    }
+  },
+  "30099": {
+    "id": 30099,
+    "event": "你学会了用杯盖喝水，虽然大部分水都流到了下巴上。但这是脱离奶瓶的第一步。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30100": {
+    "id": 30100,
+    "event": "你能够用拇指和食指夹住一块饼干并放进嘴里了。动作虽然笨拙，但已经接近成年人的精细运动水平。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30101": {
+    "id": 30101,
+    "event": "你的平衡感进步明显，坐在没有靠背的小凳上也不会倒。这让父母给你换了一个更大的活动空间。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30102": {
+    "id": 30102,
+    "event": "你在爬行时被一根数据线绊倒了，随即对缠绕在腿上的线产生了极大的好奇。你花了十分钟试图解开它。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30103": {
+    "id": 30103,
+    "event": "你开始尝试扶着家具走路——摇摇晃晃地沿着沙发移动了三步然后坐了下来。三步，但对父母来说等于三公里。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30104": {
+    "id": 30104,
+    "event": "你发出了第一声有意义的音节——'ba-ba-ba'。父亲激动得差点把手里改装的奶瓶摔碎，坚称你在叫爸爸。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30105": {
+    "id": 30105,
+    "event": "你的咿呀学语开始呈现出夜之城特有的音调模式——可能是因为你每天都在听不同语言的广告混播。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30106": {
+    "id": 30106,
+    "event": "你开始模仿声音：电视里的广告语、门铃的声音、甚至父亲骂街的声调。模仿的准确度令人惊讶。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30107": {
+    "id": 30107,
+    "event": "母亲教你说'妈妈'，你认真地看着她的嘴唇运动，然后发出了'吗-吗'。虽然不标准，但母亲已经热泪盈眶了。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30108": {
+    "id": 30108,
+    "event": "你第一次理解了'不'的含义——当你伸手去抓电源线时，母亲说了一个严厉的'不'，你犹豫了一秒后缩回了手。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30109": {
+    "id": 30109,
+    "event": "你的词汇量在快速增长，已经能说三个词了。虽然发音仍然含糊，但家人能听懂。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30110": {
+    "id": 30110,
+    "event": "你学会了说'不'——而且频繁使用这个词来表达你的反对意见。这是自我意识觉醒的信号。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1,
+      "HUMANITY": -1
+    }
+  },
+  "30111": {
+    "id": 30111,
+    "event": "你在看到一条全息鱼从头顶游过时兴奋地指着说了一个新词。虽然没人听懂，但你确实在尝试描述你看到的东西。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30112": {
+    "id": 30112,
+    "event": "邻居家的孩子已经装了语言辅助芯片，说话比你清晰得多。父母开始认真考虑是否要给你安装类似装置。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30113": {
+    "id": 30113,
+    "event": "你发现了镜子中的自己，伸出手指去碰镜子里的人。当你发现那个人也在做同样动作时，你的表情充满了困惑。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30114": {
+    "id": 30114,
+    "event": "你开始玩'藏猫猫'游戏——当母亲用手遮住脸再放开时，你咯咯笑个不停。客体永久性正在形成。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30115": {
+    "id": 30115,
+    "event": "你的听觉词汇库已经相当丰富——虽然你还不会说，但你明显能听懂父母说的简单指令。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30116": {
+    "id": 30116,
+    "event": "你第一次用食指和拇指做了'打电话'的手势——虽然你从未见过真正的电话，但全息广告里的画面已经教会了你。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30117": {
+    "id": 30117,
+    "event": "你在听音乐时能跟上节奏拍手，虽然完全不在拍子上。但音乐显然正在刺激你大脑的听觉处理区域。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "CHROME": 1,
+      "EDDIES": -2
+    }
+  },
+  "30118": {
+    "id": 30118,
+    "event": "你开始对因果关系产生兴趣——反复按按钮让玩具发出声音，观察每次按下后发生的事情。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": -1,
+      "EDDIES": 1
+    },
+    "itemAward": "imp_004"
+  },
+  "30119": {
+    "id": 30119,
+    "event": "你的记忆持续在增长——当父亲拿出一个上个月玩过的玩具时，你兴奋地认出了它，伸手去抓。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30120": {
+    "id": 30120,
+    "event": "你学会了'再见'的手势——挥动小手，在父亲出门上班时主动道别。这是社交能力的重大进步。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 1
+    }
+  },
+  "30121": {
+    "id": 30121,
+    "event": "你在看到一只赛博猫从窗外经过时，尝试发出'喵'的声音。你对动物的模仿本能正在被唤醒。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30122": {
+    "id": 30122,
+    "event": "你的注意力持续时间从几秒延长到了一两分钟——够你认真地研究一个发光的电子玩具了。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1,
+      "EDDIES": -2
+    }
+  },
+  "30123": {
+    "id": 30123,
+    "event": "你开始理解简单的空间概念——'里面'和'外面'，当把玩具放进盒子时你会探进去看。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30124": {
+    "id": 30124,
+    "event": "陌生人焦虑开始出现——每当不熟悉的人试图抱你，你就大哭不止。在夜之城，这种警惕性也许是好事。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1,
+      "CHROME": 1,
+      "EDDIES": -1
+    }
+  },
+  "30125": {
+    "id": 30125,
+    "event": "你在社区游乐场第一次与其他婴儿互动——虽然只是互相盯着看了三分钟，但这是社交的第一步。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30126": {
+    "id": 30126,
+    "event": "分离焦虑变得更严重了——母亲离开你的视线就哭。她不得不在出门前反复跟你挥手直到你理解'会回来'。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30127": {
+    "id": 30127,
+    "event": "你与一个同龄的孩子发生了第一次'冲突'——你们同时看中了同一个玩具球，你伸手就抢了过来。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30128": {
+    "id": 30128,
+    "event": "你在父亲的怀里安静地坐着，一起看窗外的夜之城天际线。这种亲密时刻虽然短暂，但温暖而珍贵。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30129": {
+    "id": 30129,
+    "event": "你开始对大人的情绪变得敏感——当母亲焦虑时你会烦躁，当父亲高兴时你会跟着笑。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30130": {
+    "id": 30130,
+    "event": "你第一次遇到了真正的宠物——邻居的赛博狗。它机械的尾巴在你面前左右摇摆，你伸出小手去摸。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30131": {
+    "id": 30131,
+    "event": "你在家庭聚会上被一大群亲戚围观，被无数只手传递来传递去。你从困惑变成了愤怒，最后嚎啕大哭。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30132": {
+    "id": 30132,
+    "event": "你开始对特定的人表现出明确的偏好——只要妈妈抱，拒绝一切其他人。父亲开玩笑说你是个'企业级筛选器'。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30133": {
+    "id": 30133,
+    "event": "你在日托中心交到了一个'朋友'——两个孩子坐在一起，各自玩各自的玩具，偶尔互相看一眼。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30134": {
+    "id": 30134,
+    "event": "你学会了表达愤怒——摔东西、打滚、大声哭叫。母亲说这叫'意志表达'，父亲说这叫'小混蛋模式'。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30135": {
+    "id": 30135,
+    "event": "你看到母亲哭泣时会伸出小手去摸她的脸。这是早期共情能力的表现——尽管你还不理解悲伤。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -1
+    }
+  },
+  "30136": {
+    "id": 30136,
+    "event": "你的第一次'恶作剧'——故意把碗里的食物扔到地上，然后看着大人捡起来，得意地笑。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30137": {
+    "id": 30137,
+    "event": "你开始理解简单的社交规则——当大人鼓掌时你也拍手，虽然完全不跟节奏。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "CHROME": 1
+    },
+    "itemAward": "imp_003"
+  },
+  "30138": {
+    "id": 30138,
+    "event": "你在半夜醒来发现旁边没人，安静地等了几分钟后才开始哭。等待的能力正在缓慢形成。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30139": {
+    "id": 30139,
+    "event": "父母给你购买了第一台AR早教终端，投射出的彩色互动影像让你兴奋不已。你伸手去抓全息蝴蝶。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30140": {
+    "id": 30140,
+    "event": "你在六个月大时接种了第二剂纳米疫苗，这次含有基础免疫增强成分。注射后你低烧了一天。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1,
+      "EDDIES": -2
+    }
+  },
+  "30141": {
+    "id": 30141,
+    "event": "你开始使用脑波感应学习垫——当你的注意力集中在某个图案上时，系统会自动调整内容。你的学习偏好数据被记录下来。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30142": {
+    "id": 30142,
+    "event": "日托中心的AI教师系统发现你的空间推理能力超出同龄人15%，建议转入进阶认知训练模块。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30143": {
+    "id": 30143,
+    "event": "你在食用添加了认知促进剂的婴儿食品后出现了轻微的过敏反应。父母立刻停止了所有强化喂养计划。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {},
+    "itemAward": "drug_018"
+  },
+  "30144": {
+    "id": 30144,
+    "event": "一次常规体检发现你的义体兼容指数异常高——你的神经系统似乎天生适应金属和有机组织的结合。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1
+    }
+  },
+  "30145": {
+    "id": 30145,
+    "event": "你的智能监护仪记录了一次夜间异常——你的体温骤降了0.5度后又恢复正常。医生说是环境波动所致。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "CHROME": 1,
+      "EDDIES": -1
+    }
+  },
+  "30146": {
+    "id": 30146,
+    "event": "你在玩虚拟触摸屏时，发现如果用力按下屏幕边缘，画面会短暂出现故障。你对这种'打破规则'的感觉很着迷。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30147": {
+    "id": 30147,
+    "event": "父母给你订了一个双语早教频道——普通话和英语同时播送。你似乎对两种语言的切换频率都能跟上。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30148": {
+    "id": 30148,
+    "event": "你在八个月大时被诊断出轻微的营养缺乏症，因为母亲使用的廉价配方奶粉缺少微量元素。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30149": {
+    "id": 30149,
+    "event": "你的体重增长放缓——因为最近你学会了爬行，每天消耗的能量是之前的两倍。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30150": {
+    "id": 30150,
+    "event": "你在虚拟游乐场中第一次体验了'重力错觉'——模拟的低重力环境让你飘浮了几秒。你的笑声充满了整个房间。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30151": {
+    "id": 30151,
+    "event": "你开始使用发音纠正器——一个贴在嘴唇上的微型装置，帮助你在学习说话时保持正确的口型。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30152": {
+    "id": 30152,
+    "event": "日托中心的营养师发现你不爱吃的食物种类恰好都是含有神经保护成分的。父母为此焦虑了一整周。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30153": {
+    "id": 30153,
+    "event": "你在睡眠中出现了一次持续30秒的异常脑波峰值——医生说可能是基因优化的副作用，但需要持续监测。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30154": {
+    "id": 30154,
+    "event": "在商场购物时，一个全息广告的角色突然蹲下来和你说话，你被吓得大哭。母亲投诉了广告公司后获得了一张代金券。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30155": {
+    "id": 30155,
+    "event": "你第一次被带到了野外——太平洲郊外的废弃园区。新鲜的空气让你的感官短暂过载，然后你平静了下来。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1,
+      "EDDIES": 1
+    }
+  },
+  "30156": {
+    "id": 30156,
+    "event": "你的基因数据被一个黑客组织从医院数据库中窃取。虽然不知道他们会拿去做什么，但你的信息已经泄露到了暗网。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30157": {
+    "id": 30157,
+    "event": "一位路过的陌生人看了你一眼说'这孩子不一般'，然后留下了一张名片就消失了。名片上只有一个暗网地址。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 1
+    }
+  },
+  "30158": {
+    "id": 30158,
+    "event": "你在一次社区活动中被选中参与婴幼儿义体兼容性研究，获得了一台免费的脑波监测仪。研究数据将匿名贡献给学术界。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "CHROME": 1,
+      "EDDIES": -2
+    }
+  },
+  "30159": {
+    "id": 30159,
+    "event": "你的哭声在一天夜里引来了邻居家的赛博猫——它趴在你窗台上盯着你看了很久。母亲拍下了这诡异的一幕。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1
+    },
+    "itemAward": "drug_011"
+  },
+  "30160": {
+    "id": 30160,
+    "event": "你在一次高烧后，瞳孔颜色似乎发生了一丝微妙的变化。医生说可能是温度导致的血管扩张，但母亲总觉得有什么不同。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30161": {
+    "id": 30161,
+    "event": "你在游乐场捡到了一枚闪亮的小芯片，在你试图把它放进嘴里的前一刻被父亲夺走了。后来发现那是一枚加密存储卡。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30162": {
+    "id": 30162,
+    "event": "你的第一个生日——父母用全息蛋糕代替了真正的蛋糕（因为你的食物过敏）。你在嘈杂的祝福声中茫然地张望。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1,
+      "EDDIES": 2
+    }
+  },
+  "30163": {
+    "id": 30163,
+    "event": "你在生日当天收到了远房亲戚送来的一个二手玩具机器人，它的电池泄漏了微量辐射。父亲在发现后立刻处理掉了。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30164": {
+    "id": 30164,
+    "event": "一位神秘的企业HR在生日聚会上偶然看到了你，随口问了你父母是否考虑过让孩子参加公司的'未来之星'计划。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30165": {
+    "id": 30165,
+    "event": "你在接触了一次超梦演示后被吓得大哭——虽然内容只是简单的自然风光，但全感官体验对一个一岁的婴儿来说太强烈了。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30166": {
+    "id": 30166,
+    "event": "你的第一次过敏反应是对空气中的工业化学物质——太平洲的空气质量指数再次超标。父母开始认真考虑搬家。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30167": {
+    "id": 30167,
+    "event": "你在街上看到了一群帮派少年骑改装摩托呼啸而过，你的眼神被他们霓虹色的义体吸引住了。母亲赶紧把你抱走。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30168": {
+    "id": 30168,
+    "event": "你的手指运动越来越灵活，已经开始尝试操作简单的触摸屏设备——虽然经常按错，但你已经理解了'点击'的概念。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30169": {
+    "id": 30169,
+    "event": "你在十个月大时开始尝试独立行走——第一步歪歪斜斜，第二步就坐了下去。但那第一步足够让全家人尖叫。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30170": {
+    "id": 30170,
+    "event": "你学会了用勺子吃饭，虽然90%的食物都掉在了地上。但那10%被送进嘴里的部分代表着巨大的进步。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30171": {
+    "id": 30171,
+    "event": "你开始理解'给'和'拿'的概念——当别人向你要玩具时，你会犹豫一下然后递过去。有时候。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "imp_009"
+  },
+  "30172": {
+    "id": 30172,
+    "event": "你在十一个月大时学会了三个以上的词汇，并开始把它们连成'句子'——虽然只是'要-奶-快'这种原始表达。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": -1
+    },
+    "itemAward": "imp_031"
+  },
+  "30173": {
+    "id": 30173,
+    "event": "你的睡眠模式终于稳定了——不再凌晨三点醒来，但偶尔做噩梦时会喊出含糊的音节。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30174": {
+    "id": 30174,
+    "event": "你在镜子前的自我意识越来越清晰——你会对着镜子做鬼脸，然后观察镜中的'另一个孩子'做同样的动作。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {},
+    "itemAward": "imp_014"
+  },
+  "30175": {
+    "id": 30175,
+    "event": "你第一次表现出对音乐的偏好——听到某些类型的电子音乐时会摇头晃脑，听到另一些则面无表情。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30176": {
+    "id": 30176,
+    "event": "你在一次社区活动中被AI评估系统评为'高潜能婴幼儿'，获得了进入高级早教项目的推荐资格。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": 1
+    }
+  },
+  "30177": {
+    "id": 30177,
+    "event": "你的模仿能力越来越强——已经能模仿大人用杯子喝水、用纸巾擦嘴，甚至模仿父亲看手机的姿势。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1,
+      "EDDIES": -2
+    }
+  },
+  "30178": {
+    "id": 30178,
+    "event": "你在接近一岁时，体重达到了10公斤。对于夜之城的标准来说，你属于中等偏上——没有营养不良，也没有过度喂养。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30179": {
+    "id": 30179,
+    "event": "你开始对'故事'产生兴趣——当父母用夸张的语气给你讲赛博童话时，你能安静地听上几分钟。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30180": {
+    "id": 30180,
+    "event": "你学会了推开障碍物——当有人挡在面前时，你会试图把对方推开。力量不够，但意图明确。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30181": {
+    "id": 30181,
+    "event": "你在日托中心第一次经历了'被欺负'——一个大孩子抢走了你的玩具。你愣了一秒后，开始大哭。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30182": {
+    "id": 30182,
+    "event": "你的精细运动已经接近1岁标准——能叠起两块积木，能翻开纸板书的页面，能旋转门把手。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30183": {
+    "id": 30183,
+    "event": "你对电子设备的兴趣越来越浓——家里的平板电脑被你摸到了密码界面。父亲赶紧更改了密码。",
+    "type": "infancy",
+    "include": "TURN>=12&TURN<=35",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30184": {
+    "id": 30184,
+    "event": "你的语言能力进入了爆发期——每天都能学会新词汇。最近最爱说的是'不要'和'为什么'这两个词。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30185": {
+    "id": 30185,
+    "event": "你说出了第一个完整的句子：'我要喝奶。'虽然发音不够标准，但语法结构完整得让父亲惊讶。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1,
+      "CHROME": 1
+    }
+  },
+  "30186": {
+    "id": 30186,
+    "event": "你开始把两个词连在一起说：'妈妈-走'、'爸爸-车'、'不要-那个'。你的世界正在通过语言展开。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30187": {
+    "id": 30187,
+    "event": "你在街头学了一句脏话——不知道从哪里听来的。在家庭聚会上大声说出来后，场面一度非常尴尬。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30188": {
+    "id": 30188,
+    "event": "你的词汇量已经突破50个，开始能够用语言表达简单的需求和情绪。'痛痛'意味着你受伤了需要安慰。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {},
+    "itemAward": "drug_017"
+  },
+  "30189": {
+    "id": 30189,
+    "event": "你开始对网络用语产生兴趣——模仿AR广告里的流行语。虽然完全不理解意思，但说起来煞有介事。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30190": {
+    "id": 30190,
+    "event": "你在双语环境中自然切换——跟母亲说普通话，跟父亲的同事说英语片段。语言区的大脑活动异常活跃。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30191": {
+    "id": 30191,
+    "event": "你发明了自己的'秘密语言'——一串只有你懂的无意义音节。母亲觉得这很可爱，父亲开始担心。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30192": {
+    "id": 30192,
+    "event": "你开始能理解简单的比喻——当父亲说'你的肚子像气球一样'时，你低头看了看自己的小肚腩。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 1
+    }
+  },
+  "30193": {
+    "id": 30193,
+    "event": "你在看全息绘本时，能够指着图片说出对应的名称。识别准确率已经超过了90%。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30194": {
+    "id": 30194,
+    "event": "你的语言模仿能力让父母既骄傲又紧张——你完美复制了邻居吵架时的语气和用词。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30195": {
+    "id": 30195,
+    "event": "你开始问'这是什么'——每天至少一百次。每一个物体、每一段文字、每一个全息影像都要问。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30196": {
+    "id": 30196,
+    "event": "你说出了第一个抽象概念的词——'漂亮'。指向窗外霓虹灯时你说的这个词让母亲感到意外。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30197": {
+    "id": 30197,
+    "event": "你开始能够唱几句简单的儿歌——虽然跑调到隔壁街都能听到，但你唱得很认真。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30198": {
+    "id": 30198,
+    "event": "你在和隔壁的双语小孩玩耍时，突然用英语说了'hello'。然后又切换回普通话。语言切换能力令人印象深刻。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30199": {
+    "id": 30199,
+    "event": "你学会了独立行走——虽然还是摇摇晃晃，但已经不需要扶任何东西了。家里的所有东西都在你的触及范围内。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": -1,
+      "CHROME": 1
+    }
+  },
+  "30200": {
+    "id": 30200,
+    "event": "你第一次爬上了沙发——翻上去的那一刻，你获得了全新的视角。然后你又爬了下来，然后又上去。重复了二十次。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30201": {
+    "id": 30201,
+    "event": "你开始尝试跑步——步子小而急促，经常摔倒。但每次摔倒后你都迅速爬起来继续跑。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30202": {
+    "id": 30202,
+    "event": "你在游乐场尝试滑滑梯——第一次坐着滑下去后被吓哭了，但三十秒后你又爬了上去。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30203": {
+    "id": 30203,
+    "event": "你的跳跃能力开始发展——你能双脚离地跳起几厘米，虽然落地时经常一屁股坐地上。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30204": {
+    "id": 30204,
+    "event": "你学会了踢球——力度和方向完全不可控，但你能用脚触碰到球这个事实本身就很了不起。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30205": {
+    "id": 30205,
+    "event": "你开始能够倒着走几步——虽然方向感一团糟，但反向运动意味着你的平衡系统在进步。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30206": {
+    "id": 30206,
+    "event": "你在大人们不注意时爬上了餐桌。从那个高度看下去，你的表情是恐惧与骄傲的奇妙混合。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30207": {
+    "id": 30207,
+    "event": "你在公园里追着一只赛博猫跑了整整五分钟，直到你被一根水管绊倒。猫停下回头看了你一眼。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1,
+      "EDDIES": 1
+    }
+  },
+  "30208": {
+    "id": 30208,
+    "event": "你的手眼协调能力在提升——能够用积木搭起三层塔了，尽管塌下来的速度比搭起来的速度快。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30209": {
+    "id": 30209,
+    "event": "你学会了用蜡笔在墙上涂鸦。家里的墙壁变成了你的第一幅'画作'。母亲既生气又不得不承认确实有点美感。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1,
+      "CHROME": 1
+    }
+  },
+  "30210": {
+    "id": 30210,
+    "event": "你开始能够自己穿简单的鞋子——虽然经常左右脚穿反，但独立完成这件事本身就是一个里程碑。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30211": {
+    "id": 30211,
+    "event": "你在街上模仿帮派成员的走路姿势，一瘸一拐的样子让路人忍俊不禁。你模仿得其实挺像。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30212": {
+    "id": 30212,
+    "event": "你学会了开和关门——但还没有学会'不要把手指夹在门缝里'。一次小事故后你终于记住了这个教训。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30213": {
+    "id": 30213,
+    "event": "你第一次成功地把一个方形积木塞进了对应形状的洞里。问题解决能力的萌芽。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1
+    }
+  },
+  "30214": {
+    "id": 30214,
+    "event": "你开始理解物品的用途——知道杯子是用来喝水的，鞋子是用来穿在脚上的。虽然偶尔还是会把鞋子套在手上。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1
+    }
+  },
+  "30215": {
+    "id": 30215,
+    "event": "你的好奇心已经延伸到了父亲的工作台——你偷了一把螺丝刀试图拆开一个玩具。虽然失败了，但热情不减。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": 1
+    }
+  },
+  "30216": {
+    "id": 30216,
+    "event": "你在沙坑里发现了一条蜈蚣，蹲下来观察了很久。这是你第一次对非人造物体表现出持久兴趣。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30217": {
+    "id": 30217,
+    "event": "你开始进行简单的假装游戏——把积木当成手机放在耳边，假装在跟谁说话。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "EDDIES": 2
+    }
+  },
+  "30218": {
+    "id": 30218,
+    "event": "你对分类产生了兴趣——把家里的东西按颜色排列，虽然逻辑上毫无规律。但你显然在做某种分类尝试。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {},
+    "itemAward": "drug_013"
+  },
+  "30219": {
+    "id": 30219,
+    "event": "你第一次理解了'昨天'和'明天'的概念——虽然时间感知仍然模糊，但你能理解'等一下'的含义了。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "HUMANITY": -1,
+      "EDDIES": 2
+    }
+  },
+  "30220": {
+    "id": 30220,
+    "event": "你在虚拟学习系统中完成了基础形状识别模块，获得了第一个数字成就徽章。你虽然不懂那是什么，但很喜欢它的颜色。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30221": {
+    "id": 30221,
+    "event": "你开始追问'为什么'——'天为什么亮''猫为什么跑''为什么不能吃那个'。每天的问题无穷无尽。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30222": {
+    "id": 30222,
+    "event": "你能够辨认出10种以上的颜色，包括霓虹紫和全息蓝——这些在夜之城比红色和蓝色更常见。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30223": {
+    "id": 30223,
+    "event": "你在一次实验中发现，把不同颜色的饮料混在一起会变成新颜色。你在地板上制造了一摊棕色的液体。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30224": {
+    "id": 30224,
+    "event": "你的记忆力在一次游戏中被验证——你准确地回忆起了三个月前去过的一个地方，描述了那里的灯光颜色。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30225": {
+    "id": 30225,
+    "event": "你开始理解数量的概念——'一个'和'很多个'的区别你已经掌握了。但精确计数还要等一阵。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30226": {
+    "id": 30226,
+    "event": "你发现了影子的奥秘——在大街上追逐自己的影子，好奇为什么它总是跟着你但永远抓不住。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": 2
+    }
+  },
+  "30227": {
+    "id": 30227,
+    "event": "你在一次社区活动中的拼图挑战里，完成了适合3岁儿童的8块拼图。其他家长投来了惊讶的目光。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30228": {
+    "id": 30228,
+    "event": "你开始问'我来自哪里'的问题。母亲犹豫了很久，然后用你能理解的语言告诉了你一个关于星星的美丽谎言。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30229": {
+    "id": 30229,
+    "event": "你与同龄孩子第一次进行了'合作'——两个人合力搬动了一个你一个人搬不动的大箱子。虽然那个箱子里只有空气。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -1
+    }
+  },
+  "30230": {
+    "id": 30230,
+    "event": "你在日托中心有了一个固定的'玩伴'——两个孩子每天到校后都会走向彼此，然后各玩各的。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30231": {
+    "id": 30231,
+    "event": "你第一次体验到了嫉妒——当母亲抱起邻居家的小孩时，你冲上去把她推开。情绪控制仍然为零。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30232": {
+    "id": 30232,
+    "event": "你开始表现出强烈的占有欲——'我的！'是你使用频率最高的词汇之一。所有东西都是你的。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1
+    }
+  },
+  "30233": {
+    "id": 30233,
+    "event": "你在看到另一个孩子哭泣时，主动把自己的玩具递给了对方。这是你第一次表现出自发的共情行为。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30234": {
+    "id": 30234,
+    "event": "你的情绪变化越来越快——上一秒还在笑，下一秒就暴怒或大哭。大脑的情绪调节系统仍在建设中。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30235": {
+    "id": 30235,
+    "event": "你在家庭聚餐中学会了'分享'——把自己最爱的饼干掰了一半给祖母。虽然你很舍不得。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1
+    },
+    "itemAward": "drug_011"
+  },
+  "30236": {
+    "id": 30236,
+    "event": "你开始对'好看'和'不好看'产生审美判断——你拒绝穿一件你觉得不好看的衣服，虽然你还说不清理由。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1,
+      "CHROME": 1
+    }
+  },
+  "30237": {
+    "id": 30237,
+    "event": "你在游乐场上经历了一次'社交排挤'——几个大孩子不让你参与他们的游戏。你独自在角落里玩了一会儿。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30238": {
+    "id": 30238,
+    "event": "你的自我意识越来越强——开始用'我'来指代自己。'我要''我的''我是'——'我'成为了你的新口头禅。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30239": {
+    "id": 30239,
+    "event": "你发现了一个社交技巧——用笑容来获得大人的好感。你开始频繁对着陌生人笑，看他们给你什么。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30240": {
+    "id": 30240,
+    "event": "你在日托中心因为抢玩具被另一个孩子咬了。你哭得很惨，但从那以后你学会了在冲突中保护自己。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30241": {
+    "id": 30241,
+    "event": "你开始有了'喜欢'和'不喜欢'的明确区分——你有最喜欢的玩具、最喜欢的颜色、最喜欢的食物。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30242": {
+    "id": 30242,
+    "event": "你模仿大人的行为模式越来越精准——模仿母亲做饭的姿势，模仿父亲看数据的神情。你在通过观察学习。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30243": {
+    "id": 30243,
+    "event": "你第一次出现了'害羞'的情绪——在陌生环境里躲在大人腿后面，拒绝与陌生人互动。这和婴儿期的陌生人焦虑不同，这是真正意义上的害羞。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30244": {
+    "id": 30244,
+    "event": "你开始使用专门为幼儿设计的AR学习终端——全息影像会在你的视野中叠加互动元素，让学习变得像游戏。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30245": {
+    "id": 30245,
+    "event": "你在日托中心的虚拟教室里完成了第一堂'数字素养'课——学习了什么是屏幕、什么是按钮、什么是电源。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30246": {
+    "id": 30246,
+    "event": "父母决定给你安装一个基础语言辅助芯片——手术在门诊完成，全程不到二十分钟。你醒来后声音有些沙哑。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30247": {
+    "id": 30247,
+    "event": "你开始使用脑机学习垫的进阶模式——系统能根据你的注意力时长自动调整教学内容。你通常在3分钟后就走神了。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 1
+    }
+  },
+  "30248": {
+    "id": 30248,
+    "event": "你在一次社区科技展上接触了儿童编程玩具——通过拼接彩色模块来控制一个迷你机器人。你拼出了一个随机运动模式。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 1
+    },
+    "itemAward": "drug_016"
+  },
+  "30249": {
+    "id": 30249,
+    "event": "你的语言辅助芯片在运行一周后出现了轻微的不兼容反应——你的舌头偶尔会不自主地抽动。医生调整了参数后恢复正常。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": 2
+    }
+  },
+  "30250": {
+    "id": 30250,
+    "event": "你在虚拟游乐场中认识了一个AI伙伴，它用简单的话语和你互动。你问它'你是活的吗'，它回答'我一直在这里'。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30251": {
+    "id": 30251,
+    "event": "你被选中参加一项关于幼儿义体耐受性的研究——研究员在你的手腕上贴了一个微型传感器，记录你的神经反应。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30252": {
+    "id": 30252,
+    "event": "你在AR早教中学习了'赛博动物百科'——认识了真正的猫、狗、鸟。然后你问母亲'为什么街上没有这些'。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": -1
+    },
+    "itemAward": "imp_015"
+  },
+  "30253": {
+    "id": 30253,
+    "event": "你的脑波学习数据被匿名上传到了教育大数据平台，与其他同龄儿童进行对比分析。结果显示你在空间推理方面排前5%。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30254": {
+    "id": 30254,
+    "event": "你在日托中心接触到了第一台3D食物打印机——它打印出的食物形状有趣但味道一般。你更喜欢吃手工做的饭。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -1
+    }
+  },
+  "30255": {
+    "id": 30255,
+    "event": "你的眼睛在长时间使用AR终端后出现了疲劳症状。医生建议每天使用时间不超过两小时。你抗议无效。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30256": {
+    "id": 30256,
+    "event": "你在虚拟世界中学会了'叠衣服'——虽然现实中你依然把衣服团成一团，但在虚拟世界你能完美地叠好一件虚拟T恤。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30257": {
+    "id": 30257,
+    "event": "父母在考虑是否给你安装基础视觉增强装置——价格可以接受，但两岁就装义体在他们的道德边界上。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1,
+      "HUMANITY": -1
+    }
+  },
+  "30258": {
+    "id": 30258,
+    "event": "你在社区图书馆的数字阅览区发现了儿童有声书。你坐在角落里听了整整一个小时，一动不动。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30259": {
+    "id": 30259,
+    "event": "孤儿院的孩子们开始形成小圈子——你被分到了'最小的那个'组，每天的任务是分到足够的食物和干净的水。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30260": {
+    "id": 30260,
+    "event": "你在孤儿院的角落里发现了一台被人丢弃的旧平板电脑。屏幕碎了一半，但你还是用它看了两个小时的全息绘本。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30261": {
+    "id": 30261,
+    "event": "帮派控制的街区里，你在大人的庇护下目睹了一次小规模的帮派冲突。你不太理解发生了什么，但记住了那些闪亮的义体。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1,
+      "CHROME": 1
+    }
+  },
+  "30262": {
+    "id": 30262,
+    "event": "作为企业子女，你进入公司专属的幼儿发展中心——这里的一切设施都比外面的要好得多，包括护工和食物。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30263": {
+    "id": 30263,
+    "event": "你在公司举办的'家庭日'活动中第一次见到了真正的科技展品——一架军用无人机在头顶盘旋。你的眼睛亮了起来。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1,
+      "EDDIES": 1
+    }
+  },
+  "30264": {
+    "id": 30264,
+    "event": "荒坂的幼教AI评估了你的发展指标，生成了一份详细的成长预测报告。父母对其中几项'潜在风险'感到焦虑。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30265": {
+    "id": 30265,
+    "event": "你在一个暴风雨之夜被巨大的雷声吓醒了——闪电照亮了整个房间。你注意到自己的影子在墙上变换了形状。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30266": {
+    "id": 30266,
+    "event": "NCPD的一次社区安全检查中，你的生物数据被更新到了最新的市政数据库。你的信息现在同时存在于三套系统中。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": 1
+    }
+  },
+  "30267": {
+    "id": 30267,
+    "event": "你在太平洲的海滩上第一次接触了真正的海水——温暖而咸涩。你在沙滩上跑来跑去，直到体力耗尽。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30268": {
+    "id": 30268,
+    "event": "一个流浪艺人用全息吉他给你弹了一首曲子。你安静地听完了整首歌，然后鼓起了掌。你不知道什么是音乐，但你知道你喜欢。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30269": {
+    "id": 30269,
+    "event": "你在楼道里遇到了一个装满了义体手臂的老爷爷。你好奇地摸了摸他的金属手指，他笑着让你握了握。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30270": {
+    "id": 30270,
+    "event": "你在家里的储物间发现了一本旧相册——里面有父母年轻时的照片。那时候他们还没有任何义体。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30271": {
+    "id": 30271,
+    "event": "一次大规模的赛博雨让整条街断电了24小时。你在黑暗中学会了使用手电筒——你拿着它像拿着一把剑。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30272": {
+    "id": 30272,
+    "event": "你在观看一场街头表演时，表演者从帽子里变出了一只全息鸽子。你目瞪口呆——这是你第一次被'魔法'震撼。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30273": {
+    "id": 30273,
+    "event": "你在日托中心不小心碰碎了一个电子玩具。护工没有责怪你，但你观察到了她的表情瞬间从微笑变成了皱眉。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30274": {
+    "id": 30274,
+    "event": "你的夜视能力似乎比同龄人更好——在停电的夜晚你是第一个适应黑暗并开始活动的孩子。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30275": {
+    "id": 30275,
+    "event": "你开始对'钱'有了模糊的概念——知道拿着发光的小卡片就能在商店里换东西。你想拥有所有的小卡片。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30276": {
+    "id": 30276,
+    "event": "你在街上捡到了一个损坏的智能手环，回家后试图用积木给它'修理'。父亲看到后说这孩子天生是修理工的料。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1
+    }
+  },
+  "30277": {
+    "id": 30277,
+    "event": "你的第二次生日蛋糕上插了两根蜡烛。你许了一个愿——虽然你不太理解许愿是什么，但你知道吹蜡烛是要做的。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30278": {
+    "id": 30278,
+    "event": "你在一次全家出游中被带到了夜之城的市中心——你看到了荒坂塔，它高耸入云，在你的视野中占据了整个天空。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30279": {
+    "id": 30279,
+    "event": "你在两岁时已经能用完整的句子表达自己的想法了。你的语言能力评估报告显示你达到了2.5岁的水平。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30280": {
+    "id": 30280,
+    "event": "你开始对'危险'有了初步的认知——知道电源插座不能碰，知道马路不能乱跑。虽然偶尔还是会忘记。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30281": {
+    "id": 30281,
+    "event": "你在一场社区聚会上表演了'唱歌'——站在所有人面前大声唱了一首自己编的歌。虽然没人听懂，但掌声很热烈。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30282": {
+    "id": 30282,
+    "event": "你的模仿天赋在一天中被彻底证实——你完美复制了母亲在电话里训斥别人的语气、用词和手势。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30283": {
+    "id": 30283,
+    "event": "你第一次在公众场合对陌生人说了'你好'和'再见'——基本社交礼仪开始成型。",
+    "type": "infancy",
+    "include": "TURN>=36&TURN<=71",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30284": {
+    "id": 30284,
+    "event": "你说出了你的第一个谎言——吃了饼干后否认。虽然你的嘴角还沾着碎屑，但你觉得语言本身就有改变事实的力量。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30285": {
+    "id": 30285,
+    "event": "你的词汇量突破了200个，开始能够描述过去发生的事情。'昨天我吃了...'成为你的新口头禅。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30286": {
+    "id": 30286,
+    "event": "你开始理解'可能'和'不可能'的区别——当你问能不能飞的时候，母亲说'人类不能飞，但飞机可以'。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30287": {
+    "id": 30287,
+    "event": "你在吵架时学会了使用'永远不'和'再也不'——'我永远再也不跟你玩了！'十分钟后你们又在一起玩了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": -1,
+      "EDDIES": -1
+    }
+  },
+  "30288": {
+    "id": 30288,
+    "event": "你开始讲'故事'——虽然逻辑混乱且时间线完全错乱，但你能用语言构建一个有开头有结尾的叙事。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30289": {
+    "id": 30289,
+    "event": "你的双语能力已经比较稳定——能根据交谈对象自动切换语言。虽然两种语言都带有幼儿特有的口音。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30290": {
+    "id": 30290,
+    "event": "你在观看全息新闻时问了一个让大人意外的问题：'那些人为什么要打人？'政治启蒙也许太早，但种子已经种下了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30291": {
+    "id": 30291,
+    "event": "你开始对文字产生兴趣——指着路边的招牌问'这个是什么字'。你还不认识任何一个字，但你很想认识。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30292": {
+    "id": 30292,
+    "event": "你在一次对话中使用了'因为...所以...'的因果句型。逻辑思维的萌芽在你的语言中显现出来。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -1
+    }
+  },
+  "30293": {
+    "id": 30293,
+    "event": "你的语言表达能力已经足够让你参与简单的谈判——'如果我把饭吃完，可以多看十分钟全息动画吗？'",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30294": {
+    "id": 30294,
+    "event": "你开始学习第三种语言——日文。因为在夜之城，日语是仅次于英语的常用外语。你在AR学习中每天接触15分钟。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30295": {
+    "id": 30295,
+    "event": "你的发音清晰度大幅提升，陌生人也能听懂你说的大部分话了。但有些发音你仍然搞不清楚。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30296": {
+    "id": 30296,
+    "event": "你在一次家庭聚会中充当了'翻译官'——帮祖父理解了一个全息广告的内容。虽然翻译得不太准确。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": 2
+    }
+  },
+  "30297": {
+    "id": 30297,
+    "event": "你开始对网络流行语感兴趣——从AR广告中学到的新词汇让你觉得自己很'酷'。父母对此表示担忧。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1,
+      "EDDIES": -1
+    }
+  },
+  "30298": {
+    "id": 30298,
+    "event": "你第一次尝试'写'字——用蜡笔在纸上画了一堆歪歪扭扭的线条，然后指着它们说'这是我的名字'。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30299": {
+    "id": 30299,
+    "event": "你学会了数数——从1数到10。虽然偶尔会跳过7，但进步已经很明显了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30300": {
+    "id": 30300,
+    "event": "你开始理解'时间'的概念——知道'等一会儿'意味着你暂时得不到你想要的东西，所以最好现在就要。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "CHROME": 1
+    }
+  },
+  "30301": {
+    "id": 30301,
+    "event": "你能够辨认基本的方向——左右分得还不太清楚，但前后和上下已经没问题了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30302": {
+    "id": 30302,
+    "event": "你在拼图游戏中表现出色——能独立完成24块的拼图。空间推理能力正在快速发展。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1,
+      "HUMANITY": -1,
+      "EDDIES": 2
+    }
+  },
+  "30303": {
+    "id": 30303,
+    "event": "你开始理解'工作'的概念——知道父亲出门是去'赚钱'的，钱可以换食物和玩具。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -1
+    }
+  },
+  "30304": {
+    "id": 30304,
+    "event": "你的记忆力让你令大人惊讶——你能记住三个月前去过的餐厅里你点了什么菜。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {},
+    "itemAward": "imp_034"
+  },
+  "30305": {
+    "id": 30305,
+    "event": "你开始进行复杂的假装游戏——假装自己是'医生'给玩具看病，假装自己是'厨师'用泥巴做饭。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30306": {
+    "id": 30306,
+    "event": "你对因果关系有了更深的理解——知道'如果我把水杯推倒，水会流出来'。虽然你仍然会推倒水杯。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30307": {
+    "id": 30307,
+    "event": "你开始理解'规则'——在游戏中能够遵守简单的规则（大多数时候）。违反规则时你会偷偷看大人的反应。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30308": {
+    "id": 30308,
+    "event": "你能够辨认出所有家庭成员的长相和名字——包括那些一年才见一次的远房亲戚。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30309": {
+    "id": 30309,
+    "event": "你在虚拟学习中完成了基础逻辑训练模块——理解了'大和小'、'多和少'、'高和矮'等对立概念。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30310": {
+    "id": 30310,
+    "event": "你开始理解'选择'的含义——当被问要苹果还是橙子时，你会认真思考然后做出选择。有时候你会两个都要。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    },
+    "itemAward": "imp_005"
+  },
+  "30311": {
+    "id": 30311,
+    "event": "你在看全息地图时能辨认出'这是我们的家'——空间记忆能力让你能够在脑中构建简单的环境模型。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1,
+      "EDDIES": -1
+    }
+  },
+  "30312": {
+    "id": 30312,
+    "event": "你理解了'死'的概念——当你看到一只虫子不再动时，你问'它是不是死了'。母亲沉默了很久。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30313": {
+    "id": 30313,
+    "event": "你开始能分辨出谎言和真话——当父亲说'这个辣椒不辣'时，你看着他的表情说'你说谎'。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30314": {
+    "id": 30314,
+    "event": "你的跑跳能力大幅提升——能跑过大部分同龄孩子，能双脚离地跳过一条低矮的障碍物。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30315": {
+    "id": 30315,
+    "event": "你学会了骑平衡车——在街区里绕圈的速度让父母追赶起来有些吃力。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30316": {
+    "id": 30316,
+    "event": "你开始学习投掷——虽然准确度仍然很差，但你扔球的力度已经能让大人的手感到疼痛了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30317": {
+    "id": 30317,
+    "event": "你在攀爬架上爬到了最高处，然后害怕得不敢下来。最终是父亲爬上去把你抱下来的。你哭了，但明天还会再爬。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30318": {
+    "id": 30318,
+    "event": "你的绘画技巧进步了——画中出现了可以辨认的物体，比如一个有头有四肢的'人'。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30319": {
+    "id": 30319,
+    "event": "你开始能够使用剪刀——安全的那种。剪出的形状歪歪扭扭，但你很自豪地展示了你的'艺术作品'。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30320": {
+    "id": 30320,
+    "event": "你学会了系鞋带——虽然用的是最笨拙的方法，但终于不用再依赖父母了。这是一个重要的独立里程碑。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 2
+    }
+  },
+  "30321": {
+    "id": 30321,
+    "event": "你在游泳池里第一次漂浮了起来——水的浮力让你感到新奇和恐惧。你紧抓着浮板不肯松手。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30322": {
+    "id": 30322,
+    "event": "你的平衡能力足够让你在狭窄的平衡木上走几步了。体育课上的协调训练正在见效。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30323": {
+    "id": 30323,
+    "event": "你开始能够用筷子吃饭——虽然大部分时候还是掉得到处都是，但偶尔能夹起一粒米。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30324": {
+    "id": 30324,
+    "event": "你在沙坑里挖了一个'地道'——用小铲子和双手掘出的隧道在孩子们中间引起了不小的关注。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30325": {
+    "id": 30325,
+    "event": "你学会了拍皮球——能连续拍五下了。虽然球经常跑掉，但你对这项技能的热情极其高涨。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30326": {
+    "id": 30326,
+    "event": "你在社区运动会上参加了一项迷你障碍赛。你用了所有同龄人中最长的时间完成，但你是唯一一个没有放弃的。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30327": {
+    "id": 30327,
+    "event": "你的手指灵活性已经能完成简单的手工——用纸折出了一架歪歪扭扭但可辨认的飞机。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30328": {
+    "id": 30328,
+    "event": "你开始对'跳舞'感兴趣——跟着音乐节奏扭动身体。动作滑稽但充满感染力。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30329": {
+    "id": 30329,
+    "event": "你在日托中心有了一个真正的朋友——你们会互相分享食物、一起玩游戏、保护彼此不被大孩子欺负。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30330": {
+    "id": 30330,
+    "event": "你第一次参加了'生日派对'——一个日托中心同学的三岁生日。你学会了说'生日快乐'和拆礼物。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30331": {
+    "id": 30331,
+    "event": "你开始理解'公平'——当有人分了更多的果汁时你会抗议。虽然你自己拿的也不少。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30332": {
+    "id": 30332,
+    "event": "你在玩耍中学会了'轮流'——等别人滑完滑梯再自己滑。虽然你经常数着数催促前面的人。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30333": {
+    "id": 30333,
+    "event": "你的社交圈子扩展到了三个人——你们组成了一个松散的'帮派'，在游乐场里一起活动。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30334": {
+    "id": 30334,
+    "event": "你第一次经历了一次真正的冲突——和朋友因为玩具归属问题大吵一架。然后你们在十分钟后就和好了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30335": {
+    "id": 30335,
+    "event": "你开始注意到别人的情绪——'妈妈你不开心吗？'当母亲疲惫时你会主动拿出你最喜欢的玩具给她。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30336": {
+    "id": 30336,
+    "event": "你在一次游戏中担任了'领导者'角色——指挥其他两个孩子一起搭沙堡。你的指挥风格出乎意料地果断。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30337": {
+    "id": 30337,
+    "event": "你开始理解'秘密'的概念——你告诉朋友'不要告诉别人'，然后一脸郑重地分享了一个毫无意义的秘密。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30338": {
+    "id": 30338,
+    "event": "你第一次试图安慰一个哭泣的孩子——笨拙地拍了拍对方的背说'不要哭'。虽然没有用，但意图是好的。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30339": {
+    "id": 30339,
+    "event": "你在和小伙伴的对抗性游戏中发现了'合作'和'竞争'的区别——有时候一起合作能得到更好的结果。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": 1
+    }
+  },
+  "30340": {
+    "id": 30340,
+    "event": "你开始发展出初步的幽默感——把鞋子穿在头上然后大笑，期待别人也笑。有些时候他们确实笑了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1,
+      "HUMANITY": -1
+    }
+  },
+  "30341": {
+    "id": 30341,
+    "event": "你对'家'的概念越来越清晰——知道哪栋楼、哪个房间是'你的'。你在家的附近建立了自己的'领地'意识。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30342": {
+    "id": 30342,
+    "event": "你在社区里认识了一个年龄更大的孩子——他教你一些你父母不会教你的东西，比如怎么翻过矮墙。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30343": {
+    "id": 30343,
+    "event": "你第一次去别人家玩——发现别人家的生活和你家完全不同。这让你产生了最初的比较意识。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30344": {
+    "id": 30344,
+    "event": "你的共情能力让你在看到新闻里的灾难画面时沉默了很久，然后问母亲'那些人怎么办'。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30345": {
+    "id": 30345,
+    "event": "你开始理解'道歉'——知道做错事后说'对不起'能让事情变好。虽然你道歉的频率远低于犯错的频率。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30346": {
+    "id": 30346,
+    "event": "你在一次公园游玩中认识了几个新朋友。你们约好了'明天再一起玩'。你回家后念叨了一整个晚上。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30347": {
+    "id": 30347,
+    "event": "你开始学会'谈判'——'如果你给我你的饼干，我就让你玩我的机器人'。交易思维在幼儿时期就已经萌芽。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30348": {
+    "id": 30348,
+    "event": "你在家里突然说出了一句让父母目瞪口呆的话——显然是从某处学来的成人对话片段。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30349": {
+    "id": 30349,
+    "event": "你已经开始熟练地使用平板电脑——能找到自己想看的全息动画片，能调节音量，甚至能切换应用。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30350": {
+    "id": 30350,
+    "event": "你在虚拟学校系统中升了一级——从'探索者'阶段进入了'学者'阶段。新的课程包括基础编程逻辑。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 2
+    }
+  },
+  "30351": {
+    "id": 30351,
+    "event": "你的视觉增强芯片虽然还没有安装，但你已经开始用父亲淘汰的AR眼镜看世界了。一切都带着数据标注。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30352": {
+    "id": 30352,
+    "event": "你在一次夜市上看到了一台破解版的街机——能免费玩游戏。你和一群孩子围在那里玩了整个下午。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    },
+    "itemAward": "drug_020"
+  },
+  "30353": {
+    "id": 30353,
+    "event": "你的VR体验从简单的游戏扩展到了虚拟动物园。你骑在全息大象的背上，兴奋得说不出话来。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "EDDIES": 2
+    }
+  },
+  "30354": {
+    "id": 30354,
+    "event": "你在AR学习中认识了各种义体——知道那个金属手臂叫'义肢'，那个发光的眼睛叫'义眼'。义体对你来说只是生活的一部分。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1,
+      "HUMANITY": -1
+    }
+  },
+  "30355": {
+    "id": 30355,
+    "event": "你开始用语音助手问各种问题——'月亮为什么是黄色的''蚂蚁有多少条腿''我能当超人吗'。助手总是耐心回答。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30356": {
+    "id": 30356,
+    "event": "你在虚拟学习中接触到了基础数学——通过拖拽数字块来完成简单的加减法。你的直觉式解题速度比程序预设的快。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30357": {
+    "id": 30357,
+    "event": "你的义体兼容性评估更新了——结果显示你的神经系统在持续优化，理论上可以承受更大规模的植入。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": 1
+    }
+  },
+  "30358": {
+    "id": 30358,
+    "event": "你在街上看到有人因为义体失控而倒在地上抽搐。母亲捂住你的眼睛拉你走开，但那一幕已经刻入了你的记忆。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": -1,
+      "EDDIES": 1
+    }
+  },
+  "30359": {
+    "id": 30359,
+    "event": "你开始了第一堂'网络礼仪'课——学习在虚拟社交中什么话不该说，什么信息不能分享。虽然你不太理解为什么。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30360": {
+    "id": 30360,
+    "event": "你在社区科技课上制作了第一个电子作品——一个简单的LED闪烁电路。虽然只是连了几根线，但你骄傲极了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30361": {
+    "id": 30361,
+    "event": "你开始使用儿童版的脑机接口训练器——通过意念控制一个虚拟小鸟飞行。你的专注力还有待提高。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30362": {
+    "id": 30362,
+    "event": "你的语言辅助芯片在一次系统更新后新增了'即时翻译'功能。你兴奋地用它和外国游客说了'hello'。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30363": {
+    "id": 30363,
+    "event": "你在一次外出时被路边的全息广告诱导想要买一个玩具。母亲趁机给你上了第一堂'广告与真实'的教育课。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30364": {
+    "id": 30364,
+    "event": "你在街头目睹了一次帮派冲突——有人开了枪，子弹打在你身边的墙壁上。你吓得腿软，回家后噩梦了一整周。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30365": {
+    "id": 30365,
+    "event": "你在孤儿院里学会了翻墙——为了到隔壁的面包店偷吃面包。虽然被发现后罚站了，但你发现了逃生的基本技能。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30366": {
+    "id": 30366,
+    "event": "企业子女的年度健康评估显示你的体能指标低于标准线。你被安排了额外的体育锻炼计划。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "CHROME": 1,
+      "EDDIES": 1
+    },
+    "itemAward": "drug_004"
+  },
+  "30367": {
+    "id": 30367,
+    "event": "一位来孤儿院做志愿者的大学生注意到了你的聪明，留下了一些基础编程教材。虽然你还看不懂，但书上的机器人图片让你着迷。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1,
+      "CHROME": 1
+    }
+  },
+  "30368": {
+    "id": 30368,
+    "event": "你在暴雨中跑回家——赛博雨酸性很强，你的皮肤被轻微灼伤。从那以后你学会了看天气预报。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30369": {
+    "id": 30369,
+    "event": "你在一次高烧中产生了幻觉——看到天花板上出现了流动的数据流。退烧后你告诉了父母，他们面面相觑。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30370": {
+    "id": 30370,
+    "event": "NCPD在学校开展了一次安全教育活动——你学会了'如果有人让你不舒服，要大声说不'。但你不太理解为什么会有人让你不舒服。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30371": {
+    "id": 30371,
+    "event": "你在太平洲的贫民窟里看到了真正的贫穷——衣衫褴褛的孩子在垃圾堆里翻找食物。你回家后一言不发地坐了很久。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30372": {
+    "id": 30372,
+    "event": "你的一个远房亲戚是黑客——他偷偷给你演示了一次入侵学校网络系统。你虽然看不懂代码，但觉得很酷。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1
+    }
+  },
+  "30373": {
+    "id": 30373,
+    "event": "你在游乐场认识了一个很特别的孩子——他的半边脸都是金属的。你们玩得很开心，你甚至忘了他的脸不一样。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": -1,
+      "CHROME": 1
+    }
+  },
+  "30374": {
+    "id": 30374,
+    "event": "你在家里的某个角落找到了一把玩具枪——虽然不能发射，但你拿着它摆出了你在电影里看到的英雄姿势。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1
+    }
+  },
+  "30375": {
+    "id": 30375,
+    "event": "你在社区活动中被选中体验了一次基础神经扫描——结果发现你的神经突触密度超出同龄人平均值。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30376": {
+    "id": 30376,
+    "event": "你在家里模仿新闻主播的样子'播报新闻'——'现在播报重要消息，今天妈妈做的饭不好吃。'母亲无语。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30377": {
+    "id": 30377,
+    "event": "你在街头看到了一辆被严重撞毁的自动驾驶汽车。残骸中散落出的数据碎片在你脚下闪烁。你对'车祸'有了模糊的认知。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30378": {
+    "id": 30378,
+    "event": "你开始每晚要求一个睡前故事——而且必须是赛博朋克版本。你最喜欢的故事是'小黑客与邪恶公司'。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30379": {
+    "id": 30379,
+    "event": "你的语言辅助芯片检测到了一种罕见信号——厂商远程推送了一条消息说这是'例行维护'。但父亲总觉得不太对劲。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30380": {
+    "id": 30380,
+    "event": "你在三岁生日时收到了一副真正的AR眼镜——儿童版。你戴上后发现整个世界变成了一个巨大的游乐场。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {},
+    "itemAward": "imp_011"
+  },
+  "30381": {
+    "id": 30381,
+    "event": "你在街头遇到了一个义体改造失败的人——他的手臂在不受控制地抽搐。你站在那里看了很久，母亲把你拉走了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30382": {
+    "id": 30382,
+    "event": "你在夜之城的夜空下第一次看到了真正的星星——在霓虹灯和光污染之间，那些微弱的光点让你安静了下来。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -1
+    }
+  },
+  "30383": {
+    "id": 30383,
+    "event": "你在三岁时已经发展出相当完整的自我意识——你能说'我是谁'、'我想要什么'、'我喜欢什么'。你是一个独立的人了。",
+    "type": "infancy",
+    "include": "TURN>=72&TURN<=107",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30384": {
+    "id": 30384,
+    "event": "你第一天上学——走进校园的那一刻，你紧紧拉着母亲的手不肯松开。教室里有20张陌生的脸。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30385": {
+    "id": 30385,
+    "event": "你迅速适应了学校生活——在第一周就交到了三个朋友，并且成功让老师注意到了你的存在（不全是好事）。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "CHROME": 1,
+      "EDDIES": -1
+    }
+  },
+  "30386": {
+    "id": 30386,
+    "event": "你在学校里被一个比你大的孩子欺负了——他推了你一下并抢走了你的零食。你没有哭，但回家后偷偷哭了很久。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30387": {
+    "id": 30387,
+    "event": "你的第一位老师是一个温和的中年女性——她的右眼是义眼，但她说'这不影响我看出谁在捣蛋'。你很怕她。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "EDDIES": -1
+    }
+  },
+  "30388": {
+    "id": 30388,
+    "event": "你在学校学会了举手发言——虽然一开始你举手的频率太高，每堂课至少举50次。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30389": {
+    "id": 30389,
+    "event": "你第一次参加了学校的集体活动——运动会。你参加了跑步比赛，跑了倒数第二。但你觉得倒数第二也很好。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -1
+    }
+  },
+  "30390": {
+    "id": 30390,
+    "event": "你开始理解'学校是一个规则的地方'——有固定的时间表、有作业、有考试。你对'考试'这个词感到恐惧。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30391": {
+    "id": 30391,
+    "event": "你在学校的午餐时间学会了自己打饭——虽然经常洒出来，但这是独立性的一大步。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30392": {
+    "id": 30392,
+    "event": "你的班级进行了一次角色扮演游戏，你被分配了'医生'的角色——你用玩具听诊器认真检查了每个人的'心脏'。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": 1
+    }
+  },
+  "30393": {
+    "id": 30393,
+    "event": "你在学校认识了来自不同家庭背景的孩子——有的住在科珀广场的豪宅里，有的住在太平洲的棚屋里。世界的差距开始在你眼前展开。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30394": {
+    "id": 30394,
+    "event": "你第一次因为打架被叫了家长——因为有人说你穿的衣服是'垃圾堆里捡的'。你的自尊心第一次受到了严重伤害。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30395": {
+    "id": 30395,
+    "event": "你在学校的图书馆里发现了一个安静的角落——那里有全息书籍和舒适的座椅。你开始把图书馆当作避风港。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30396": {
+    "id": 30396,
+    "event": "你开始正式学习汉字——第一次在作业本上写出了自己的名字。虽然笔画歪歪扭扭，但每一个字都是你。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30397": {
+    "id": 30397,
+    "event": "你在数学课上展示了超出同龄人的能力——能心算20以内的加减法。老师怀疑你在家偷偷补过课。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30398": {
+    "id": 30398,
+    "event": "你对科学实验产生了浓厚兴趣——在课堂上做的'火山喷发'实验（小苏打加醋）让你兴奋了一整天。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": -1,
+      "EDDIES": -2
+    }
+  },
+  "30399": {
+    "id": 30399,
+    "event": "你的阅读能力进步飞快——已经能独立阅读简单的全息绘本，不需要父母的帮助了。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30400": {
+    "id": 30400,
+    "event": "你在学校的编程入门课上学到了如何用图形化编程让一个角色动起来。你让角色做了一个后空翻。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30401": {
+    "id": 30401,
+    "event": "你的注意力持续时间仍然不长——在课堂上能专注15分钟，然后就忍不住看窗外的全息广告。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30402": {
+    "id": 30402,
+    "event": "你开始理解'地球是圆的'这个概念——站在夜之城的街道上，你抬头看天，想象脚下的地面弯曲成一个球。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "CHROME": 1
+    },
+    "itemAward": "drug_008"
+  },
+  "30403": {
+    "id": 30403,
+    "event": "你在课堂上提出了一个问题让老师都答不上来——'如果机器人有了感情，它算不算活着？'",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30404": {
+    "id": 30404,
+    "event": "你的创造力在绘画课上一览无余——你画了一幅'夜之城的未来'，画面中充满了飞行汽车和巨型机器人。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30405": {
+    "id": 30405,
+    "event": "你开始学习基础英语词汇——能用英语数到20了。发音不太标准，但热情很高。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1,
+      "HUMANITY": -1
+    }
+  },
+  "30406": {
+    "id": 30406,
+    "event": "你在学校的'小小发明家'比赛中获得了一个参与奖——你用废旧电子零件拼了一个'能亮灯的盒子'。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30407": {
+    "id": 30407,
+    "event": "你开始对'历史'产生兴趣——尤其是夜之城的历史。你问老师'为什么夜之城叫夜之城'。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30408": {
+    "id": 30408,
+    "event": "你在学校接触到了进阶AR学习系统——课程内容已经不再只是认字和算数，还包括基础逻辑和编程思维。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1
+    },
+    "itemAward": "imp_024"
+  },
+  "30409": {
+    "id": 30409,
+    "event": "学校建议为有天赋的学生安装学习增强芯片。你父母为此争论了一整周。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30410": {
+    "id": 30410,
+    "event": "你的脑机接口训练从虚拟游戏升级到了虚拟实验——在安全环境中体验化学实验和物理现象。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30411": {
+    "id": 30411,
+    "event": "你在学校的虚拟实验室里第一次观察了细胞的微观结构——通过纳米级全息投影。那些微小的生命体让你惊叹。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30412": {
+    "id": 30412,
+    "event": "学校的网络安全课程教你如何识别钓鱼网站和虚假信息——你回家后检查了父亲手机里的所有消息。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30413": {
+    "id": 30413,
+    "event": "你开始使用学校的'智能作业系统'——AI会根据你的学习进度自动调整作业难度。你发现AI比你更了解你。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30414": {
+    "id": 30414,
+    "event": "你在一次科技展示中看到了一台真正的人形机器人——它的动作流畅得像真人一样。你站在那里看了整整十分钟。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30415": {
+    "id": 30415,
+    "event": "你的同学中有人已经安装了基础义体——一个视觉辅助芯片。他向你展示了他的视野和你的有什么不同。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30416": {
+    "id": 30416,
+    "event": "学校组织了一次参观夜之城科技博物馆的活动——你看到了第一代赛博义体的原型，对历史感到震撼。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30417": {
+    "id": 30417,
+    "event": "你在虚拟现实课程中完成了一个'太空漫步'的体验项目——模拟的失重感让你有些头晕，但你不想停下来。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "HUMANITY": -1,
+      "EDDIES": -1
+    },
+    "itemAward": "drug_016"
+  },
+  "30418": {
+    "id": 30418,
+    "event": "你开始学习使用电子日历和时间管理工具——虽然你的日程主要就是'吃饭、上学、玩、睡觉'。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": 2
+    }
+  },
+  "30419": {
+    "id": 30419,
+    "event": "你的虚拟学校系统生成了本学期的能力报告——在创造力和逻辑推理方面获得了高分，在纪律性方面低得可怜。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30420": {
+    "id": 30420,
+    "event": "你在学校里有了第一个'最好的朋友'——你们发誓要做一辈子的朋友，并且用画押的方式确认了。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30421": {
+    "id": 30421,
+    "event": "你开始理解'背叛'——当你最好的朋友和另一个孩子玩而没有叫你时，你的心碎了。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30422": {
+    "id": 30422,
+    "event": "你在生日派对上收到了第一个来自非家庭成员的礼物——是同学送的一支全息画笔。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30423": {
+    "id": 30423,
+    "event": "你开始参加团队活动——和三个同学一起完成了一项小型科学项目。分工合作的概念开始扎根。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30424": {
+    "id": 30424,
+    "event": "你在学校遇到了一个'奇怪'的孩子——他不爱说话，总是独来独往。你主动和他分享了你的零食。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30425": {
+    "id": 30425,
+    "event": "你开始理解'死亡'的更多含义——当班上同学的宠物去世时，全班默哀了三分钟。你第一次感受到了集体悲伤。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30426": {
+    "id": 30426,
+    "event": "你在游戏中担任'调解者'——当两个同学因为游戏规则争吵时，你提出了一个双方都接受的妥协方案。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30427": {
+    "id": 30427,
+    "event": "你的领导力在小组活动中显现——当没有老师监督时，你能组织几个孩子一起完成一幅合作画作。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30428": {
+    "id": 30428,
+    "event": "你第一次体验到了'嫉妒'的滋味——当看到同学有一个你特别想要的玩具时。你学会了忍耐和自我安慰。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30429": {
+    "id": 30429,
+    "event": "你在社区里开始有了自己的'社交网络'——不仅仅是学校的朋友，还有邻居家的孩子、街头认识的大孩子。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30430": {
+    "id": 30430,
+    "event": "你开始理解'大人和小孩的世界不同'——有些对话大人们会突然降低音量或让你'先出去玩'。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30431": {
+    "id": 30431,
+    "event": "你的自尊心在学校里建立了起来——你喜欢被人夸奖，讨厌被人批评。特别是当着其他人的面。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30432": {
+    "id": 30432,
+    "event": "你被选中参加了全城幼儿才艺大赛——你在台上紧张得忘了词，但台下的大人们还是给了你热烈的掌声。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30433": {
+    "id": 30433,
+    "event": "你在一次全家出行中第一次乘坐了磁悬浮列车——窗外飞速掠过的城市景象让你目瞪口呆。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30434": {
+    "id": 30434,
+    "event": "你在街头看到了一个流浪者——他的双腿都是义体，穿着破旧的衣服。你问他要不要你的饼干。他笑着拒绝了。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1,
+      "CHROME": 1
+    }
+  },
+  "30435": {
+    "id": 30435,
+    "event": "你在家里帮母亲做家务——虽然'帮忙'通常意味着制造更多的混乱，但你的意愿是好的。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30436": {
+    "id": 30436,
+    "event": "学校组织了一次消防演习——你在警报声中学会了'不慌张、排队走、捂口鼻'。你觉得这比任何课程都实用。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 2
+    }
+  },
+  "30437": {
+    "id": 30437,
+    "event": "你在社区的帮助下学会了骑自行车——去掉辅助轮后的第一圈你摔了三次，但第四圈你成功了。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30438": {
+    "id": 30438,
+    "event": "你在街头帮一个老奶奶捡起了她掉在地上的购物袋。她给了你一颗糖作为感谢。你觉得自己是个英雄。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": -1,
+      "CHROME": 1
+    }
+  },
+  "30439": {
+    "id": 30439,
+    "event": "你在家里的花园（其实是阳台上的几个花盆）种下了一颗种子。你每天浇水，等待着它发芽。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30440": {
+    "id": 30440,
+    "event": "你在电视上看到了荒坂公司的CEO发表年度讲话。你问父亲'那个人是不是世界上最有钱的人'。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30441": {
+    "id": 30441,
+    "event": "你开始有了零花钱的概念——每周5欧。你把钱存在一个小盒子里，盘算着什么时候能买那个你想要的玩具。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1,
+      "EDDIES": 1
+    }
+  },
+  "30442": {
+    "id": 30442,
+    "event": "你在一次深夜被枪声惊醒——隔壁街区又出事了。你蜷缩在被子里，等待枪声停止。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30443": {
+    "id": 30443,
+    "event": "你在公园里偶遇了一个街头艺人——他用纳米修复凝胶在空气中绘制出3D画作。你站在那里看了半个小时。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30444": {
+    "id": 30444,
+    "event": "你的义体兼容性指数达到了同龄人的前3%。学校把这个数据加入到了你的升学推荐档案中。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {}
+  },
+  "30445": {
+    "id": 30445,
+    "event": "你在网络上学会了使用搜索引擎——输入的第一个问题是'恐龙为什么灭绝了'。你花了整个下午阅读答案。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30446": {
+    "id": 30446,
+    "event": "你在四岁生日那天许了一个愿望——'我要保护妈妈和爸爸不受伤'。母亲听到后哭了。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {}
+  },
+  "30447": {
+    "id": 30447,
+    "event": "你在学校的最后一学期被评为'最有创造力学生'——虽然你的纪律评分几乎是全班最低的。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30448": {
+    "id": 30448,
+    "event": "你在毕业典礼上唱了一首歌——虽然跑调跑到了太平洋，但你唱得非常认真。全家都为你鼓掌。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30449": {
+    "id": 30449,
+    "event": "你四岁时已经能独立完成很多事：穿衣、吃饭、洗漱、整理书包。独立性的种子已经生根发芽。",
+    "type": "infancy",
+    "include": "TURN>=108&TURN<=143",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    }
+  },
+  "30450": {
+    "id": 30450,
+    "event": "你进入了正规小学——教室里配备了AR智能黑板和全息投影教材。第一天你就被科技设施深深吸引。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": -1
+    },
+    "itemAward": "imp_011"
+  },
+  "30451": {
+    "id": 30451,
+    "event": "你发现自己的班级里有40个学生——在这个拥挤的教室里，你必须学会竞争才能获得老师的关注。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30452": {
+    "id": 30452,
+    "event": "你在第一次正式考试中获得了全班第五名。虽然你更想考第一名，但第五名已经让父母很满意了。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30453": {
+    "id": 30453,
+    "event": "你在学校里被选为'科技小组长'——负责管理小组的全息实验设备。你认真得像个小大人。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30454": {
+    "id": 30454,
+    "event": "你的作业量开始增加——每天需要花一个小时完成AR作业和书面作业。你开始理解'辛苦'的含义。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": 2
+    }
+  },
+  "30455": {
+    "id": 30455,
+    "event": "你在学校的编程比赛中获得了一个小奖——你编写了一个让虚拟角色跳舞的简单程序。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30456": {
+    "id": 30456,
+    "event": "你的数学老师发现了你的天赋——给了你一些超纲的练习题。你做得很轻松，但不太理解为什么。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30457": {
+    "id": 30457,
+    "event": "你在学校食堂第一次吃到了合成的营养餐——味道一般，但里面的营养成分经过科学配比。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1,
+      "CHROME": 1,
+      "EDDIES": -1
+    }
+  },
+  "30458": {
+    "id": 30458,
+    "event": "你在学校图书馆发现了科幻小说区——里面的故事让你大开眼界，你开始把'当科学家'加入了人生目标清单。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": -1,
+      "CHROME": 1,
+      "EDDIES": 2
+    }
+  },
+  "30459": {
+    "id": 30459,
+    "event": "你的班级进行了一次辩论赛——题目是'孩子应该装义体吗'。你站在'不应该'的那一边，但你的论点让老师印象深刻。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30460": {
+    "id": 30460,
+    "event": "你在学校认识了第一个'竞争对手'——另一个同样聪明且同样好强的孩子。你们互相较劲，也在暗中互相尊重。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30461": {
+    "id": 30461,
+    "event": "你在学校运动会上参加了短跑和跳远两个项目——短跑第三名，跳远没进决赛。你决定以后多练习跳远。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30462": {
+    "id": 30462,
+    "event": "你在学校的义体教育课上第一次了解到了'义体排斥'的风险——那些图片让你做了一整晚噩梦。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {}
+  },
+  "30463": {
+    "id": 30463,
+    "event": "你开始使用进阶版AR学习终端——能够通过手势和语音控制界面，学习效率提升了一倍。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30464": {
+    "id": 30464,
+    "event": "你的虚拟学校账号被人入侵了——所有游戏积分被清零。你第一次体会到了网络犯罪对个人造成的影响。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30465": {
+    "id": 30465,
+    "event": "你在学校的编程社团里完成了你的第一个实际项目——一个能自动浇水的智能花盆控制器。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "EDDIES": 2
+    }
+  },
+  "30466": {
+    "id": 30466,
+    "event": "你参观了一次军用科技的青少年科技展——在那里你第一次见到了真正的战斗义体。你既害怕又着迷。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "CHROME": 1,
+      "EDDIES": 1
+    }
+  },
+  "30467": {
+    "id": 30467,
+    "event": "你开始学习基础电子维修——从父亲那里学来了焊接技术。你的第一件'作品'是一个能亮的LED手环。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -1
+    }
+  },
+  "30468": {
+    "id": 30468,
+    "event": "你的学校推荐你参加了一个全市范围的'儿童创新大赛'——你提交了一个'能自动分类垃圾的垃圾桶'设计。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30469": {
+    "id": 30469,
+    "event": "你在网络上接触到了'黑客'的概念——你开始好奇那些人在暗网里到底做些什么。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30470": {
+    "id": 30470,
+    "event": "你在一次课外活动中参观了一个义体工厂——看到生产线上的义体零件从原材料变成成品，你对制造业有了全新的认识。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30471": {
+    "id": 30471,
+    "event": "你的学校引入了一套AI辅助教学系统——它能根据每个人的学习速度调整内容。你被分到了'加速班'。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30472": {
+    "id": 30472,
+    "event": "你在虚拟世界中参与了一次多人探险任务——与来自不同学校的孩子们合作解谜。你的协作能力获得了好评。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30473": {
+    "id": 30473,
+    "event": "你在科技课上学习了3D建模基础——用简单的工具创建了自己的第一个3D角色模型。虽然很丑，但是你做的。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30474": {
+    "id": 30474,
+    "event": "你在学校里有了几个稳定的朋友——你们每天一起上学、一起吃饭、一起在操场玩到天黑。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30475": {
+    "id": 30475,
+    "event": "你第一次经历了'朋友搬家'——你的好朋友转学去了另一个区。你们约定了要保持联系，但你们都知道可能会慢慢断了联系。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1,
+      "EDDIES": 2
+    }
+  },
+  "30476": {
+    "id": 30476,
+    "event": "你在社区里加入了一个儿童编程兴趣班——每周六下午和其他对编程感兴趣的孩子一起学习。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {}
+  },
+  "30477": {
+    "id": 30477,
+    "event": "你开始注意到了家庭经济状况——有些同学总是穿新衣服，而你已经穿了几个月的旧校服。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30478": {
+    "id": 30478,
+    "event": "你在街头遇到了一群帮派少年——他们试图引诱你加入。你转身跑了。这是你在夜之城学到的第一课。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "CHROME": 1
+    }
+  },
+  "30479": {
+    "id": 30479,
+    "event": "你与父母的关系开始变化——不再事事依赖，开始有了自己的秘密和小世界。你的日记本上写着'不要给任何人看'。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "EDDIES": 2
+    }
+  },
+  "30480": {
+    "id": 30480,
+    "event": "你在社区活动中帮助组织了一场儿童义卖——你出售了自己制作的全息卡片，赚了30欧。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {},
+    "itemAward": "imp_019"
+  },
+  "30481": {
+    "id": 30481,
+    "event": "你开始理解'承诺'的重量——当你说'我会还给你'的时候，你真的会去还。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_001"
+  },
+  "30482": {
+    "id": 30482,
+    "event": "你在学校里经历了一次'公开演讲'——在全校面前介绍你们小组的科学项目。你的声音在发抖，但你完成了。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30483": {
+    "id": 30483,
+    "event": "你的世界观在持续构建——你开始理解不是所有问题都有答案，不是所有事情都公平。但你相信只要努力就会变好。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 5,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30484": {
+    "id": 30484,
+    "event": "你在社区帮派活动日益频繁的环境中学会了规避危险——你知道哪些巷子不能走，哪些人不能搭话。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30485": {
+    "id": 30485,
+    "event": "你在家庭旅行中第一次看到了夜之城以外的世界——郊外的绿色田野和清澈的河流让你震惊。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "HUMANITY": -1
+    }
+  },
+  "30486": {
+    "id": 30486,
+    "event": "一个企业代表在学校里注意到了你的考试成绩，给你的父母发了一封邮件，邀请你参加公司赞助的天才培养计划。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 3,
+    "effect": {
+      "EDDIES": 1
+    }
+  },
+  "30487": {
+    "id": 30487,
+    "event": "你在一次体检中被告知你的基因序列包含一种罕见的抗排斥变异——这让你的义体兼容性几乎是完美的。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30488": {
+    "id": 30488,
+    "event": "NCPD到学校做了一次安全讲座——你学到了'如何识别危险区域'和'紧急情况下的逃生路线'。这些知识在夜之城很有用。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {},
+    "itemAward": "drug_013"
+  },
+  "30489": {
+    "id": 30489,
+    "event": "你在一次社区科技比赛中击败了比自己大两岁的选手，获得了第一名。评委说你的设计思路非常独特。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": -1
+    }
+  },
+  "30490": {
+    "id": 30490,
+    "event": "你的夜视能力被正式记录在体检报告中——医生说这可能是基因优化或环境适应的结果。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30491": {
+    "id": 30491,
+    "event": "你在太平洲的海边发现了一个被遗弃的实验设备——你把它带回家研究，但什么都没弄懂。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30492": {
+    "id": 30492,
+    "event": "你在五岁时的一次高烧中体验了一次'超梦式幻觉'——仿佛意识脱离了身体在夜之城上空飘浮。退烧后你画了那幅景象。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {}
+  },
+  "30493": {
+    "id": 30493,
+    "event": "你在网络上发现了一个加密的论坛入口——虽然你无法访问，但你记住了那个地址。也许未来有一天你会用上。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 7,
+    "effect": {
+      "TECH": 1,
+      "HUMANITY": -1,
+      "EDDIES": 2
+    },
+    "itemAward": "imp_007"
+  },
+  "30494": {
+    "id": 30494,
+    "event": "你在学校的一次智力测试中得分异常高——你被推荐参加了全市的儿童智力竞赛。你获得了前50名。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {}
+  },
+  "30495": {
+    "id": 30495,
+    "event": "你在六岁生日时做出了一个重大决定——'我长大要当一个能改变世界的人'。你还不确定怎样改变，但你很确定。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "TECH": 1,
+      "EDDIES": -2
+    }
+  },
+  "30496": {
+    "id": 30496,
+    "event": "你在学校的学习档案被标记为'高潜力'——这意味着你将获得更多资源和支持，也意味着更多的关注和期望。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "TECH": 1
+    }
+  },
+  "30497": {
+    "id": 30497,
+    "event": "你在小区里组织了一场'儿童科技博览会'——你在所有孩子中年龄最小，但你的展品数量最多。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 4,
+    "effect": {
+      "STYLE": -1,
+      "CHROME": 1
+    }
+  },
+  "30498": {
+    "id": 30498,
+    "event": "你第一次独立使用公共交通系统——从学校到家的路线你已经完全记住了。你骄傲地拒绝让父母接送。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 8,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30499": {
+    "id": 30499,
+    "event": "你的计算机老师私下给了你一本加密的学习资料——'当你准备好了再打开'。你把它藏在了床底下。",
+    "type": "infancy",
+    "include": "TURN>=144&TURN<=215",
+    "repeatable": true,
+    "cooldown": 6,
+    "effect": {
+      "STYLE": -1
+    }
+  },
+  "30500": {
+    "id": 30500,
+    "event": "你在沃森区的地下黑市发现了一把品相不错的金刚，卖家是个戴着面具的独眼老兵。你花了4000欧将它收入囊中。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -4
+    }
+  },
+  "30501": {
+    "id": 30501,
+    "event": "歌舞伎町的一个小巷子里，一个神秘商人对你说'朋友，有好东西'。他打开一个金属箱——里面是一把行刑者的宽恕。你掏出了6000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -6
+    },
+    "itemAward": "wpn_048"
+  },
+  "30502": {
+    "id": 30502,
+    "event": "你在太平洲的夜市里找到了一个出售走私武器的摊位——响尾蛇摆在最显眼的位置。经过一番讨价还价，你以2000欧成交。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    },
+    "itemAward": "wpn_002"
+  },
+  "30503": {
+    "id": 30503,
+    "event": "暗网上的一个卖家联系了你——他手里有一批'清仓特价'武器。你花6000欧买到了一把先锋，物流用了三个小时。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -6
+    },
+    "itemAward": "wpn_001"
+  },
+  "30504": {
+    "id": 30504,
+    "event": "你在一个地下武器交易会上发现了偏见，卖家声称这是'军用淘汰品'。不管真假，你花3000欧买下了它。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -3
+    },
+    "itemAward": "wpn_036"
+  },
+  "30505": {
+    "id": 30505,
+    "event": "圣多明哥的一个帮派成员急需用钱，向你推销他的碎骨。品相还行，价格也不错——2000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    },
+    "itemAward": "wpn_003"
+  },
+  "30506": {
+    "id": 30506,
+    "event": "你在黑市上认识了一个叫'铁匠'的军火贩子。他说'信我一次'，拿出了哈兰。你付了2000欧，它竟然真的能用。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    },
+    "itemAward": "wpn_050"
+  },
+  "30507": {
+    "id": 30507,
+    "event": "一个走投无路的佣兵在来生酒吧向你低价出售他的八星铳。他说'我金盆洗手了'。你花3000欧捡了个便宜。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -3
+    },
+    "itemAward": "wpn_027"
+  },
+  "30508": {
+    "id": 30508,
+    "event": "你的线人告诉你，港口区有一批从军用科技偷出来的武器正在甩卖。你赶过去抢到了一把诗篇11:6，花了6000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -6
+    },
+    "itemAward": "wpn_033"
+  },
+  "30509": {
+    "id": 30509,
+    "event": "一个从战区回来的雇佣兵在街边摆摊卖'战利品'——你挑中了一把守望，花了2000欧。枪身上还有弹痕。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    }
+  },
+  "30510": {
+    "id": 30510,
+    "event": "在一次激烈的街头交火后，你在地上捡到了一把遗落的普鲁托之握。原来的主人已经不需要它了。你擦了擦血迹把它收入背包。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_010"
+  },
+  "30511": {
+    "id": 30511,
+    "event": "帮派据点被清剿后，你在一堆废墟中翻出了一把金蜥蜴。虽然有些磨损，但功能完好。这就是夜之城的'二手市场'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_046"
+  },
+  "30512": {
+    "id": 30512,
+    "event": "你在一个被遗弃的安全屋中发现了一个隐藏的武器库——风暴就躺在枪架上，旁边的弹药还剩大半箱。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_008"
+  },
+  "30513": {
+    "id": 30513,
+    "event": "完成一次危险的任务后，中间人除了报酬外还附赠了一把诗篇11:6。他说'这是给你的额外奖励'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -3
+    },
+    "itemAward": "wpn_033"
+  },
+  "30514": {
+    "id": 30514,
+    "event": "你在战场废墟中搜刮物资时，从一个阵亡佣兵的装备袋里找到了一把先锋。你沉默了一会儿，然后把它收了起来。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_001"
+  },
+  "30515": {
+    "id": 30515,
+    "event": "NCPD在一次行动后封锁了一片区域——你趁乱溜进去捡到了一把寡妇制造者，它被扔在路边的排水沟里。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_024"
+  },
+  "30516": {
+    "id": 30516,
+    "event": "你帮一个义体医生解决了几个麻烦后，他给了你一把哈兰作为报酬。'我不需要武器，我需要的是手术刀。'他说。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -5
+    }
+  },
+  "30517": {
+    "id": 30517,
+    "event": "你在太平洲的垃圾场里翻找零件时，意外发现了一把还能用的巴别碎片——被丢弃在旧电视和废电池之间。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30518": {
+    "id": 30518,
+    "event": "一次工厂爆炸后你潜入现场搜刮，在一间上锁的储物室里找到了金色狠婆娘。锁是电子的，但你的技术手段比它更快。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_037"
+  },
+  "30519": {
+    "id": 30519,
+    "event": "你在清理一个帮派仓库时发现了一批密封的武器箱——打开后里面是一把全新的风暴。也许是某批走私货被遗忘了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_008"
+  },
+  "30520": {
+    "id": 30520,
+    "event": "你的老战友退役前把他的同志的铁锤送给了你——'这把枪跟了我十年，现在它跟你。'它已经有些年头了，但被保养得很好。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_031"
+  },
+  "30521": {
+    "id": 30521,
+    "event": "荒坂的一次内部清理中，一批装备流入了黑市。你通过中间人搞到了一把真探，花了4000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -4
+    },
+    "itemAward": "wpn_040"
+  },
+  "30522": {
+    "id": 30522,
+    "event": "你在赛博空间里赢了一场地下武器竞拍——一把裁决，起拍价很低但竞争很激烈。你最终花了2000欧拿下。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    }
+  },
+  "30523": {
+    "id": 30523,
+    "event": "一个武器收藏家去世后，他的藏品被家属清仓出售。你在其中发现了一把保存完好的米斯特汀，花了3000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -3
+    },
+    "itemAward": "wpn_015"
+  },
+  "30524": {
+    "id": 30524,
+    "event": "军用科技的安全漏洞被黑客利用，一批实验性武器流入了民间市场。你花5000欧买到了一把不归——它有些功能你从未见过。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -5
+    },
+    "itemAward": "wpn_044"
+  },
+  "30525": {
+    "id": 30525,
+    "event": "你在一次危机中救了一个军火商，他感激涕零地送了你一把沉默。'这算利息，本金下次再说。'",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_045"
+  },
+  "30526": {
+    "id": 30526,
+    "event": "你在暗网上接了一个'回收'任务——去一个指定地点取回毒刺。你完成了任务，雇主让你保留了武器作为额外报酬。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_007"
+  },
+  "30527": {
+    "id": 30527,
+    "event": "帮派战争结束后，胜利的一方在大街上分发'战利品'。你凑热闹排了队，获得了一把普鲁托之握。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_010"
+  },
+  "30528": {
+    "id": 30528,
+    "event": "你在一场地下格斗赛的奖金中意外获得了一把蓝色钢铁——举办方说'我们用实物支付'。你检查了一下，是真货。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_049"
+  },
+  "30529": {
+    "id": 30529,
+    "event": "你的一个客户是武器测试员——他经常能搞到原型武器。这次他给了你一把大天使，说是'量产前的测试版'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30530": {
+    "id": 30530,
+    "event": "一个流浪的军火匠人在街头给你展示了他的手艺——他当场用废旧零件拼装了一把应龙，并以2000欧的价格卖给了你。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    },
+    "itemAward": "wpn_023"
+  },
+  "30531": {
+    "id": 30531,
+    "event": "你在一次夜闯企业大楼的任务中，顺手从一个军械库里拿了退路。警报在你离开后才响起。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_035"
+  },
+  "30532": {
+    "id": 30532,
+    "event": "你在来生酒吧的角落里发现了一个无人认领的包裹——打开后发现是一把斯芬克斯谜题。你环顾四周，没有人注意到你。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_019"
+  },
+  "30533": {
+    "id": 30533,
+    "event": "你的前雇主在破产清算前，偷偷把一把莫克斯作为'最后的薪水发'给了你。至少他还有一点良心。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_038"
+  },
+  "30534": {
+    "id": 30534,
+    "event": "一个神秘的包裹送到了你的住处——没有寄件人信息。里面是一把应龙和一张纸条：'你会需要它的。'",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_023"
+  },
+  "30535": {
+    "id": 30535,
+    "event": "你在一个被封的帮派据点里找到了一把先锋——它被锁在保险柜里，但密码是四个零。真不知道这帮帮派分子是怎么活到现在的。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_001"
+  },
+  "30536": {
+    "id": 30536,
+    "event": "你在夜间巡逻时从一个犯罪现场捡到了一把裁决——NCPD还没到，你先到一步。你迅速把它收了起来。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_009"
+  },
+  "30537": {
+    "id": 30537,
+    "event": "你在港口区的集装箱堆场里发现了一个走私用的暗格——里面藏着一把真探和几个弹匣。船已经走了，货留了下来。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_040"
+  },
+  "30538": {
+    "id": 30538,
+    "event": "一个在夜之城很有名的武器商人突然降低了价格——普鲁托之握只卖2000欧。你不知道他为什么要清仓，但你不会错过这个机会。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    },
+    "itemAward": "wpn_010"
+  },
+  "30539": {
+    "id": 30539,
+    "event": "你在帮派交易中被卷入了一场混战——混乱中你捡起了一把掉在地上的响尾蛇。它比你现在的武器好得多。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_002"
+  },
+  "30540": {
+    "id": 30540,
+    "event": "你帮一位老人修好了他坏掉的义眼。他感激地打开家里的一个密室——里面收藏了十几把武器。你选了一把哈兰带走。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_050"
+  },
+  "30541": {
+    "id": 30541,
+    "event": "你在一家即将倒闭的武器店倒闭前最后一天抢购了哈兰，花3000欧。店主看起来比你更难过。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -3
+    },
+    "itemAward": "wpn_050"
+  },
+  "30542": {
+    "id": 30542,
+    "event": "你在赛博空间里攻破了一个武器经销商的数据库，找到了一批'未入库'的武器位置。你去实地取回了阿拉克涅之网。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_017"
+  },
+  "30543": {
+    "id": 30543,
+    "event": "一次偶然的机会让你在废墟中发现了一个流浪佣兵的营地——他已经不在了，但金色狠婆娘还在帐篷里等着下一个主人。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_037"
+  },
+  "30544": {
+    "id": 30544,
+    "event": "你用几瓶合成威士忌和一个出租车司机换了铁壁——他说他再也不想碰这东西了。你检查了一下，状态意外地好。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_006"
+  },
+  "30545": {
+    "id": 30545,
+    "event": "你在一次黑客行动中截获了一批武器运输的信息——你半路截取了其中一把芬里尔。快递公司至今还在寻找'丢失'的包裹。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_028"
+  },
+  "30546": {
+    "id": 30546,
+    "event": "一个退役的NCPD警员在深夜的酒吧里喝醉了，把他的莫克斯以6000欧卖给了你。第二天他大概会后悔，但他已经不记得你的样子了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -6
+    }
+  },
+  "30547": {
+    "id": 30547,
+    "event": "你在边境检查站的垃圾堆里找到了一把被没收后'忘记销毁'的罗兰之誓。系统漏洞的受益者又多了一个。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30548": {
+    "id": 30548,
+    "event": "你在一家拍卖行里以6000欧拍得了一把响尾蛇——拍卖师说它'来历不明但保存完好'。来历不明在夜之城反而是好事。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -6
+    },
+    "itemAward": "wpn_002"
+  },
+  "30549": {
+    "id": 30549,
+    "event": "你帮一个黑客破解了一个军用加密系统作为回报，他送了你一把从军用科技实验室'借来'的穿透者。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "wpn_004"
+  },
+  "30550": {
+    "id": 30550,
+    "event": "你走进了沃森区一家口碑不错的义体医生诊所。经过两小时的手术，你的身体里多了突触信号优化件。疼痛持续了三天。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_030"
+  },
+  "30551": {
+    "id": 30551,
+    "event": "你在歌舞伎町找到了传说中的义体医生'老维克'——他在你的身体上花了一整天安装了赫尔墨斯之足。'别动，我在做精密调整。'",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -6
+    },
+    "itemAward": "imp_012"
+  },
+  "30552": {
+    "id": 30552,
+    "event": "一个地下义体医生在太平洲的废弃仓库里为你安装了纳米镀膜。手术条件很简陋，但你付的4000欧也只能买这种服务。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -2,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_032"
+  },
+  "30553": {
+    "id": 30553,
+    "event": "你花3000欧在一家认证义体诊所做了突触信号优化件的安装手术。医生说手术非常成功，术后恢复期大约一周。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -3
+    },
+    "itemAward": "imp_030"
+  },
+  "30554": {
+    "id": 30554,
+    "event": "你的义体医生朋友给你打了个折——4000欧就装上了外接盘。'朋友价，别告诉别人。'",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_031"
+  },
+  "30555": {
+    "id": 30555,
+    "event": "一台自动化义体手术台为你安装了外接盘——全程无人工干预。手术精确度很高，但缺乏人情的冰冷感让你有些不安。花了2000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_031"
+  },
+  "30556": {
+    "id": 30556,
+    "event": "你在一家街头义体改装店里花了3000欧安装了纳米镀膜。店主是个粗犷的中年人，手法却意外地细腻。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -3
+    }
+  },
+  "30557": {
+    "id": 30557,
+    "event": "一个巡回义体医生在城市边缘的移动诊所为你安装了女娲之指——手术完成时他已经开始收拾工具准备去下一个地点了。花了4000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_014"
+  },
+  "30558": {
+    "id": 30558,
+    "event": "你在午夜时分进入了一个只有通过暗网邀请才能找到的义体实验室。里面安装了血液过滤。代价：6000欧和部分记忆。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1,
+      "EDDIES": -6
+    }
+  },
+  "30559": {
+    "id": 30559,
+    "event": "一位退休的军用科技外科医生在你的厨房里完成了布罗卡之锻炉的安装——他声称这种'家庭手术'他做过上百次。你信了他的话。花了2000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_016"
+  },
+  "30560": {
+    "id": 30560,
+    "event": "你被紧急送进了一间义体修复中心——之前安装的旧义体出了故障。修复过程中你决定顺便升级为女娲之指，额外花了5000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -5
+    },
+    "itemAward": "imp_014"
+  },
+  "30561": {
+    "id": 30561,
+    "event": "一个来自日本的外科专家在夜之城短期执业——你花5000欧找他安装了刻耳柏洛斯脊索。手艺名不虚传。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1,
+      "EDDIES": -5
+    },
+    "itemAward": "imp_013"
+  },
+  "30562": {
+    "id": 30562,
+    "event": "你在二手义体市场上淘到了一个品相尚可的荷鲁斯之眼——前主人将它保养得很好。花2000欧买到后，你找了诊所安装。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_010"
+  },
+  "30563": {
+    "id": 30563,
+    "event": "一个帮派成员以极低的价格（6000欧）卖给了你一个'几乎全新'的强化肌腱——他说它是从一个'不再需要它的人'身上拆下来的。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -2,
+      "EDDIES": -6
+    },
+    "itemAward": "imp_002"
+  },
+  "30564": {
+    "id": 30564,
+    "event": "作为企业员工，你享受了公司的义体补贴计划——神经加速器几乎由公司全额支付。个人只花了2000欧。这大概是你最大的员工福利了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_004"
+  },
+  "30565": {
+    "id": 30565,
+    "event": "一批从荒坂走私出来的义体在黑市上流通——你花了6000欧买到了荷鲁斯之眼。安装后你发现它确实比民用版本先进。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1,
+      "EDDIES": -6
+    },
+    "itemAward": "imp_010"
+  },
+  "30566": {
+    "id": 30566,
+    "event": "你在暗网上以3000欧拍到了一个军用级致密骨髓——卖家声称是'退役军官的收藏品'。安装时义体医生看了直皱眉。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -2,
+      "EDDIES": -3
+    },
+    "itemAward": "imp_029"
+  },
+  "30567": {
+    "id": 30567,
+    "event": "一个义体回收站的老板让你看了他'珍藏'的致密骨髓——从各种来源收集来的二手零件组装而成。花了3000欧，物美价廉。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -3
+    },
+    "itemAward": "imp_029"
+  },
+  "30568": {
+    "id": 30568,
+    "event": "你在太平洲的黑市里遇到了一个专门做义体走私的女人——她以4000欧的价格卖给你一套布罗卡之锻炉，附赠一份'不保证'的质量声明。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -2,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_016"
+  },
+  "30569": {
+    "id": 30569,
+    "event": "企业升级了员工的标配义体——旧的血液过滤型号被替换下来。你通过内部渠道花了4000欧搞到了一个。虽然是旧型号，但对你来说足够好了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_009"
+  },
+  "30570": {
+    "id": 30570,
+    "event": "一个在帮派里做'义体拆解工'的人向你推销了一批拆下来的代谢增强器——花6000欧买了一个兼容型号。前主人的身份你选择不去想。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -2,
+      "EDDIES": -6
+    },
+    "itemAward": "imp_006"
+  },
+  "30571": {
+    "id": 30571,
+    "event": "军用科技的员工内部折扣让你以2000欧的价格拿到了荷鲁斯之眼——这大概是你作为'内部人士'最大的好处之一。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_010"
+  },
+  "30572": {
+    "id": 30572,
+    "event": "你在夜之城的废品回收站找到了一个损坏的塞壬之歌——花了4000欧请人修复后安装。虽然有些功能不稳定，但核心功能完好。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_019"
+  },
+  "30573": {
+    "id": 30573,
+    "event": "一个地下义体实验室在清仓时甩卖了一批实验性斯安威斯坦——你花了2000欧买了一个。安装后你的身体有些排异反应，但很快就适应了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -2,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_022"
+  },
+  "30574": {
+    "id": 30574,
+    "event": "你从一名战死的佣兵身上回收了副心脏——用一个便携式拆解工具小心翼翼地取了下来。义体医生帮你安装时评价说'保养得很差但还能用'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_026"
+  },
+  "30575": {
+    "id": 30575,
+    "event": "你为一位神秘的客户完成了一次高危任务——报酬不是现金，而是一套全新的纳米镀膜。它在夜之城的任何商店都买不到。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_032"
+  },
+  "30576": {
+    "id": 30576,
+    "event": "一个义体黑客'升级'了你的身体——他在你的体内安装了奥丁之眼。你感到一阵刺痛，然后获得了前所未有的能力。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_017"
+  },
+  "30577": {
+    "id": 30577,
+    "event": "你在一次赛博空间探索中发现了一段义体设计蓝图——你把蓝图交给一个义体工匠，他用2000欧的成本为你打造了阿努比斯之心。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_018"
+  },
+  "30578": {
+    "id": 30578,
+    "event": "帮派老大将一套赫尔墨斯之足赏给了你——'你证明了自己的价值，这是你的徽章。'安装仪式在帮派的全体成员面前进行。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -2
+    },
+    "itemAward": "imp_012"
+  },
+  "30579": {
+    "id": 30579,
+    "event": "你在一次任务中被俘虏，俘虏你的人给你安装了代谢增强器——不是作为奖励，而是作为控制手段。你感到体内多了什么东西在悄悄运作。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -2
+    },
+    "itemAward": "imp_006"
+  },
+  "30580": {
+    "id": 30580,
+    "event": "一个奇怪的义体科学家在街头拦住了你——他自称在研究'人体增强极限'，免费为你安装了合成肺。你不知道他为什么选中你。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_005"
+  },
+  "30581": {
+    "id": 30581,
+    "event": "你在一次深入企业大楼的行动中，意外发现了一个义体实验室——你顺手拿了一套散热槽并带了出来。自行安装的过程很痛苦。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -2
+    }
+  },
+  "30582": {
+    "id": 30582,
+    "event": "你的固定义体医生为你搞到了一批'内部渠道'的毗湿奴之握——比市面产品更先进。你花了4000欧就安装了它。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_020"
+  },
+  "30583": {
+    "id": 30583,
+    "event": "你参加了一场地下义体改装大赛——获胜奖品是一套顶级塞壬之歌。你在比赛中展示的改装技术让评委们印象深刻。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_019"
+  },
+  "30584": {
+    "id": 30584,
+    "event": "你从一位已故义体匠人的遗物中获得了他的代表作微发电机——附赠的笔记里记录了详细的安装指南。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_035"
+  },
+  "30585": {
+    "id": 30585,
+    "event": "一次黑市的义体拍卖会上，你以6000欧的价格拍下了一套稀有的纳米镀膜——据说全世界只有不到100套。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1,
+      "EDDIES": -6
+    },
+    "itemAward": "imp_032"
+  },
+  "30586": {
+    "id": 30586,
+    "event": "你在赛博空间里发现了一个隐藏的义体蓝图数据库——你花了三天时间打印和组装了一套大猩猩手臂。成本只花了2000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_024"
+  },
+  "30587": {
+    "id": 30587,
+    "event": "一个走投无路的义体工程师以2000欧卖给你他的专利作品视觉皮质支持——他说他需要钱来还债，但这套义体是他毕生的心血。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_034"
+  },
+  "30588": {
+    "id": 30588,
+    "event": "你帮NCPD提供了一次关键线索，作为感谢，他们以'特殊渠道'为你提供了一套刻耳柏洛斯脊索。安装在一个秘密的警用设施里完成。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_013"
+  },
+  "30589": {
+    "id": 30589,
+    "event": "在一次任务中你意外获得了一套军用级致密骨髓——它本来是要运往军用科技总部的，但你的'截胡'改变了它的命运。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -2
+    },
+    "itemAward": "imp_029"
+  },
+  "30590": {
+    "id": 30590,
+    "event": "你在沙漠中的一个废弃军事基地里发现了散热槽——它们被保存在密封容器里，状态完好如新。安装后你感觉到身体发生了微妙的变化。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_033"
+  },
+  "30591": {
+    "id": 30591,
+    "event": "一个流浪的义体匠人在街头帮你用废旧零件拼装了一套骨骼加固——虽然外观粗糙，但功能出人意料地好。你付了他4000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_008"
+  },
+  "30592": {
+    "id": 30592,
+    "event": "你在一次非法赌局的奖品中得到了骨骼加固的安装券——你兑换了它，在一家高档义体诊所完成了安装。这大概是你赌博生涯中最幸运的一次。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30593": {
+    "id": 30593,
+    "event": "你从一位老佣兵的遗物中获得了一套赫尔墨斯之足——他的遗嘱上写着'交给下一个有需要的人'。安装后的不适感让你想起了他。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_012"
+  },
+  "30594": {
+    "id": 30594,
+    "event": "一个义体黑客远程入侵了你的神经接口，强行下载了突触信号优化件的驱动程序——你感到一阵剧痛，然后发现自己的身体多了一项新功能。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -2
+    },
+    "itemAward": "imp_030"
+  },
+  "30595": {
+    "id": 30595,
+    "event": "你在帮派的军械库里找到了一套刻耳柏洛斯脊索——它被锁在一个特殊的柜子里，上面贴着'高级会员专用'。你用技术手段绕过了锁。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_013"
+  },
+  "30596": {
+    "id": 30596,
+    "event": "你花6000欧在一家没有执照的义体店里安装了提尔之臂——手术过程中停电了两次，但医生用手电筒完成了最后一步。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -2,
+      "EDDIES": -6
+    }
+  },
+  "30597": {
+    "id": 30597,
+    "event": "一个神秘包裹寄到了你的住处——里面是视觉皮质支持和一份手写的安装说明。没有寄件人信息。你犹豫了三天，最后决定安装它。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 2,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_034"
+  },
+  "30598": {
+    "id": 30598,
+    "event": "你在街头遇到了一个自称'人体增强师'的义体改装者——他花了4000欧和四个小时为你安装了纳米镀膜。效果超出预期。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_032"
+  },
+  "30599": {
+    "id": 30599,
+    "event": "你在一次义体展览会上看中了一套代谢增强器——但价格太高。不过你认识的人里有展览会的布展工人，他帮你搞到了一套'展示品'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "CHROME": 1,
+      "HUMANITY": -1
+    }
+  },
+  "30600": {
+    "id": 30600,
+    "event": "你在车行里看中了一辆古德拉·图尔——经过一番讨价还价和贷款手续，你花2000欧把它开回了家。钥匙在手中的感觉真好。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    },
+    "vehicleAward": "veh_006"
+  },
+  "30601": {
+    "id": 30601,
+    "event": "你在夜之城的二手汽车市场淘到了一辆古德拉·图尔——虽然有些划痕和异响，但价格只要4000欧。你决定自己动手修。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -4
+    },
+    "vehicleAward": "veh_006"
+  },
+  "30602": {
+    "id": 30602,
+    "event": "你在网上找到了一辆埃雷拉·翼手龙的低价出售信息——卖家说他急需用钱。你花了4000欧买下，发现车况比描述的好。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -4
+    },
+    "vehicleAward": "veh_004"
+  },
+  "30603": {
+    "id": 30603,
+    "event": "一个即将离开夜之城的人低价出售他的卷贝·湖勇——'带走不了，卖了吧。'你花了3000欧接手了这辆车。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "EDDIES": -3
+    }
+  },
+  "30604": {
+    "id": 30604,
+    "event": "你在圣多明哥的露天车市上以2000欧买到了一辆雷菲尔德·石中剑——卖家是个肌肉车爱好者，卖车是因为他买了新车。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -2
+    }
+  },
+  "30605": {
+    "id": 30605,
+    "event": "军用科技的员工内部购车计划让你以优惠价格获得了一辆卷贝·海怪——花了5000欧。虽然是最基础配置，但在夜之城有一辆车就够了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -5
+    },
+    "vehicleAward": "veh_012"
+  },
+  "30606": {
+    "id": 30606,
+    "event": "你在一次车行促销活动中以5000欧的价格买到了梅赫·巨兽——附赠了免费保养和一份延保协议。你觉得自己赚到了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -5
+    }
+  },
+  "30607": {
+    "id": 30607,
+    "event": "一个车行老板因为欠你人情，以5000欧的价格卖给你一辆水谷·MZ1——'这辆车放在这里很久了，你来给它找个好主人。'",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -5
+    },
+    "vehicleAward": "veh_010"
+  },
+  "30608": {
+    "id": 30608,
+    "event": "你在帮派控制的改装车店里以2000欧买了一辆卷贝·海怪——车已经做了大量非法改装，你假装不知道。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "EDDIES": -2
+    }
+  },
+  "30609": {
+    "id": 30609,
+    "event": "你花了3000欧在一家拍卖行拍到了一辆水谷·MZ1——前车主是个富豪，这辆车只是他车库里最不起眼的一辆。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -3
+    }
+  },
+  "30610": {
+    "id": 30610,
+    "event": "你通过暗网经纪人以3000欧的价格买了一辆天穹·赫拉——据说它是某个犯罪集团被查抄后的'流失品'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -3
+    }
+  },
+  "30611": {
+    "id": 30611,
+    "event": "你在科珀广场的高端车行里签了一份分期协议，每月还款把你压得喘不过气。但你终于开上了ARCH·刽子手。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -4
+    },
+    "vehicleAward": "veh_016"
+  },
+  "30612": {
+    "id": 30612,
+    "event": "你在一次大胆的行动中'借'走了一辆停在后巷的古德拉·图尔——车主大概需要几个小时才会发现。你把车牌换了之后它就是你的了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "vehicleAward": "veh_006"
+  },
+  "30613": {
+    "id": 30613,
+    "event": "你在一场地下赛车比赛中赢了冠军——奖品是一辆维尔福·德莱昂。你站在领奖台上时还在想这不是做梦吧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30614": {
+    "id": 30614,
+    "event": "你在一个报废车辆处理场里发现了一辆半毁的ARCH·刽子手——花了6000欧买下零件并花了一周时间修复。虽然有些地方不完美，但它能跑了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -6
+    },
+    "vehicleAward": "veh_016"
+  },
+  "30615": {
+    "id": 30615,
+    "event": "帮派老大在派对上宣布'你现在是核心成员了'——作为入伙礼物，他把你领到车库，里面停着一辆水谷·MZ1。'你的。'",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "vehicleAward": "veh_010"
+  },
+  "30616": {
+    "id": 30616,
+    "event": "你在一场赌局中赢了一辆ARCH·刽子手——赌注只是一辆旧摩托。对面的家伙显然高估了自己的运气。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30617": {
+    "id": 30617,
+    "event": "你的叔叔去世后留下了一辆埃雷拉·歹徒——它在车库里积了半年的灰尘。你打开车门坐进去，闻到了旧皮革和机油的气味。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {},
+    "vehicleAward": "veh_003"
+  },
+  "30618": {
+    "id": 30618,
+    "event": "你在一次任务中为企业客户护送了一批货物——报酬除了现金外还有一辆霆威·科尔比。'企业不差这点钱。'客户说。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "vehicleAward": "veh_007"
+  },
+  "30619": {
+    "id": 30619,
+    "event": "你花了3000欧从NCPD的报废车拍卖会上买到了一辆保时捷·911——警方使用过的车，经历了各种场面，但发动机还在。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -3
+    }
+  },
+  "30620": {
+    "id": 30620,
+    "event": "你在沙漠中发现了一辆被遗弃的古德拉·图尔——它半埋在沙中，但车载系统还能启动。你花了0欧请人把它拖了出来。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30621": {
+    "id": 30621,
+    "event": "你在赛博空间里入侵了一家租车公司的系统，将一辆雷菲尔德·湖女之剑的所有权信息'修正'成了你的名字。技术果然是第一生产力。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {},
+    "vehicleAward": "veh_002"
+  },
+  "30622": {
+    "id": 30622,
+    "event": "你在一场街头赛车中被对手'赌输了'——他输得心服口服，把保时捷·911的钥匙扔给你后转身走了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30623": {
+    "id": 30623,
+    "event": "一个地下黑客帮你修改了一辆梅赫·巨兽的电子序列号——你花了4000欧买下了这辆'已被注销'的车。现在它有了新的身份。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -4
+    },
+    "vehicleAward": "veh_014"
+  },
+  "30624": {
+    "id": 30624,
+    "event": "你在边境的高速公路上发现了一辆出了事故的雷菲尔德·石中剑——车主已经离开了。你花了0欧把它拖回去修好。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {}
+  },
+  "30625": {
+    "id": 30625,
+    "event": "公司为你配备了一辆梅赫·苏普龙——作为你新职位的配套福利。虽然车辆归属权是公司的，但你有无限使用权。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "vehicleAward": "veh_013"
+  },
+  "30626": {
+    "id": 30626,
+    "event": "你在一次抢劫中被分配到了驾驶埃雷拉·翼手龙逃跑的任务——事后同伙说'你留着吧，这车会暴露我们'。你不客气地收下了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "vehicleAward": "veh_004"
+  },
+  "30627": {
+    "id": 30627,
+    "event": "你在网上的一家虚拟二手车交易平台以6000欧买到了维尔福·德莱昂——实际车况和描述略有出入，但总体可接受。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -6
+    },
+    "vehicleAward": "veh_020"
+  },
+  "30628": {
+    "id": 30628,
+    "event": "你在科罗拉多州的一次旅行中发现了一个二手车市场——花3000欧买到了一辆卷贝·海怪并一路开回了夜之城。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -3
+    },
+    "vehicleAward": "veh_012"
+  },
+  "30629": {
+    "id": 30629,
+    "event": "你的一个客户是汽车收藏家——他用一辆霆威·科尔比抵扣了欠你的佣金。'这辆车对我来说太多了。'他说。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30630": {
+    "id": 30630,
+    "event": "你在一次帮派火拼后发现了一辆无人认领的霆威·科尔比——钥匙还在点火器上。你深吸一口气，启动了引擎。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30631": {
+    "id": 30631,
+    "event": "你帮一个汽车改装店老板解决了他的'税务问题'——作为报酬，他在店里随便你挑。你选了水谷·隼。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {}
+  },
+  "30632": {
+    "id": 30632,
+    "event": "你花6000欧买了一个报废的保时捷·911和一堆配件——用了一个月时间在车库里亲手组装。虽然是拼装车，但每一颗螺丝都是你拧的。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -6
+    },
+    "vehicleAward": "veh_017"
+  },
+  "30633": {
+    "id": 30633,
+    "event": "你在太平洲的一个渔船码头上发现了一辆古德拉·图尔——它在码头上放了很久，船主似乎已经不再需要它了。你和船主达成了交易。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "vehicleAward": "veh_006"
+  },
+  "30634": {
+    "id": 30634,
+    "event": "你在一次非常规的任务中通过中间人获得了一辆水谷·隼作为报酬——客户说'现金太容易被追踪了'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {}
+  },
+  "30635": {
+    "id": 30635,
+    "event": "你的一个女性朋友要搬家，她有一辆卷贝·海怪不知道怎么处理——'你拿去吧，给我留个好印象就行。'",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30636": {
+    "id": 30636,
+    "event": "你在街头帮助了一个出了车祸的人——他受了轻伤，他的梅赫·巨兽却还能开。为了感谢你，他让你先开走，他等拖车。然后他再也没联系你。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "vehicleAward": "veh_014"
+  },
+  "30637": {
+    "id": 30637,
+    "event": "你在一个地下停车场里发现了一辆被遗弃的雷菲尔德·湖女之剑——仪表盘上显示'低电量'。你花了0欧更换了电池，它重新启动了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30638": {
+    "id": 30638,
+    "event": "你在一场公司抽奖活动中中了大奖——一辆梅赫·巨兽。HR通知你的时候你差点从椅子上跳起来。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30639": {
+    "id": 30639,
+    "event": "你在街头的一场即兴赛车中被一个富二代挑战——他输了，很不情愿地把卷贝·湖勇的钥匙交给了你。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {},
+    "vehicleAward": "veh_011"
+  },
+  "30640": {
+    "id": 30640,
+    "event": "你花5000欧从一个破产的物流公司那里买了一批拍卖车中的一辆水谷·隼——虽然是工作用车，但你很快就把它改成了自己的风格。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -5
+    }
+  },
+  "30641": {
+    "id": 30641,
+    "event": "你在赛博空间里帮一个黑客完成了入侵任务——他送你的报酬不是现金，而是他入侵的租车公司的数据库里一辆卷贝·湖勇的使用权。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30642": {
+    "id": 30642,
+    "event": "你用旧摩托和6000欧的补差价在一家二手车行换购了一辆雷菲尔德·石中剑——虽然被坑了一些，但你终于不用骑摩托了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -6
+    }
+  },
+  "30643": {
+    "id": 30643,
+    "event": "你在夜之城的街道上发现了一辆没有上锁的梅赫·苏普龙——车主在旁边便利店买东西。你犹豫了三秒，然后开走了它。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "vehicleAward": "veh_013"
+  },
+  "30644": {
+    "id": 30644,
+    "event": "你在一家回收站花了5000欧买到了一辆被水淹过的古德拉·66型——花了两天时间烘干电路后它竟然还能用。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -5
+    },
+    "vehicleAward": "veh_005"
+  },
+  "30645": {
+    "id": 30645,
+    "event": "你帮一个汽车设计师做了一个黑客项目，他作为回报赠送了一辆他设计的概念版水谷·MZ1。全世界只有三辆。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30646": {
+    "id": 30646,
+    "event": "你在一个地下赛车论坛上发现有人以6000欧出售一辆经过重度改装的天穹·赫拉——引擎声音低沉有力，像一头苏醒的野兽。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "EDDIES": -6
+    }
+  },
+  "30647": {
+    "id": 30647,
+    "event": "你在帮派总部完成了升级仪式——帮派奖励了你一辆埃雷拉·歹徒，引擎上喷涂着帮派标志。从现在起你就是'有车一族'了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "vehicleAward": "veh_003"
+  },
+  "30648": {
+    "id": 30648,
+    "event": "你在一个被遗忘的车库里发现了一辆尘封的天穹·伊莎——它的状态出乎意料地好。花0欧做了保养后，它像新车一样运转。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "vehicleAward": "veh_019"
+  },
+  "30649": {
+    "id": 30649,
+    "event": "你的收入终于达到了一个里程碑——你走进车行，大手一挥买下了天穹·伊莎。花了5000欧，但你值得。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -5
+    }
+  },
+  "30650": {
+    "id": 30650,
+    "event": "你在一个被遗忘的军火库中发现了传说中的四季宝——据说它曾在夜之城的一次大战中决定了胜负。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30651": {
+    "id": 30651,
+    "event": "你从一名退役特种兵那里花4000欧买到了一件军用级别的特殊装备——风暴。他说'这东西在正规商店里买不到的'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -4
+    },
+    "itemAward": "wpn_037"
+  },
+  "30652": {
+    "id": 30652,
+    "event": "一个武器收藏家去世后，他的家人公开拍卖他的收藏。你花了3000欧拍到了一把据说'夜之城只有三把'的幽影。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -3
+    },
+    "itemAward": "wpn_013"
+  },
+  "30653": {
+    "id": 30653,
+    "event": "你在沙漠中探索废弃军事设施时，在一个上锁的保险箱里发现了一件原型武器真探。标签上写着'实验品-禁止流出'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30654": {
+    "id": 30654,
+    "event": "你帮一个老佣兵处理了他的武器收藏——他送给你{wpn}作为感谢。'年轻人，这把武器见证过很多事。好好保管。'",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "imp_004"
+  },
+  "30655": {
+    "id": 30655,
+    "event": "你在暗网的最高级拍卖会上以2000欧拍得了一件传说级装备{wpn}——据说它曾经属于一个传奇佣兵。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_030"
+  },
+  "30656": {
+    "id": 30656,
+    "event": "一次夜之城的大规模骚乱中，军用科技的安全仓库被攻破——你趁乱获得了一件罗兰之誓。它的型号你从未在任何公开资料中见过。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "wpn_019"
+  },
+  "30657": {
+    "id": 30657,
+    "event": "你在帮派交火后的废墟中翻出了蓝色钢铁——据传它是某个传奇帮派领袖的贴身武器。上面的签名已经模糊了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30658": {
+    "id": 30658,
+    "event": "你在赛博空间的深层区域发现了一个武器设计者留下的数字遗产——蓝图+材料，你花了2000欧请人打造出了{wpn}。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_017"
+  },
+  "30659": {
+    "id": 30659,
+    "event": "一个在夜之城被称为'军火之神'的人物决定金盆洗手——他在最后一场拍卖中出售了他的私人藏品。你花3000欧买到了真探。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -3
+    },
+    "itemAward": "wpn_019"
+  },
+  "30660": {
+    "id": 30660,
+    "event": "你在执行一次护送任务时，被护送的神秘箱子在混乱中打开了——里面是一件原型机{wpn}。你把它'收入'了自己的装备库。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30661": {
+    "id": 30661,
+    "event": "你在废墟中发现了一辆独特改装的{veh}——它的引擎经过军用级改造，速度和耐用性远超普通型号。花了2000欧修复。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -2
+    },
+    "itemAward": "wpn_037"
+  },
+  "30662": {
+    "id": 30662,
+    "event": "一个来自日本的武器匠人专程来到夜之城，为你打造了{wpn}——花了2000欧和三个月的等待时间。每一寸都经过精心锻造。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -2
+    },
+    "itemAward": "imp_027"
+  },
+  "30663": {
+    "id": 30663,
+    "event": "你在荒坂塔的一次秘密潜入任务中，从一个高管办公室的暗格里偷出了{wpn}——它是用特殊材料制作的，在黑市上价值连城。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "imp_030"
+  },
+  "30664": {
+    "id": 30664,
+    "event": "你在夜之城的传说中发现了一条'宝藏线索'——追踪线索后在地下停车场的一个废弃储物柜里找到了巴别碎片。传说是真的。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "wpn_030"
+  },
+  "30665": {
+    "id": 30665,
+    "event": "你获得了一套独一无二的原型义体合成肺——它由一位天才义体工程师设计，全世界只有这一套。安装后的感觉难以言喻。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "CHROME": 2,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_029"
+  },
+  "30666": {
+    "id": 30666,
+    "event": "你在暗网的'传奇物品'板块上以5000欧买到了一件据说'仅此一件'的{wpn}。鉴定结果表明它的确是孤品。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -5
+    },
+    "itemAward": "imp_023"
+  },
+  "30667": {
+    "id": 30667,
+    "event": "一个秘密组织在夜之城招募新成员——入伙福利是一套顶级装备{wpn}。你犹豫了很久后接受了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "itemAward": "imp_034"
+  },
+  "30668": {
+    "id": 30668,
+    "event": "你从一名企业叛逃者手中获得了{wpn}——它是企业实验室的绝密产品。叛逃者说'用它做你想做的事'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30669": {
+    "id": 30669,
+    "event": "你在一次野外探险中，在一座废弃的军用研究设施里发现了一件特殊装备幽影。它的功能让你目瞪口呆。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "wpn_002"
+  },
+  "30670": {
+    "id": 30670,
+    "event": "一个武器设计师在临终前将他毕生心血之作{wpn}托付给了你——'这是超越时代的作品，交给值得拥有它的人。'",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "vehicleAward": "veh_015"
+  },
+  "30671": {
+    "id": 30671,
+    "event": "你在一次地下拍卖会上以3000欧的价格获得了一件来自'旧网时代'的特殊装备{wpn}——据说它有着不为人知的历史。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -3
+    },
+    "vehicleAward": "veh_005"
+  },
+  "30672": {
+    "id": 30672,
+    "event": "你帮一位赛博空间大牛完成了他的研究项目，他奖励你了一件数字武器天丛云——它能以独特的方式影响赛博空间中的实体。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "wpn_045"
+  },
+  "30673": {
+    "id": 30673,
+    "event": "你从一位死去黑客的遗物中获得了一件名为退路的特殊装置——它看起来不起眼，但功能远超表面。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30674": {
+    "id": 30674,
+    "event": "你在夜之城的黑市中发现了一件'来路不明'的{wpn}——卖家只知道它是从某个大企业的秘密项目中流出来的。花了2000欧。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -2
+    }
+  },
+  "30675": {
+    "id": 30675,
+    "event": "一个从未来...或者说自称从未来回来的人，给了你一件尽忠丸。'你会需要它的。'他说。然后他就消失了。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "wpn_048"
+  },
+  "30676": {
+    "id": 30676,
+    "event": "你在帮派冲突中缴获了一件帮派首领的专属装备混沌——它上面刻着帮派标志和首领的编号。这是权力的象征。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30677": {
+    "id": 30677,
+    "event": "你在一次政府秘密仓库的泄露事件中获得了{wpn}——它是NCPD从未对外公开的特殊装备。来源你不打算深究。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "vehicleAward": "veh_005"
+  },
+  "30678": {
+    "id": 30678,
+    "event": "你花了5000欧和一个游荡在夜之城的'旅行商人'交换了一件斯芬克斯谜题——他似乎什么都有，也什么都不在乎。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "EDDIES": -5
+    },
+    "itemAward": "wpn_028"
+  },
+  "30679": {
+    "id": 30679,
+    "event": "你在赛博空间的一个隐藏区域发现了一件数字武器{wpn}的蓝图——你花了5000欧的材料费3D打印出来。它是唯一一件物理副本。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -5
+    },
+    "itemAward": "imp_004"
+  },
+  "30680": {
+    "id": 30680,
+    "event": "你从一位退休的'夜之城传奇'那里获得了一套传说级荷鲁斯之眼——他说'我老了，不需要这些了，但你会用得上的'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "CHROME": 2,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_023"
+  },
+  "30681": {
+    "id": 30681,
+    "event": "你在一次穿越战区的任务中捡到了一件军用级别的特殊装备{wpn}——它的型号在所有公开资料中都找不到。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "imp_015"
+  },
+  "30682": {
+    "id": 30682,
+    "event": "你在夜之城的地下格斗场中赢得了冠军——奖励是一件传说级装备零五。观众席上的赌徒们为你的胜利欢呼。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "wpn_031"
+  },
+  "30683": {
+    "id": 30683,
+    "event": "一个自称来自'旧美国'的收藏家在夜之城办了一场私人拍卖——你花了4000欧买到了一件战前收藏品{wpn}。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "EDDIES": -4
+    },
+    "itemAward": "imp_022"
+  },
+  "30684": {
+    "id": 30684,
+    "event": "你在一次意外中激活了裁决——它原本是一件不起眼的物品，但在特定条件下展现了令人震惊的隐藏功能。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "wpn_047"
+  },
+  "30685": {
+    "id": 30685,
+    "event": "你完成了一次传奇级委托——中间人感激不已，除了现金外还送了你{wpn}和一张通往ARCH·刽子手的提车单。大丰收的一天。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "vehicleAward": "veh_016",
+    "itemAward": "wpn_034"
+  },
+  "30686": {
+    "id": 30686,
+    "event": "你在一场帮派战争中帮助了胜利的一方——作为奖励，你获得了{wpn}和神经加速器。你在战争中找到了自己的位置。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_027"
+  },
+  "30687": {
+    "id": 30687,
+    "event": "你帮一个亿万富翁解决了他的'私人问题'——报酬是风暴加一辆{veh}。他说'这只是零花钱买的'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "wpn_024"
+  },
+  "30688": {
+    "id": 30688,
+    "event": "你在一次深入企业大楼的任务中发现了武器库和车库——你'借用'了{wpn}和一辆ARCH·忍者。企业的损失，你的收获。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    }
+  },
+  "30689": {
+    "id": 30689,
+    "event": "你在沙漠中的废弃军事基地里发现了一个完整的军火库——{wpn}和活血泵同时收入囊中。你感觉自己像是中了大奖。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1,
+      "CHROME": 1,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_032"
+  },
+  "30690": {
+    "id": 30690,
+    "event": "你帮一个地下实验室解决了安全问题——他们用实验性产品外接盘和{wpn}作为报酬支付给你。这些东西市面上绝对买不到。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "CHROME": 2,
+      "HUMANITY": -1
+    },
+    "itemAward": "imp_012"
+  },
+  "30691": {
+    "id": 30691,
+    "event": "你在夜之城的传说中追踪到了'暗影商人'的藏宝地点——箱子里有混沌和{cyber}。传说果然是真的。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "CHROME": 1,
+      "HUMANITY": -1
+    },
+    "itemAward": "wpn_020"
+  },
+  "30692": {
+    "id": 30692,
+    "event": "你在一次大型黑客行动中攻破了一个军火商的加密数据库——你远程'订购'了{wpn}，快递地址写的是你的安全屋。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30693": {
+    "id": 30693,
+    "event": "你的团队在一次高难度任务中大获全胜——战利品分配中你拿到了{wpn}。队友们羡慕地看着你。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    }
+  },
+  "30694": {
+    "id": 30694,
+    "event": "你在一个帮派领袖的私人收藏中发现了一件顶级{wpn}——它的序列号表明它曾经属于荒坂的一位高级执行官。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "vehicleAward": "veh_012"
+  },
+  "30695": {
+    "id": 30695,
+    "event": "你在赛博空间里赢得了一场全服大赛——奖励是实物{wpn}。组委会用加密快递把奖品送到了你手上。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "vehicleAward": "veh_012"
+  },
+  "30696": {
+    "id": 30696,
+    "event": "你从一位传奇佣兵的墓碑下取走了一个密封盒——里面是{wpn}。盒子上写着'传承于此，望善待之'。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "itemAward": "imp_008"
+  },
+  "30697": {
+    "id": 30697,
+    "event": "你在一个秘密实验室的废墟中发现了一套原型装备{cyber}——它能让你的神经系统与武器系统直接对接。安装过程极其痛苦。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2,
+      "CHROME": 2,
+      "HUMANITY": -2
+    },
+    "itemAward": "wpn_014"
+  },
+  "30698": {
+    "id": 30698,
+    "event": "你完成了一次不可能的任务——雇主欣喜若狂，给了你超出约定五倍的报酬，外加一件传说级{wpn}。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 2
+    },
+    "vehicleAward": "veh_019"
+  },
+  "30699": {
+    "id": 30699,
+    "event": "你在夜之城的天台上看日出时，发现了一个用密码锁锁住的箱子。你破解了密码——里面是{wpn}和一张写着'给有缘人'的字条。",
+    "type": "gear",
+    "repeatable": false,
+    "effect": {
+      "STYLE": 1
+    },
+    "vehicleAward": "veh_017"
+  }
+}

@@ -14,6 +14,9 @@ const EVENT_META_DEFAULTS = {
   tags: []
 };
 
+// 死亡事件ID范围（专由 #checkDeath() 触发，不应出现在随机池中）
+const DEATH_EVENT_ID_RANGE = { min: 18000, max: 18999 };
+
 // ID范围对应的隐含年龄段
 const ID_AGE_RANGES = [
   { minId: 10000, maxId: 10999, minAge: 0, maxAge: 2 },    // 出身事件：0-2岁
@@ -23,6 +26,12 @@ const ID_AGE_RANGES = [
   { minId: 18000, maxId: 18999, minAge: 0, maxAge: 200 },  // 死亡事件：任何年龄
   { minId: 19000, maxId: 19999, minAge: 0, maxAge: 200 },  // 日常事件：任何年龄
   { minId: 20000, maxId: 20999, minAge: 16, maxAge: 200 }, // 剧情事件：16岁+
+];
+
+// 新事件（>=30000）的 TURN 范围（用于没有显式 AGE/TURN 条件的事件）
+const ID_TURN_RANGES = [
+  { minId: 30000, maxId: 30499, minTurn: 0, maxTurn: 216 },   // 幼儿期(0-6岁)
+  { minId: 30500, maxId: 30699, minTurn: 0, maxTurn: 9999 },  // 装备事件（无年龄限制）
 ];
 
 export class Event {
@@ -85,6 +94,9 @@ export class Event {
       }
       this.#typeGroups.get(eventType).push(eid);
     }
+
+    // 数据校验（初始化完成后对所有已加载事件进行检查）
+    this.#validateEventData();
   }
 
   get(eventId) {
@@ -117,11 +129,26 @@ export class Event {
       }
     }
 
-    // 如果事件没有显式的 AGE 条件，检查隐含的 ID 范围年龄限制
+    // 如果事件没有显式的 AGE 条件，检查隐含的 ID 范围限制
     const inc = event.include || '';
     const exc = event.exclude || '';
     const hasAgeCondition = inc.includes('AGE') || exc.includes('AGE');
-    if (!hasAgeCondition && !this.#isInIdAgeRange(Number(eventId), state.AGE || 0)) {
+    const hasTurnCondition = inc.includes('TURN') || exc.includes('TURN');
+    const eventIdNum = Number(eventId);
+
+    // 新事件（>=30000）：如果没有显式 TURN 条件，检查 TURN 范围
+    if (eventIdNum >= 30000) {
+      if (!hasTurnCondition && !hasAgeCondition) {
+        const turn = state.TURN || 0;
+        if (!this.#isInIdTurnRange(eventIdNum, turn)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    // 现有事件（<30000）：保持原有的 AGE 隐式过滤
+    if (!hasAgeCondition && !this.#isInIdAgeRange(eventIdNum, state.AGE || 0)) {
       return false;
     }
 
@@ -212,15 +239,19 @@ export class Event {
    * @param {string} type - 事件类型
    * @param {number} age - 当前年龄
    * @param {object} property - 属性对象
-   * @param {object} extraState - 额外状态（含 eventCooldowns 等）
+   * @param {object} extraState - 额外状态（含 eventCooldowns, turn 等）
    * @returns {number|null} eventId 或 null
    */
   pickByType(type, age, property, extraState = {}) {
     const group = this.#typeGroups.get(type);
     if (!group || group.length === 0) return null;
 
+    const turn = extraState.turn || 0;
     const candidates = [];
     for (const eid of group) {
+      // 死亡事件排除：18000-18999 范围的事件由 #checkDeath() 专门触发
+      if (eid >= DEATH_EVENT_ID_RANGE.min && eid <= DEATH_EVENT_ID_RANGE.max) continue;
+
       // 条件检查
       if (!this.check(eid, property)) continue;
 
@@ -233,11 +264,14 @@ export class Event {
         if (evtList.includes(eid)) continue;
       }
 
-      // 冷却检查
+      // 冷却双轨检查：新事件(>=30000)按旬冷却，现有事件(<30000)按年冷却转旬
       if (event.cooldown > 0 && event.repeatable) {
         const cooldowns = extraState.eventCooldowns || new Map();
-        const lastAge = cooldowns.get(eid);
-        if (lastAge !== undefined && (age - lastAge) < event.cooldown) {
+        const cooldownTurns = (eid >= 30000)
+          ? (event.cooldown || 0)          // 新事件：按旬
+          : (event.cooldown || 0) * 36;    // 现有事件：按年转旬
+        const lastTurn = cooldowns.get(eid);
+        if (lastTurn !== undefined && (turn - lastTurn) < cooldownTurns) {
           continue;
         }
       }
@@ -268,10 +302,14 @@ export class Event {
     const selected = [];
     const usedTypes = new Set(); // 避免同一年选到多个完全相同类型的事件
     const age = extraState.age || 0;
+    const turn = extraState.turn || 0;
 
     // 筛选可用候选
     const candidates = [];
     for (const eid of eventIds) {
+      // 死亡事件排除
+      if (eid >= DEATH_EVENT_ID_RANGE.min && eid <= DEATH_EVENT_ID_RANGE.max) continue;
+
       if (!this.check(eid, property)) continue;
 
       const event = this.#eventData.get(eid);
@@ -284,11 +322,14 @@ export class Event {
         if (evtList.includes(eid)) continue;
       }
 
-      // 冷却检查
+      // 冷却双轨检查
       if (event.cooldown > 0 && event.repeatable) {
         const cooldowns = extraState.eventCooldowns || new Map();
-        const lastAge = cooldowns.get(eid);
-        if (lastAge !== undefined && (age - lastAge) < event.cooldown) {
+        const cooldownTurns = (eid >= 30000)
+          ? (event.cooldown || 0)          // 新事件：按旬
+          : (event.cooldown || 0) * 36;    // 现有事件：按年转旬
+        const lastTurn = cooldowns.get(eid);
+        if (lastTurn !== undefined && (turn - lastTurn) < cooldownTurns) {
           continue;
         }
       }
@@ -344,11 +385,11 @@ export class Event {
   /**
    * 检查冷却是否已过
    * @param {number} eventId
-   * @param {number} currentAge - 当前年龄
-   * @param {number|undefined} lastTriggerAge - 上次触发的年龄
+   * @param {number} currentTurn - 当前回合（旬）
+   * @param {number|undefined} lastTriggerTurn - 上次触发的回合
    * @returns {boolean} true = 冷却已过或无需冷却
    */
-  checkCooldown(eventId, currentAge, lastTriggerAge) {
+  checkCooldown(eventId, currentTurn, lastTriggerTurn) {
     const event = this.#eventData.get(Number(eventId));
     if (!event) return true;
 
@@ -356,9 +397,14 @@ export class Event {
     if (!event.cooldown || event.cooldown <= 0) return true;
 
     // 从未触发过
-    if (lastTriggerAge === undefined || lastTriggerAge === null) return true;
+    if (lastTriggerTurn === undefined || lastTriggerTurn === null) return true;
 
-    return (currentAge - lastTriggerAge) >= event.cooldown;
+    // 冷却双轨：新事件(>=30000)按旬冷却，现有事件(<30000)按年转旬
+    const cooldownTurns = (Number(eventId) >= 30000)
+      ? event.cooldown          // 新事件：按旬
+      : event.cooldown * 36;    // 现有事件：按年转旬
+
+    return (currentTurn - lastTriggerTurn) >= cooldownTurns;
   }
 
   /**
@@ -374,5 +420,52 @@ export class Event {
       }
     }
     return true; // 不在定义的范围内则放行
+  }
+
+  /**
+   * 根据事件ID范围检查是否匹配当前回合（仅用于>=30000没有显式TURN条件的事件）
+   * @param {number} eventId
+   * @param {number} turn
+   * @returns {boolean}
+   */
+  #isInIdTurnRange(eventId, turn) {
+    for (const range of ID_TURN_RANGES) {
+      if (eventId >= range.minId && eventId <= range.maxId) {
+        return turn >= range.minTurn && turn <= range.maxTurn;
+      }
+    }
+    return true; // 不在定义的范围内则放行
+  }
+
+  /**
+   * 数据校验：在 initial() 完成后对所有已加载事件进行检查
+   * 使用 console.warn 输出警告，不阻断加载
+   */
+  #validateEventData() {
+    for (const [eid, event] of this.#eventData) {
+      // 可重复事件未设置冷却 → 建议设置
+      if (event.repeatable && (!event.cooldown || event.cooldown <= 0)) {
+        console.warn(`[事件校验] 事件 ${eid} "${event.event}" repeatable=true 但 cooldown=0，建议设置冷却时间防止连续触发`);
+      }
+
+      // itemAward 格式检查
+      if (event.itemAward && typeof event.itemAward === 'string') {
+        if (!event.itemAward.startsWith('wpn_') && !event.itemAward.startsWith('cyber_') && !event.itemAward.startsWith('drug_') && !event.itemAward.startsWith('imp_')) {
+          console.warn(`[事件校验] 事件 ${eid} "${event.event}" itemAward="${event.itemAward}" 格式不以 wpn_/cyber_/drug_/imp_ 开头`);
+        }
+      }
+
+      // branch 目标存在性检查
+      if (event.branch) {
+        const branches = this.#conditionCache.get(`br_${eid}`);
+        if (branches) {
+          for (const branch of branches) {
+            if (branch && !this.#eventData.has(branch.target)) {
+              console.warn(`[事件校验] 事件 ${eid} "${event.event}" branch 目标 ${branch.target} 不存在`);
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -58,7 +58,7 @@
     <!-- Life -->
     <div id="life" class="page" style="padding:0;">
       <div class="hud-header">
-        <span class="age">AGE: <span id="ageDisplay" style="color:#fff;">0</span></span>
+        <span class="age"><span id="timeDisplay" style="color:#fff;font-size:0.85em;">0岁 1月 上旬</span></span>
         <span class="stats">
           <span>STYLE:</span> <span id="statStyle" class="stat-value">0</span>
           <span>TECH:</span> <span id="statTech" class="stat-value">0</span>
@@ -77,9 +77,18 @@
       </div>
       <div class="log-container" id="log"></div>
       <div class="bottom-bar">
-        <button class="cyber-btn" id="next-btn" onclick="window.app.nextYear()">▶ 继续 (下一岁)</button>
+        <button class="cyber-btn" id="next-btn" onclick="window.app.nextTurn()">▶ 继续 (下一旬)</button>
         <button class="cyber-btn auto-btn" id="auto-btn" onclick="window.app.toggleAuto()">⟳ 自动模拟</button>
         <span id="run-count" style="font-size:0.65em;color:#555;margin-left:8px;"></span>
+      </div>
+      <div id="inventory-panel" class="inventory-panel collapsed">
+        <div class="inventory-toggle" onclick="window.app.toggleInventory()">▼ 物品栏</div>
+        <div class="inventory-content" id="inventory-content">
+          <div class="inv-section"><h4>⚔ 武器</h4><div id="inv-weapons" class="inv-list"></div></div>
+          <div class="inv-section"><h4>🦾 义体</h4><div id="inv-cyberware" class="inv-list"></div></div>
+          <div class="inv-section"><h4>🚗 载具</h4><div id="inv-vehicles" class="inv-list"></div></div>
+          <div class="inv-section"><h4>💊 药品</h4><div id="inv-drugs" class="inv-list"></div></div>
+        </div>
       </div>
     </div>
 

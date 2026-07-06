@@ -12,7 +12,10 @@ export const TYPES = {
   EVT: 'EVT',
   GANG: 'GANG',
   CORP: 'CORP',
-  DIST: 'DIST'
+  DIST: 'DIST',
+  TURN: 'TURN',         // 回合数（旬）
+  MONTH: 'MONTH',       // 当前月份(1-12)
+  PHASE: 'PHASE'         // 旬(0=上旬, 1=中旬, 2=下旬)
 };
 
 export class Property {
@@ -37,13 +40,21 @@ export class Property {
       EVT: [],
       GANG: [],
       CORP: [],
-      DIST: ''
+      DIST: '',
+      TURN: 0,
+      MONTH: 1,
+      PHASE: 0
     };
   }
 
   get(type) {
     const val = this.#state[type];
     return val !== undefined ? val : 0;
+  }
+
+  // 直接赋值（用于MONTH/PHASE等需要覆盖而非增减的场景）
+  set(type, value) {
+    this.#state[type] = value;
   }
 
   getAll() {
@@ -66,6 +77,8 @@ export class Property {
         this.#state.STYLE = Math.max(0, this.#state.STYLE + value);
       } else if (type === TYPES.TECH) {
         this.#state.TECH = Math.max(0, this.#state.TECH + value);
+      } else if (type === TYPES.TURN) {
+        this.#state.TURN += value;
       }
     } else if (Array.isArray(value)) {
       if (type === TYPES.TLT || type === TYPES.EVT || type === TYPES.GANG || type === TYPES.CORP) {

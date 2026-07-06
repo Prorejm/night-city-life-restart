@@ -56,8 +56,10 @@ body {
 
 #app { position: relative; z-index: 1; min-height: 100vh; }
 
-.page { display: none; min-height: 100vh; padding: 20px; flex-direction: column; align-items: center; justify-content: center; }
-.page.active { display: flex; }
+/* 页面切换动画 */
+.page { opacity: 0; transform: translateX(30px); transition: opacity 0.4s ease, transform 0.4s ease; pointer-events: none; min-height: 100vh; padding: 20px; flex-direction: column; align-items: center; justify-content: center; position: absolute; width: 100%; }
+.page.active { opacity: 1; transform: translateX(0); pointer-events: auto; position: relative; }
+.page.leaving { opacity: 0; transform: translateX(-30px); }
 
 /* Loading */
 #loading .glitch-text {
@@ -116,7 +118,7 @@ body {
   padding: 8px 20px; display: flex; justify-content: space-between; align-items: center;
   font-family: 'Orbitron', sans-serif; font-size: 0.7em; z-index: 100; flex-wrap: wrap; gap: 5px;
 }
-.hud-header .age { color: var(--cyber-yellow); font-size: 1.2em; }
+.hud-header .age { color: var(--cyber-yellow); font-size: 1.2em; min-width: 120px; }
 .hud-header .stats span { color: var(--cyber-cyan); margin: 0 3px; }
 
 .hud-panel {
@@ -140,14 +142,44 @@ body {
 .log-container::-webkit-scrollbar-thumb { background: var(--cyber-cyan); border-radius: 2px; }
 
 .event-entry {
-  animation: fadeIn 0.5s ease-out; margin-bottom: 15px; padding: 12px;
+  animation: slideInLeft 0.4s ease-out both; margin-bottom: 15px; padding: 12px;
   background: rgba(0,255,247,0.03); border-left: 3px solid var(--cyber-cyan);
 }
-.event-entry .event-age { font-family: 'Orbitron', sans-serif; font-size: 0.65em; color: var(--cyber-yellow); margin-bottom: 4px; }
+.event-entry .event-age { font-family: 'Orbitron', sans-serif; font-size: 0.6em; color: var(--cyber-yellow); margin-bottom: 4px; }
 .event-entry .event-text { line-height: 1.7; font-size: 0.9em; }
 .event-entry.death-event { border-left-color: var(--cyber-red); background: rgba(255,0,68,0.05); }
 .event-entry.death-event .event-text { color: var(--cyber-red); }
 .event-entry .event-post { margin-top: 6px; color: var(--cyber-dim); font-style: italic; font-size: 0.8em; }
+
+/* 塔罗牌事件 */
+.event-entry.tarot-event {
+  border-left-color: #cc66ff;
+  background: rgba(204,102,255,0.05);
+  animation: tarotGlow 2s ease-in-out infinite alternate, slideInLeft 0.4s ease-out both;
+}
+.event-entry.tarot-event .event-text { color: #dd99ff; }
+@keyframes tarotGlow {
+  from { box-shadow: inset 2px 0 8px rgba(204,102,255,0.1); }
+  to   { box-shadow: inset 2px 0 20px rgba(204,102,255,0.3); }
+}
+
+/* 创伤小组事件 */
+.event-entry.trauma-event {
+  border-left-color: #00cc66;
+  background: rgba(0,204,102,0.05);
+}
+.event-entry.trauma-event .event-text { color: #00ee88; }
+
+/* 直接死亡事件 */
+.event-entry.death-event.is-instant {
+  border-left-color: #ff0044;
+  background: rgba(255,0,68,0.1);
+  animation: deathPulse 1s ease-in-out infinite alternate, slideInLeft 0.4s ease-out both;
+}
+@keyframes deathPulse {
+  from { box-shadow: inset 3px 0 10px rgba(255,0,68,0.2); }
+  to   { box-shadow: inset 3px 0 30px rgba(255,0,68,0.5); }
+}
 
 .birth-event {
   border-left: 3px solid var(--cyber-cyan);
@@ -246,6 +278,136 @@ body {
 .recipe-entry .recipe-ingredients { font-size: 0.7em; color: var(--cyber-dim); }
 .recipe-entry .recipe-glass { font-size: 0.65em; color: #888; }
 .recipe-entry .recipe-desc { font-size: 0.75em; color: var(--cyber-text); margin-top: 5px; }
+
+/* 物品栏面板 */
+.inventory-panel {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  background: rgba(10, 10, 20, 0.9);
+  border: 1px solid #00f0ff33;
+  border-right: none;
+  z-index: 100;
+  transition: width 0.3s ease;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.inventory-panel.collapsed {
+  width: 32px;
+}
+
+.inventory-panel.collapsed .inventory-content {
+  display: none;
+}
+
+.inventory-toggle {
+  writing-mode: vertical-lr;
+  padding: 12px 6px;
+  cursor: pointer;
+  color: #00f0ff;
+  font-size: 13px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #00f0ff22;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.inventory-toggle:hover {
+  background: #00f0ff11;
+}
+
+.inventory-content {
+  padding: 8px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.inv-section {
+  margin-bottom: 12px;
+}
+
+.inv-section h4 {
+  color: #ff004480;
+  font-size: 12px;
+  margin: 0 0 6px 0;
+  padding-bottom: 3px;
+  border-bottom: 1px solid #ff004422;
+}
+
+.inv-item {
+  padding: 3px 6px;
+  font-size: 11px;
+  color: #a0a0b0;
+  margin-bottom: 2px;
+  border-left: 2px solid transparent;
+}
+
+.inv-item.quality-common { border-left-color: #808080; color: #808080; }
+.inv-item.quality-uncommon { border-left-color: #00cc66; color: #00cc66; }
+.inv-item.quality-rare { border-left-color: #6655ff; color: #9988ff; }
+.inv-item.quality-epic { border-left-color: #ff8800; color: #ff9933; }
+.inv-item.quality-legendary { border-left-color: #ffcc00; color: #ffdd44; text-shadow: 0 0 6px #ffcc0044; }
+
+.inv-empty {
+  padding: 3px 6px;
+  font-size: 11px;
+  color: #505060;
+  font-style: italic;
+}
+
+/* 奖励标签 */
+.reward-tag {
+  display: inline-block;
+  animation: rewardPulse 1.5s ease-in-out;
+  color: #ffcc00;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@keyframes rewardPulse {
+  0% { opacity: 0; transform: scale(0.8); }
+  30% { opacity: 1; transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* 按钮交互动画 - 增强 */
+.cyber-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.cyber-btn:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.15), transparent);
+  animation: btnSweep 0.6s ease;
+}
+
+@keyframes btnSweep {
+  to { left: 100%; }
+}
+
+/* 事件日志滑入动画 */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* HUD数值变化闪烁 */
+.stat-value.changed {
+  animation: valueFlash 0.6s ease-out;
+}
+
+@keyframes valueFlash {
+  0% { color: #ffcc00; text-shadow: 0 0 8px #ffcc0088; }
+  100% { color: inherit; text-shadow: none; }
+}
 
 /* Responsive */
 @media (max-width: 768px) {

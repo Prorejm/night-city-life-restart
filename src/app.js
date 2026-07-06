@@ -207,7 +207,7 @@ export class App {
     this.#appendEvents(birthResult);
   }
 
-  async nextYear() {
+  async nextTurn() {
     const btn = document.getElementById('next-btn');
     if (!this.#autoMode) {
       btn.disabled = true;
@@ -220,11 +220,10 @@ export class App {
 
     if (result.isDead) {
       if (this.#autoMode) {
-        // 自动模式：短暂停顿后显示总结再自动重来
+        // 自动模式：显示总结后停止自动，不再自动重启
         await this.#delay(800);
         this.#showSummary();
-        await this.#delay(3000);
-        this.#autoRestart();
+        this.stopAuto();
       } else {
         btn.textContent = '☠ 人生终结';
         btn.disabled = true;
@@ -234,9 +233,14 @@ export class App {
     } else {
       if (!this.#autoMode) {
         btn.disabled = false;
-        btn.textContent = '▶ 继续 (下一岁)';
+        btn.textContent = '▶ 继续 (下一旬)';
       }
     }
+  }
+
+  // 兼容别名
+  async nextYear() {
+    return this.nextTurn();
   }
 
   // 自动模式：连续推进年龄
@@ -251,21 +255,11 @@ export class App {
 
   #autoLoop() {
     if (!this.#autoMode) return;
-    const result = this.#life.ageNext();
-    this.#updateHUD();
-    this.#appendEvents(result);
-
-    if (result.isDead) {
-      // 延迟显示总结再自动重来
-      this.#autoTimer = setTimeout(() => {
-        this.#showSummary();
-        this.#autoTimer = setTimeout(() => {
-          this.#autoRestart();
-        }, 2500);
-      }, 500);
-    } else {
+    this.nextTurn().then(() => {
+      if (!this.#autoMode) return;
+      if (!this.#life || this.#life.property.get('LIFE') <= 0) return;
       this.#autoTimer = setTimeout(() => this.#autoLoop(), this.#autoSpeed);
-    }
+    });
   }
 
   stopAuto() {
@@ -278,7 +272,7 @@ export class App {
     document.getElementById('auto-btn').classList.remove('active');
     const btn = document.getElementById('next-btn');
     btn.disabled = false;
-    btn.textContent = '▶ 继续 (下一岁)';
+    btn.textContent = '▶ 继续 (下一旬)';
   }
 
   toggleAuto() {
@@ -321,52 +315,144 @@ export class App {
   #updateHUD() {
     const p = this.#life.property;
     const age = p.get('AGE');
-    document.getElementById('ageDisplay').textContent = age;
-    document.getElementById('statStyle').textContent = p.get('STYLE');
-    document.getElementById('statTech').textContent = p.get('TECH');
-    document.getElementById('statChrome').textContent = p.get('CHROME');
-    document.getElementById('statEddies').textContent = p.get('EDDIES');
-    document.getElementById('statHumanity').textContent = p.get('HUMANITY');
+    const month = p.get('MONTH');
+    const phase = p.get('PHASE');
+    const timeDisplay = document.getElementById('timeDisplay');
+    if (timeDisplay) {
+      const phaseNames = ['上旬', '中旬', '下旬'];
+      timeDisplay.textContent = `${age}岁 ${month}月 ${phaseNames[phase] || ''}`;
+    }
 
-    document.getElementById('panelStyle').textContent = p.get('STYLE');
-    document.getElementById('panelTech').textContent = p.get('TECH');
-    document.getElementById('panelChrome').textContent = p.get('CHROME');
-    document.getElementById('panelEddies').textContent = p.get('EDDIES');
+    // 顶部HUD数值 + 变化闪烁动画
+    const headerStats = [
+      { id: 'statStyle', val: p.get('STYLE') },
+      { id: 'statTech', val: p.get('TECH') },
+      { id: 'statChrome', val: p.get('CHROME') },
+      { id: 'statEddies', val: p.get('EDDIES') },
+      { id: 'statHumanity', val: p.get('HUMANITY') }
+    ];
+    for (const s of headerStats) {
+      const el = document.getElementById(s.id);
+      if (el && el.textContent !== String(s.val)) {
+        el.textContent = s.val;
+        el.classList.remove('changed');
+        void el.offsetWidth; // 强制重绘
+        el.classList.add('changed');
+        setTimeout(() => el.classList.remove('changed'), 600);
+      }
+    }
+
+    // 侧面板数值 + 变化闪烁动画
+    const panelStats = [
+      { id: 'panelStyle', val: p.get('STYLE') },
+      { id: 'panelTech', val: p.get('TECH') },
+      { id: 'panelChrome', val: p.get('CHROME') },
+      { id: 'panelEddies', val: p.get('EDDIES') }
+    ];
+    for (const s of panelStats) {
+      const el = document.getElementById(s.id);
+      if (el && el.textContent !== String(s.val)) {
+        el.textContent = s.val;
+        el.classList.remove('changed');
+        void el.offsetWidth; // 强制重绘
+        el.classList.add('changed');
+        setTimeout(() => el.classList.remove('changed'), 600);
+      }
+    }
+
     const h = p.get('HUMANITY');
     const hEl = document.getElementById('panelHumanity');
-    hEl.textContent = h;
-    hEl.className = 'stat-value' + (h <= 0 ? ' danger' : h <= 3 ? ' warning' : '');
-    document.getElementById('panelLife').textContent = p.get('LIFE');
+    if (hEl) {
+      if (hEl.textContent !== String(h)) {
+        hEl.textContent = h;
+        hEl.classList.remove('changed');
+        void hEl.offsetWidth;
+        hEl.classList.add('changed');
+        setTimeout(() => hEl.classList.remove('changed'), 600);
+      }
+      hEl.className = 'stat-value' + (h <= 0 ? ' danger' : h <= 3 ? ' warning' : '');
+    }
+    const lifeEl = document.getElementById('panelLife');
+    if (lifeEl) {
+      const life = p.get('LIFE');
+      if (lifeEl.textContent !== String(life)) {
+        lifeEl.textContent = life;
+        lifeEl.classList.remove('changed');
+        void lifeEl.offsetWidth;
+        lifeEl.classList.add('changed');
+        setTimeout(() => lifeEl.classList.remove('changed'), 600);
+      }
+    }
+
+    // 更新物品栏UI
+    this.updateInventoryUI();
   }
 
   #appendEvents(result) {
     const log = document.getElementById('log');
-    for (const ev of result.events) {
+    const entries = result.events;
+    entries.forEach((ev, index) => {
       let cls = 'event-entry';
-      if (ev.isDeath) cls += ' death-event';
+      if (ev.isDeath || ev.isInstantDeath) cls += ' death-event';
       if (ev.isBirth) cls += ' birth-event';
+      if (ev.isTarot) cls += ' tarot-event';
+      if (ev.isTraumaTeam) cls += ' trauma-event';
       const div = document.createElement('div');
       div.className = cls;
-      
+
+      // 阶梯延迟动画
+      if (index > 0) {
+        div.style.animationDelay = `${index * 0.15}s`;
+      }
+
       const ageDiv = document.createElement('div');
       ageDiv.className = 'event-age';
-      ageDiv.textContent = `▼ AGE ${result.age || this.#life.getAge()}`;
+      if (result.turn !== undefined) {
+        const phaseNames = ['上旬', '中旬', '下旬'];
+        ageDiv.textContent = `▼ ${result.age}岁 ${result.month}月 ${phaseNames[result.phase] || ''}`;
+      } else {
+        ageDiv.textContent = `▼ AGE ${result.age || this.#life.getAge()}`;
+      }
       div.appendChild(ageDiv);
-      
+
       const textDiv = document.createElement('div');
       textDiv.className = 'event-text';
-      textDiv.textContent = ev.event || '';
+      // 塔罗牌事件前缀
+      if (ev.isTarot && ev.tarotName) {
+        textDiv.textContent = `🔮 [${ev.tarotName}] ${ev.event || ''}`;
+      } else if (ev.isTraumaTeam) {
+        textDiv.textContent = `🏥 [创伤小组] ${ev.event || ''}`;
+      } else if (ev.isInstantDeath) {
+        textDiv.textContent = `💀 [致命] ${ev.event || ''}`;
+      } else {
+        textDiv.textContent = ev.event || '';
+      }
+
+      // 奖励标签
+      if (ev.rewards) {
+        const tags = [];
+        if (ev.rewards.item) tags.push('🎁 获得物品');
+        if (ev.rewards.vehicle) tags.push('🚗 获得载具');
+        if (ev.rewards.drug) tags.push('💊 获得药品');
+        if (tags.length > 0) {
+          const tagSpan = document.createElement('span');
+          tagSpan.className = 'reward-tag';
+          tagSpan.textContent = ' ' + tags.join(' ');
+          textDiv.appendChild(tagSpan);
+        }
+      }
+
       div.appendChild(textDiv);
-      
+
       if (ev.postEvent) {
         const postDiv = document.createElement('div');
         postDiv.className = 'event-post';
         postDiv.textContent = ev.postEvent;
         div.appendChild(postDiv);
       }
-      
+
       log.appendChild(div);
-    }
+    });
     log.scrollTop = log.scrollHeight;
   }
 
@@ -468,14 +554,80 @@ export class App {
     this.#allocated = { STYLE: 0, TECH: 0, CHROME: 0, EDDIES: 0 };
   }
 
-  #showPage(id) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
+  #showPage(pageId) {
+    const pages = document.querySelectorAll('.page');
+    const target = document.getElementById(pageId);
+
+    if (!target || target.classList.contains('active')) return;
+
+    // 当前页面添加leaving类
+    pages.forEach(p => {
+      if (p.classList.contains('active') && p.id !== pageId) {
+        p.classList.add('leaving');
+        p.classList.remove('active');
+        setTimeout(() => p.classList.remove('leaving'), 400);
+      }
+    });
+
+    // 新页面添加active
+    target.classList.add('active');
   }
 
   #updateLoadStatus(msg) {
     const el = document.getElementById('load-status');
     if (el) el.textContent = msg;
+  }
+
+  toggleInventory() {
+    const panel = document.getElementById('inventory-panel');
+    if (panel) {
+      panel.classList.toggle('collapsed');
+      const toggle = panel.querySelector('.inventory-toggle');
+      if (toggle) {
+        toggle.textContent = panel.classList.contains('collapsed') ? '▼ 物品栏' : '▲ 物品栏';
+      }
+    }
+  }
+
+  updateInventoryUI() {
+    if (!this.#life) return;
+    const inv = this.#life.inventory;
+    const vehicles = this.#life.getVehicles();
+
+    // 渲染武器
+    const weaponsEl = document.getElementById('inv-weapons');
+    if (weaponsEl) {
+      const stats = inv.getAllStats();
+      weaponsEl.innerHTML = (stats.weapons || []).map(w =>
+        `<div class="inv-item quality-${w.quality || 'common'}">${escapeHtml(w.name)}</div>`
+      ).join('') || '<div class="inv-empty">无</div>';
+    }
+
+    // 渲染义体
+    const cyberwareEl = document.getElementById('inv-cyberware');
+    if (cyberwareEl) {
+      const stats = inv.getAllStats();
+      cyberwareEl.innerHTML = (stats.cyberware || []).map(c =>
+        `<div class="inv-item quality-${c.quality || 'common'}">${escapeHtml(c.name)}</div>`
+      ).join('') || '<div class="inv-empty">无</div>';
+    }
+
+    // 渲染载具
+    const vehiclesEl = document.getElementById('inv-vehicles');
+    if (vehiclesEl) {
+      vehiclesEl.innerHTML = vehicles.map(v =>
+        `<div class="inv-item">${escapeHtml(v.name || v.id)}</div>`
+      ).join('') || '<div class="inv-empty">无</div>';
+    }
+
+    // 渲染药品
+    const drugsEl = document.getElementById('inv-drugs');
+    if (drugsEl) {
+      const stats = inv.getAllStats();
+      drugsEl.innerHTML = (stats.drugs || []).map(d =>
+        `<div class="inv-item quality-${d.quality || 'common'}">${escapeHtml(d.name)}</div>`
+      ).join('') || '<div class="inv-empty">无</div>';
+    }
   }
 
   #delay(ms) {
